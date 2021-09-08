@@ -26,6 +26,14 @@
           </p>
         </a>
       </li>
+      <li class="nav-item">
+        <a href="{{ route('users') }}" class="nav-link {{ request()->is('portal/users') ? 'active' : '' }}">
+          <i class="nav-icon fas fa-users"></i>
+          <p>
+            Users
+          </p>
+        </a>
+      </li>
       <li style="position: fixed; bottom: 15px;">
         <a href="#" class="btn btn-default btn-sm">Logout</a>
       </li>

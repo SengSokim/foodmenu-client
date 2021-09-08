@@ -19,6 +19,9 @@ Route::prefix('portal')->group(function () {
         Route::get('/', 'ProductCategoryController@index')->name('product-categories');
     });
 
+    Route::prefix('users')->group(function () {
+        Route::get('/', 'UserController@index')->name('users');
+    });
 });
 
 

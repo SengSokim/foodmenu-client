@@ -3,7 +3,8 @@
     <div class="card">
       <div class="card-header">
         <div class="card-tools">
-          <button class="btn btn-warning btn-sm rounded-pill px-4"><i class="far fa-plus fa-fw"></i>Create New</button>
+          <button class="btn btn-warning btn-sm rounded-pill px-4" data-toggle="modal" data-target="#createVariant"><i class="far fa-plus fa-fw"></i>Create New</button>
+          @include('products.variants.create')
         </div>
       </div>
       <div class="card-body">
@@ -27,8 +28,8 @@
                 <td class="text-center">0</td>
                 <td class="text-center">Active</td>
                 <td class="text-center">
-                  <a href="#" class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-edit"></i></a>
-                  <a href="#" class="btn btn-danger btn-xs" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash"></i></a>
+                  <a href="#" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-edit"></i></a>
+                  <a href="#" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash"></i></a>
                 </td>
               </tr>
               <tr class="text-muted font-italic">
@@ -38,8 +39,8 @@
                 <td class="text-center">2</td>
                 <td class="text-center">Deactive</td>
                 <td class="text-center">
-                  <a href="#" class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-edit"></i></a>
-                  <a href="#" class="btn btn-danger btn-xs" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash"></i></a>
+                  <a href="#" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-edit"></i></a>
+                  <a href="#" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash"></i></a>
                 </td>
               </tr>
               <tr>
@@ -49,8 +50,8 @@
                 <td class="text-center">1</td>
                 <td class="text-center">Active</td>
                 <td class="text-center">
-                  <a href="#" class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-edit"></i></a>
-                  <a href="#" class="btn btn-danger btn-xs" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash"></i></a>
+                  <a href="#" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-edit"></i></a>
+                  <a href="#" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash"></i></a>
                 </td>
               </tr>
             </tbody>

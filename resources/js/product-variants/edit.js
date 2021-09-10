@@ -1,10 +1,9 @@
-EditProductVariant = new Vue({
+const EditProductVariant = new Vue({
     el: "#editProductVariant",
     data: {
         data : data,
         data_adding:{
-            name_en: '',
-            name_kh: '',
+            name: '',
             extra_price: 0,
             sequence: 0,
             enable_status: true,
@@ -17,8 +16,7 @@ EditProductVariant = new Vue({
     methods: {
         addVariantValue() {
             this.data_adding= {  //clear variant value after comfirm add
-                name_en: '',
-                name_kh: '',
+                name: '',
                 extra_price: 0,
                 sequence: 0,
                 enable_status: true,

@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var CreateProductVariant = new Vue({
+CreateProductVariant = new Vue({
   el: "#createProductVariant",
   data: {
     data: {

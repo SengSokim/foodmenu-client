@@ -4,7 +4,6 @@
 <div class="row mx-1">
   <div class="col-md-12">
     <a href="{{ route('products') }}" class="btn btn-default rounded-pill"><i class="far fa-arrow-left fa-fw"></i>Back</a>
-    <button class="btn btn-warning rounded-pill"><i class="far fa-save fa-fw"></i>Save</button>
   </div>
 </div>
 @endsection

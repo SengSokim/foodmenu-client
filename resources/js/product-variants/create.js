@@ -1,4 +1,4 @@
-const CreateProductVariant = new Vue({
+CreateProductVariant = new Vue({
     el: "#createProductVariant",
     data: {
         data:{

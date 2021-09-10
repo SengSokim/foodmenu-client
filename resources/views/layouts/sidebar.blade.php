@@ -1,4 +1,4 @@
-<div class="sidebar mt-2">
+<div class="sidebar mt-2" style="width: 100%; overflow: hidden">
   <!-- Sidebar Menu -->
   <nav class="mt-2">
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -34,9 +34,21 @@
           </p>
         </a>
       </li>
-      <li style="position: fixed; bottom: 15px;">
-        <a href="#" class="btn btn-default btn-sm">Logout</a>
+      <li class="nav-item">
+        <a href="{{ route('tables') }}" class="nav-link {{ request()->is('portal/tables') ? 'active' : '' }}">
+          <i class="nav-icon fas fa-table"></i>
+          <p>
+            Tables
+          </p>
+        </a>
       </li>
     </ul>
   </nav>
+
+  <div class="cus btn btn-danger btn-sm" style="position: fixed;bottom: 15px;font-weight: bold">Logout</div>
 </div>
+<style>
+  .cus:hover {
+    width: 234px
+  }
+</style>

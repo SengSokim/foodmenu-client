@@ -22,6 +22,10 @@ Route::prefix('portal')->group(function () {
     Route::prefix('users')->group(function () {
         Route::get('/', 'UserController@index')->name('users');
     });
+
+    Route::prefix('tables')->group(function () {
+        Route::get('/', 'TableController@index')->name('tables');
+    });
 });
 
 

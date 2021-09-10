@@ -24,10 +24,10 @@
                     <option value="0" @if(request('enable_status') == '0') selected @endif>Deactive</option>
                 </select>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
 
             </div>
-            <div class="col-md-3">
+            <div class="col-md-5">
               <div class="input-group">
                 <input type="text" class="form-control" placeholder="Search" name="search" value="{{ request('search') }}">
                 <div class="input-group-append">
@@ -38,8 +38,8 @@
           </div>
           <div class="row pb-3">
               <div class="col-md-12">
-                  <a href="{{ url('portal/product-categories') }}" class="btn btn-sm btn-danger"><i class="fas fa-sync-alt"></i></a>
-                  <button type="submit" class="btn btn-sm btn-warning text-white"><i class="fas fa-filter"></i></button>
+                  <button type="submit" class="btn btn-sm btn-info text-white">Filter <i class="fas fa-filter"></i></button>
+                  <a href="{{ url('portal/product-categories') }}" class="btn btn-sm btn-danger">Clear <i class="fas fa-sync-alt"></i></a>
               </div>
           </div>
         </form>

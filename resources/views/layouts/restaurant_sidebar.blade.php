@@ -34,7 +34,10 @@
   <div class="row pull-right">
     <div class="col-md-12">
       <div class="p-1 mt-1 float-right">
-        <button class="btn btn-default btn-xs" data-toggle="modal" data-target="#editRestaurant">
+        <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#editRestaurant">
+          <i class="fa fa-eye"></i>
+        </button>
+        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#editRestaurant">
           <i class="fa fa-edit"></i>
         </button>
         <div class="modal fade" id="editRestaurant" tabindex="-1" role="dialog" aria-hidden="true">

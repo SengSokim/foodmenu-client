@@ -1,4 +1,7 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/dist/js/app.js": "/dist/js/app.js",
+    "/dist/css/app.css": "/dist/css/app.css",
+    "/dist/js/axios.js": "/dist/js/axios.js",
+    "/dist/js/product-variants/create.js": "/dist/js/product-variants/create.js",
+    "/dist/js/product-variants/edit.js": "/dist/js/product-variants/edit.js"
 }

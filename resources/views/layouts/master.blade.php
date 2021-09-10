@@ -45,5 +45,5 @@
       </aside>
     </div>
   </div>
+  @include('layouts.master_footer')
 </body>
-@include('layouts.master_footer')

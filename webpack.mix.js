@@ -11,5 +11,12 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+mix.js('resources/js/app.js', 'public/dist/js')
+    .js('resources/js/axios.js', 'public/dist/js')
+    .sass('resources/sass/app.scss', 'public/dist/css')
+
+    //Product Variant
+    .js('resources/js/product-variants/create.js', 'public/dist/js/product-variants')
+    .js('resources/js/product-variants/edit.js', 'public/dist/js/product-variants')
+
+

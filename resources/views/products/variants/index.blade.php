@@ -27,6 +27,12 @@
   @include('products.variants.table')  
 </div>
 @endsection
-@section('footer-content')
 
+@section('content-footer')
+<script>
+  // const product_id = <?php echo request('product_id'); ?>;
+
+</script>
+<script src="{{ mix('dist/js/app.js') }}"></script>
+<script src="{{ mix('dist/js/product-variants/create.js') }}"></script>
 @endsection

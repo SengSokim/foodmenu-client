@@ -24,5 +24,6 @@
   <!-- AdminLTE App -->
   <script src="{{ asset('adminlte/dist/js/adminlte.js') }}"></script>
   <script src="{{ asset('adminlte/dist/js/demo.js') }}"></script>
-  @yield('footer-content')
+
+  @yield('content-footer')
 </html>

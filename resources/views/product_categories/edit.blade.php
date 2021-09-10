@@ -1,9 +1,9 @@
 <form method="GET">
-    <div class="modal fade" id="createCategory" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="editCategory" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title">Create Category</h5>
+                <h5 class="modal-title">Edit Category</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -11,7 +11,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="category_name">Name</label>
-                        <input type="text" class="form-control" placeholder="Category Name..." required>
+                        <input type="text" class="form-control name" placeholder="Category Name..." required>
                     </div>
                     <div class="form-group">
                         <label for="display_sequence">Dispaly Sequence</label>
@@ -24,7 +24,7 @@
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                <button type="sumbit" class="btn btn-primary">Submit</button>
+                <button type="sumbit" class="btn btn-primary">Save Change</button>
                 </div>
             </div>
         </div>

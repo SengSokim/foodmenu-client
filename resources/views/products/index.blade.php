@@ -3,15 +3,14 @@
 @section('content-header')
 <div class="row mx-1">
   <div class="col-md-12">
-      <button class="btn btn-warning rounded-pill my-1">All</button>
-      <button class="btn btn-default rounded-pill my-1">Drink</button>
-      <button class="btn btn-default rounded-pill my-1">Beer</button>
-      <button class="btn btn-default rounded-pill my-1">Khmer</button>
-      <button class="btn btn-default rounded-pill my-1">Asian Food</button>
-      <button class="btn btn-default rounded-pill my-1">Bread</button>
-      <button class="btn btn-default rounded-pill my-1">Burgar</button>
-      <button class="btn btn-default rounded-pill my-1">Coffee</button>
-      <button class="btn btn-default rounded-pill my-1">Item Set</button>
+      @php
+          $categories = ["All","Drink","Beer","Khmer","sian Food","Bread","Burgar","Coffee","Item Set"];
+
+      @endphp
+      @foreach ($categories as $category)
+        <button class="btn btn-warning rounded-pill my-1 py-0">{{ $category }}</button>
+      @endforeach
+
   </div>
 </div>
 @endsection
@@ -20,9 +19,9 @@
 
   @include('products.list')  
 
-  <button class="btn btn-warning btn-sm rounded-pill px-4" style="position: fixed; bottom: 10%; right: 20%; z-index: 1" data-toggle="modal" data-target="#createProduct">
+  <button class="btn btn-warning btn-sm rounded-pill px-3" style="position: fixed; bottom: 10%; right: 20%; z-index: 1" data-toggle="modal" data-target="#createProduct">
     <i class="far fa-plus"></i>
-    Create
+    Create New
   </button>
   @include('products.create')
   @include('products.edit')

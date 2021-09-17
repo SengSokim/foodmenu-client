@@ -25,7 +25,8 @@
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/croppie-2.6.4/croppie.css') }}">
     <!-- custom -->
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
-
+    <link rel="stylesheet" href="css/animate.css">
+     
     @yield('header-content')
 
   </head>

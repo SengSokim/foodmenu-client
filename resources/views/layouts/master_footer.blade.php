@@ -25,5 +25,6 @@
   <script src="{{ asset('adminlte/dist/js/adminlte.js') }}"></script>
   <script src="{{ asset('adminlte/dist/js/demo.js') }}"></script>
 
+  
   @yield('content-footer')
 </html>

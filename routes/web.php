@@ -1,11 +1,18 @@
 <?php
+// Route::prefix('/home')->group(function(){
+//     Route::get('/login', 'HomeController@index')->name('login');
+
+// });
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/login', 'LoginController@index')->name('login');
+Route::get('/signin', 'SigninController@index')->name('signin');
+
+
+
 
 Route::prefix('portal')->group(function () {
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
-
     Route::get('/', 'ProductController@index')->name('products');
-
 
     Route::prefix('products')->group(function () {
         Route::get('/', 'ProductController@index')->name('products');

@@ -1,6 +1,17 @@
 @extends('layouts.master')
 
 @section('content-header')
+<div class="row mx-1 mt-2">
+    <div class="col-md-6">
+        <h4>Products</h4>
+    </div>
+    <div class="col-md-6">
+        <h5 class="text-right">
+            <a href="">Dashboard </a>/ Products
+        </h5>
+  </div>
+</div>
+<hr class="mt-1">
 <div class="row mx-1">
   <div class="col-md-12">
       @php
@@ -8,7 +19,9 @@
 
       @endphp
       @foreach ($categories as $category)
-        <button class="btn btn-warning rounded-pill my-1 py-0">{{ $category }}</button>
+        <button class="btn btn-warning rounded-pill my-1 py-0 category" onclick="$(this).addClass('bg-white'); $('.category').not(this).removeClass('bg-white')">
+          {{ $category }}
+        </button>
       @endforeach
 
   </div>

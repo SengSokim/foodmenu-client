@@ -21,6 +21,8 @@
   <script src="{{ asset('adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
   <!-- croppie -->
   <script src="{{ asset('adminlte/plugins/croppie-2.6.4/croppie.js') }}"></script>
+  <!-- lity -->
+  <script src="{{ asset('assets/plugins/lity/lity.min.js') }}"></script>
   <!-- AdminLTE App -->
   <script src="{{ asset('adminlte/dist/js/adminlte.js') }}"></script>
   <script src="{{ asset('adminlte/dist/js/demo.js') }}"></script>

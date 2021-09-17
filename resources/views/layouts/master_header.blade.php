@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/summernote/summernote-bs4.min.css') }}">
     <!-- croppie -->
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/croppie-2.6.4/croppie.css') }}">
+     <!-- lity -->
+     <link rel="stylesheet" href="{{ asset('assets/plugins/lity/lity.min.css') }}">
     <!-- custom -->
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 

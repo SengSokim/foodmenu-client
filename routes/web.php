@@ -1,6 +1,10 @@
 <?php
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+Route::get('/', function() {
+   return redirect('portal');
+});
 Route::prefix('portal')->group(function () {
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 

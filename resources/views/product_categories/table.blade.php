@@ -3,11 +3,8 @@
     <div class="card">
       <div class="card-header">
         <div class="row">
-          <div class="col-md-6">
-            <h2 class="m-0">Product Categories</h2>
-          </div>
-          <div class="col-md-6 text-right">
-            <div class="card-tools mt-1">
+          <div class="col-md-12">
+            <div class="card-tools mt-1" style="float:right">
               <button class="btn btn-warning btn-sm rounded-pill"  title="Create Category" data-toggle="modal" data-target="#createCategory"><i class="far fa-plus fa-fw"></i>Create New</button>
               @include('product_categories.create')
             </div>
@@ -48,14 +45,14 @@
             <thead>
               <tr>
                 <th class="text-center">#</th>
-                <th scope="col">Category Name</th>
-                <th scope="col" class="text-center">Display Sequence</th>
+                <th scope="col">Name</th>
+                <th scope="col" class="text-center">Sequence</th>
                 <th scope="col" class="text-center">Status</th>
                 <th class="text-center">Actions</th>
               </tr>
             </thead>
             <tbody>
-              @for($i = 1; $i <= 10; $i++)
+              @for($i = 1; $i <= 5; $i++)
               <tr>
                 <th scope="row" class="text-center">{{ $i }}</th>
                 <td>Drink</td>

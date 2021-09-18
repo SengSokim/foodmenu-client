@@ -18,7 +18,6 @@
         <link rel="stylesheet" href="{{asset('css/web/bootstrap-datepicker.css')}}">
         <link rel="stylesheet" href="{{asset('css/web/jquery.timepicker.css')}}">
 
-        <!-- <link rel="stylesheet" href="{{asset('css/web/flaticon.css')}}"> -->
         <link rel="stylesheet" href="{{asset('css/web/style.css')}}">
         <link rel="stylesheet" href="{{asset('login.css')}}">
 
@@ -54,14 +53,14 @@
             <div class="container">
                 <div class="row mb-5">
                 <div class="col-md pt-5">
-                    <div class="ftco-footer-widget pt-md-5 mb-4">
-                    <h2 class="ftco-heading-2">About</h2>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <ul class="ftco-footer-social list-unstyled float-md-left float-lft">
-                        <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
-                        <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
-                        <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
-                    </ul>
+                  <div class="ftco-footer-widget pt-md-5 mb-4">
+                  <h2 class="ftco-heading-2">About</h2>
+                  <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                  <ul class="ftco-footer-social list-unstyled float-md-left float-lft">
+                    <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
+                    <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
+                    <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+                  </ul>
                 </div>
             </div>
             <div class="col-md pt-5">

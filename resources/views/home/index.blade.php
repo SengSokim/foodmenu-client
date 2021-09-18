@@ -1,152 +1,153 @@
 @extends('home.main')
 @section('content')
-        <main>
-                <div class="hero-wrap js-fullheight" id="home" style="background-color: rgb(247, 170, 54);" >
-                <div class="overlay"></div>
-                <div class="container">
-                    <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
-                    <div class="col-md-7 ftco-animate">
-                        <span class="subheading">Welcome to Emenu</span>
-                        <h1 class="mb-4">We Are Online Platform For Make Learn</h1>
-                        <p class="caps">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-                        <p class="mb-0">
-                            <a href="/login" class="btn btn-primary">Log In</a>
-                            <a href="#" class="btn btn-white">Guideline</a></p>
-                    </div>
-                </div>
-                </div>
-                </div>
+<main>
+  <div class="hero-wrap js-fullheight" id="home" style="background-color: rgb(247, 170, 54);" >
+    <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
+          <div class="col-md-7 ftco-animate">
+            <span class="subheading">Welcome to Emenu</span>
+            <h1 class="mb-4">We Are Online Platform For Make Learn</h1>
+            <p class="caps">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+            <p class="mb-0">
+            <a href="{{ route('auth.login') }}" class="btn btn-primary">Log In</a>
+            <a href="#" class="btn btn-white">Guideline</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-                <section class="ftco-section ftco-no-pb ftco-no-pt" id="home">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-7"></div>
-                            <div class="col-md-5 order-md-last">
-                            <div class="login-wrap p-4 p-md-5">
-                                <h3 class="mb-4">Register Now</h3>
-                                <form action="#" class="signup-form">
-                                    <div class="form-group">
-                                        <label class="label" for="name">Restaurant Name</label>
-                                        <input type="text" class="form-control" placeholder="Restaurant Name" required="" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="label" for="email">Phone Number</label>
-                                        <input type="tel" class="form-control" placeholder="088 49 99 080" required="" />
-                                    </div>
-                                    <div class="form-group">
-                                    <label class="label" for="password">Password</label>
-                                    <input id="password-field" type="password" class="form-control" placeholder="Password" required="" />
-                                </div>
-                                <div class="form-group">
-                                    <label class="label" for="password">Confirm Password</label>
-                                    <input id="password-field" type="password" class="form-control" placeholder="Confirm Password" required="" />
-                                </div>
-                                <div class="form-group d-flex justify-content-end mt-4">
-                                    <a href="/signin" type="submit" class="btn btn-primary submit">Sign up</a>
-                                </div>
-                                </form>
-                            <p class="text-center">Already have an account? <a href="/login">Login Here</a></p>
-                        </div>
-                    </div>
-                    </div>
-                    </div>
-                </section>
+    <section class="ftco-section ftco-no-pb ftco-no-pt" id="home">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7"></div>
+            <div class="col-md-5 order-md-last">
+              <div class="login-wrap p-4 p-md-5">
+                <h3 class="mb-4">Register Now</h3>
+                <form action="{{ route('register') }}" class="signup-form" method="POST">
+                  @csrf
+                  <div class="form-group">
+                    <label class="label" for="name">Restaurant Name</label>
+                    <input type="text" class="form-control @error('restaurant_name') is-invalid @enderror" name="restaurant_name"/>
+                    @error('restaurant_name')
+                    <span class="invalid-feedback" role="alert">{{ $message }}</span>
+                    @enderror
+                  </div>
+                  <div class="form-group">
+                      <label class="label" for="email">Phone Number</label>
+                      <input type="text" class="form-control" name="phone_number"/>
+                  </div>
+                  <div class="form-group">
+                    <label class="label" for="password">Password</label>
+                    <input type="password" class="form-control" name="password"/>
+                  </div>
+                  <div class="form-group d-flex justify-content-end mt-4">
+                    <button type="submit" class="btn btn-primary submit">Register</button>
+                  </div>
+                </form>
+              <p class="text-center">Already have an account? <a href="{{ route('auth.login') }}">Login Here</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
                 
-                <section class="ftco-section ftco-about img" id="about" >
-                    <div class="container">
-                        <div class="row d-flex">
-                            <div class="col-md-12 about-intro">
-                                <div class="row">
-                                <div class="col-md-6 d-flex">
-                                    <div class="d-flex about-wrap">
-                                        <div style=" width: 100%;height: 100%;">
-                                            <iframe width="100%" height="400px" src="https://www.youtube.com/embed/30Jeg25bClc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                     </div>
-                                        <div class="img-2 d-flex align-items-center justify-content-center" >
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 pl-md-5 py-5">
-                                <div class="row justify-content-start pb-3">
-                                    <div class="col-md-12 heading-section ftco-animate">
-                                        <span class="subheading">About Us</span>
-                                        <h2 class="mb-4">What Is E-Menu ?</h2>
-                                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                                        <p><a href="#" class="btn btn-primary">Get in touch with us</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                    </div>
-                    </section> 
+    <section class="ftco-section ftco-about img" id="about" >
+      <div class="container">
+        <div class="row d-flex">
+          <div class="col-md-12 about-intro">
+            <div class="row">
+              <div class="col-md-6 d-flex">
+                <div class="d-flex about-wrap">
+                  <div style=" width: 100%;height: 100%;">
+                    <iframe width="100%" height="400px" src="https://www.youtube.com/embed/30Jeg25bClc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                     </div>
+                  <div class="img-2 d-flex align-items-center justify-content-center" >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 pl-md-5 py-5">
+
+              <div class="row justify-content-start pb-3">
+                <div class="col-md-12 heading-section ftco-animate">
+                  <span class="subheading">About Us</span>
+                  <h2 class="mb-4">What Is E-Menu ?</h2>
+                  <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                  <p><a href="#" class="btn btn-primary">Get in touch with us</a></p>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+    </section> 
             
-                <section class="ftco-section services-section" id="features">
-                    <div class="container">
-                        <div class="row d-flex">
-                        <div class="col-md-6 heading-section pr-md-5 ftco-animate d-flex align-items-center">
-                            <div class="w-100 mb-4 mb-md-0">
-                                <span class="subheading">Features</span>
-                                <h2 class="mb-4">Why Choose E-Menu?</h2>
-                                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                <!-- <div class="d-flex video-image align-items-center mt-md-4">
-                                <a href="#" class="video img d-flex align-items-center justify-content-center" style="background-image: url(images/about.jpg);">
-                                    <span class="fa fa-play-circle"></span>
-                                </a>
-                                <h4 class="ml-4">Learn anything from StudyLab, Watch video</h4>
-                            </div> -->
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col-md-12 col-lg-6 d-flex align-self-stretch ftco-animate">
-                            <div class="services">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-tools"></span></div>
-                                <div class="media-body">
-                                <h3 class="heading mb-3">Top Quality Content</h3>
-                                <p>A small river named Duden flows by their place and supplies</p>
-                            </div>
-                        </div>      
-                    </div>
-                    <div class="col-md-12 col-lg-6 d-flex align-self-stretch ftco-animate">
-                        <div class="services">
-                            <div class="icon icon-2 d-flex align-items-center justify-content-center"><span class="flaticon-instructor"></span></div>
-                            <div class="media-body">
-                            <h3 class="heading mb-3">Highly Skilled Instructor</h3>
-                            <p>A small river named Duden flows by their place and supplies</p>
-                        </div>
-                    </div>    
-                    </div>
-                    <div class="col-md-12 col-lg-6 d-flex align-self-stretch ftco-animate">
-                    <div class="services">
-                        <div class="icon icon-3 d-flex align-items-center justify-content-center"><span class="flaticon-quiz"></span></div>
-                        <div class="media-body">
-                        <h3 class="heading mb-3">World Class &amp; Quiz</h3>
-                        <p>A small river named Duden flows by their place and supplies</p>
-                    </div>
-                    </div>      
-                    </div>
-                        <div class="col-md-12 col-lg-6 d-flex align-self-stretch ftco-animate">
-                            <div class="services">
-                                <div > <img src="images/1076182.png" alt=""  style="width: 60px;border-radius: 360px;padding: 15px;background-color: rgb(250, 81, 2);" ></div>
-                                <div class="media-body">
-                                    <h3 class="heading mb-3">Secure stornge</h3>
-                                    <p>A small river named Duden flows by their place and supplies</p>
-                                </div>
-                            </div>      
-                        </div>
-                    </div>
-                    </div>
-                    </div>
-                    </div>
-                </section>
-                <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/about-img2.png);">
-                    <p style="text-align: center;font-size: 50px;font-weight: bold; color: #fff;">Ready to start your online Restaurant?    </p>
-                    <div class="overlay"></div>
-                
-                </section>
+    <section class="ftco-section services-section" id="features">
+      <div class="container">
+        <div class="row d-flex">
+          <div class="col-md-6 heading-section pr-md-5 ftco-animate d-flex align-items-center">
+            <div class="w-100 mb-4 mb-md-0">
+              <span class="subheading">Features</span>
+              <h2 class="mb-4">Why Choose E-Menu?</h2>
+              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+              <!-- <div class="d-flex video-image align-items-center mt-md-4">
+              <a href="#" class="video img d-flex align-items-center justify-content-center" style="background-image: url(images/about.jpg);">
+                  <span class="fa fa-play-circle"></span>
+              </a>
+              <h4 class="ml-4">Learn anything from StudyLab, Watch video</h4> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-12 col-lg-6 d-flex align-self-stretch ftco-animate">
+              <div class="services">
+                <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-tools"></span></div>
+                  <div class="media-body">
+                    <h3 h3 class="heading mb-3">Top Quality Content</h3>
+                    <p>A small river named Duden flows by their place and supplies</p>
+                  </div>
+                </div>      
+              </div>
+            <div class="col-md-12 col-lg-6 d-flex align-self-stretch ftco-animate">
+              <div class="services">
+                <div class="icon icon-2 d-flex align-items-center justify-content-center"><span class="flaticon-instructor"></span></div>
+                  <div class="media-body">
+                  <h3 class="heading mb-3">Highly Skilled Instructor</h3>
+                  <p>A small river named Duden flows by their place and supplies</p>
+                </div>
+              </div>    
+            </div>
+            <div class="col-md-12 col-lg-6 d-flex align-self-stretch ftco-animate">
+              <div class="services">
+                <div class="icon icon-3 d-flex align-items-center justify-content-center"><span class="flaticon-quiz"></span></div>
+                  <div class="media-body">
+                  <h3 class="heading mb-3">World Class &amp; Quiz</h3>
+                  <p>A small river named Duden flows by their place and supplies</p>
+                </div>
+              </div>      
+            </div>
+            <div class="col-md-12 col-lg-6 d-flex align-self-stretch ftco-animate">
+              <div class="services">
+                <div><img src="images/1076182.png" alt=""  style="width: 60px;border-radius: 360px;padding: 15px;background-color: rgb(250, 81, 2);" ></div>
+                <div class="media-body">
+                  <h3 class="heading mb-3">Secure stornge</h3>
+                  <p>A small river named Duden flows by their place and supplies</p>
+                </div>
+              </div>      
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/about-img2.png);">
+      <p style="text-align: center;font-size: 50px;font-weight: bold; color: #fff;">Ready to start your online Restaurant?    </p>
+      <div class="overlay"></div>
+    </section>
                 
                 <section class="ftco-section bg-light" id="home">
                     <div class="container">

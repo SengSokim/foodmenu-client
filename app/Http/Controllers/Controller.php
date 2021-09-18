@@ -114,7 +114,7 @@ class Controller extends BaseController
     {
         self::api_post('admin/auth/logout');
         session()->put('auth', null);
-        return redirect()->to('/login');
+        return redirect()->to('/');
     }
 
     public function all($api ,$limit, $offset, $search, $order, $sort, $more_query_string = [])

@@ -47,7 +47,8 @@
     </ul>
   </nav>
 
-  <div class="cus btn btn-danger btn-sm" style="position: fixed;bottom: 15px;font-weight: bold">Logout</div>
+  <a href="{{ route('logout') }}" class="btn btn-default">Logout</a>
+  {{-- <div class="cus btn btn-danger btn-sm" style="position: fixed;bottom: 15px;font-weight: bold">Logout</div> --}}
 </div>
 <style>
   .cus:hover {

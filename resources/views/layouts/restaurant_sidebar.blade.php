@@ -67,7 +67,7 @@
   </div>
   
   <div class="res-name">
-    <span style="font-size: 1rem">{{ $restaurant_info->name }}</span>
+    <span style="font-size: 1rem">{{ $restaurant_info->name ?? '' }}</span>
      
     <button class="btn btn-transparent btn-sm" type="button" title="share link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-share-all" style="opacity: 0.5; font-size: 15px;"></i>
       <div class="dropdown-menu">
@@ -86,7 +86,7 @@
           {!! base64_encode(QrCode::format('png')
           ->merge('https://emenu-development-admin.rorean.com/adminlte/img/emenu-square-black-bg.png', .3, true)
           ->size(300)
-          ->generate($restaurant_info->website_url)) !!} " style="width: 100%">
+          ->generate($restaurant_info->website_url ?? '' )) !!} " style="width: 100%">
       </div>
     </div>
   </div>  

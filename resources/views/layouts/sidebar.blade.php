@@ -41,6 +41,8 @@
             Tables
           </p>
         </a>
+      <li style="position: fixed; bottom: 15px;">
+        <a href="{{ route('logout') }}" class="btn btn-default btn-sm">Logout</a>
       </li>
     </ul>
   </nav>

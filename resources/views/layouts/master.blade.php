@@ -1,3 +1,4 @@
+@php(getGeneralData($auth))
 @include('layouts.master_header')
 <style>
   .content-wrapper {

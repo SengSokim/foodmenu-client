@@ -27,7 +27,8 @@
      <link rel="stylesheet" href="{{ asset('assets/plugins/lity/lity.min.css') }}">
     <!-- custom -->
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
-
+    <link rel="stylesheet" href="css/animate.css">
+     
     @yield('header-content')
 
   </head>

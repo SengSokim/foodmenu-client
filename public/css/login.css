@@ -1,0 +1,155 @@
+
+	@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+	* {
+		box-sizing: border-box;
+	}
+
+	body {
+		background: #f6f5f7;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		font-family: 'Montserrat', sans-serif;
+		height: 100vh;
+		/* margin: -20px 0 50px; */
+	}
+
+	h1 {
+		font-weight: bold;
+		margin: 0;
+	}
+
+	h2 {
+		text-align: center;
+	}
+
+	p {
+		font-size: 14px;
+		font-weight: 100;
+		line-height: 20px;
+		letter-spacing: 0.5px;
+		margin-bottom: 0;
+	}
+
+
+	a {
+		color: #FFB300;
+		font-size: 11px;
+		text-decoration: none;
+		margin: 15px 0;
+		margin-bottom: 0;
+	}
+
+
+	form {
+		background-color: #FFFFFF;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		padding: 0 50px;
+		height: 100%;
+		text-align: center;
+	}
+
+	input {
+		background-color: #eee;
+		border: none;
+		padding: 1px 13px;
+		margin: 8px 0;
+		width: 100%;
+	}
+
+	.container {
+		background-color: #fff;
+		border-radius: 10px;
+		box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+				0 10px 10px rgba(0,0,0,0.22);
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+		max-width: 765px;
+		min-height: 480px;
+	}
+	/* .container{
+      background-color: #fff;
+			border-radius: 10px;
+			box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+					0 10px 10px rgba(0,0,0,0.22);
+			position: relative;
+			overflow: hidden;
+			width: 100%;
+      padding:10px;
+     
+} */
+
+	.form-container {
+		position: absolute;
+		top: 0;
+		height: 100%;
+		transition: all 0.6s ease-in-out;
+	}
+
+	.log-in-container {
+		left: 0;
+		width: 100%;
+		z-index: 2;
+	}
+
+	.container.right-panel-active .sign-in-container {
+		transform: translateX(100%);
+	}
+
+
+	.overlay-container {
+	
+		position: absolute;
+		top: 0;
+		left: 50%;
+		width: 50%;
+		height: 100%;
+		overflow: hidden;
+		transition: transform 0.6s ease-in-out;
+		z-index: 100;
+	}
+	.btn-Green{
+		background-color: #3c8dbc;
+		color: #fff;
+		font-weight: 500;
+		width: 100%;
+		
+	}
+	.btn-passwordReset{
+		background-color: #3c8dbc;
+		color: #fff;
+		font-weight: 500;
+
+	}
+
+	.container.right-panel-active .overlay-container{
+		transform: translateX(-100%);
+	}
+	@media(max-width:700px){
+	#img-benner img{
+		display: none;
+	}
+	
+	.log-in-container {
+		margin-top: 30vh;
+		left: 0;
+		width: 100%;
+		z-index: 2;
+	}
+	}
+	@media(max-width:370px){
+		form{
+			margin-top: 5vh;
+		}
+	}
+	@media(max-width:320px){
+		form{
+			margin-top: 12vh;
+		}
+	}

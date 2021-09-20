@@ -1,80 +1,110 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>login</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{asset('css/web/animate.css')}}">
-    <link rel="stylesheet" href="{{asset('css/web/style.css')}}">
-    <link rel="stylesheet" href="{{asset('css/login.css')}}">
-  </head>
-  <body>   
-    <div class="container" id="container" >
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-container log-in-container">
-            <form action="{{ route('auth.login') }}" id="login" method="POST">
-              @csrf
-              <img src="{{ asset('images/emenu-black-transparent.png') }}" alt="" style="width: 150px;">
-              <h6 style="font-weight: 200;margin: 0;color: #FFB300;font-weight: 400;">Sign in to start your session</h6>
-              <input type="text" name="code" placeholder="Restaurant_code" />
-              <input type="text" name="phone_number" placeholder="Phone Number" />
-              <input type="password" name="password" placeholder="Password"/>
-              <button type="submit" class="btn btn-Green" style="margin:2vh">log In</button>
-              <a href="#" data-toggle="modal" data-target="#myModal" style="font-size: 12px;">Forgot your password?</a>
-              <p>Don't have account?<a href="{{ route('register') }}" style="font-size: 11px;">Create an account?</a>
-              </p>
-            </form>   
-          </div>
-        </div>
-        <div class="col-md-6" id="img-benner">
-          <img src="{{ asset('images/banner3.png') }}" alt="" >
-        </div>
-      </div>
-      <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog" >
-        
-          <div class="modal-content" style="padding: 5vh;">
-            <form action="#" id="fromfroget-password"  >
-              <img src="images/emenu-black-transparent.png" alt="" style="width: 150px;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>eMenu</title>
 
-              <h5 style="font-weight: 600;margin: 0;">Reset Your Password</h5>
-              <p>Enter your PhoneNumber below to reset your password</p>
-              <div class="field">
-                <input type="text" id="forgot-phonenumber" name="forgot-phonenumber" placeholder="012 930 477" required="" style="padding: 5px;width: 100%;">
+  <!-- Favicon Icon -->
+  <link rel="shortcut icon" type="image/x-icon" href="{{ asset('adminlte/dist/img/logo/emenu-square-black-bg.png') }}">
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{asset('css/login.css')}}">
+</head>
+<body>
+  <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+    <div class="container">
+      <div class="card login-card">
+        <div class="row no-gutters">
+          <div class="col-md-5">
+            <div class="card-body">
+              <div class="brand-wrapper">
+                <img src="{{ asset('images/emenu-black-transparent.png') }}" alt="" style="width: 150px;">
               </div>
-              <button class="btn btn-passwordReset" style="margin:2vh" >Reset password</button>
-              <!-- <p>Already have account?<a href="login.html" style="font-size: 11px;">Sign in</a> -->
-            </form>
+              <p class="login-card-description">Sign into your account</p>
+              <form action="{{ route('auth.login') }}" method="POST">
+                @csrf
+                <div class="form-group">
+                  <label for="restaurant_code">Restaurant Code</label>
+                  <input type="text" class="form-control" name="code" id="restaurant_code" placeholder="Restarant Code">                
+                </div>
+                <div class="form-group">
+                  <label for="phone_number">Phone Number</label>
+                  <input type="text" class="form-control" name="phone_number" id="phone_number" placeholder="Phone Number">
+                  <div class="invalid-feedback">
+                    Please provide a valid Phone Number.
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="text" class="form-control" name="password" id="password" placeholder="******">
+                  <div class="invalid-feedback">
+                    Please provide a valid Password.
+                  </div>
+                </div>
+                <button class="login-card login-btn" type="submit">login</button>
+              </form>
+              <a href="#" class="forgot-password-link" data-toggle="modal" data-target="#myModal">Forgot password?</a>
+              <p class="login-card-footer-text">Don't have an account? <a href="{{ route('home') }}" class="register-here">Register here</a></p>
+              {{-- <nav class="login-card-footer-nav">
+                <a href="#">Terms of use.</a>
+                <a href="#">Privacy policy</a>
+              </nav> --}}
+            </div>
           </div>
+          <div class="col-md-7">
+            <img src="{{ asset('images/banner3.png') }}" alt="login" class="login-card-img">
+          </div>
+          
         </div>
       </div>
-    </div>    
-       
-    <!-- loader -->
-    <script src="{{asset('js/web/jquery.min.js')}}"></script>
-
-    <script src="{{asset('js/web/jquery-migrate-3.0.1.min.js')}}"></script>
-
-    <script src="{{asset('js/web/popper.min.js')}}"></script>
-
-    <script src="{{asset('js/web/bootstrap.min.js')}}"></script>
-
-    <script src="{{asset('js/web/jquery.easing.1.3.js')}}"></script>
-
-    <script src="{{asset('js/web/jquery.waypoints.min.js')}}"></script>
-
-    <script src="{{asset('js/web/jquery.stellar.min.js')}}"></script>
-    <script src="{{asset('js/web/owl.carousel.min.js')}}"></script>
-    <script src="{{asset('js/web/jquery.magnific-popup.min.js')}}"></script>
-    <script src="{{asset('js/web/jquery.animateNumber.min.js')}}"></script>
-    <script src="{{asset('js/web/bootstrap-datepicker.js')}}"></script>
-    <script src="{{asset('js/web/scrollax.min.js')}}"></script>
-    <script src="{{asset('js/web/main.js')}}"></script>
-  </body>
+    </div>
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog" >
+        <div class="modal-content" style="padding: 5vh;">
+            <form action="#" id="fromfroget-password" >
+              <center><img src="images/emenu-black-transparent.png" alt="" style="width: 150px;">
+              <h5 style="font-weight: 600;margin: 0;">Reset Your Password</h5>
+              <p>Enter your PhoneNumber below to reset your password</p></center>
+                <div class="field">
+                  <label for="validationCustom062">Phone Number</label>
+                  <input type="phonenumber" class="form-control" id="validationCustom045" required>
+                  <div class="invalid-feedback">
+                    Please provide a valid Phone Number.
+                  </div>							
+                </div>
+              <center><button class="btn btn-passwordReset" style="margin:2vh" >Reset password</button></center>
+            </form>
+        </div>
+      
+      </div>
+    </div>
+  </main>
+  <script>
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+      var forms = document.getElementsByClassName('needs-validation');
+      var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+      if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+      }
+      form.classList.add('was-validated');
+      }, false);
+      });
+      }, false);
+    })();
+  </script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
 </html>
+
+
+
 

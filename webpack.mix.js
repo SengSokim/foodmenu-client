@@ -19,4 +19,7 @@ mix.js('resources/js/app.js', 'public/dist/js')
     .js('resources/js/product-variants/create.js', 'public/dist/js/product-variants')
     .js('resources/js/product-variants/edit.js', 'public/dist/js/product-variants')
 
+    //Product Category
+    .js('resources/js/product-categories/product-category.js', 'public/dist/js/product-categories')
+
 

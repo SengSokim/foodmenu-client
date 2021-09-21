@@ -35,8 +35,8 @@
       </div>
       <footer class="main-footer text-sm" >
         <div class="clearfix">
-          <a href="#" class="btn btn-warning btn-sm rounded-pill"><i class="fas fa-video"></i> Video Tutorials</a>
-          <a href="#" class="btn btn-warning btn-sm rounded-pill"><i class="fas fa-book"></i> Help Docs</a>
+          <a href="#" class="btn btn-link btn-sm rounded-pill"><i class="fas fa-video"></i> Video Tutorials</a> | 
+          <a href="#" class="btn btn-link btn-sm rounded-pill"><i class="fas fa-book"></i> Help Docs</a>
         </div>
       </footer>
     </div>

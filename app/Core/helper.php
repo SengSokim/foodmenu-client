@@ -10,7 +10,7 @@
             $output .= '</div>';
             $output .= '<div class="col-sm-6">';
             $output .= '<ol class="breadcrumb float-sm-right">';
-            $output .= '<li class="breadcrumb-item"><a href="'.route('home').'">Home</a></li>';
+            $output .= '<li class="breadcrumb-item"><a href="'.route('dashboard').'">Dashboard</a></li>';
 
             if($action) {
                 $output .= '<li class="breadcrumb-item"><a href="'. route(str_replace(' ', '-', strtolower($child))) .'">'. ucwords($child) .'</a></li>';
@@ -35,8 +35,18 @@
             $controller->setAuth($auth);
 
             $response_restaurant = $controller->api_get('portal/restaurants');
-       
+            
             view()->share('restaurant_info', $response_restaurant->data ?? null);
         }
 
+    }
+
+    function ok($data = null)
+    {
+        return response()->json(['success' => true, 'data' => $data]);
+    }
+
+    function fail($message, $code = 400)
+    {
+        return response()->json(["success" => false, "message" => $message], $code);
     }

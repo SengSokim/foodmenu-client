@@ -39,7 +39,7 @@
                 </div>
                 <div class="form-group">
                   <label for="password">Password</label>
-                  <input type="text" class="form-control" name="password" id="password" placeholder="******">
+                  <input type="password" class="form-control" name="password" id="password" placeholder="******">
                   <div class="invalid-feedback">
                     Please provide a valid Password.
                   </div>

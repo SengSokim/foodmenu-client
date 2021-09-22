@@ -1,18 +1,9 @@
-  
   <!-- jQuery -->
   <script src="{{ asset('adminlte/plugins/jquery/jquery.min.js') }}"></script>
   <!-- jQuery UI 1.11.4 -->
   <script src="{{ asset('adminlte/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
   <!-- Bootstrap 4 -->
   <script src="{{ asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-
-  
-  <!-- helper -->
-  <script src="{{ asset('js/helper.js') }}"></script>
-  <!-- jquery alert -->
-  <script src="{{ asset('adminlte/plugins/loading/jquery.loading.min.js') }}"></script>
-  <script src="{{ asset('adminlte/plugins/toast/jquery.toast.min.js') }}"></script>
-  <script src="{{ asset('adminlte/plugins/confirm/jquery-confirm.min.js') }}"></script>
 
   <!-- Fontawesome 5-->
   <script src="{{ asset('adminlte/plugins/fontawesome-free/js/all.js') }}"></script>
@@ -35,7 +26,14 @@
   <!-- AdminLTE App -->
   <script src="{{ asset('adminlte/dist/js/adminlte.js') }}"></script>
   <script src="{{ asset('adminlte/dist/js/demo.js') }}"></script>
-
+  
 
   @yield('footer-content')
+  
+  <!-- jquery alert -->
+  <script src="{{ asset('adminlte/plugins/loading/jquery.loading.min.js') }}"></script>
+  <script src="{{ asset('adminlte/plugins/toast/jquery.toast.min.js') }}"></script>
+  <script src="{{ asset('adminlte/plugins/confirm/jquery-confirm.min.js') }}"></script>
+  <!-- helper -->
+  <script src="{{ asset('js/helper.js') }}"></script>
 </html>

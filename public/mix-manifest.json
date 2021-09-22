@@ -2,6 +2,7 @@
     "/dist/js/app.js": "/dist/js/app.js",
     "/dist/css/app.css": "/dist/css/app.css",
     "/dist/js/axios.js": "/dist/js/axios.js",
+    "/dist/js/product-categories/create.js": "/dist/js/product-categories/create.js",
     "/dist/js/product-categories/product-category.js": "/dist/js/product-categories/product-category.js",
     "/dist/js/product-variants/create.js": "/dist/js/product-variants/create.js",
     "/dist/js/product-variants/edit.js": "/dist/js/product-variants/edit.js"

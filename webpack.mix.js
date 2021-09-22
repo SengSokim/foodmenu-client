@@ -21,5 +21,7 @@ mix.js('resources/js/app.js', 'public/dist/js')
 
     //Product Category
     .js('resources/js/product-categories/product-category.js', 'public/dist/js/product-categories')
+    .js('resources/js/product-categories/create.js', 'public/dist/js/product-categories')
+
 
 

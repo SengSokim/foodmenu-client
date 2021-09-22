@@ -36,6 +36,8 @@
         Route::prefix('product-categories')->group(function () {
             Route::get('/', 'ProductCategoryController@index')->name('product-categories');
             Route::post('/', 'ProductCategoryController@store')->name('product-categories.store');
+            Route::post('/{id}', 'ProductCategoryController@update')->name('product-categories.update');
+            Route::delete('/delete/{id}', 'ProductCategoryController@destroy')->name('product-categories.destroy');
         });
 
         Route::prefix('users')->group(function () {

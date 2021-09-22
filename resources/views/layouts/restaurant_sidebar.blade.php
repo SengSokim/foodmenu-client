@@ -34,10 +34,10 @@
   <div class="row pull-right">
     <div class="col-md-12">
       <div class="p-1 mt-1 float-right">
-        <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#editRestaurant">
+        <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#editRestaurant" title="View">
           <i class="fa fa-eye"></i>
         </button>
-        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#editRestaurant">
+        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#editRestaurant" title="Edit">
           <i class="fa fa-edit"></i>
         </button>
         <div class="modal fade" id="editRestaurant" tabindex="-1" role="dialog" aria-hidden="true">
@@ -50,7 +50,7 @@
                 </button>
               </div>
               <div class="modal-body">
-                ...
+                <form action="" method="post"></form>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -63,7 +63,7 @@
     </div>
   </div>
   <div class="text-center mt-5">
-      <img src="{{ $restaurant_info->media->url ?? asset('adminlte/dist/img/placeholder/square-placeholder.png')}}" width="40%" style="margin: auto">
+      <img class="img-circle" src="{{ $restaurant_info->media->url ?? asset('adminlte/dist/img/placeholder/square-placeholder.png')}}" width="40%" style="margin: auto">
   </div>
   
   <div class="res-name">

@@ -6,8 +6,62 @@ use Illuminate\Http\Request;
 
 class ProductCategoryController extends Controller
 {
-    public function index()
+    public function index(){
+        list($current_page, $limit, $offset, $search, $order, $sort) = $this->getParams();
+
+        $data = $this->pagination(
+            'portal/product_categories/list',
+            $limit,
+            $offset,
+            $search,
+            $order,
+            $sort,
+            url('portal/product-categories'),
+            $current_page,
+            [
+                'enable_status' => request('enable_status')
+            ]
+        );
+        return view('product_categories.index', compact('data'));
+    }
+
+    public function store(Request $request)
     {
-        return view('product_categories.index');
+        $result = $this->api_post('portal/product_categories/create', $request->all());
+        if ($result->success == true) {
+            session()->put('success', __('dialog_box.create_success', ['name' => 'product category']));
+            return ok('');
+        } else {
+            return fail($result->message, 200);
+        } 
+    }
+
+    public function update(Request $request, $id){
+        $result = $this->api_post('portal/product_categories/update/'. $id, $request->all());
+
+        if ($result->success == true) {
+            session()->put('success', __('dialog_box.update_success', ['name' => 'product category']));
+
+            return ok('');
+        } else {
+            return fail($result->message, 200);
+        }
+    }
+
+    public function destroy($id)
+    {
+        try {
+            $result = $this->api_post('portal/product_categories/delete/'. $id);
+
+            if ($result->success == false) {
+                $msg = self::getErrorMessage($result->message);
+                return back()->with('error', $msg);
+            }
+
+            return back()->with('success', __('dialog_box.delete_success', ['name' => 'product category']));
+        } catch (Exception $e) {
+            return back()->with('error', $e->getMessage())->withInput();
+        }
+
     }
 }

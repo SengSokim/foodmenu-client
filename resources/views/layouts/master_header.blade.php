@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
     <!-- Daterange picker -->
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/daterangepicker/daterangepicker.css') }}">
+ 
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/summernote/summernote-bs4.min.css') }}">
     <!-- croppie -->
@@ -27,8 +28,12 @@
      <link rel="stylesheet" href="{{ asset('assets/plugins/lity/lity.min.css') }}">
     <!-- custom -->
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
-    <link rel="stylesheet" href="css/animate.css">
-     
+    {{-- <link rel="stylesheet" href="{{ asset('css/animate.css') }}"> --}}
+        
+    <!-- jquery loading -->
+    <link rel="stylesheet" href="{{ asset('adminlte/plugins/loading/jquery.loading.css') }}">
+    <link rel="stylesheet" href="{{ asset('adminlte/plugins/toast/jquery.toast.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('adminlte/plugins/confirm/jquery-confirm.min.css') }}">
     @yield('header-content')
 
   </head>

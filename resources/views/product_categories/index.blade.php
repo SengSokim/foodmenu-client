@@ -9,8 +9,8 @@
       <div class="card-header">
         <div class="row">
           <div class="col-md-12">
-            <div class="card-tools mt-1" style="float:right">
-              <button class="btn btn-warning btn-sm rounded-pill" title="Create Category" data-toggle="modal" data-target="#modal-category"><i class="far fa-plus fa-fw"></i>Create New</button>
+            <div class="card-tools mt-1" style="float:right" id="createProductCategory">
+              <button class="btn btn-warning btn-sm rounded-pill" @click="addProductCategory()" title="Create Category" data-toggle="modal" data-target="#modal-category"><i class="far fa-plus fa-fw"></i>Create New</button>
               @include('product_categories.create')
             </div>
           </div>
@@ -22,7 +22,7 @@
             <div class="form-group">
               <label>Status</label>
               <select name="enable_status" class="form-control">
-                  <option value="" @if(request('enable_status') == '') selected @endif>All Status</option>
+                  <option value="" @if(request('enable_status') == '') selected @endif>All</option>
                   <option value="1" @if(request('enable_status') == '1') selected @endif>Active</option>
                   <option value="0" @if(request('enable_status') == '0') selected @endif>Deactive</option>
               </select>
@@ -46,6 +46,8 @@
       </form>
       <div class="card-body" id="productCategory">
         @include('product_categories.table')  
+        @include('product_categories.delete')
+        @include('product_categories.edit')
       </div>
       <div class="card-footer">
         @include('layouts.pagination') 
@@ -53,6 +55,7 @@
     </div>
   </div>
 </div>
+
 @endsection
 @section('footer-content')
   <script>

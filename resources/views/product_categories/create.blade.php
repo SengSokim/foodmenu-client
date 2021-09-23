@@ -8,13 +8,13 @@
         </button>
       </div>
       <div class="modal-body">
-        <form @submit.prevent="submit" v-cloak id="createProductCategory">
+        <form @submit.prevent="submit" v-cloak id="createCategory">
           @include('product_categories.form')
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default btn-sm" data-dismiss="modal"><i class="fas fa-ban"></i> Cancel</button>
-        <button type="sumbit" form="createProductCategory" class="btn btn-primary btn-sm"><i class="fas fa-save"></i> Save</button>
+        <button type="sumbit" form="createCategory" class="btn btn-primary btn-sm"><i class="fas fa-save"></i> Save</button>
       </div>
     </div>
   </div>

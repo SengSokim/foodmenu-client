@@ -16,11 +16,8 @@
         <td>@{{ item.sequence }}</td>
         <td>@{{ item.enable_status ? "Active" : "Deactive" }}</td>
         <td class="">
-          <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editCategory" @click="editCategory(item)" title="Edit"><i class="fas fa-edit"></i></button>
-          @include('product_categories.edit')
-
-          <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteCategory" @click="selected_index = item.id;" title="Delete"><i class="fas fa-trash"></i></button>
-          @include('product_categories.delete')
+          <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editCategory" @click="setData(item)" title="Edit"><i class="fas fa-edit"></i></button>
+          <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete-category" @click="setData(item)" title="Delete"><i class="fas fa-trash"></i></button>
         </td>
       </tr>
     </tbody>

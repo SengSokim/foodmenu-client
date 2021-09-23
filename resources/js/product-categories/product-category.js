@@ -1,17 +1,34 @@
 new Vue({
     el: '#productCategory',
     data: {       
-        selected_index: null,
+        selected_id: null,
         product_categories:product_categories,
-        data:{}
+        data:{
+            id: null,
+            name: null,
+            sequence: 0,
+            enable_status: 1
+        }
     },
 
     methods: {
         clearData() {
-            this.data = {};
+            this.data = {
+                id: null,
+                name: null,
+                sequence: 0,
+                enable_status: 1
+            };    
+            
+            setTimeout(() => {
+                this.$validator.errors.remove('name', 'productCateogory');
+                this.$validator.errors.remove('sequence', 'productCateogory');
+            }, 0);
         },
 
-        editCategory (product_category) {
+        setData (product_category) {
+            this.clearData()
+              
             this.data = Object.assign({}, {
                 id: product_category.id,
                 name: product_category.name_en,
@@ -38,7 +55,7 @@ new Vue({
 
         submit(){
             showLoading();
-            this.$validator.validate().then((result) => {
+            this.$validator.validateAll('productCateogory').then((result) => {
                 let save = true;
                 if (!result || !save) {
                     hideLoading();
@@ -51,14 +68,14 @@ new Vue({
         },
 
         deleteCategory () {
-            axios.delete(`/portal/product-categories/delete/${this.selected_index}`).then(response => {
-                hideLoading();
-                if (response.data.success) {
-                    $('#deleteCategory').modal('hide');
-                    showToastSuccess('Delete task successfully');
-                } else {
-                    showAlertError(response.data.message);
-                } 
+            axios.delete(`/portal/product-categories/delete/${this.data.id}`)
+                .then(response => {
+                    hideLoading();
+                    if (response.data.success) {
+                        window.location.href = '/portal/product-categories';
+                    } else {
+                        showAlertError(response.data.message);
+                    } 
             }).catch(error => {
                 console.log(error);
                 hideLoading();

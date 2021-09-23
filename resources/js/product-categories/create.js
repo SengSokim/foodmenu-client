@@ -9,6 +9,12 @@ new Vue({
     },
 
     methods: {
+        addProductCategory(){
+            setTimeout(() => {
+                this.$validator.errors.remove('name', 'productCateogory');
+                this.$validator.errors.remove('sequence', 'productCateogory');
+            }, 0);
+        },
         save() {
             axios.post(`/portal/product-categories`,
                 this.data

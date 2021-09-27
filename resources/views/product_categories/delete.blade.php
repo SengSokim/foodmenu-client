@@ -8,13 +8,13 @@
         </button>
       </div>
       <div class="modal-body text-center">
-        <form @submit.prevent="deleteCategory" id="delete">
           <h6>Do you want to delete this category: <span class="text-warning"></span>@{{ data.name }}?</h6>
-        </form>
       </div>
       <div class="modal-footer">
+        <form @submit.prevent="deleteCategory">
           <button type="button" class="btn btn-default btn-sm" data-dismiss="modal"><i class="fas fa-ban"></i> Cancel</button>
-          <button type="sumbit" form="delete" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Confirm</button>
+          <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Confirm</button>
+        </form>
       </div>
     </div>
   </div>

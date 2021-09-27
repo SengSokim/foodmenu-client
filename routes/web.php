@@ -27,6 +27,14 @@
 
         Route::prefix('products')->group(function () {
             Route::get('/', 'ProductController@index')->name('products');
+
+            Route::get('/get', 'ProductController@product');
+            Route::post('/', 'ProductController@store');
+            
+            Route::post('/{id}', 'ProductController@update');
+
+            Route::post('/status/{id}', 'ProductController@status');
+
         });
 
         Route::prefix('products/variants')->group(function () {
@@ -37,7 +45,7 @@
             Route::get('/', 'ProductCategoryController@index')->name('product-categories');
             Route::post('/', 'ProductCategoryController@store')->name('product-categories.store');
             Route::post('/{id}', 'ProductCategoryController@update')->name('product-categories.update');
-            Route::delete('/delete/{id}', 'ProductCategoryController@destroy')->name('product-categories.destroy');
+            Route::delete('/{id}', 'ProductCategoryController@destroy')->name('product-categories.destroy');
         });
 
         Route::prefix('users')->group(function () {

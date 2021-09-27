@@ -21,7 +21,14 @@ mix.js('resources/js/app.js', 'public/dist/js')
 
     //Product Category
     .js('resources/js/product-categories/product-category.js', 'public/dist/js/product-categories')
-    .js('resources/js/product-categories/create.js', 'public/dist/js/product-categories')
+    
+    //Restaurant
+    .js('resources/js/restaurants/edit.js', 'public/dist/js/restaurants')
+
+    //Create
+    .js('resources/js/products/product.js', 'public/dist/js/products')
+    .js('resources/js/products/create.js', 'public/dist/js/products')
+
 
 
 

@@ -50,17 +50,15 @@ class ProductCategoryController extends Controller
 
     public function destroy($id)
     {
-        try {
-            $result = $this->api_post('portal/product_categories/delete/'. $id);
+        
+        $result = $this->api_post('portal/product_categories/delete/'. $id);
 
-            if ($result->success == false) {
-                $msg = self::getErrorMessage($result->message);
-                return back()->with('error', $msg);
-            }
+        if ($result->success == true) {
+            session()->put('success', __('dialog_box.delete_success', ['name' => 'product category']));
 
-            return back()->with('success', __('dialog_box.delete_success', ['name' => 'product category']));
-        } catch (Exception $e) {
-            return back()->with('error', $e->getMessage())->withInput();
+            return ok('');
+        } else {
+            return fail($result->message, 200);
         }
 
     }

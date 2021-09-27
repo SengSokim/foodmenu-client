@@ -15,14 +15,14 @@ new Vue({
         clearData() {
             this.data = {
                 id: null,
-                name: null,
+                name: '',
                 sequence: 0,
                 enable_status: 1
             };    
             
             setTimeout(() => {
-                this.$validator.errors.remove('name', 'productCateogory');
-                this.$validator.errors.remove('sequence', 'productCateogory');
+                this.$validator.errors.remove('name');
+                this.$validator.errors.remove('sequence');
             }, 0);
         },
 
@@ -36,8 +36,9 @@ new Vue({
                 enable_status: product_category.enable_status
             });
         },
+
         save(){
-            axios.post(`/portal/product-categories/${this.data.id}`,
+            axios.post(`/portal/product-categories/${this.data.id ?? ''}`,
                 this.data
             ).then(response => {
                 if (response.data.success) {
@@ -55,7 +56,7 @@ new Vue({
 
         submit(){
             showLoading();
-            this.$validator.validateAll('productCateogory').then((result) => {
+            this.$validator.validate().then((result) => {
                 let save = true;
                 if (!result || !save) {
                     hideLoading();
@@ -68,9 +69,10 @@ new Vue({
         },
 
         deleteCategory () {
-            axios.delete(`/portal/product-categories/delete/${this.data.id}`)
+            axios.delete(`/portal/product-categories/${this.data.id}`)
                 .then(response => {
                     hideLoading();
+                    console.log(response.data);
                     if (response.data.success) {
                         window.location.href = '/portal/product-categories';
                     } else {

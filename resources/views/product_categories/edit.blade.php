@@ -13,7 +13,7 @@
         </form>
       </div>
       <div class="modal-footer">
-      <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal"><i class="fas fa-ban"></i> Cancel</button>
+      <button type="button" class="btn btn-default btn-sm" data-dismiss="modal"><i class="fas fa-ban"></i> Cancel</button>
       <button type="sumbit" form="updateProductCategory" class="btn btn-primary btn-sm"><i class="fas fa-save"></i> Save Change</button>
       </div>
     </div>

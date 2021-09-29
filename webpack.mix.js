@@ -25,6 +25,8 @@ mix.js('resources/js/app.js', 'public/dist/js')
     //Restaurant
     .js('resources/js/restaurants/edit.js', 'public/dist/js/restaurants')
 
+    .js('resources/js/profile.js', 'public/dist/js/profile')
+
     //Create
     .js('resources/js/products/product.js', 'public/dist/js/products')
     .js('resources/js/products/create.js', 'public/dist/js/products')

@@ -45,7 +45,7 @@ new Vue({
                     window.location.href = '/portal/product-categories';
                 } else {
                     showAlertError(response.data.message);
-                    hideLoading()
+                    hideLoading();
                 }
             }).catch(error => {
                 hideLoading();

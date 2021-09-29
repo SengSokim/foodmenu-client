@@ -17,8 +17,11 @@
           <img src="{{ asset('adminlte/dist/img/logo/emenu-black-transparent.png') }}" alt="Emenu Large" class="brand-image-xs logo-xl" style="left: 85px">
         </a>
         @include('layouts.sidebar')
+        <div class="sidebar-custom">
+          <a href="#" class="btn btn-link"><i class="fas fa-cogs"></i></a>
+          <a href="#" class="btn btn-secondary hide-on-collapse pos-right">Help</a>
+        </div>
       </aside>
-    
       
       <div class="content-wrapper">
         <section class="content-header">
@@ -33,6 +36,7 @@
           </div>
         </section>
       </div>
+
       <footer class="main-footer text-sm" >
         <div class="clearfix">
           <a href="#" class="btn btn-link btn-sm rounded-pill"><i class="fas fa-video"></i> Video Tutorials</a> | 
@@ -47,5 +51,5 @@
     </div>
   </div>
 </body>
-@include('layouts.alert')
 @include('layouts.master_footer')
+@include('layouts.alert')

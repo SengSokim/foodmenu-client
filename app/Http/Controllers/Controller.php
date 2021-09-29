@@ -20,17 +20,17 @@ class Controller extends BaseController
     {
         $this->middleware(function ($request, $next) {
             $this->auth = session()->get('auth');
-            // if($this->auth) {
-            //     $user_per = $request->user_per;
-            //     if(!isset($user_per))
-            //     {
-            //         $response = $this->api_get('portal/auth/user_per');
+            if($this->auth) {
+                // $user_per = $request->user_per;
+                // if(!isset($user_per))
+                // {
+                //     $response = $this->api_get('portal/auth/user_per');
 
-            //         if ($response->success) {
-            //             $user_per = (array)$response->data;
-            //         }
-            //     }
-            // }
+                //     if ($response->success) {
+                //         $user_per = (array)$response->data;
+                //     }
+                // }
+            }
 
             view()->share('auth', $this->auth);
             view()->share('user_per', $user_per ?? null);
@@ -112,9 +112,9 @@ class Controller extends BaseController
 
     public function clearAuth()
     {
-        self::api_post('admin/auth/logout');
+        self::api_post('portal/auth/logout');
         session()->put('auth', null);
-        return redirect()->to('/');
+        return redirect()->to('/auth/login');
     }
 
     public function all($api ,$limit, $offset, $search, $order, $sort, $more_query_string = [])

@@ -68,7 +68,7 @@
         </div>
       </div>
       <div class="card-footer">
-        @include('layouts.pagination') 
+        {{-- @include('layouts.pagination')  --}}
       </div>
     </div>
   </div>

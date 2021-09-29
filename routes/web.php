@@ -21,7 +21,7 @@
 
         Route::group(['prefix' =>'profile'], function(){
             Route::get('/', 'ProfileController@view');
-            Route::post('/', 'ProfileController@store');
+            Route::post('/', 'ProfileController@update');
             Route::post('/change_password/', 'ProfileController@changePassword');
         });
 
@@ -55,6 +55,12 @@
         Route::prefix('tables')->group(function () {
             Route::get('/', 'TableController@index')->name('tables');
         });
+
+        Route::prefix('restaurants')->group(function () {
+            Route::get('/', 'RestaurantController@edit')->name('tables');
+        });
+
+
     });
 
 

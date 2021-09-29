@@ -29,7 +29,7 @@
 
 @section('content-footer')
 <script>
-  // const product_id = <?php echo request('product_id'); ?>;
+  const product_id = <?php echo request('product_id'); ?>;
 
 </script>
 <script src="{{ mix('dist/js/app.js') }}"></script>

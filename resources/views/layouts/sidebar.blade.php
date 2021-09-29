@@ -41,17 +41,19 @@
             Tables
           </p>
         </a>
-      <li style="position: fixed; bottom: 15px;">
-        <a href="{{ route('logout') }}" class="btn btn-default btn-sm">Logout</a>
       </li>
+      {{-- <li style="position: fixed; bottom: 15px;">
+        <a href="{{ route('logout') }}" class="btn btn-default btn-sm">Logout</a>
+      </li> --}}
     </ul>
   </nav>
 
   {{-- <a href="{{ route('logout') }}" class="btn btn-default">Logout</a> --}}
   {{-- <div class="cus btn btn-danger btn-sm" style="position: fixed;bottom: 15px;font-weight: bold">Logout</div> --}}
 </div>
-<style>
+
+{{-- <style>
   .cus:hover {
     width: 234px
   }
-</style>
+</style> --}}

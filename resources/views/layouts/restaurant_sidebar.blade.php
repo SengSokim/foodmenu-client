@@ -30,18 +30,18 @@
 
 
 </style>
-<div class="sidebar restaurant-sidebar" style="height: 100vh">
+<div class="sidebar restaurant-sidebar" style="height: 100vh" id="editRestaurant">
   <div class="row pull-right">
     <div class="col-md-12">
       <div class="p-1 mt-1 float-right">
-        <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#editRestaurant" title="View">
+        <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#view-restaurant" title="View">
           <i class="fa fa-eye"></i>
         </button>
-        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#editRestaurant" title="Edit">
+        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#edit-restaurant" title="Edit"  @click="showRestaurant">
           <i class="fa fa-edit"></i>
         </button>
-        <div class="modal fade" id="editRestaurant" tabindex="-1" role="dialog" aria-hidden="true">
-          <div class="modal-dialog" role="document">
+        <div class="modal fade" id="edit-restaurant" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title">Edit Restaurant</h5>
@@ -50,7 +50,114 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form action="" method="post"></form>
+                <form action="" method="post">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <img id="restaurant-profile-upload" class="img-fluid mb-3 ml-5" :src="data.image ? data.image : (data.media ? data.media.url : '{{ asset('adminlte/dist/img/placeholder/square-placeholder.png') }}')" style="width: 110px;">
+                        <input type='file' id="restaurant-profile-input" name="image" accept=".jpg,.png" style="display: none" @change="uploadProfile"/>
+                        <input class="btn-upload btn btn-primary form-control" type="button" value="Browse" onclick="document.getElementById('restaurant-profile-input').value='';document.getElementById('restaurant-profile-input').click();"  style="width: 110px;">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <img id="restaurant-banner-upload" class="img-fluid mb-3" :src="data.banner_image ? data.banner_image : (data.banner ? data.banner.url : '{{ asset('adminlte/dist/img/placeholder/landscape_placeholder.png') }}')" style="width: 300px; height: 168.75px;">
+                        <input type='file' id="restaurant-banner-input" name="banner" accept=".jpg,.png" style="display: none" @change="uploadBanner"/>
+                        <input class="btn-upload btn btn-primary form-control" type="button" value="Browse" onclick="document.getElementById('restaurant-banner-input').value='';document.getElementById('restaurant-banner-input').click();">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="required">Restaurant Name</label>
+                        <input type="text" name="name" class="form-control" v-model="data.name" placeholder="Restaurant name"/> 
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="required">Restaurant Code</label>
+                        <input type="text" name="price" class="form-control" v-model="data.code" placeholder="code"/> 
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                       <div class="form-group">
+                        <label class="required">Website URL</label>
+                        <input type="text" name="website_url" class="form-control" v-model="data.website_url" placeholder="www.emenu.com"/> 
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                       <div class="form-group">
+                        <label class="required">Email</label>
+                        <input type="text" name="email" class="form-control" v-model="data.email" placeholder="abc@example.com"/> 
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                       <div class="form-group">
+                        <label class="required">Phone Number</label>
+                        <input type="text" name="phone_number" class="form-control" :class="{'is-invalid': errors.has('phone_number') }" v-model="data.phone_number"  v-validate="'required'"/> 
+                        <div class="invalid-feedback">@{{ errors.first('name') }}</div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                       <div class="form-group">
+                        <label class="required">Other Phone Number</label>
+                        <input type="text" name="other_phone_number" class="form-control" v-model="data.name"/> 
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                       <div class="form-group">
+                        <label>Telegram User</label>
+                        <input type="text" name="telegram_user" class="form-control" v-model="data.telegram_user" placeholder="Telegram Username"/> 
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                       <div class="form-group">
+                        <label>Telegram Group</label>
+                        <input type="text" name="telegram_group" class="form-control" v-model="data.telegram_group" placeholder="Telegram Group"/> 
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                       <div class="form-group">
+                        <label class="required">Latitude</label>
+                        <input type="text" class="form-control" v-model="data.latitude" placeholder="0"/> 
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                       <div class="form-group">
+                        <label class="required">Longitude</label>
+                        <input type="text" class="form-control" v-model="data.longitude" placeholder="0"/> 
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                       <div class="form-group">
+                        <label class="required">About</label>
+                        <textarea rows="5" class="form-control" v-model="data.about"></textarea>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                       <div class="form-group">
+                        <label class="required">Address</label>
+                        <textarea rows="5" class="form-control" v-model="data.address"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <label><input type="checkbox" v-model="data.is_can_order">Available Order</label>
+                    </div>
+                  </div>
+                </form>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

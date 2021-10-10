@@ -34,11 +34,16 @@
             Route::post('/{id}', 'ProductController@update');
 
             Route::post('/status/{id}', 'ProductController@status');
+            Route::delete('/{id}', 'ProductController@destroy');
 
         });
 
-        Route::prefix('products/variants')->group(function () {
-            Route::get('/', 'ProductVariantController@index')->name('products.variants');
+        Route::prefix('product_variants')->group(function () {
+            Route::get('/', 'ProductVariantController@index')->name('product_variants');
+            Route::post('/', 'ProductVariantController@store')->name('product_variants.store');
+            Route::delete('/{id}', 'ProductVariantController@destroy')->name('product_variants.destroy');
+
+
         });
 
         Route::prefix('product-categories')->group(function () {
@@ -57,7 +62,8 @@
         });
 
         Route::prefix('restaurants')->group(function () {
-            Route::get('/', 'RestaurantController@edit')->name('tables');
+            Route::get('/', 'RestaurantController@edit')->name('restaurants.edit');
+            Route::post('/', 'RestaurantController@update')->name('restaurants.update');
         });
 
 

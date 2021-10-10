@@ -100,9 +100,25 @@ new Vue({
             }
         },
 
-        setData (product) {
-            // this.clearData()
-              
+        clearData(){
+             this.data={
+                id: null,
+                name: '',
+                price: 0,
+                sequence: 0,
+                enable_status: 1,
+                product_category_id: null,
+                description:'',
+                image:null
+            }
+            setTimeout(() => {
+                // this.$validator.errors.remove('name');
+                this.$validator.errors.clear();
+                this.error.image = ''
+            }, 0);
+        },
+
+        setData (product) {              
             this.data = Object.assign({}, {
                 id: product.id,
                 name: product.name_en,
@@ -116,8 +132,9 @@ new Vue({
         },
 
         updateProductStatus(value){
+            showLoading();
             axios.post(`/portal/products/status/${this.data.id}`,
-                {'enable_status': value}
+                { enable_status : value}
             ).then(response => {
                 if (response.data.success) {
                     window.location.href = '/portal/products';
@@ -130,6 +147,22 @@ new Vue({
                 console.log(error)
                 showAlertError('Cannot update product');
             })
+        },
+        deleteVariant() {
+            axios.delete(`/portal/products/${this.data.id}`)
+                .then(response => {
+                    hideLoading();
+                    if (response.data.success) {
+                        console.log(this.data);
+                        window.location.href = '/portal/products';
+                    } else {
+                        showAlertError(response.data.message);
+                    } 
+            }).catch(error => {
+                console.log(error);
+                hideLoading();
+                showAlertError('Cannot delete product');
+            });
         }
 
     },

@@ -12,8 +12,8 @@
         <div class="overlay">
           <div class="button text-center">
             <a href="#" class="btn btn-warning rounded-pill btn-xs m-1 px-4" data-toggle="modal" data-target="#editProduct" @click="setData(item)">Edit</a><br>
-            <a href="{{ route('products.variants') }}" class="btn btn-info rounded-pill btn-xs m-1 px-2">Set Variants</a>
-          </div>
+            <a :href="'{{ url('portal/product_variants') }}?product_id=' + item.id" class="btn btn-info rounded-pill btn-xs m-1 px-2">Set Variants</a><br>
+            <a href="" class="btn btn-danger rounded-pill btn-xs m-1 px-4" data-toggle="modal" data-target="#deleteProduct" @click="setData(item)">Delete</a>
         </div>
       </div>
     </div>

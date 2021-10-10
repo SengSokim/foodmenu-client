@@ -10,7 +10,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" v-if="data.enable_status == 0" @click="updateProductStatus(1)" class="btn btn-warning rounded-pill">Active</button>
-        <button type="button" v-else @click="updateProductStatus(1)" class="btn btn-warning rounded-pill">Deactive</button>
+        <button type="button" v-else @click="updateProductStatus(0)" class="btn btn-warning rounded-pill">Deactive</button>
         <button type="button" class="btn btn-secondary rounded-pill" data-dismiss="modal">Close</button>
         <button type="confirm" form="updateProduct" class="btn btn-primary rounded-pill">Save changes</button>
       </div>

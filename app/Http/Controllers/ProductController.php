@@ -51,16 +51,27 @@ class ProductController extends Controller
 
     public function status(Request $request, $id)
     {
-        try {
-            $result = $this->api_post('portal/products/status/'. $id, $request->all());
-            if ($result->success == false) {
-                $msg = self::getErrorMessage($result->message);
-                return back()->with('error', $msg);
-            }
+        $result = $this->api_post('portal/products/status/'. $id, $request->all());
+        if ($result->success == true) {
+            session()->put('success', __('dialog_box.update_success', ['name' => 'product']));
 
-            return back()->with('success', __('dialog_box.update_success', ['name' => 'product']));
-        } catch (Exception $e) {
-            return back()->with('error', $e->getMessage())->withInput();
+            return ok('');
+        } else {
+            return fail($result->message, 200);
         }
+    }
+
+    public function destroy($id)
+    {
+        $result = $this->api_post('portal/products/delete/'. $id);
+
+        if ($result->success == true) {
+            session()->put('success', __('dialog_box.delete_success', ['name' => 'product']));
+
+            return ok('');
+        } else {
+            return fail($result->message, 200);
+        }
+
     }
 }

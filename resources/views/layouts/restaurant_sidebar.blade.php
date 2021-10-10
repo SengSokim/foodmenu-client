@@ -193,11 +193,11 @@
   <div class="res-qrcode">
     <div class="card">
       <div class="card-body">
-        {{-- <img src="data:image/png;base64, 
+        <img src="data:image/png;base64, 
           {!! base64_encode(QrCode::format('png')
-          ->merge('https://emenu-development-admin.rorean.com/adminlte/img/emenu-square-black-bg.png', .3, true)
+          ->merge('adminlte/dist/img/logo/emenu-square-black-bg-with-stroke.png', .3, true)
           ->size(300)
-          ->generate($restaurant_info->website_url ?? '' )) !!} " style="width: 100%"> --}}
+          ->generate($restaurant_info->website_url ?? '' )) !!} " style="width: 100%">
       </div>
     </div>
   </div>  

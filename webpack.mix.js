@@ -16,8 +16,7 @@ mix.js('resources/js/app.js', 'public/dist/js')
     .sass('resources/sass/app.scss', 'public/dist/css')
 
     //Product Variant
-    .js('resources/js/product-variants/create.js', 'public/dist/js/product-variants')
-    .js('resources/js/product-variants/edit.js', 'public/dist/js/product-variants')
+    .js('resources/js/product-variants/product-variant.js', 'public/dist/js/product-variants')
 
     //Product Category
     .js('resources/js/product-categories/product-category.js', 'public/dist/js/product-categories')
@@ -25,11 +24,11 @@ mix.js('resources/js/app.js', 'public/dist/js')
     //Restaurant
     .js('resources/js/restaurants/edit.js', 'public/dist/js/restaurants')
 
+    //profile
     .js('resources/js/profile.js', 'public/dist/js/profile')
 
-    //Create
+    //product
     .js('resources/js/products/product.js', 'public/dist/js/products')
-    .js('resources/js/products/create.js', 'public/dist/js/products')
 
 
 

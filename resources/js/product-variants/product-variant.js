@@ -1,8 +1,9 @@
-CreateProductVariant = new Vue({
-    el: "#createProductVariant",
+new Vue({
+    el: "#product_variant",
     data: {
+        product_variants : data,
         data:{
-            // product_id: product_id,
+            product_id: product_id,
             name: '',
             sequence: 0,
             enable_status: true,
@@ -53,17 +54,17 @@ CreateProductVariant = new Vue({
         cancelEdit(){
             this.isEdit = false;
         },
-       
 
         removeVariantValue(){
             this.data.values.splice(this.selected_variant_index, 1); 
         },
+
         save() {
-            axios.post(`${baseURL}/portal/product-variants/`,
+            axios.post(`/portal/product_variants/${this.data.id ?? ''}`,
                 this.data
             ).then(response => {
                 if (response.data.success) {
-                    window.location.href = baseURL+'/portal/product-variants?product_id=' + this.data.product_id;
+                    window.location.href = '/portal/product_variants?product_id=' + this.data.product_id;
                 } else {
                     showAlertError(response.data.message);
                     hideLoading()
@@ -74,8 +75,37 @@ CreateProductVariant = new Vue({
                 console.log(error)
             })
         },
+
+       clearData() {
+            this.data = {
+                name: '',
+                sequence: 0,
+                enable_status: true,
+                is_required: true,
+                values: [],
+            };    
+            
+            setTimeout(() => {
+                this.$validator.errors.remove('name');
+            }, 0);
+        },
+
+        setData (variant) {
+            this.clearData()
+            this.data = Object.assign({}, {
+                id: variant.id,
+                product_id: variant.product_id,
+                name: variant.name_en,
+                sequence: variant.sequence,
+                enable_status: variant.enable_status,
+                is_required: variant.is_required,
+               //issue
+               values : []
+            });
+        },
+
         submit(){
-            showLoading();
+            // showLoading();
             this.$validator.validate().then((result) =>{
                 if (!result) {
                     hideLoading();
@@ -86,5 +116,25 @@ CreateProductVariant = new Vue({
                 }    
             })
         },
-    }
+        deleteVariant() {
+            showLoading();
+            axios.delete(`/portal/product_variants/${this.data.id}`)
+                .then(response => {
+                    hideLoading();
+                    console.log(response.data);
+                    if (response.data.success) {
+                        console.log(this.data);
+                        window.location.href = '/portal/product_variants?product_id=' + this.data.product_id;
+                    } else {
+                        showAlertError(response.data.message);
+                    } 
+            }).catch(error => {
+                console.log(error);
+                hideLoading();
+                showAlertError('Cannot delete product variant');
+            });
+        }
+    },
+
+  
 })

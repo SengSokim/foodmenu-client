@@ -11,26 +11,28 @@
                 <div class="row pt-3 pl-3">
                     <div class="col-md-12">
                         <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-arrow-left"></i> Back</button>
-                        <button type="sumbit" class="btn btn-primary"><i class="fas fa-save"></i> Save Change</button>
+                        <button type="submit" form="editProductVariant" class="btn btn-primary"><i class="fas fa-save"></i> Save Change</button>
                     </div>
                 </div>
                 <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="variant_name">Name</label>
-                                <input type="text" class="form-control name" v-model="data.name" placeholder="Variant Name..." required>
+                    <form @submit.prevent="submit" id="editProductVariant" v-cloak>
+                       <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="variant_name" class="required">Name</label>
+                                    <input type="text" class="form-control" :class="{'is-invalid': errors.has('name') }" name="name" v-model="data.name" v-validate="'required'" placeholder="Variant Name...">
+                                    <div class="invalid-feedback">@{{ errors.first('name') }}</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="display_sequence">Display Sequence</label>
+                                    <input type="number" class="form-control" v-model="data.sequence">
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="display_sequence">Dispaly Sequence</label>
-                                <input type="number" class="form-control" v-model="data.sequence" placeholder="Dispaly Sequence...">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12">
                             <div class="form-group m-0">
                                 <input type="checkbox" v-model="data.enable_status">
                                 <label for="status"> Active</label>
@@ -39,8 +41,9 @@
                                 <input type="checkbox" v-model="data.is_required">
                                 <label for="status"> Required</label>
                             </div>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
                 <div class="row px-3">
                     <div class="col-md-12">
@@ -125,16 +128,6 @@
                               </tbody>
                             </table>
                           </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="row pt-3">
-                                <div class="col-md-6">
-                                    <h6>Total: 10</h6>
-                                </div>
-                                <div class="col-md-6">
-                                    @include('layouts.pagination') 
-                                </div>
-                            </div>
                         </div>
                       </div>
                     </div>

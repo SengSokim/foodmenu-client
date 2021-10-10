@@ -3,7 +3,7 @@
   <nav class="mt-2">
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
       <li class="nav-item">
-        <a href="{{ route('dashboard') }}" class="nav-link {{ request()->is('portal/dashboard') ? 'active text-white' : '' }}">
+        <a href="{{ route('dashboard') }}" class="nav-link {{ request()->is('portal/dashboard') ? 'active' : '' }}">
           <i class="nav-icon fas fa-tachometer-alt"></i>
           <p>
             Dashboard
@@ -11,7 +11,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="{{ route('products') }}" class="nav-link {{ request()->is(['portal','portal/products*']) ? 'active text-danger' : '' }}">
+        <a href="{{ route('products') }}" class="nav-link {{ request()->is(['portal','portal/products*']) ? 'active' : '' }}">
           <i class="nav-icon fas fa-hamburger"></i>
           <p>
             Products
@@ -19,15 +19,15 @@
         </a>
       </li>    
       <li class="nav-item">
-        <a href="{{ route('product-categories') }}" class="nav-link {{ request()->is('portal/product-categories') ? 'active text-danger' : '' }}">
+        <a href="{{ route('product-categories') }}" class="nav-link {{ request()->is('portal/product-categories') ? 'active' : '' }}">
           <i class="nav-icon fas fa-boxes"></i>
           <p>
             Product Categories
           </p>
         </a>
       </li>
-      <li class="nav-item">
-        <a href="{{ route('users') }}" class="nav-link {{ request()->is('portal/users') ? 'active text-danger' : '' }}">
+      {{-- <li class="nav-item">
+        <a href="{{ route('users') }}" class="nav-link {{ request()->is('portal/users') ? 'active' : '' }}">
           <i class="nav-icon fas fa-users"></i>
           <p>
             Users
@@ -35,16 +35,16 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="{{ route('tables') }}" class="nav-link {{ request()->is('portal/tables') ? 'active text-danger' : '' }}">
+        <a href="{{ route('tables') }}" class="nav-link {{ request()->is('portal/tables') ? 'active' : '' }}">
           <i class="nav-icon fas fa-table"></i>
           <p>
             Tables
           </p>
         </a>
-      </li>
-      {{-- <li style="position: fixed; bottom: 15px;">
-        <a href="{{ route('logout') }}" class="btn btn-default btn-sm">Logout</a>
       </li> --}}
+      <li style="position: fixed; bottom: 15px;">
+        <a href="{{ route('logout') }}" class="btn btn-default btn-sm">Logout</a>
+      </li>
     </ul>
   </nav>
 

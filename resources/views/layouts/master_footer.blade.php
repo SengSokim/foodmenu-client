@@ -1,7 +1,7 @@
   <!-- jQuery -->
   <script src="{{ asset('adminlte/plugins/jquery/jquery.min.js') }}"></script>
   <!-- jQuery UI 1.11.4 -->
-  {{-- <script src="{{ asset('adminlte/plugins/jquery-ui/jquery-ui.min.js') }}"></script> --}}
+  <script src="{{ asset('adminlte/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
   <!-- Bootstrap 4 -->
   <script src="{{ asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
   <!-- Fontawesome 5-->
@@ -11,12 +11,7 @@
   <!-- daterangepicker -->
   <script src="{{ asset('adminlte/plugins/moment/moment.min.js') }}"></script>
   <script src="{{ asset('adminlte/plugins/daterangepicker/daterangepicker.js') }}"></script>
-  <!-- Jquery toast -->
-  <script src="{{ asset('adminlte/plugins/loading/jquery.loading.min.js') }}"></script>
-  <script src="{{ asset('adminlte/plugins/toast/jquery.toast.min.js') }}"></script>
-  <script src="{{ asset('adminlte/plugins/confirm/jquery-confirm.min.js') }}"></script>
-  <!-- Helper -->
-  <script src="{{ asset('js/helper.js') }}"></script>
+ 
   <!-- Summernote -->
   <script src="{{ asset('adminlte/plugins/summernote/summernote-bs4.min.js') }}"></script>
   <!-- overlayScrollbars -->
@@ -30,6 +25,12 @@
   <script src="{{ asset('adminlte/dist/js/demo.js') }}"></script>
 
   <script src="{{ mix('dist/js/app.js') }}"></script>
+  <!-- Jquery toast -->
+ <script src="{{ asset('adminlte/plugins/loading/jquery.loading.min.js') }}"></script>
+ <script src="{{ asset('adminlte/plugins/toast/jquery.toast.min.js') }}"></script>
+ <script src="{{ asset('adminlte/plugins/confirm/jquery-confirm.min.js') }}"></script>
+ <!-- Helper -->
+ <script src="{{ asset('js/helper.js') }}"></script>
   @yield('footer-content')
 
   <script src="{{ mix('dist/js/profile/profile.js') }}"></script>
@@ -50,5 +51,35 @@
         readURL(this);
     });
   
+    function readURL_RP(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#restaurant-profile-upload').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+    $("#restaurant-profile-input").change(function(){
+        readURL_RP(this);
+    });
+
+    function readURL_RB(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#restaurant-banner-upload').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+    $("#restaurant-banner-input").change(function(){
+        readURL_RB(this);
+    });
+
   </script> 
 </html>

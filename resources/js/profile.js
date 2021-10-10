@@ -49,6 +49,13 @@ editProfile = new Vue({
         },
         
         viewProfile(){
+            this.data={}
+             
+            setTimeout(() => {
+                this.$validator.errors.clear();
+                this.error.image = ''
+            }, 0);
+
             axios.get(`/portal/profile`
             ).then(response => {
                 if (response.data.success) {

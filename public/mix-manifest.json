@@ -3,9 +3,7 @@
     "/dist/css/app.css": "/dist/css/app.css",
     "/dist/js/axios.js": "/dist/js/axios.js",
     "/dist/js/product-categories/product-category.js": "/dist/js/product-categories/product-category.js",
-    "/dist/js/product-variants/create.js": "/dist/js/product-variants/create.js",
-    "/dist/js/product-variants/edit.js": "/dist/js/product-variants/edit.js",
-    "/dist/js/products/create.js": "/dist/js/products/create.js",
+    "/dist/js/product-variants/product-variant.js": "/dist/js/product-variants/product-variant.js",
     "/dist/js/products/product.js": "/dist/js/products/product.js",
     "/dist/js/profile/profile.js": "/dist/js/profile/profile.js",
     "/dist/js/restaurants/edit.js": "/dist/js/restaurants/edit.js"

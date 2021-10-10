@@ -61,6 +61,5 @@
   <script>
     const product_categories = @json($data)
   </script>
-  <script src="{{ mix('dist/js/app.js') }}"></script>
   <script src="{{ mix('dist/js/product-categories/product-category.js') }}"></script>
 @endsection

@@ -41,6 +41,16 @@
 
     }
 
+    function formatCurrency($money, $code = 'usd')
+    {
+        switch ($code) {
+            case 'riel':
+                return number_format($money, 0, '', ',') . '';
+            default:
+                return '$' . number_format($money, 2, '.', ',');
+        }
+    }
+
     function ok($data = null)
     {
         return response()->json(['success' => true, 'data' => $data]);

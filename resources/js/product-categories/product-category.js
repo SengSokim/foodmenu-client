@@ -38,10 +38,12 @@ new Vue({
         },
 
         save(){
+            showLoading();
             axios.post(`/portal/product-categories/${this.data.id ?? ''}`,
                 this.data
             ).then(response => {
                 if (response.data.success) {
+                    hideLoading();
                     window.location.href = '/portal/product-categories';
                 } else {
                     showAlertError(response.data.message);
@@ -69,6 +71,7 @@ new Vue({
         },
 
         deleteCategory () {
+            showLoading();
             axios.delete(`/portal/product-categories/${this.data.id}`)
                 .then(response => {
                     hideLoading();

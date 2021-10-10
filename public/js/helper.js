@@ -1,11 +1,11 @@
     var showLoading = function () {
-        // $('body').loading({
-        //     zIndex : 10000
-        // });
+        $('body').loading({
+            zIndex : 10000
+        });
     };
 
     var hideLoading = function () {
-        // $('body').loading('stop')
+        $('body').loading('stop')
     };
 
     var setToastMessage = function (message) {

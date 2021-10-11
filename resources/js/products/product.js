@@ -148,7 +148,7 @@ new Vue({
                 showAlertError('Cannot update product');
             })
         },
-        deleteVariant() {
+        deleteProduct() {
             axios.delete(`/portal/products/${this.data.id}`)
                 .then(response => {
                     hideLoading();
@@ -163,7 +163,7 @@ new Vue({
                 hideLoading();
                 showAlertError('Cannot delete product');
             });
-        }
+        }   
 
     },
     computed: {

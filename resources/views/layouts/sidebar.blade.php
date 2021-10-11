@@ -22,7 +22,7 @@
         <a href="{{ route('product-categories') }}" class="nav-link {{ request()->is('portal/product-categories') ? 'active' : '' }}">
           <i class="nav-icon fas fa-boxes"></i>
           <p>
-            Product Categories
+            Categories
           </p>
         </a>
       </li>

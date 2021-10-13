@@ -1,9 +1,11 @@
   <!-- jQuery -->
   <script src="{{ asset('adminlte/plugins/jquery/jquery.min.js') }}"></script>
+  
   <!-- jQuery UI 1.11.4 -->
   <script src="{{ asset('adminlte/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
   <!-- Bootstrap 4 -->
   <script src="{{ asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+ 
   <!-- Fontawesome 5-->
   <script src="{{ asset('adminlte/plugins/fontawesome-free/js/all.js') }}"></script>
   <!-- ChartJS -->
@@ -11,7 +13,14 @@
   <!-- daterangepicker -->
   <script src="{{ asset('adminlte/plugins/moment/moment.min.js') }}"></script>
   <script src="{{ asset('adminlte/plugins/daterangepicker/daterangepicker.js') }}"></script>
- 
+  
+   <!-- Helper -->
+  <script src="{{ asset('js/helper.js') }}"></script>
+    
+  <!-- Jquery toast -->
+  <script src="{{ asset('loading/jquery.loading.min.js') }}"></script>
+  <script src="{{ asset('toast/jquery.toast.min.js') }}"></script>
+  <script src="{{ asset('confirm/jquery-confirm.min.js') }}"></script>
   <!-- Summernote -->
   <script src="{{ asset('adminlte/plugins/summernote/summernote-bs4.min.js') }}"></script>
   <!-- overlayScrollbars -->
@@ -24,17 +33,12 @@
   <script src="{{ asset('adminlte/dist/js/adminlte.js') }}"></script>
   <script src="{{ asset('adminlte/dist/js/demo.js') }}"></script>
 
-  <script src="{{ mix('dist/js/app.js') }}"></script>
-  <!-- Jquery toast -->
- <script src="{{ asset('adminlte/plugins/loading/jquery.loading.min.js') }}"></script>
- <script src="{{ asset('adminlte/plugins/toast/jquery.toast.min.js') }}"></script>
- <script src="{{ asset('adminlte/plugins/confirm/jquery-confirm.min.js') }}"></script>
- <!-- Helper -->
- <script src="{{ asset('js/helper.js') }}"></script>
-  @yield('footer-content')
 
-  <script src="{{ mix('dist/js/profile/profile.js') }}"></script>
+  <script src="{{ mix('dist/js/app.js') }}"></script>
   <script src="{{ mix('dist/js/restaurants/edit.js') }}"></script>
+ 
+  @yield('footer-content')
+  <script src="{{ mix('dist/js/profile/profile.js') }}"></script>
   <script>
     function readURL(input) {
       if (input.files && input.files[0]) {

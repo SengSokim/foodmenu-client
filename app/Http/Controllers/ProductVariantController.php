@@ -8,21 +8,7 @@ class ProductVariantController extends Controller
 {
     public function index(Request $request)
     {
-         list($current_page, $limit, $offset, $search, $order, $sort) = $this->getParams();
-
-        $data = $this->pagination(
-            'portal/product_variants/list?product_id='. $request->product_id,
-            $limit,
-            $offset,
-            $search,
-            $order,
-            $sort,
-            url('portal/product-varirants'),
-            $current_page,
-            [
-                'enable_status' => request('enable_status')
-            ]
-        );
+        $data = $this->api_get('portal/product_variants/list?product_id='. $request->product_id);
         return view('products.variants.index', compact('data'));
     }
 
@@ -32,6 +18,19 @@ class ProductVariantController extends Controller
         if ($result->success == true) {
             session()->put('success', __('dialog_box.create_success', ['name' => 'product variant']));
 
+            return ok('');
+        } else {
+            return fail($result->message, 200);
+        }
+    }
+
+    public function update(Request $request, $id)
+    {
+        $result = $this->api_post('portal/product_variants/update/'. $id, $request->all());
+
+        if ($result->success == true) {
+            session()->put('success', __('dialog_box.update_success', ['name' => 'product variant']));
+            
             return ok('');
         } else {
             return fail($result->message, 200);

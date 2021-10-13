@@ -1,14 +1,8 @@
 @php(getGeneralData($auth))
 @include('layouts.master_header')
-<style>
-  .content-wrapper {
-    height: 80vh; 
-    overflow-y: auto;
-  }
-</style>
 <body class="layout-fixed sidebar-mini layout-footer-fixed sidebar-collapse" style="height: 100vh; overflow: hidden">
   <div class="row">
-    <div class="wrapper col-md-10 col-xs-12" style="padding: 0">
+    <div class="wrapper col-md-10 col-xs-sm" style="padding: 0">
       @include('layouts.navbar')
 
       <aside class="main-sidebar elevation-1 sidebar-light-warning">
@@ -44,7 +38,7 @@
         </div>
       </footer>
     </div>
-    <div class="col-md-2" style="z-index: 1100;position: fixed; right: 0;background-color: #f8f9fa; border: 1px solid #dee2e6; ">
+    <div class="col-md-2" id="responsive-qr" style="z-index: 1100;position: fixed; right: 0;background-color: #f8f9fa; border: 1px solid #dee2e6; ">
       <aside>
         @include('layouts.restaurant_sidebar')
       </aside>
@@ -53,3 +47,4 @@
 </body>
 @include('layouts.master_footer')
 @include('layouts.alert')
+  

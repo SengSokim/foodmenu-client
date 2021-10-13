@@ -174,24 +174,27 @@
     </div>
   </div>
   <div class="text-center mt-5">
-      <img class="img-circle" src="{{ $restaurant_info->media->url ?? asset('adminlte/dist/img/placeholder/square-placeholder.png')}}" width="40%" style="margin: auto">
+    <img class="img-circle" src="{{ $restaurant_info->media->url ?? asset('adminlte/dist/img/placeholder/square-placeholder.png')}}" width="40%" style="margin: auto">
   </div>
   
-  <div class="res-name">
-    <span style="font-size: 1rem">{{ $restaurant_info->name ?? '' }}</span>
+  <div class="res-name dropdown">
+    <span style="font-size: 1rem" class="text-warning">{{ $restaurant_info->name ?? '' }}</span>
      
-    <button class="btn btn-transparent btn-sm" type="button" title="share link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-share-all" style="opacity: 0.5; font-size: 15px;"></i>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#"><i class="fab fa-facebook fa-fw"></i>Facebook</a>
-        <a class="dropdown-item" href="#"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
-        <a class="dropdown-item" href="#"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
-        <a class="dropdown-item" href="#"><i class="far fa-link fa-fw"></i>Copy Link</a>
-      </div>
+    <button class="btn btn-transparent btn-sm" type="button" title="share link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="far fa-share-all text-warning" style="opacity:1; font-size: 15px;"></i>
     </button>
-  </div>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php?u={{ $restaurant_info->website_url }}&display=popup" target="_blank"><i class="fab fa-facebook fa-fw"></i>Facebook</a>
+        <a class="dropdown-item" href="https://twitter.com/intent/tweet?url={{ $restaurant_info->website_url }}" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+        <a class="dropdown-item" href="https://t.me/share/url?url={{ $restaurant_info->website_url }}" target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
+        <a class="dropdown-item" href="#" @click.stop.prevent="copySharableLink">
+          <input type="hidden" :value="'{!! $restaurant_info->website_url !!}'" id="share-link">
+          <i class="far fa-link fa-fw"></i>Copy Link</a>
+      </div>
+  </div> 
 
   <div class="res-qrcode">
-    <div class="card">
+    {{-- <div class="card">
       <div class="card-body">
         <img src="data:image/png;base64, 
           {!! base64_encode(QrCode::format('png')
@@ -201,14 +204,13 @@
           ->generate($restaurant_info->website_url ?? '' )) !!} " style="width: 100%">
       </div>
     </div>
-  </div>  
+  </div>   --}}
   <div class="scan-for-menu">
     <span>Scan For Menu</span>
   </div>
 
   <div class="poweredby">
     <p>Powered By</p>
-    <img src="{{ asset('adminlte/dist/img/logo/emenu-black-transparent.png') }}" alt="" width="15%">
     <img src="{{ asset('adminlte/dist/img/logo/papa-deliver.png') }}" alt="" width="15%">
   </div>
 </div>

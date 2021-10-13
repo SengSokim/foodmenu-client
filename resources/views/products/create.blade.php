@@ -10,8 +10,8 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary rounded-pill" data-dismiss="modal">Close</button>
-        <button type="submit" form="createProduct" class="btn btn-primary rounded-pill">Save</button>
+        <button type="button" class="btn btn-default rounded-pill" data-dismiss="modal">Cancel</button>
+        <button type="submit" form="createProduct" class="btn btn-primary rounded-pill px-3">Save</button>
       </div>
     </div>
   </div>

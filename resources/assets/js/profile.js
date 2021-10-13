@@ -25,7 +25,7 @@ editProfile = new Vue({
             })
         },
         submit() {
-            // showLoading();
+            showLoading();
             this.$validator.validate().then((result) => {
                 if (!result) {
                     hideLoading();

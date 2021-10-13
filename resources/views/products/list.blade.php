@@ -7,6 +7,7 @@
           </div>
         </div>
         <div class="card-body p-2 mx-2">
+          <span style="font-size: 0.8rem">@{{item.name_en}}</span><br>
           <span>@{{ formatCurrency(item.price) }}</span>
         </div>
         <div class="overlay">

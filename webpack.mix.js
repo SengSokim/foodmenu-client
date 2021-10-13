@@ -11,24 +11,24 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/dist/js')
-    .js('resources/js/axios.js', 'public/dist/js')
-    .sass('resources/sass/app.scss', 'public/dist/css')
+mix.js('resources/assets/js/app.js', 'public/dist/js')
+    .js('resources/assets/js/axios.js', 'public/dist/js')
+    .sass('resources/assets/sass/app.scss', 'public/dist/css')
 
     //Product Variant
-    .js('resources/js/product-variants/product-variant.js', 'public/dist/js/product-variants')
+    .js('resources/assets/js/product-variants/product-variant.js', 'public/dist/js/product-variants')
 
     //Product Category
-    .js('resources/js/product-categories/product-category.js', 'public/dist/js/product-categories')
+    .js('resources/assets/js/product-categories/product-category.js', 'public/dist/js/product-categories')
     
     //Restaurant
-    .js('resources/js/restaurants/edit.js', 'public/dist/js/restaurants')
+    .js('resources/assets/js/restaurants/edit.js', 'public/dist/js/restaurants')
 
     //profile
-    .js('resources/js/profile.js', 'public/dist/js/profile')
+    .js('resources/assets/js/profile.js', 'public/dist/js/profile')
 
     //product
-    .js('resources/js/products/product.js', 'public/dist/js/products')
+    .js('resources/assets/js/products/product.js', 'public/dist/js/products')
 
 
 

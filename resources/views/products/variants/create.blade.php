@@ -1,4 +1,3 @@
-
 <div class="modal fade" id="create-product-variant" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static" style="width: 100vw; margin-top: 5vh">
   <div class="modal-dialog" role="document" style="max-width: 80vw">
     <div class="modal-content" style="max-width: 65vw">
@@ -109,7 +108,7 @@
                     </tr>
                       
                     <!-- Empty data-->
-                    <tr v-if="data.values.length == 0"> 
+                    <tr v-if="data.values.length == 0 && isEdit == false"> 
                       <td colspan="99" class="text-center">No data</td>
                     </tr>
       

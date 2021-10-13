@@ -51,24 +51,25 @@ new Vue({
         },
 
         save(){
+            showLoading();
             axios.post(`/portal/products/${this.data.id ?? ''}`,
                 this.data
             ).then(response => {
                 if (response.data.success) {
                     window.location.href = '/portal/products';
                 } else {
-                    // showAlertError(response.data.message);
+                    showAlertError(response.data.message);
                     hideLoading()
                 }
             }).catch(error => {
-                // hideLoading();
+                hideLoading();
                 console.log(error)
                 showAlertError('Cannot update product');
             }) 
         },
 
         submit() {
-            // showLoading();
+            showLoading();
             this.$validator.validate().then((result) => {
                 let save = true;
                 if(!this.data.id && !this.data.image) {
@@ -140,7 +141,7 @@ new Vue({
                     window.location.href = '/portal/products';
                 } else {
                     showAlertError(response.data.message);
-                    hideLoading()
+                    hideLoading();
                 }
             }).catch(error => {
                 hideLoading();

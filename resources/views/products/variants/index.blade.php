@@ -13,12 +13,13 @@
     <div class="col-12 col-sm-6 col-md-3">
       <div class="info-box">
         <span class="info-box-icon" style="width: 80px; height: auto;">  
-          <img src="{{ $data->product->media->url ?? asset('adminlte/dist/img/logo/emenu-square-black-bg-with-stroke.png') }}">
+          <img src="{{ $data->data->product->media->url ?? asset('adminlte/dist/img/logo/emenu-square-black-bg-with-stroke.png') }}">
         </span>
+        
         <div class="info-box-content">
-          <span class="info-box-text" style="line-height: 1.1"></a> {{$data->product->name}}</span>
-          <span class="info-box-text text-muted" style="line-height: 1.1;"><em>{{$data->product->product_category}}</em></span>
-          <span class="info-box-text" style="line-height: 1.1"><b>{{formatCurrency($data->product->price)}}</b></span>
+          <span class="info-box-text" style="line-height: 1.1"></a> {{$data->data->product->name}}</span>
+          <span class="info-box-text text-muted" style="line-height: 1.1;"><em>{{$data->data->product->product_category}}</em></span>
+          <span class="info-box-text" style="line-height: 1.1"><b>{{formatCurrency($data->data->product->price)}}</b></span>
         </div>
       </div>
     </div>

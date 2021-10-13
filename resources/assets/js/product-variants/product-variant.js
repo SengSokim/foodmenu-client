@@ -78,6 +78,7 @@ new Vue({
 
        clearData() {
             this.data = {
+                product_id : product_id,
                 name: '',
                 sequence: 0,
                 enable_status: true,
@@ -92,20 +93,11 @@ new Vue({
 
         setData (variant) {
             this.clearData()
-            this.data = Object.assign({}, {
-                id: variant.id,
-                product_id: variant.product_id,
-                name: variant.name_en,
-                sequence: variant.sequence,
-                enable_status: variant.enable_status,
-                is_required: variant.is_required,
-               //issue
-               values : []
-            });
+            this.data = Object.assign({}, variant);
         },
 
         submit(){
-            // showLoading();
+            showLoading();
             this.$validator.validate().then((result) =>{
                 if (!result) {
                     hideLoading();

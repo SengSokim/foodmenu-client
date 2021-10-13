@@ -9,14 +9,14 @@
       <!-- small box -->
       <div class="small-box bg-info">
         <div class="inner">
-          <h3>20</h3>
+          <h3>999</h3>
 
-          <p>Remind Stock</p>
+          <p>Categories</p>
         </div>
         <div class="icon">
-          <i class="fas fa-shopping-bag"></i>
+          <i class="fas fa-boxes"></i>
         </div>
-        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+        <a href="{{ url('portal/product-categories') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
       </div>
     </div>
     <!-- ./col -->
@@ -24,14 +24,14 @@
       <!-- small box -->
       <div class="small-box bg-success">
         <div class="inner">
-          <h3>53<sup style="font-size: 20px">%</sup></h3>
+          <h3>999<sup style="font-size: 20px">%</sup></h3>
 
-          <p>Ordered</p>
+          <p>Product</p>
         </div>
         <div class="icon">
-          <i class="fas fa-analytics"></i>
+          <i class="fas fa-hamburger"></i>
         </div>
-        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+        <a href="{{ url('portal/products') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
       </div>
     </div>
     <!-- ./col -->
@@ -39,12 +39,12 @@
       <!-- small box -->
       <div class="small-box bg-warning">
         <div class="inner">
-          <h3>44</h3>
+          <h3>1011</h3>
 
-          <p>Customer</p>
+          <p>Orders</p>
         </div>
         <div class="icon">
-          <i class="fas fa-user"></i>
+          <i class="fas fa-shopping-basket"></i>
         </div>
         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
       </div>
@@ -59,15 +59,12 @@
           <p>Users</p>
         </div>
         <div class="icon">
-          <i class="fas fa-chart-pie-alt"></i>
+          <i class="fas fa-user"></i>
         </div>
         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
       </div>
     </div>
     <!-- ./col -->
-  </div>
-  <div class="row">
-    This is main row
   </div>
 </div>
 @endsection

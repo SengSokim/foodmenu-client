@@ -10,12 +10,15 @@
 
         Route::post('/register', 'AuthController@submitRegister')->name('register');
 
+        Route::get('/forget', 'AuthController@forget')->name('auth.forget');
+        Route::post('/forget', 'AuthController@submitforgetPassword');
+
         
         Route::get('/profile', 'AuthController@logout')->name('logout');
         Route::get('/logout', 'AuthController@logout')->name('logout');
     });
     
-    Route::prefix('portal')->group(function () {
+    Route::group(['prefix' =>  'portal', 'middleware' => 'web'], function () {
         Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
         Route::get('/', 'ProductController@index')->name('products');
 
@@ -41,6 +44,7 @@
         Route::prefix('product_variants')->group(function () {
             Route::get('/', 'ProductVariantController@index')->name('product_variants');
             Route::post('/', 'ProductVariantController@store')->name('product_variants.store');
+            Route::post('/{id}', 'ProductVariantController@update')->name('product_variants.update');
             Route::delete('/{id}', 'ProductVariantController@destroy')->name('product_variants.destroy');
 
 

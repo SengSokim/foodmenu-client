@@ -7,7 +7,8 @@ new Vue({
             image : null,
             banner_image : null
         },
-        data:{}
+        data:{},
+        share_link:''
     },
 
     methods: {
@@ -41,6 +42,23 @@ new Vue({
                     this.save();
                 }
             })
+        },
+        copySharableLink() {
+            const el = document.querySelector('#share-link')
+            el.setAttribute('type', 'text')    // 不是 hidden 才能複製
+            el.select()
+
+            try {
+                var successful = document.execCommand('copy');
+                var msg = successful ? 'successful' : 'unsuccessful';
+                alert('Link copied ' + msg);
+            } catch (err) {
+                alert('Oops, unable to copy');
+            }
+
+            /* unselect the range */
+            el.setAttribute('type', 'hidden')
+            window.getSelection().removeAllRanges()
         },
 
         showRestaurant(){

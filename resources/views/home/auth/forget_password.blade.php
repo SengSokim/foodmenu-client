@@ -24,37 +24,17 @@
                 <img src="{{ asset('images/emenu-black-transparent.png') }}" alt="" style="width: 150px;">
               </div>
               <p class="login-card-description">Sign into your account</p>
-              <form action="{{ route('auth.login') }}" method="POST">
-                @csrf    
-                @php $error = session()->get('error'); @endphp    
-                  <div class="form-group">
-                  <label for="phone_number">Code</label>
-                  <input type="text" class="form-control {{ isset($error['val']['code']) ? 'is-invalid' : '' }}" name="code" id="phone_number" placeholder="Phone Number">
-                </div>
+              <form action="#" method="POST">
+                {{-- @csrf    
+                @php $error = session()->get('error'); @endphp     --}}
+
                 <div class="form-group">
                   <label for="phone_number">Phone Number</label>
                   <input type="text" class="form-control {{ isset($error['val']['phone_number']) ? 'is-invalid' : '' }}" name="phone_number" id="phone_number" placeholder="Phone Number">
                   <span class="invalid-feedback" role="alert">{{ $error['val']['phone_number'] ?? ''  }}</span> 
                 </div>
-               
-                <div class="form-group">
-                  <label for="password">Password</label>
-                  <input type="password" class="form-control {{ isset($error['val']['password']) ? 'is-invalid' : '' }}" name="password" id="password" placeholder="******">
-                  <span class="invalid-feedback" role="alert">{{ $error['val']['password'] ?? ''  }}</span> 
-                </div>
-                <button class="login-card login-btn" type="submit">login</button>
+                <button class="login-card login-btn" type="submit">Send Reset Password Link</button>
               </form>
-
-              {{-- <a href="#" class="forgot-password-link" data-toggle="modal" data-target="#myModal">Forgot password?</a> --}}
-              <p>
-                {{-- <a href="{{ route('forget') }}">Forgot password?</a> --}}
-              </p>
-
-              <p class="login-card-footer-text">Don't have an account? <a href="{{ route('home') }}" class="register-here">Register here</a></p>
-              {{-- <nav class="login-card-footer-nav">
-                <a href="#">Terms of use.</a>
-                <a href="#">Privacy policy</a>
-              </nav> --}}
             </div>
           </div>
           <div class="col-md-7">

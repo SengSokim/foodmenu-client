@@ -26,20 +26,22 @@
                 <h3 class="mb-4">Register Now</h3>
                 <form action="{{ route('register') }}" class="signup-form" method="POST">
                   @csrf
+                  @php $error = session()->get('error'); @endphp    
+
                   <div class="form-group">
                     <label class="label" for="name">Restaurant Name</label>
-                    <input type="text" class="form-control @error('restaurant_name') is-invalid @enderror" name="restaurant_name"/>
-                    @error('restaurant_name')
-                    <span class="invalid-feedback" role="alert">{{ $message }}</span>
-                    @enderror
+                    <input type="text" class="form-control {{ isset($error['val']['restaurant_name']) ? 'is-invalid' : '' }}" name="restaurant_name"/>
+                    <span class="invalid-feedback" role="alert">{{ $error['val']['restaurant_name'] ?? ''  }}</span> 
                   </div>
                   <div class="form-group">
-                      <label class="label" for="email">Phone Number</label>
-                      <input type="text" class="form-control" name="phone_number"/>
+                    <label class="label">Phone Number</label>
+                    <input type="text" class="form-control {{ isset($error['val']['phone_number']) ? 'is-invalid' : '' }}" name="phone_number"/>
+                    <span class="invalid-feedback" role="alert">{{ $error['val']['phone_number'] ?? ''  }}</span> 
                   </div>
                   <div class="form-group">
                     <label class="label" for="password">Password</label>
-                    <input type="password" class="form-control" name="password"/>
+                    <input type="password" class="form-control {{ isset($error['val']['password']) ? 'is-invalid' : '' }}" name="password"/>
+                    <span class="invalid-feedback" role="alert">{{ $error['val']['password'] ?? ''  }}</span> 
                   </div>
                   <div class="form-group d-flex justify-content-end mt-4">
                     <button type="submit" class="btn btn-primary submit">Register</button>

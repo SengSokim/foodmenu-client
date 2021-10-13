@@ -1,4 +1,4 @@
-new Vue({
+EditRestaurant = new Vue({
     el: '#editRestaurant',
     data: {
         image:null,
@@ -62,7 +62,8 @@ new Vue({
         },
 
         showRestaurant(){
-            console.log('editRestaurant');
+            this.data = {};
+
             axios.get(`/portal/restaurants`
             ).then(response => {
                 if (response.data.success) {
@@ -72,7 +73,7 @@ new Vue({
                     hideLoading()
                 }
             }).catch(error => {
-                // hideLoading();
+                hideLoading();
                 console.log(error)
             })
         },

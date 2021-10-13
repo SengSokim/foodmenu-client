@@ -164,7 +164,7 @@
                 </form>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                 <button type="submit" form="submitUpdateRestaurant" class="btn btn-primary">Save changes</button>
               </div>
             </div>
@@ -178,9 +178,9 @@
   </div>
   
   <div class="res-name dropdown">
+    <button class="btn btn-transparent btn-sm" type="button" title="share link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <span style="font-size: 1rem" class="text-warning">{{ $restaurant_info->name ?? '' }}</span>
      
-    <button class="btn btn-transparent btn-sm" type="button" title="share link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <i class="far fa-share-all text-warning" style="opacity:1; font-size: 15px;"></i>
     </button>
       <div class="dropdown-menu">
@@ -214,3 +214,4 @@
     <img src="{{ asset('adminlte/dist/img/logo/papa-deliver.png') }}" alt="" width="15%">
   </div>
 </div>
+@include('layouts.modal-crop-image')

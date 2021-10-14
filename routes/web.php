@@ -11,7 +11,7 @@
         Route::get('/forget', 'AuthController@forget');
         Route::post('/forget', 'AuthController@submitforgetPassword');
 
-        Route::get('/verify/{phone_number}/{code}', 'AuthController@verify');
+        Route::get('/verify/{phone_number}', 'AuthController@verify');
         Route::post('/verify', 'AuthController@submitVerify');
 
         Route::get('/reset/{phone_number}/{token}', 'AuthController@reset');

@@ -1,4 +1,4 @@
-<div class="modal" id="modal-crop-image" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+{{-- <div class="modal" id="modal-crop-image" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-md" role="document">
         <div class="modal-content">
             <div class="modal-header text-center d-block">
@@ -22,4 +22,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}

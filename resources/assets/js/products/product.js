@@ -22,6 +22,7 @@ Product = new Vue({
         },
         product_category_selected: undefined,
         product_category_id: null,
+        is_loaded_product : 0
     },
     mounted() {
         this.init()
@@ -30,6 +31,7 @@ Product = new Vue({
         init(){
             axios.get(`/portal/products/get`
                 ).then(response => {
+                    this.is_loaded_product =1
                 if (response.data.success) {
                     hideLoading()
                     this.products.push(...response.data.data.list);

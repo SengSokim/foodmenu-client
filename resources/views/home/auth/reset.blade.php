@@ -28,8 +28,8 @@
                 @csrf    
                 @php $error = session()->get('error'); @endphp    
 
-                <input type="text" name="token" value="{{ $token }}">
-                <input type="text" name="phone_number" value="{{ $phone_number }}">
+                <input type="hidden" name="token" value="{{ $token }}">
+                <input type="hidden" name="phone_number" value="{{ $phone_number }}">
 
                 <div class="form-group">
                   <label for="password">Password</label>

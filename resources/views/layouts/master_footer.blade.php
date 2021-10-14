@@ -89,14 +89,20 @@
         isImgInput = 1;
         $('#square').show()
         $('#landscape').hide()
-      }else{
+      }else if(idClicked == 'restaurant-banner-input'){
         viewport={width: 300, height: 168};
         result={width: 1080, height: 608}; 
         isImgInput = 0;
         $('#square').hide()
         $('#landscape').show()
+      }else if(idClicked == 'product-input'){
+        viewport={width: 300, height: 300};
+        result={width: 400, height: 400}; 
+        isImgInput = 2;
+        $('#square').hide()
+        $('#landscape').hide()
       }
-      
+
       image_crop = $('#image-crop').croppie({
         enableExif: true,
         enableOrientation: true,
@@ -105,7 +111,7 @@
       });
     });
 
-    $('#restaurant-profile-input, #restaurant-banner-input').on('change', function(){
+    $('#restaurant-profile-input, #restaurant-banner-input, #product-input').on('change', function(){
       var reader = new FileReader();
       reader.onload = function (event) {
         imageBind = event.target.result;
@@ -124,13 +130,16 @@
         quality: 1,
       }).then(function(res){
         $('#modal-crop-image').modal('hide');
-        if(isImgInput){
+        if(isImgInput == 1){
           $('#restaurant-profile-upload').attr('src', res);
           EditRestaurant.data.image = res
         }
-        else{
+        else if(isImgInput == 0){
           $('#restaurant-banner-upload').attr('src', res);
           EditRestaurant.data.banner_image = res
+        }else if(isImgInput == 2){
+          $('#product-upload').attr('src', res);
+          Product.data.image = res
         }
       })
     })

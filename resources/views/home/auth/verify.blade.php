@@ -27,10 +27,9 @@
               <form action="{{ url('auth/verify') }}" method="POST">
                 @csrf    
                 @php $error = session()->get('error'); @endphp    
-
                 <div class="form-group">
                   <label for="code">Code</label>
-                  <input type="text" class="form-control {{ isset($error['val']['verify_code']) ? 'is-invalid' : '' }}" name="verify_code" id="verify_code" placeholder="xxxx">
+                  <input type="text" class="form-control {{ isset($error['val']['verify_code']) ? 'is-invalid' : '' }}" value="{{ old('verify_code', request('code')) }}" name="verify_code" id="verify_code" placeholder="xxxx">
                   <span class="invalid-feedback" role="alert">{{ $error['val']['verify_code'] ?? ''  }}</span> 
                   <input type="hidden" name="phone_number" value="{{ request('phone_number') }}">
                 </div>

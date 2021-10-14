@@ -6,6 +6,7 @@
         <div class="form-inline pull-right" style="margin-right:25px">
           <p id="square">Size 110x110 - Ratio 1:1</p>
           <p id="landscape">Size 1080x608 - Ratio 1.91:1</p>
+          <p id="product">Size 400x400 - Ratio 1:1</p>
         </div>
         <h5 class="modal-title">Upload Image</h5>
       </div>

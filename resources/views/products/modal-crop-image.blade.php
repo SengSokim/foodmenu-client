@@ -3,9 +3,9 @@
         <div class="modal-content">
             <div class="modal-header text-center d-block">
                 <div class="form-inline pull-right" style="margin-right:25px">
-                    <p id="square">Primary Image:  600x600 - Ratio 1:1</p>
+                    <p id="square">Product Image:  400x400 - Ratio 1:1</p>
                 </div>
-                <h5 class="modal-title">Upload Product Picture</h5>
+                <h5 class="modal-title">Upload Product Image</h5>
             </div>
             <div class="modal-body">
                 <div class="container-fluid">

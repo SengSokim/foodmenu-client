@@ -1,5 +1,5 @@
-new Vue({
-    el: '#Product',
+Product = new Vue({
+    el: '#product',
     data: {  
         image: null,
         error: {
@@ -63,7 +63,6 @@ new Vue({
                 }
             }).catch(error => {
                 hideLoading();
-                console.log(error)
                 showAlertError('Cannot update product');
             }) 
         },
@@ -93,7 +92,6 @@ new Vue({
                 const reader = new FileReader();
 
                 reader.onload = (e) => {
-                    console.log(e.target.result);
                     this.data.image = e.target.result;
                     this.error.image = null;
                 };
@@ -145,7 +143,6 @@ new Vue({
                 }
             }).catch(error => {
                 hideLoading();
-                console.log(error)
                 showAlertError('Cannot update product');
             })
         },
@@ -154,13 +151,11 @@ new Vue({
                 .then(response => {
                     hideLoading();
                     if (response.data.success) {
-                        console.log(this.data);
                         window.location.href = '/portal/products';
                     } else {
                         showAlertError(response.data.message);
                     } 
             }).catch(error => {
-                console.log(error);
                 hideLoading();
                 showAlertError('Cannot delete product');
             });

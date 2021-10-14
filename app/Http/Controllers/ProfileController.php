@@ -28,4 +28,17 @@ class ProfileController extends Controller
             return fail($result->message, 200);
         }
     }
+
+    public function changePassword(Request $request)
+    {
+        $result = $this->api_post('portal/auth/profile/password', $request->all());
+
+        if ($result->success == true) {
+            session()->put('success', __('dialog_box.update_success', ['name' => 'Change password']));
+
+            return ok();
+        } else {
+            return fail($result->message, 200);
+        }
+    }
 }

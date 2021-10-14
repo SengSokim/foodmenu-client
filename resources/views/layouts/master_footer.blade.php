@@ -25,10 +25,10 @@
   <script src="{{ asset('adminlte/plugins/summernote/summernote-bs4.min.js') }}"></script>
   <!-- overlayScrollbars -->
   <script src="{{ asset('adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
-  <!-- croppie -->
-  <script src="{{ asset('adminlte/plugins/croppie-2.6.4/croppie.js') }}"></script>
   <!-- Select2 -->
   <script src="{{ asset('adminlte/plugins/select2/js/select2.full.min.js') }}"></script>
+  <!-- croppie -->
+  <script src="{{ asset('adminlte/plugins/croppie-2.6.4/croppie.js') }}"></script>
   <!-- AdminLTE App -->
   <script src="{{ asset('adminlte/dist/js/adminlte.js') }}"></script>
   <script src="{{ asset('adminlte/dist/js/demo.js') }}"></script>
@@ -43,31 +43,31 @@
   @yield('footer-content')
   <script src="{{ mix('dist/js/profile/profile.js') }}"></script>
   <script>
-    // function readURL(input) {
-    //   if (input.files && input.files[0]) {
-    //     var reader = new FileReader();
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
   
-    //     reader.onload = function (e) {
-    //         $('#user-profile-upload').attr('src', e.target.result);
-    //     }
-    //     reader.readAsDataURL(input.files[0]);
-    //   }
-    // }
+        reader.onload = function (e) {
+            $('#user-profile-upload').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
   
-    // $("#user-profile-input").change(function(){
-    //     readURL(this);
-    // });
+    $("#user-profile-input").change(function(){
+        readURL(this);
+    });
   
-    // function readURL_RP(input) {
-    //   if (input.files && input.files[0]) {
-    //     var reader = new FileReader();
+    function readURL_RP(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
 
-    //     reader.onload = function (e) {
-    //         $('#restaurant-profile-upload').attr('src', e.target.result);
-    //     }
-    //     reader.readAsDataURL(input.files[0]);
-    //   }
-    // }
+        reader.onload = function (e) {
+            $('#restaurant-profile-upload').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
 
     var image_crop = $('#image-crop').croppie({
         enableExif: true,
@@ -81,59 +81,58 @@
     var result={width: 1080, height: 1080};  
 
     $('input[type=file]').change(function(e){
-        var idClicked= e.target.id;
-        image_crop.croppie('destroy');
-        if(idClicked == 'restaurant-profile-input'){
-            viewport={width: 300, height: 300};
-            result={width: 110, height: 110};  
-            isImgInput = 1;
-            $('#square').show()
-            $('#landscape').hide()
-        }else{
-            viewport={width: 300, height: 168};
-            result={width: 1080, height: 608}; 
-            isImgInput = 0;
-            $('#square').hide()
-            $('#landscape').show()
-        }
-        
-        image_crop = $('#image-crop').croppie({
-            enableExif: true,
-            enableOrientation: true,
-            viewport: viewport,
-            boundary: {width:400, height:400}
-        });
+      var idClicked= e.target.id;
+      image_crop.croppie('destroy');
+      if(idClicked == 'restaurant-profile-input'){
+        viewport={width: 300, height: 300};
+        result={width: 400, height: 400};  
+        isImgInput = 1;
+        $('#square').show()
+        $('#landscape').hide()
+      }else{
+        viewport={width: 300, height: 168};
+        result={width: 1080, height: 608}; 
+        isImgInput = 0;
+        $('#square').hide()
+        $('#landscape').show()
+      }
+      
+      image_crop = $('#image-crop').croppie({
+        enableExif: true,
+        enableOrientation: true,
+        viewport: viewport,
+        boundary: {width:400, height:400}
+      });
     });
 
     $('#restaurant-profile-input, #restaurant-banner-input').on('change', function(){
-        var reader = new FileReader();
-        reader.onload = function (event) {
-            imageBind = event.target.result;
-            image_crop.croppie('bind', {
-                url: event.target.result,
-            })
-        }
-        reader.readAsDataURL(this.files[0]);
-        $('#modal-crop-image').modal('show');
+      var reader = new FileReader();
+      reader.onload = function (event) {
+        imageBind = event.target.result;
+        image_crop.croppie('bind', {
+          url: event.target.result,
+        })
+      }
+      reader.readAsDataURL(this.files[0]);
+      $('#modal-crop-image').modal('show');
     });
     
     $('.submit-crop').click(function(){
-        image_crop.croppie('result', {
-            type: 'base64',
-            size: result,
-            quality: 1,
-        }).then(function(res){
-            $('#modal-crop-image').modal('hide');
-            if(isImgInput){
-                $('#restaurant-profile-upload').attr('src', res);
-                EditRestaurant.data.image = res
-            }
-            else{
-                $('#restaurant-banner-upload').attr('src', res);
-                EditRestaurant.data.banner_image = res
-            }
-        })
+      image_crop.croppie('result', {
+        type: 'base64',
+        size: result,
+        quality: 1,
+      }).then(function(res){
+        $('#modal-crop-image').modal('hide');
+        if(isImgInput){
+          $('#restaurant-profile-upload').attr('src', res);
+          EditRestaurant.data.image = res
+        }
+        else{
+          $('#restaurant-banner-upload').attr('src', res);
+          EditRestaurant.data.banner_image = res
+        }
+      })
     })
-
   </script> 
 </html>

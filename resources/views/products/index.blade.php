@@ -23,7 +23,7 @@
     background-color: rgba(0,0,0,0.8);
   }
 </style>
-<div class="container-fluid" id="Product">
+<div class="container-fluid" id="product">
   <div class="row mx-1 mx- mb-3">    
     <div class="col-md-12">
       <button class="btn rounded-pill my-1 py-0" v-on:click="product_category_selected=undefined; product_category_id=null" :class="[product_category_id == null ? 'btn-warning' : 'btn-default']">All</button>
@@ -39,6 +39,7 @@
     <i class="far fa-plus fa-fw"></i>Create Product
   </button>
   @include('products.create')
+  @include('products.modal-crop-image')
 </div>
 @endsection
 @section('footer-content')
@@ -47,21 +48,41 @@
   </script>
   <script src="{{ mix('dist/js/products/product.js') }}"></script>
   <script>
-    function readURL(input) {
-      if (input.files && input.files[0]) {
-        var reader = new FileReader();
+      var image_crop = $('#image-crop').croppie({
+        enableExif: true,
+        enableOrientation: true,
+        viewport:{width: 300, height: 300},
+        boundary:{width: 400, height: 400}
+    });    
 
-        reader.onload = function (e) {
-            $('#img-upload').attr('src', e.target.result);
+    $('#img-input').on('change', function(){
+        var reader = new FileReader();
+        reader.onload = function (event) {
+            image_crop.croppie('bind', {
+                url: event.target.result,
+            })
         }
-        reader.readAsDataURL(input.files[0]);
-      }
-    }
+        reader.readAsDataURL(this.files[0]);
+        $('#modal-crop-image').modal('show');
+    });
+   
+    $('.submit-crop').click(function(){
+        image_crop.croppie('result', {
+            type: 'base64',
+            size: {width:400, height:400},
+            quality: 0.99,
+        }).then(function(res){
+            $('#modal-crop-image').modal('hide');
+            $('#img-upload').attr('src', res);
+            Product.data.image = res
+        })
+    })
+
 
     $("#img-input").change(function(){
         readURL(this);
     });
     
-    // $('.product-category-select2').select2()
+    $('.product-category-select2').select2()
   </script> 
 @endsection

@@ -5,7 +5,6 @@ editProfile = new Vue({
             image: null
         },
         data: {}
-        // data:data
     },
     methods: {
         save() {
@@ -65,7 +64,7 @@ editProfile = new Vue({
                     hideLoading()
                 }
             }).catch(error => {
-                // hideLoading();
+                hideLoading();
                 console.log(error)
             })
         }
@@ -86,50 +85,50 @@ editProfile = new Vue({
 });
 
 
-// updatePassword = new Vue({
-//     el: '#updatePassword',
-//     data: {
-//         data: {
-//             old_password: '',
-//             password: '',
-//             confirm_password: '',
-//         },
-//     },
-//     methods: {
-//         save() {
-//             axios.post(`${baseURL}/admin/profile/change_password`,
-//                 this.data
-//             ).then(response => {
-//                 if (response.data.success) {
-//                     window.location.href = baseURL + '/admin/profile';
-//                 } else {
-//                     showAlertError(response.data.message);
-//                     hideLoading()
-//                 }
-//             }).catch(error => {
-//                 hideLoading();
-//                 showAlertError('Cannot update profile');
-//                 console.log(error)
-//             })
-//         },
-//         submit() {
-//             showLoading();
-//             this.$validator.validate().then((result) => {
-//                 if (!result) {
-//                     hideLoading();
-//                     //set Window location to top
-//                     window.scrollTo(0, 0);
-//                 } else {
-//                     if(this.data.password == this.data.confirm_password) {
-//                         this.save();
-//                     } else {
-//                         showAlertError('The confirm password is not match!');
-//                         hideLoading();
-//                         //set Window location to top
-//                         window.scrollTo(0, 0);
-//                     }
-//                 }
-//             })
-//         },
-//     }
-// });
+updatePassword = new Vue({
+    el: '#updatePassword',
+    data: {
+        data: {
+            old_password: '',
+            password: '',
+            confirm_password: '',
+        },
+    },
+    methods: {
+        save() {
+            axios.post(`/portal/profile/change_password`,
+                this.data
+            ).then(response => {
+                if (response.data.success) {
+                    window.location.href ='/portal/products';
+                } else {
+                    showAlertError(response.data.message);
+                    hideLoading()
+                }
+            }).catch(error => {
+                hideLoading();
+                showAlertError('Cannot update profile');
+                console.log(error)
+            })
+        },
+        submit() {
+            showLoading();
+            this.$validator.validate().then((result) => {
+                if (!result) {
+                    hideLoading();
+                    //set Window location to top
+                    window.scrollTo(0, 0);
+                } else {
+                    if(this.data.password == this.data.confirm_password) {
+                        this.save();
+                    } else {
+                        showAlertError('The confirm password is not match!');
+                        hideLoading();
+                        //set Window location to top
+                        window.scrollTo(0, 0);
+                    }
+                }
+            })
+        },
+    }
+});

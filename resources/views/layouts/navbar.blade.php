@@ -7,7 +7,7 @@
       <li class="nav-item dropdown user-menu" style="position: absolute; right: 20px">
         <a href="#edit-profile" class="nav-link" data-toggle="modal" aria-expanded="true" @click="viewProfile">
           <img src="{{ $auth->user->media->url ?? asset('adminlte/dist/img/placeholder/square_avatar_placeholder.jpg') }}" class="user-image img-circle elevation-2" alt="User Image">
-          <span class="d-none d-md-inline">{{$auth->user->name ?? 'Not Set' }}</span>
+          <span class="d-none d-md-inline">{{$auth->user->name ?? 'Unknown' }}</span>
         </a>
       </li>
     </ul>
@@ -45,7 +45,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label class="required">Gender</label>
-                  <select class="form-control gender-select2" :class="{'is-invalid': errors.has('gender') }"  name="gender" v-select2 v-model="data.gender" v-validate="'required'" style="width: 100%;">
+                  <select class="form-control" :class="{'is-invalid': errors.has('gender') }"  name="gender" v-select2 v-model="data.gender" v-validate="'required'" style="width: 100%;">
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                   </select>
@@ -72,10 +72,12 @@
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button class="btn btn-warning" data-toggle="modal" data-target="#modal-change-password"><i class="fas fa-lock fa-fw"></i>Change Password</button>
+          <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
           <button type="submit" form="profile" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
   </div>
 </div>
+@include('layouts.password.index')

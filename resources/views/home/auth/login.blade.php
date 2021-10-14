@@ -45,9 +45,8 @@
                 <button class="login-card login-btn" type="submit">login</button>
               </form>
 
-              {{-- <a href="#" class="forgot-password-link" data-toggle="modal" data-target="#myModal">Forgot password?</a> --}}
               <p>
-                {{-- <a href="{{ route('forget') }}">Forgot password?</a> --}}
+                <a class="register-here" href="{{ url('auth/forget') }}">Forgot password?</a>
               </p>
 
               <p class="login-card-footer-text">Don't have an account? <a href="{{ route('home') }}" class="register-here">Register here</a></p>

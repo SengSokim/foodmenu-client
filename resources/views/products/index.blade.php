@@ -48,40 +48,40 @@
   </script>
   <script src="{{ mix('dist/js/products/product.js') }}"></script>
   <script>
-      var image_crop = $('#image-crop').croppie({
-        enableExif: true,
-        enableOrientation: true,
-        viewport:{width: 300, height: 300},
-        boundary:{width: 400, height: 400}
-    });    
+    //   var image_crop = $('#image-crop').croppie({
+    //     enableExif: true,
+    //     enableOrientation: true,
+    //     viewport:{width: 300, height: 300},
+    //     boundary:{width: 400, height: 400}
+    // });    
 
-    $('#img-input').on('change', function(){
-        var reader = new FileReader();
-        reader.onload = function (event) {
-            image_crop.croppie('bind', {
-                url: event.target.result,
-            })
-        }
-        reader.readAsDataURL(this.files[0]);
-        $('#modal-crop-image').modal('show');
-    });
+    // $('#img-input').on('change', function(){
+    //     var reader = new FileReader();
+    //     reader.onload = function (event) {
+    //         image_crop.croppie('bind', {
+    //             url: event.target.result,
+    //         })
+    //     }
+    //     reader.readAsDataURL(this.files[0]);
+    //     $('#modal-crop-image').modal('show');
+    // });
    
-    $('.submit-crop').click(function(){
-        image_crop.croppie('result', {
-            type: 'base64',
-            size: {width:400, height:400},
-            quality: 0.99,
-        }).then(function(res){
-            $('#modal-crop-image').modal('hide');
-            $('#img-upload').attr('src', res);
-            Product.data.image = res
-        })
-    })
+    // $('.submit-crop').click(function(){
+    //     image_crop.croppie('result', {
+    //         type: 'base64',
+    //         size: {width:400, height:400},
+    //         quality: 0.99,
+    //     }).then(function(res){
+    //         $('#modal-crop-image').modal('hide');
+    //         $('#img-upload').attr('src', res);
+    //         Product.data.image = res
+    //     })
+    // })
 
 
-    $("#img-input").change(function(){
-        readURL(this);
-    });
+    // $("#img-input").change(function(){
+    //     readURL(this);
+    // });
     
     $('.product-category-select2').select2()
   </script> 

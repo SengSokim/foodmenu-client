@@ -1,17 +1,21 @@
 <?php
-
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/home', 'HomeController@index')->name('home');
 
     Route::prefix('auth')->group(function () {
-        
         Route::get('/login', 'AuthController@login')->name('auth.login');
         Route::post('/login', 'AuthController@submitLogin')->name('auth.login');
 
         Route::post('/register', 'AuthController@submitRegister')->name('register');
 
-        Route::get('/forget', 'AuthController@forget')->name('auth.forget');
+        Route::get('/forget', 'AuthController@forget');
         Route::post('/forget', 'AuthController@submitforgetPassword');
+
+        Route::get('/verify/{phone_number}/{code}', 'AuthController@verify');
+        Route::post('/verify', 'AuthController@submitVerify');
+
+        Route::get('/reset/{phone_number}/{token}', 'AuthController@reset');
+        Route::post('/reset', 'AuthController@submitResetPassword');
 
         
         Route::get('/profile', 'AuthController@logout')->name('logout');

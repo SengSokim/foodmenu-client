@@ -24,16 +24,26 @@
                 <img src="{{ asset('images/emenu-black-transparent.png') }}" alt="" style="width: 150px;">
               </div>
               <p class="login-card-description">Reset Password</p>
-              <form action="{{ url('auth/forget') }}" method="POST">
+              <form action="{{ url('auth/reset') }}" method="POST">
                 @csrf    
                 @php $error = session()->get('error'); @endphp    
 
+                <input type="text" name="token" value="{{ $token }}">
+                <input type="text" name="phone_number" value="{{ $phone_number }}">
+
                 <div class="form-group">
-                  <label for="phone_number">Phone Number</label>
-                  <input type="text" class="form-control {{ isset($error['val']['phone_number']) ? 'is-invalid' : '' }}" name="phone_number" id="phone_number" placeholder="Phone Number">
-                  <span class="invalid-feedback" role="alert">{{ $error['val']['phone_number'] ?? ''  }}</span> 
+                  <label for="password">Password</label>
+                  <input id="password" type="password" class="form-control {{ isset($error['val']['password']) ? 'is-invalid' : '' }}" name="password" placeholder="Password">
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $error['val']['password'] ?? ''  }}</strong>
+                  </span>
                 </div>
-                <button class="login-card login-btn" type="submit">Send Reset Password Link</button>
+
+                <div class="form-group">
+                  <label for="password-confirm">Confirm Password</label>
+                  <input id="password-confirm" type="password" class="form-control" name="confirm_password"  {{ isset($error['val']['confirm_password']) ? 'is-invalid' : '' }} placeholder="Confirm password">
+                </div>
+                <button class="login-card login-btn" type="submit">Reset Password</button>
               </form>
             </div>
           </div>

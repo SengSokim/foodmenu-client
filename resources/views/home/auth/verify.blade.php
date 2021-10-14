@@ -23,17 +23,18 @@
               <div class="brand-wrapper">
                 <img src="{{ asset('images/emenu-black-transparent.png') }}" alt="" style="width: 150px;">
               </div>
-              <p class="login-card-description">Reset Password</p>
-              <form action="{{ url('auth/forget') }}" method="POST">
+              <p class="login-card-description">Verify</p>
+              <form action="{{ url('auth/verify') }}" method="POST">
                 @csrf    
                 @php $error = session()->get('error'); @endphp    
 
                 <div class="form-group">
-                  <label for="phone_number">Phone Number</label>
-                  <input type="text" class="form-control {{ isset($error['val']['phone_number']) ? 'is-invalid' : '' }}" name="phone_number" id="phone_number" placeholder="Phone Number">
-                  <span class="invalid-feedback" role="alert">{{ $error['val']['phone_number'] ?? ''  }}</span> 
+                  <label for="code">Code</label>
+                  <input type="text" class="form-control {{ isset($error['val']['verify_code']) ? 'is-invalid' : '' }}" name="verify_code" id="verify_code" placeholder="xxxx">
+                  <span class="invalid-feedback" role="alert">{{ $error['val']['verify_code'] ?? ''  }}</span> 
+                  <input type="hidden" name="phone_number" value="{{ request('phone_number') }}">
                 </div>
-                <button class="login-card login-btn" type="submit">Send Reset Password Link</button>
+                <button class="login-card login-btn" type="submit">Submit</button>
               </form>
             </div>
           </div>

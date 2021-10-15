@@ -4,16 +4,15 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button" data-enable-remember="true"><i class="fas fa-bars"></i></a>
       </li>
-      <li class="nav-item dropdown user-menu" style="position: absolute; right: 55px">
-        <a href="#edit-profile" class="nav-link" data-toggle="modal" aria-expanded="true" @click="viewProfile">
-          <img src="{{ $auth->user->media->url ?? asset('adminlte/dist/img/placeholder/square_avatar_placeholder.jpg') }}" class="user-image img-circle elevation-2" alt="User Image">
+      <li class="nav-item dropdown" style="position: absolute; right: 25px">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" style="border: 0">
+          <img src="{{ $auth->user->media->url ?? asset('adminlte/dist/img/placeholder/square_avatar_placeholder.jpg') }}" class="user-image img-circle elevation-2" alt="User Image" width="30">
           <span class="d-none d-md-inline">{{$auth->user->name ?? 'Unknown' }}</span>
         </a>
-      </li>
-     <li class="nav-item" style="position: absolute; right: 20px">
-        <a class="nav-link" href="{{ route('logout') }}" title="logout">
-          <i class="fas fa-sign-out-alt"></i>
-        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#edit-profile" data-toggle="modal" @click="viewProfile">Account</a>
+          <a class="dropdown-item" href="{{ route('logout') }}">Log Out</a>
+        </div>
       </li>
     </ul>
   </nav>

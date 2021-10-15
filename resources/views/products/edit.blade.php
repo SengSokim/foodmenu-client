@@ -9,8 +9,8 @@
         @include('products.form')
       </div>
       <div class="modal-footer">        
-        <button type="button" class="btn btn-default rounded-pill" data-dismiss="modal">Cancel</button>
-        <button type="confirm" form="updateProduct" class="btn btn-warning rounded-pill">Save changes</button>
+        <button type="button" class="btn btn-default btn-sm rounded-pill" data-dismiss="modal">Cancel</button>
+        <button type="confirm" form="updateProduct" class="btn btn-warning btn-sm rounded-pill">Save changes</button>
       </div>
     </div>
   </div>

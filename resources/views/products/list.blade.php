@@ -15,10 +15,10 @@
       </div>
       <div class="overlay">
         <div class="button text-center">
-          <a href="#" class="btn btn-success rounded-pill btn-xs mx-1" style="padding: .425rem .55rem" data-toggle="modal" data-target="#status" @click="setData(item)" title="Status"><i class="fas fa-check"></i></a>
-          <a :href="'{{ url('portal/product_variants') }}?product_id=' + item.id" class="btn btn-info rounded-pill btn-xs mx-1" style="padding: .425rem .55rem" title="Set Variant"><i class="fas fa-sitemap"></i></a>
-          <a href="#" class="btn btn-primary rounded-pill btn-xs mx-1" style="padding: .425rem .55rem" data-toggle="modal" data-target="#editProduct" @click="setData(item)" title="Edit"><i class="fas fa-edit"></i></a>
-          <a href="" class="btn btn-danger rounded-pill btn-xs mx-1" style="padding: .425rem .55rem" data-toggle="modal" data-target="#deleteProduct" @click="setData(item)" title="Delete"><i class="fas fa-trash"></i></a>
+          <a href="#" class="btn btn-success rounded-pill btn-xs  mx-2 my-3" style="padding: .8rem .99rem" data-toggle="modal" data-target="#status" @click="setData(item)" title="Status"><i class="fas fa-check"></i></a>
+          <a :href="'{{ url('portal/product_variants') }}?product_id=' + item.id" class="btn btn-info rounded-pill btn-xs my-3" style="padding: .8rem .9rem" title="Set Variant"><i class="fas fa-sitemap"></i></a> <br>
+          <a href="#" class="btn btn-primary rounded-pill btn-xs mx-2" style="padding: .8rem .9rem" data-toggle="modal" data-target="#editProduct" @click="setData(item)" title="Edit"><i class="fas fa-edit"></i></a>
+          <a href="" class="btn btn-danger rounded-pill btn-xs mx-1" style="padding: .8rem 1rem" data-toggle="modal" data-target="#deleteProduct" @click="setData(item)" title="Delete"><i class="fas fa-trash"></i></a>
       </div>
     </div>
   </div>

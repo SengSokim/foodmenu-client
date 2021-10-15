@@ -43,6 +43,10 @@
           display: none;
         }
       }
+
+      .dropdown-toggle::after {
+          display:none;
+      }
     </style>
     
     @yield('header-content')

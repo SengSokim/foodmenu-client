@@ -22,7 +22,7 @@
         Route::get('/logout', 'AuthController@logout')->name('logout');
     });
     
-    Route::group(['prefix' =>  'portal', 'middleware' => 'web'], function () {
+    Route::group(['prefix' =>  'portal', 'middleware' => 'auth'], function () {
         Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
         Route::get('/', 'ProductController@index')->name('products');
 

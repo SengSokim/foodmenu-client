@@ -3,7 +3,7 @@
 {!! generateContentHeader('Product Categories', 'Product Categories') !!}
 @endsection
 @section('content')
-<div class="row" id="productCategory">
+<div class="row" id="productCategory" v-cloak>
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">

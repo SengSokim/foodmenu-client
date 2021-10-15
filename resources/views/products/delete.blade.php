@@ -12,8 +12,8 @@
       </div>
       <div class="modal-footer">
         <form @submit.prevent="deleteProduct">
-          <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>
-          <button type="submit" class="btn btn-danger btn-sm">Confirm</button>
+          <button type="button" class="btn btn-default rounded-pill btn-sm" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-danger rounded-pill btn-sm">Confirm</button>
         </form>
       </div>
     </div>

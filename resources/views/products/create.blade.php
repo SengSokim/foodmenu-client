@@ -11,7 +11,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default rounded-pill" data-dismiss="modal">Cancel</button>
-        <button type="submit" form="createProduct" class="btn btn-primary rounded-pill px-3">Save</button>
+        <button type="submit" form="createProduct" class="btn btn-warning rounded-pill px-4">Save</button>
       </div>
     </div>
   </div>

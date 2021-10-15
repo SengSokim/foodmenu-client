@@ -11,7 +11,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="{{ route('products') }}" class="nav-link {{ request()->is(['portal','portal/products*']) ? 'active' : '' }}">
+        <a href="{{ route('products') }}" class="nav-link {{ request()->is(['portal','portal/products*','portal/product_variants*']) ? 'active' : '' }}">
           <i class="nav-icon fas fa-hamburger"></i>
           <p>
             Products
@@ -41,10 +41,7 @@
             Tables
           </p>
         </a>
-      </li> --}}
-      <li style="position: fixed; bottom: 15px;">
-        <a href="{{ route('logout') }}" class="btn btn-default btn-sm">Logout</a>
-      </li>
+      </li> --}}     
     </ul>
   </nav>
 

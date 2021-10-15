@@ -55,7 +55,7 @@
                           <div class="form-group">
                             <img id="restaurant-profile-upload" class="img-fluid mb-1" :src="data.image ? data.image : (data.media ? data.media.url : '{{ asset('adminlte/dist/img/placeholder/square-placeholder.png') }}')" style="width: 110px;">
                             <input type='file' id="restaurant-profile-input" name="image" :class="{'is-invalid': errors.has('image') }" accept=".jpg,.png" style="display: none" @change="uploadProfile"/>
-                            <input class="btn-upload btn btn-primary form-control" type="button" value="Browse" onclick="document.getElementById('restaurant-profile-input').value='';document.getElementById('restaurant-profile-input').click();"  style="width: 110px;">
+                            <input class="btn-upload btn btn-default form-control" type="button" value="Browse" onclick="document.getElementById('restaurant-profile-input').value='';document.getElementById('restaurant-profile-input').click();"  style="width: 110px;">
                           </div>
                         </div>
                       </div>
@@ -66,7 +66,7 @@
                           <div class="form-group">
                             <img id="restaurant-banner-upload" class="img-fluid mb-1" :src="data.banner_image ? data.banner_image : (data.banner ? data.banner.url : '{{ asset('adminlte/dist/img/placeholder/landscape_placeholder.png') }}')" style="width: 300px; height: 168.75px;">
                             <input type='file' id="restaurant-banner-input" name="banner" :class="{'is-invalid': errors.has('banner') }" accept=".jpg,.png" style="display: none" @change="uploadBanner"/>
-                            <input class="btn-upload btn btn-primary form-control" type="button" value="Browse" onclick="document.getElementById('restaurant-banner-input').value='';document.getElementById('restaurant-banner-input').click();">
+                            <input class="btn-upload btn btn-default form-control" type="button" value="Browse" onclick="document.getElementById('restaurant-banner-input').value='';document.getElementById('restaurant-banner-input').click();">
                           </div>
                         </div>
                       </div>
@@ -164,8 +164,8 @@
                 </form>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="submit" form="submitUpdateRestaurant" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-default rounded-pill" data-dismiss="modal">Cancel</button>
+                <button type="submit" form="submitUpdateRestaurant" class="btn btn-warning rounded-pill">Save changes</button>
               </div>
             </div>
           </div>

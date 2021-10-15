@@ -23,7 +23,7 @@
         <link rel="stylesheet" href="{{ asset('confirm/jquery-confirm.min.css') }}">
 
         <link rel="stylesheet" href="{{asset('css/web/style.css')}}">
-        <link rel="stylesheet" href="{{asset('login.css')}}">
+        <link rel="stylesheet" href="{{asset('css/login.css')}}">
 
         
     </head>

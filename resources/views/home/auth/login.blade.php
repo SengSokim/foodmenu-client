@@ -31,7 +31,7 @@
                 @php $error = session()->get('error'); @endphp    
                 <div class="form-group">
                   <label for="phone_number">Phone Number</label>
-                  <input type="text" class="form-control {{ isset($error['val']['phone_number']) ? 'is-invalid' : '' }}" name="phone_number" id="phone_number" placeholder="Phone Number">
+                  <input type="text" class="form-control {{ isset($error['val']['phone_number']) ? 'is-invalid' : '' }}" name="phone_number" id="phone_number" placeholder="Phone Number" value="{{ old('phone_number') }}">
                   <span class="invalid-feedback" role="alert">{{ $error['val']['phone_number'] ?? ''  }}</span> 
                 </div>
                
@@ -40,7 +40,7 @@
                   <input type="password" class="form-control {{ isset($error['val']['password']) ? 'is-invalid' : '' }}" name="password" id="password" placeholder="******">
                   <span class="invalid-feedback" role="alert">{{ $error['val']['password'] ?? ''  }}</span> 
                 </div>
-                <button class="login-card login-btn" type="submit">login</button>
+                <button class="login-card login-btn" type="submit">Login</button>
               </form>
 
               <p>

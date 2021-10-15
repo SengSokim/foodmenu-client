@@ -13,7 +13,9 @@
     <div class="col-12 col-sm-6 col-md-3">
       <div class="info-box">
         <span class="info-box-icon" style="width: 80px; height: auto;">  
-          <img src="{{ $data->data->product->media->url ?? asset('adminlte/dist/img/logo/emenu-square-black-bg-with-stroke.png') }}">
+           <a href="{{ asset($data->data->product->media->url ?? 'adminlte/dist/img/logo/emenu-square-black-bg-with-stroke.png') }}" data-lity data-lity-target="{{ asset($data->data->product->media->url ?? 'adminlte/dist/img/logo/emenu-square-black-bg-with-stroke.png') }}">
+              <img src="{{ $data->data->product->media->url ?? asset('adminlte/dist/img/logo/emenu-square-black-bg-with-stroke.png') }}" width="60">
+            </a>
         </span>
         
         <div class="info-box-content">

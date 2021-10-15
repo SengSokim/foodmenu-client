@@ -4,10 +4,15 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button" data-enable-remember="true"><i class="fas fa-bars"></i></a>
       </li>
-      <li class="nav-item dropdown user-menu" style="position: absolute; right: 20px">
+      <li class="nav-item dropdown user-menu" style="position: absolute; right: 55px">
         <a href="#edit-profile" class="nav-link" data-toggle="modal" aria-expanded="true" @click="viewProfile">
           <img src="{{ $auth->user->media->url ?? asset('adminlte/dist/img/placeholder/square_avatar_placeholder.jpg') }}" class="user-image img-circle elevation-2" alt="User Image">
           <span class="d-none d-md-inline">{{$auth->user->name ?? 'Unknown' }}</span>
+        </a>
+      </li>
+     <li class="nav-item" style="position: absolute; right: 20px">
+        <a class="nav-link" href="{{ route('logout') }}" title="logout">
+          <i class="fas fa-sign-out-alt"></i>
         </a>
       </li>
     </ul>
@@ -72,9 +77,9 @@
           </form>
         </div>
         <div class="modal-footer">
-          <button class="btn btn-warning" data-toggle="modal" data-target="#modal-change-password"><i class="fas fa-lock fa-fw"></i>Change Password</button>
-          <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
-          <button type="submit" form="profile" class="btn btn-primary">Save changes</button>
+          <button class="btn btn-default rounded-pill" data-toggle="modal" data-target="#modal-change-password"><i class="fas fa-lock fa-fw"></i>Change Password</button>
+          <button type="button" class="btn btn-default rounded-pill" data-dismiss="modal">Cancel</button>
+          <button type="submit" form="profile" class="btn btn-warning rounded-pill">Save changes</button>
         </div>
       </div>
     </div>

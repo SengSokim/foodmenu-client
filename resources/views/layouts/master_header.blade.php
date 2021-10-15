@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/daterangepicker/daterangepicker.css') }}">
     <!-- select2 -->
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/select2/css/select2.min.css') }}">
+    <!-- lity -->
+    <link rel="stylesheet" href="{{ asset('assets/plugins/lity/lity.css') }}">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/summernote/summernote-bs4.min.css') }}">
     <!-- Jquery toast -->
@@ -40,7 +42,7 @@
         #responsive-qr {
           display: none;
         }
-       }
+      }
     </style>
     
     @yield('header-content')

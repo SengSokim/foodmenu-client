@@ -10,8 +10,8 @@
                 </div>
                 <div class="row pt-3 pl-3">
                     <div class="col-md-12">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-arrow-left"></i> Back</button>
-                        <button type="submit" form="editProductVariant" class="btn btn-primary"><i class="fas fa-save"></i> Save Change</button>
+                        <button type="button" class="btn btn-default rounded-pill btn-sm" data-dismiss="modal">Back</button>
+                        <button type="submit" form="editProductVariant" class="btn btn-warning rounded-pill btn-sm">Save Change</button>
                     </div>
                 </div>
                 <div class="modal-body">
@@ -79,12 +79,12 @@
                                       <template v-if="value.isEdit">
                                           <td></td>
                                           <td><input type="text" name="name" class="form-control" v-model="data_adding.name"></td>
-                                          <td><input type="number" step="0.05" name="extra_price" class="form-control" v-model="data_adding.extra_price"></td>
+                                          <td><input type="number" step="0.01" name="extra_price" class="form-control" v-model="data_adding.extra_price"></td>
                                           <td><input type="number" name="sequence" class="form-control" v-model="data_adding.sequence"></td>
                                           <td class="text-center"><input type="checkbox" name="enable_status" v-model="data_adding.enable_status"></td>
                                           <td class="text-center">
-                                              <button v-if="data_adding.name" type="button" @click="confirmEdit(); Object.assign(value, data_adding); value.isEdit = false;" class="btn btn-success btn-sm" title="Confirm"><i class="fa fa-check"></i></button>
-                                              <button type="button" @click="cancelEdit(); value.isEdit = false;" class="btn btn-danger btn-sm" title="Cancel"><i class="fa fa-ban"></i></button>
+                                              <button v-if="data_adding.name" type="button" @click="confirmEdit(); Object.assign(value, data_adding); value.isEdit = false;"  class="btn btn-warning rounded-pill btn-sm" style="padding: .425rem .55rem" title="Confirm"><i class="fa fa-check"></i></button>
+                                              <button type="button" @click="cancelEdit(); value.isEdit = false;" class="btn btn-danger rounded-pill btn-sm" style="padding: .425rem .55rem" title="Cancel"><i class="fa fa-ban"></i></button>
                                           </td>                        
                                       </template>
                   
@@ -97,10 +97,10 @@
                                           <td class="text-center">@{{ value.enable_status == 1 ? 'Active' : 'Deactive' }} </td>
                                           <td class="text-center">
                                               <template v-if="!isEdit">
-                                                  <button type="button" class="btn btn-success btn-sm" @click="editVariantValue(); data_adding = Object.assign({}, value); value.isEdit = true" title="Edit Variant">
+                                                  <button type="button" class="btn btn-primary rounded-pill btn-sm" style="padding: .425rem .55rem" @click="editVariantValue(); data_adding = Object.assign({}, value); value.isEdit = true" title="Edit Variant">
                                                       <i class="fa fa-edit"></i>
                                                   </button>
-                                                  <button type="button" @click="selected_variant_index = index; removeVariantValue()" class="btn btn-danger btn-sm" title="Delete Variant">
+                                                  <button type="button" @click="selected_variant_index = index; removeVariantValue()" class="btn btn-danger rounded-pill btn-sm" style="padding: .425rem .55rem" title="Delete Variant">
                                                       <i class="fa fa-trash" title="Delete"></i>
                                                   </button>
                                               </template>
@@ -117,12 +117,12 @@
                                   <tr v-if="isAddNew">
                                       <td></td>
                                       <td><input type="text" name="name" class="form-control" v-model="data_adding.name"></td>
-                                      <td><input type="number" step="0.05" name="extra_price" class="form-control" v-model="data_adding.extra_price"></td>
+                                      <td><input type="number" step="0.01" name="extra_price" class="form-control" v-model="data_adding.extra_price"></td>
                                       <td><input type="number" name="sequence" class="form-control" v-model="data_adding.sequence"></td>
                                       <td class="text-center"><input type="checkbox" name="enable_status" v-model="data_adding.enable_status"></td>
                                       <td class="text-center">
-                                          <button @click="confirmAdd" v-if="data_adding.name" class="btn btn-success btn-sm" title="Confirm"><i class="fa fa-check"></i></button>
-                                          <button @click="cancelAdd" class="btn btn-danger btn-sm" title="Cancel"><i class="fa fa-ban"></i></button>
+                                          <button @click="confirmAdd" v-if="data_adding.name" class="btn btn-warning rounded-pill btn-sm" style="padding: .425rem .55rem" title="Confirm"><i class="fa fa-check"></i></button>
+                                          <button @click="cancelAdd" class="btn btn-danger rounded-pill btn-sm" style="padding: .425rem .55rem" title="Cancel"><i class="fa fa-ban"></i></button>
                                       </td>
                                   </tr>
                               </tbody>

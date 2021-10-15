@@ -37,7 +37,7 @@
         <button class="btn btn-default btn-xs" data-toggle="modal" data-target="#edit-restaurant" title="Edit"  @click="showRestaurant">
           <i class="fa fa-edit"></i>
         </button>
-        <div class="modal fade" id="edit-restaurant" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+        <div class="modal fade" id="edit-restaurant" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static" style="overflow: scroll !important;">
           <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
               <div class="modal-header">

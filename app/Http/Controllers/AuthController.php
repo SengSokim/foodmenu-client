@@ -6,6 +6,37 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
+    public function checkPhone(Request $request)
+    {
+        $res = $this->api_post('client/auth/check_phone', [
+            'phone' => $request->phone
+        ]);
+
+        if ($res->success == false) {
+            return fail($res->message, 200);
+        }
+
+        return ok($res->data);
+    }
+
+    public function register(Request $request)
+    {
+        $res = $this->api_post('client/auth/register', [
+            'name' => $request->name,
+            'phone' => $request->phone,
+            'password' => $request->password,
+            'verify_code' => $request->verify_code,
+        ]);
+
+        if ($res->success == false) {
+            return fail($res->message, 200);
+        }
+
+        session()->put('auth', $res->data);
+
+        return ok($res->data);
+    }
+
     public function submitRegister(Request $request)
     {
         $result = $this->api_post('portal/auth/register', $request->all());

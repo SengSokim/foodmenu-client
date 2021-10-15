@@ -2,11 +2,13 @@
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/home', 'HomeController@index')->name('home');
 
-    Route::prefix('auth')->group(function () {
+    Route::group(['prefix' => 'auth'], function () {
         Route::get('/login', 'AuthController@login')->name('auth.login');
         Route::post('/login', 'AuthController@submitLogin')->name('auth.login');
 
+        //show
         Route::post('/register', 'AuthController@submitRegister')->name('register');
+
 
         Route::get('/forget', 'AuthController@forget');
         Route::post('/forget', 'AuthController@submitforgetPassword');

@@ -26,6 +26,8 @@
               <p class="login-card-description">Sign into your account</p>
               <form action="{{ route('auth.login') }}" method="POST">
                 @csrf    
+    @include('home.auth.alert_error_message')
+
                 @php $error = session()->get('error'); @endphp    
                   <div class="form-group">
                   <label for="phone_number">Code</label>

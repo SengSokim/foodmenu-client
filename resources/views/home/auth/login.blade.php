@@ -26,13 +26,9 @@
               <p class="login-card-description">Sign into your account</p>
               <form action="{{ route('auth.login') }}" method="POST">
                 @csrf    
-    @include('home.auth.alert_error_message')
+                @include('home.auth.alert_error_message')
 
                 @php $error = session()->get('error'); @endphp    
-                  <div class="form-group">
-                  <label for="phone_number">Code</label>
-                  <input type="text" class="form-control {{ isset($error['val']['code']) ? 'is-invalid' : '' }}" name="code" id="phone_number" placeholder="Phone Number">
-                </div>
                 <div class="form-group">
                   <label for="phone_number">Phone Number</label>
                   <input type="text" class="form-control {{ isset($error['val']['phone_number']) ? 'is-invalid' : '' }}" name="phone_number" id="phone_number" placeholder="Phone Number">

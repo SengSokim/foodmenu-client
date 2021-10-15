@@ -30,6 +30,9 @@ mix.js('resources/assets/js/app.js', 'public/dist/js')
     //product
     .js('resources/assets/js/products/product.js', 'public/dist/js/products')
 
+    //register
+    .js('resources/assets/js/register/register.js', 'public/dist/js/register')
+
 
 
 

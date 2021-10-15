@@ -6,5 +6,6 @@
     "/dist/js/product-variants/product-variant.js": "/dist/js/product-variants/product-variant.js",
     "/dist/js/products/product.js": "/dist/js/products/product.js",
     "/dist/js/profile/profile.js": "/dist/js/profile/profile.js",
+    "/dist/js/register/register.js": "/dist/js/register/register.js",
     "/dist/js/restaurants/edit.js": "/dist/js/restaurants/edit.js"
 }

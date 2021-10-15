@@ -18,6 +18,10 @@
         <link rel="stylesheet" href="{{asset('css/web/bootstrap-datepicker.css')}}">
         <link rel="stylesheet" href="{{asset('css/web/jquery.timepicker.css')}}">
 
+        <link rel="stylesheet" href="{{ asset('loading/jquery.loading.css') }}">
+        <link rel="stylesheet" href="{{ asset('toast/jquery.toast.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('confirm/jquery-confirm.min.css') }}">
+
         <link rel="stylesheet" href="{{asset('css/web/style.css')}}">
         <link rel="stylesheet" href="{{asset('login.css')}}">
 
@@ -139,6 +143,14 @@
         <script src="{{asset('js/web/scrollax.min.js')}}"></script>
         <script src="{{asset('js/web/main.js')}}"></script>
 
+        <script src="{{ asset('js/helper.js') }}"></script>
+            
+        <script src="{{ asset('loading/jquery.loading.min.js') }}"></script>
+        <script src="{{ asset('toast/jquery.toast.min.js') }}"></script>
+        <script src="{{ asset('confirm/jquery-confirm.min.js') }}"></script>
+
+        <script src="{{ mix('dist/js/app.js') }}"></script>
+        <script src="{{ mix('dist/js/register/register.js') }}"></script>
 
     
     

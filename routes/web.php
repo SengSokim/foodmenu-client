@@ -7,7 +7,8 @@
         Route::post('/login', 'AuthController@submitLogin')->name('auth.login');
 
         //show
-        Route::post('/register', 'AuthController@submitRegister')->name('register');
+        Route::post('/register/check_phone', 'AuthController@checkPhone');
+        Route::post('/register', 'AuthController@register')->name('register');
 
 
         Route::get('/forget', 'AuthController@forget');

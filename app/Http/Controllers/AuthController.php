@@ -8,9 +8,7 @@ class AuthController extends Controller
 {
     public function checkPhone(Request $request)
     {
-        $res = $this->api_post('client/auth/check_phone', [
-            'phone' => $request->phone
-        ]);
+        $res = $this->api_post('portal/auth/check_phone', $request->all());
 
         if ($res->success == false) {
             return fail($res->message, 200);
@@ -21,13 +19,7 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
-        $res = $this->api_post('client/auth/register', [
-            'name' => $request->name,
-            'phone' => $request->phone,
-            'password' => $request->password,
-            'verify_code' => $request->verify_code,
-        ]);
-
+        $res = $this->api_post('portal/auth/register', $request->all());
         if ($res->success == false) {
             return fail($res->message, 200);
         }

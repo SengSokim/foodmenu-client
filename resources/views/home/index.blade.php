@@ -24,7 +24,7 @@
           <div class="col-md-5 order-md-last">
             <div class="login-wrap p-4 p-md-5">
               <h3 class="mb-4">Register Now</h3>
-              <form @submit.prevent="" action="{{ url('auth/register') }}" class="signup-form" method="POST">
+              <form @submit.prevent="" action="{{ url('api/auth/register') }}" class="signup-form" method="POST">
                 @csrf
                 @php $error = session()->get('error'); @endphp
 

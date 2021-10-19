@@ -211,7 +211,9 @@
 
   <div class="poweredby">
     <p>Powered By</p>
-    <img src="{{ asset('adminlte/dist/img/logo/papa-deliver.png') }}" alt="" width="15%">
+    <a href="https://papadeliver.co/" target="_blank">
+      <img src="{{ asset('adminlte/dist/img/logo/papa-deliver.png') }}" alt="" width="15%">
+    </a>
   </div>
 </div>
 @include('layouts.modal-crop-image')

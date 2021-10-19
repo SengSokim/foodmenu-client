@@ -20,10 +20,10 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $res = $this->api_post('portal/auth/register', $request->all());
+
         if ($res->success == false) {
             return fail($res->message, 200);
         }
-
         session()->put('auth', $res->data);
 
         return ok($res->data);
@@ -47,6 +47,18 @@ class AuthController extends Controller
     }
 
     public function submitLogin(Request $request)
+    {
+        $result = $this->api_post('portal/auth/login', $request->all());
+        if ($result->success == false) {
+            return back()->withInput(request()->except('password'))->with('error', self::getErrorMessage($result->message));
+        }
+
+        session()->put('auth', $result->data);
+        
+        return redirect()->to('portal');
+    }
+
+    public function loginGet(Request $request)
     {
         $result = $this->api_post('portal/auth/login', $request->all());
         if ($result->success == false) {

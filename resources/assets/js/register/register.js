@@ -17,16 +17,13 @@ new Vue({
                     //set Window location to top
                     window.scrollTo(0, 0);
                 } else {
-                    axios.post(`/auth/register/check_phone`, this.data)
+                    axios.post(`api/auth/register/check_phone`, this.data)
                         .then(response => {
                             hideLoading()
                             if (response.data.success) {
-                                console.log('res succ');
                                 if (response.data.data.is_login) {
-                                    console.log('login');
                                     $('#modalLogin').modal('show');
                                 } else {
-                                    console.log('not yet');
                                     Vue.set(this.data, 'verify_code', response.data.data.verify_code);
                                     $('#modalVerify').modal('show');
                                 }
@@ -48,10 +45,11 @@ new Vue({
                     //set Window location to top
                     window.scrollTo(0, 0);
                 } else {
-                    axios.post(`/auth/register`, this.data)
+                    axios.post(`/api/auth/register`, this.data)
                         .then(response => {
                             if (response.data.success) {
-                                window.location.href = "portal/products";
+                                console.log(response.data.success);
+                                window.location.href = '/auth/login/get?phone_number=' + this.data.phone_number + '&password=' + this.data.password;
                             } else {
                                 showAlertError(response.data.message);
                                 hideLoading()

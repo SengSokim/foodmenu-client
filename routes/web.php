@@ -4,11 +4,12 @@
 
     Route::group(['prefix' => 'auth'], function () {
         Route::get('/login', 'AuthController@login')->name('auth.login');
+        Route::get('/login/get', 'AuthController@loginGet')->name('auth.login.get');
         Route::post('/login', 'AuthController@submitLogin')->name('auth.login');
 
-        //show
-        Route::post('/register/check_phone', 'AuthController@checkPhone');
-        Route::post('/register', 'AuthController@register')->name('register');
+        // //show
+        // Route::post('/register/check_phone', 'AuthController@checkPhone');
+        // Route::post('/register', 'AuthController@register')->name('register');
 
 
         Route::get('/forget', 'AuthController@forget');

@@ -130,6 +130,8 @@ Product = new Vue({
                 media: product.media,
                 description: product.long_description
             });
+
+            $('.product-category-select2').val(product.product_category_id ? product.product_category_id: null).trigger('change');
         },
 
         updateProductStatus(value){

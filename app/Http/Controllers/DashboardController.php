@@ -8,6 +8,8 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('dashboard');
+        $data = $this->api_get('portal/dashboard');
+
+        return view('dashboard', compact('data'));
     }
 }

@@ -82,7 +82,7 @@ class AuthController extends Controller
             return back()->withInput()->with('error', self::getErrorMessage($result->message));
         }
 
-        return redirect()->to('auth/verify/'.$request->phone_number. '?code='. $result->data->code);
+        return redirect()->to('auth/verify/'.$request->phone_number. '?code='. $result->data->verify_code);
     }
 
     public function verify($phone_number)

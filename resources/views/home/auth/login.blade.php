@@ -47,7 +47,7 @@
                 <a class="register-here" href="{{ url('auth/forget') }}">Forgot password?</a>
               </p>
 
-              <p class="login-card-footer-text">Don't have an account? <a href="{{ route('home') }}" class="register-here">Register here</a></p>
+              <p class="login-card-footer-text">Don't have an account? <a href="{{ config('app.website_url') }}" class="register-here">Register here</a></p>
               {{-- <nav class="login-card-footer-nav">
                 <a href="#">Terms of use.</a>
                 <a href="#">Privacy policy</a>

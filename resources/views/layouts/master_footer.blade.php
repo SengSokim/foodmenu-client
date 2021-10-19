@@ -38,6 +38,7 @@
   <script src="{{ mix('dist/js/app.js') }}"></script>
   <script>
     let EditRestaurant;
+    let editProfile;
   </script>
   <script src="{{ mix('dist/js/restaurants/edit.js') }}"></script>
  
@@ -102,6 +103,12 @@
         isImgInput = 2;
         $('#square').hide()
         $('#landscape').hide()
+      }else if(idClicked == 'user-profile-input'){
+        viewport={width: 300, height: 300};
+        result={width: 400, height: 400}; 
+        isImgInput = 3;
+        $('#square').hide()
+        $('#landscape').hide()
       }
 
       image_crop = $('#image-crop').croppie({
@@ -112,7 +119,7 @@
       });
     });
 
-    $('#restaurant-profile-input, #restaurant-banner-input, #product-input').on('change', function(){
+    $('#user-profile-input, #restaurant-profile-input, #restaurant-banner-input, #product-input').on('change', function(){
       var reader = new FileReader();
       reader.onload = function (event) {
         imageBind = event.target.result;
@@ -141,6 +148,9 @@
         }else if(isImgInput == 2){
           $('#product-upload').attr('src', res);
           Product.data.image = res
+        }else if(isImgInput == 3){
+          $('#user-profile-upload').attr('src', res);
+          editProfile.data.image = res
         }
       })
     })

@@ -194,7 +194,7 @@
   </div> 
 
   <div class="res-qrcode">
-    {{-- <div class="card">
+    <div class="card">
       <div class="card-body">
         <img src="data:image/png;base64, 
           {!! base64_encode(QrCode::format('png')
@@ -203,7 +203,7 @@
           ->errorCorrection('H')
           ->generate($restaurant_info->website_url ?? '' )) !!} " style="width: 100%">
       </div>
-    </div> --}}
+    </div>
   </div>  
   <div class="scan-for-menu">
     <span>Scan For Menu</span>

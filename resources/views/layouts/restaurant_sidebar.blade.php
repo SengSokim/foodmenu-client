@@ -4,8 +4,8 @@
   }
 
   .res-name{
-    font-weight: bold;
-    margin: 8px -25px 8px 8px;
+  font-weight: bold;
+    margin: 8px 0 8px 0;
     text-align: center
   }
 
@@ -34,8 +34,8 @@
   <div class="row pull-right">
     <div class="col-md-12">
       <div class="p-1 mt-1 float-right">
-        <button class="btn btn-default btn-xs" data-toggle="modal" data-target="#edit-restaurant" title="Edit"  @click="showRestaurant">
-          <i class="fa fa-edit"></i>
+        <button class="btn btn-default rounded-pill btn-xs px-2" data-toggle="modal" data-target="#edit-restaurant" title="Edit"  @click="showRestaurant">
+          <i class="fa fa-edit text-warning"></i><span class="text-warning">Edit</span> 
         </button>
         <div class="modal fade" id="edit-restaurant" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static" style="overflow: scroll !important;">
           <div class="modal-dialog modal-lg" role="document">
@@ -177,11 +177,13 @@
     <img class="img-circle" src="{{ $restaurant_info->media->url ?? asset('adminlte/dist/img/placeholder/square-placeholder.png')}}" width="40%" style="margin: auto">
   </div>
   
-  <div class="res-name dropdown">
-    <button class="btn btn-transparent btn-sm" type="button" title="share link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <span style="font-size: 1rem" class="text-warning">{{ $restaurant_info->name ?? '' }}</span>
-     
-      <i class="far fa-share-all text-warning" style="opacity:1; font-size: 15px;"></i>
+  <div class="res-name dropdown text-center">
+    <span style="font-size: 1rem mt-2">{{ $restaurant_info->name ?? '' }}</span><br>
+    <button class="btn btn-default rounded-pill btn-xs px-2" type="button" title="share link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Download <i class="far fa-download text-warning" style="opacity:1;"></i>
+    </button>
+    <button class="btn btn-default rounded-pill btn-xs px-2" type="button" title="share link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Share <i class="far fa-share-all text-warning" style="opacity:1;"></i>
     </button>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php?u={{ $restaurant_info->website_url }}&display=popup" target="_blank"><i class="fab fa-facebook fa-fw"></i>Facebook</a>
@@ -194,7 +196,7 @@
   </div> 
 
   <div class="res-qrcode">
-    <div class="card">
+    {{-- <div class="card">
       <div class="card-body">
         <img src="data:image/png;base64, 
           {!! base64_encode(QrCode::format('png')
@@ -203,7 +205,7 @@
           ->errorCorrection('H')
           ->generate($restaurant_info->website_url ?? '' )) !!} " style="width: 100%">
       </div>
-    </div>
+    </div> --}}
   </div>  
   <div class="scan-for-menu">
     <span>Scan For Menu</span>

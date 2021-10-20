@@ -26,8 +26,8 @@
                 <td class="text-center">@{{item.sequence}}</td>
                 <td class="text-center">@{{item.enable_status ? 'Active' : 'Deactive'}}</td>
                 <td class="text-center">
-                  <button class="btn btn-primary rounded-pill btn-sm" title="Edit" data-toggle="modal" data-target="#editVariant" @click="setData(item)"><i class="fas fa-edit fa-fw"></i>Edit</button>
-                  <button class="btn btn-danger rounded-pill btn-sm" data-toggle="modal" data-target="#delete-variant" @click="setData(item)" title="Delete"><i class="fas fa-trash fa-fw"></i>Delete</button>
+                  <button class="btn btn-primary rounded-pill btn-sm" style="padding: .425rem .55rem" title="Edit" data-toggle="modal" data-target="#editVariant" @click="setData(item)"><i class="fas fa-edit fa-fw"></i></button>
+                  <button class="btn btn-danger rounded-pill btn-sm" style="padding: .425rem .55rem" data-toggle="modal" data-target="#delete-variant" @click="setData(item)" title="Delete"><i class="fas fa-trash fa-fw"></i></button>
                 </td>
               </tr>
                <tr v-if="product_variants.data.length == 0"> 

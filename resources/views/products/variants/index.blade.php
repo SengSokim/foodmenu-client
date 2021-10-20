@@ -10,7 +10,7 @@
 @section('content')
 <div class="container-fluid" id="product_variant">
   <div class="row">
-    <div class="col-12 col-sm-6 col-md-3">
+    <div class="col-12 col-sm-6 col-md-6">
       <div class="info-box">
         <span class="info-box-icon" style="width: 80px; height: auto;">  
            <a href="{{ asset($data->data->product->media->url ?? 'adminlte/dist/img/logo/emenu-square-black-bg-with-stroke.png') }}" data-lity data-lity-target="{{ asset($data->data->product->media->url ?? 'adminlte/dist/img/logo/emenu-square-black-bg-with-stroke.png') }}">
@@ -19,9 +19,9 @@
         </span>
         
         <div class="info-box-content">
-          <span class="info-box-text" style="line-height: 1.1"></a> {{$data->data->product->name}}</span>
-          <span class="info-box-text text-muted" style="line-height: 1.1;"><em>{{$data->data->product->product_category}}</em></span>
-          <span class="info-box-text" style="line-height: 1.1"><b>{{formatCurrency($data->data->product->price)}}</b></span>
+          <span class="info-box-text" style="line-height: 1.2"></a> {{$data->data->product->name}}</span>
+          <span class="info-box-text text-muted" style="line-height: 1.2;font-size: 13px">{{$data->data->product->product_category}}</span>
+          <span class="info-box-text" style="line-height: 1.2"><b>{{formatCurrency($data->data->product->price)}}</b></span>
         </div>
       </div>
     </div>

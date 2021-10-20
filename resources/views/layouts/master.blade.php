@@ -10,11 +10,7 @@
           <img src="{{ asset('adminlte/dist/img/logo/emenu-black-transparent.png') }}" alt="Emenu Small" class="brand-image-xl logo-xs" style="height: 20px; margin: 9px 0px">
           <img src="{{ asset('adminlte/dist/img/logo/emenu-black-transparent.png') }}" alt="Emenu Large" class="brand-image-xs logo-xl" style="left: 85px">
         </a>
-        @include('layouts.sidebar')
-        <div class="sidebar-custom">
-          <a href="#" class="btn btn-link"><i class="fas fa-cogs"></i></a>
-          <a href="#" class="btn btn-secondary hide-on-collapse pos-right">Help</a>
-        </div>
+        @include('layouts.sidebar')       
       </aside>
       
       <div class="content-wrapper">
@@ -33,8 +29,8 @@
 
       <footer class="main-footer text-sm" >
         <div class="clearfix">
-          <a href="#" class="btn btn-link btn-sm rounded-pill"><i class="fas fa-video"></i> Video Tutorials</a> | 
-          <a href="#" class="btn btn-link btn-sm rounded-pill"><i class="fas fa-book"></i> Help Docs</a>
+          <a href="#" class="btn btn-link btn-sm rounded-pill" style="color: #1aa7ec"><i class="fas fa-video"></i> Video Tutorials</a> | 
+          <a href="#" class="btn btn-link btn-sm rounded-pill" style="color: #1aa7ec"><i class="fas fa-book"></i> Help Docs</a>
         </div>
       </footer>
     </div>

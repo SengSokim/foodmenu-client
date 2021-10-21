@@ -87,7 +87,7 @@
       </div>
     </section>
 
-    <section class="ftco-section ftco-about img" id="about">
+    {{-- <section class="ftco-section ftco-about img" id="about">
       <div class="container">
         <div class="row d-flex">
           <div class="col-md-12 about-intro">
@@ -531,7 +531,7 @@
                 </div>
             </div>
         </center>
-    </section>
+    </section> --}}
 </main>
 
 @endsection

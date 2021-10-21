@@ -14,7 +14,7 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <h5>Telegram</h5>
-                  <p>Setting up Telegram allowed you to receive notification from your customer's order.</p>
+                  <p>Setting up Telegram allowed your customer to contact or make communication with you.</p>
                 </div>
               </div>
               <div class="col-md-6 pr-5">
@@ -31,9 +31,9 @@
                         <label for="telgram_user">Telegram Group</label>
                         <input type="text" class="form-control" name="telegram_group" v-model="data.telegram_group"  placeholder="e.g. telegram_group">
                       </div>
+                      <button type="submit" class="btn btn-warning btn-sm rounded-pill" v-if="telegramData.telegram_user === null && telegramData.telegram_group === null">Save</button>
+                      <button type="submit" class="btn btn-warning btn-sm rounded-pill" v-else>Save Changes</button>
                     </div>
-                    <button type="submit" class="btn btn-warning btn-sm rounded-pill" v-if="telegramData.telegram_user === null || telegramData.telegram_group === null">Save</button>
-                    <button type="submit" class="btn btn-warning btn-sm rounded-pill" v-else>Save Changes</button>
                   </div>
                 </form>
                 <hr>

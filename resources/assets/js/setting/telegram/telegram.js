@@ -5,6 +5,7 @@ new Vue({
         data:{
             telegram_user: '',
             telegram_group: '',
+            name: ''
         },
         is_exist : false,
     },
@@ -14,6 +15,7 @@ new Vue({
         ).then(response => {
             if (response.data.success) {
                 this.telegramData = response.data.data
+                this.data.name = this.telegramData.name
                 this.data.telegram_user = this.telegramData.telegram_user
                 this.data.telegram_group = this.telegramData.telegram_group
                 hideLoading()
@@ -30,7 +32,7 @@ new Vue({
         save(){
             showLoading()
             axios.post(`/portal/restaurants`,
-            this.data
+                this.data
             ).then(response => {
                 if (response.data.success) {
                     window.location.href = '/portal/setting/telegram';
@@ -58,23 +60,5 @@ new Vue({
                 }
             })
         },
-
-        deleteTelegram () {
-            showLoading();
-            // axios.delete(`/portal/product-categories/${this.data.id}`)
-            //     .then(response => {
-            //         hideLoading();
-            //         console.log(response.data);
-            //         if (response.data.success) {
-            //             window.location.href = '/portal/product-categories';
-            //         } else {
-            //             showAlertError(response.data.message);
-            //         } 
-            // }).catch(error => {
-            //     console.log(error);
-            //     hideLoading();
-            //     showAlertError('Cannot delete task');
-            // });
-        }
     }
 });

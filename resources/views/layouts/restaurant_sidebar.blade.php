@@ -114,7 +114,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="row">
+                  {{-- <div class="row">
                     <div class="col-md-6">
                        <div class="form-group">
                         <label>Telegram User</label>
@@ -127,7 +127,7 @@
                         <input type="text" name="telegram_group" class="form-control" v-model="data.telegram_group" placeholder="Telegram Group"/> 
                       </div>
                     </div>
-                  </div>
+                  </div> --}}
                   <div class="row">
                     <div class="col-md-6">
                        <div class="form-group">

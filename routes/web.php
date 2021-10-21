@@ -79,6 +79,9 @@
         });
 
 
+        Route::prefix('setting')->group(function () {
+            Route::get('/telegram', 'SettingController@telegram')->name('setting.telegram');
+        });
     });
 
 

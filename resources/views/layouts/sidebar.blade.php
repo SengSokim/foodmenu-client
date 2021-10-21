@@ -26,6 +26,14 @@
           </p>
         </a>
       </li>
+      <li class="nav-item">
+        <a href="{{ route('setting.telegram') }}" class="nav-link {{ request()->is('portal/setting*') ? 'active' : '' }}">
+          <i class="nav-icon fas fa-cog"></i>
+          <p>
+            Setting
+          </p>
+        </a>
+      </li>
       {{-- <li class="nav-item">
         <a href="{{ route('users') }}" class="nav-link {{ request()->is('portal/users') ? 'active' : '' }}">
           <i class="nav-icon fas fa-users"></i>
@@ -41,16 +49,21 @@
             Tables
           </p>
         </a>
-      </li> --}}     
+      </li> --}}    
+      <li class="nav-item"> 
+        <div class="card" style="height: 10rem;background-color: #f4cf83">
+          <div class="card-body">
+            <div class="card m-1">
+              <div class="card-body m-1 text-dark">
+                <h4 class="text-center">Premium Plan</h4>
+                <hr>
+                - Lorem ipsom lorem ipsom<br>
+                - Lorem ipsom lorem ipsom<br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li> 
     </ul>
   </nav>
-
-  {{-- <a href="{{ route('logout') }}" class="btn btn-default">Logout</a> --}}
-  {{-- <div class="cus btn btn-danger btn-sm" style="position: fixed;bottom: 15px;font-weight: bold">Logout</div> --}}
 </div>
-
-{{-- <style>
-  .cus:hover {
-    width: 234px
-  }
-</style> --}}

@@ -3,10 +3,10 @@
     <thead>
       <tr>
         <th class="text-center">#</th>
-        <th scope="col">Name</th>
+        <th scope="col"><div style="width: 120px"></div> Name</th>
         <th scope="col" class="text-center">Sequence</th>
         <th scope="col" class="text-center">Status</th>
-        <th scope="col" class="text-center">Actions</th>
+        <th scope="col" class="text-center"><div style="width: 100px"></div> Actions</th>
       </tr>
     </thead>
     <tbody>

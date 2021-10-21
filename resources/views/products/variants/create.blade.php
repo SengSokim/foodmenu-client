@@ -1,6 +1,6 @@
 <div class="modal fade" id="create-product-variant" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static" style="width: 100vw; margin-top: 5vh">
-  <div class="modal-dialog" role="document" style="max-width: 80vw">
-    <div class="modal-content" style="max-width: 65vw">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Create Variant</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -64,12 +64,12 @@
                 <table class="table table-striped table-hover table-bordered">
                   <thead>
                     <tr>
-                      <th class="text-center" style="width: 10%">#</th>
-                      <th scope="col" style="25%" class="required">Name</th>
-                      <th scope="col" class="text-center" style="width: 20%">Extra Price</th>
-                      <th scope="col" class="text-center" style="width: 20%">Sequence</th>
-                      <th scope="col" class="text-center" style="width: 10%">Status</th>
-                      <th class="text-center" style="width: 15%">Actions</th>
+                      <th class="text-center">#</th>
+                      <th scope="col" class="required"><div style="width: 90px"></div> Name</th>
+                      <th scope="col" class="text-center"><div style="width: 130px"></div>Extra Price</th>
+                      <th scope="col" class="text-center">Sequence</th>
+                      <th scope="col" class="text-center">Status</th>
+                      <th class="text-center"><div style="width: 120px"></div>Actions</th>
                     </tr>
                   </thead>
                   <tbody>

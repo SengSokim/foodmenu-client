@@ -7,5 +7,6 @@
     "/dist/js/products/product.js": "/dist/js/products/product.js",
     "/dist/js/profile/profile.js": "/dist/js/profile/profile.js",
     "/dist/js/register/register.js": "/dist/js/register/register.js",
-    "/dist/js/restaurants/edit.js": "/dist/js/restaurants/edit.js"
+    "/dist/js/restaurants/edit.js": "/dist/js/restaurants/edit.js",
+    "/dist/js/setting/telegram.js": "/dist/js/setting/telegram.js"
 }

@@ -13,10 +13,10 @@
             <thead>
               <tr>
                 <th class="text-center">#</th>
-                <th scope="col">Variant Name</th>
-                <th scope="col" class="text-center">Display Sequence</th>
-                <th scope="col" class="text-center">Status</th>
-                <th class="text-center">Actions</th>
+                <th scope="col"><div style="width: 130px"></div> Variant Name</th>
+                <th scope="col" class="text-center"><div style="width: 120px"></div> Sequence</th>
+                <th scope="col" class="text-center"><div style="width: 120px"></div> Status</th>
+                <th class="text-center"><div style="width: 120px"></div> Actions</th>
               </tr>
             </thead>
             <tbody>

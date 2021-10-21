@@ -33,6 +33,9 @@ mix.js('resources/assets/js/app.js', 'public/dist/js')
     //register
     .js('resources/assets/js/register/register.js', 'public/dist/js/register')
 
+    //telegram
+    .js('resources/assets/js/setting/telegram/telegram.js', 'public/dist/js/setting')
+
 
 
 

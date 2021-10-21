@@ -8505,11 +8505,11 @@ a.text-dark:hover, a.text-dark:focus {
 
 body {
   font-family: "Poppins", Arial, sans-serif;
-  background: #fff;
+  /* background: #fff; */
   font-size: 16px;
   line-height: 1.8;
   font-weight: 400;
-  color: #999999; }
+  /* color: #999999; } */}
   body.menu-show {
     overflow: hidden;
     position: fixed;
@@ -8520,10 +8520,10 @@ a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease;
-  color: #4986fc; }
+  color: #FFB300; }
   a:hover, a:focus {
     text-decoration: none;
-    color: #4986fc;
+    color: #FFB300;
     outline: none !important; }
 
 h1, h2, h3, h4, h5,
@@ -8894,15 +8894,15 @@ h1, h2, h3, h4, h5,
     position: relative;
     margin-bottom: 30px; }
     .login-wrap .form-group label {
-      position: absolute;
-      top: -12px;
-      left: 0;
+      /* position: absolute; */
+      /* top: -12px;
+      left: 0; */
       font-weight: 500;
       font-size: 14px;
-      color: rgba(0, 0, 0, 0.3);
-      margin-bottom: 0;
+    color: rgb(0 0 0 / 71%);
+      /* margin-bottom: 0; */
       background: #fff;
-      margin-left: 30px;
+      /* margin-left: 30px; */
       padding: 0 4px; }
   .login-wrap .form-control {
     height: 52px;

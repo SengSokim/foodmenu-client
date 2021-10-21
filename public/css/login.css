@@ -3,6 +3,9 @@
 		font-family: "Karla", sans-serif;
 		background-color: #d0d0ce;
 		min-height: 100vh; }
+		.row{
+			height: 70vh;
+		}
 	  
 	  .brand-wrapper {
 		margin-bottom: 19px; }
@@ -35,8 +38,9 @@
 		.login-card form {
 		  max-width: 326px; }
 		.login-card .form-control {
-		  border: 1px solid #000;
+		  /* border: 1px solid #000; */
 		  padding: 10px 25px;
+		  border-radius: 40px;
 		  /* margin-bottom: 20px; */
 		  min-height: 45px;
 		  font-size: 13px;
@@ -55,7 +59,7 @@
 		.login-card .login-btn {
 		  padding: 13px 20px 12px;
 		  background-color: #FBB300;
-		  border-radius: 4px;
+		  border-radius: 40px;
 		  width:100%;
 		  font-size: 17px;
 		  font-weight: bold;

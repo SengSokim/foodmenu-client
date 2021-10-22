@@ -111,11 +111,19 @@ class AuthController extends Controller
     public function submitResetPassword(Request $request)
     {
     
-        $result = $this->api_post('portal/auth/forgetPassword/reset', $request->all());  
-        if ($result->success == false) {
-            return back()->withInput()->with('error', self::getErrorMessage($result->message));
+        $password = $request->password;
+        $confirm_password = $request->confirm_password;
+        if($password == $confirm_password && $password!=null&$confirm_password!=null){
+            $result = $this->api_post('portal/auth/forgetPassword/reset', $request->all());  
+            if ($result->success == false) {
+                return back()->withInput()->with('error', self::getErrorMessage($result->message));
+            }
+            return redirect()->to('auth/login')->with('message', 'Password Reset Successfully');
+        }elseif($password != $confirm_password){
+            return back()->withInput()->with('error', self::getErrorMessage("Password and confirm password not match!"));
+        }else{
+            return back()->withInput()->with('error', self::getErrorMessage("Password and confirm password invalid!"));
         }
-        return redirect()->to('auth/login')->with('message', 'Password Reset Successfully');
 
     }
 

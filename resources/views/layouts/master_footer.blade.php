@@ -13,7 +13,6 @@
   <!-- daterangepicker -->
   <script src="{{ asset('adminlte/plugins/moment/moment.min.js') }}"></script>
   <script src="{{ asset('adminlte/plugins/daterangepicker/daterangepicker.js') }}"></script>
-  
    <!-- Helper -->
   <script src="{{ asset('js/helper.js') }}"></script>
     

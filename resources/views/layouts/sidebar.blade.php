@@ -50,7 +50,7 @@
           </p>
         </a>
       </li> --}}    
-      <li class="nav-item"> 
+      {{-- <li class="nav-item"> 
         <div class="card" style="height: 10rem;background-color: #f4cf83">
           <div class="card-body">
             <div class="card m-1">
@@ -63,7 +63,7 @@
             </div>
           </div>
         </div>
-      </li> 
+      </li>  --}}
     </ul>
   </nav>
 </div>

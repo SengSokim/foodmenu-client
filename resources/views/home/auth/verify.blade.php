@@ -23,10 +23,12 @@
               <div class="brand-wrapper">
                 <img src="{{ asset('images/emenu-black-transparent.png') }}" alt="" style="width: 150px;">
               </div>
-              <p class="login-card-description">Verify</p>
+              <p class="login-card-description">SMS Verification Code</p>
               <form action="{{ url('auth/verify') }}" method="POST">
                 @csrf    
                 @php $error = session()->get('error'); @endphp    
+                @include('home.auth.alert_error_message')
+                
                 <div class="form-group">
                   <label for="code">Code</label>
                   <input type="text" class="form-control {{ isset($error['val']['verify_code']) ? 'is-invalid' : '' }}" value="{{ old('verify_code', request('code')) }}" name="verify_code" id="verify_code" placeholder="xxxx">
@@ -38,7 +40,7 @@
             </div>
           </div>
           <div class="col-md-7">
-            <img src="{{ asset('images/banner3.png') }}" alt="login" class="login-card-img">
+            <img src="{{ asset('adminlte/dist/img/other/verify_code.png') }}" alt="login" class="login-card-img ml-5" style="width: 80%;">
           </div>
           
         </div>

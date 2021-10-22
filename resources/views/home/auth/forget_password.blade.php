@@ -20,9 +20,9 @@
         <div class="row no-gutters">       
               <div class="col-md-5">
               <div class="card-body">
-                <div class="brand-wrapper">
+                {{-- <div class="brand-wrapper">
                   <img src="{{ asset('images/emenu-black-transparent.png') }}" alt="" style="width: 150px;">
-                </div>
+                </div> --}}
                 <p class="login-card-description">Reset Password</p>
                 <form action="{{ url('auth/forget') }}" method="POST">
                   @csrf    
@@ -30,15 +30,15 @@
 
                   <div class="form-group">
                     <label for="phone_number">Phone Number</label>
-                    <input type="text" class="form-control {{ isset($error['val']['phone_number']) ? 'is-invalid' : '' }}" name="phone_number" id="phone_number" placeholder="Phone Number">
+                    <input type="text" class="form-control {{ isset($error['val']['phone_number']) ? 'is-invalid' : '' }}" name="phone_number" id="phone_number" placeholder="Phone Number" value="{{ old('phone_number') }}">
                     <span class="invalid-feedback" role="alert">{{ $error['val']['phone_number'] ?? ''  }}</span> 
                   </div>
                   <button class="login-card login-btn" type="submit">Send Reset Password Link</button>
                 </form>
               </div>
             </div>                                                                    
-          <div class="col-md-7">
-            <img src="{{ asset('images/banner3.png') }}" alt="login" class="login-card-img">
+          <div class="col-md-7 text-left">
+            <img src="{{ asset('adminlte/dist/img/other/send_phone_number.png') }}" alt="login" class="login-card-img ml-5" style="width: 80%;">
           </div>
           
         </div>

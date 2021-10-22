@@ -55,9 +55,8 @@
             </div>
           </div>
           <div class="col-md-7">
-            <img src="{{ asset('images/banner3.png') }}" alt="login" class="login-card-img">
+            <img src="{{ asset('adminlte/dist/img/other/login.png') }}" alt="login" class="login-card-img" style="margin-top: -95px">
           </div>
-          
         </div>
       </div>
     </div>

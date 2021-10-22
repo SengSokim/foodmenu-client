@@ -27,12 +27,14 @@
               <form action="{{ url('auth/reset') }}" method="POST">
                 @csrf    
                 @php $error = session()->get('error'); @endphp    
+                @include('home.auth.alert_error_message')
+
 
                 <input type="hidden" name="token" value="{{ $token }}">
                 <input type="hidden" name="phone_number" value="{{ $phone_number }}">
 
                 <div class="form-group">
-                  <label for="password">Password</label>
+                  <label for="password">New Password</label>
                   <input id="password" type="password" class="form-control {{ isset($error['val']['password']) ? 'is-invalid' : '' }}" name="password" placeholder="Password">
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $error['val']['password'] ?? ''  }}</strong>
@@ -48,7 +50,7 @@
             </div>
           </div>
           <div class="col-md-7">
-            <img src="{{ asset('images/banner3.png') }}" alt="login" class="login-card-img">
+            <img src="{{ asset('adminlte/dist/img/other/reset_password.png') }}" alt="login" class="login-card-img ml-5" style="width: 80%;">
           </div>
           
         </div>

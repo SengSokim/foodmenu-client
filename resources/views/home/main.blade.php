@@ -61,9 +61,9 @@
                   <h2 class="ftco-heading-2">About</h2>
                   <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                   <ul class="ftco-footer-social list-unstyled float-md-left float-lft">
-                    <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
-                    <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
-                    <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+                    {{-- <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li> --}}
+                    <li class="ftco-animate"><a href="https://www.facebook.com/PAPA.eMenu" target="_blank"><span class="fa fa-facebook"></span></a></li>
+                    <li class="ftco-animate"><a href="https://www.instagram.com/papa_emenu/" target="_blank"><span class="fa fa-instagram"></span></a></li>
                   </ul>
                 </div>
             </div>

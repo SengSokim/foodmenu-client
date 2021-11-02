@@ -45,7 +45,7 @@
   <div class="col-md-12">
     <div class="form-group">
       <label class="required">Description</label>
-      <textarea class="form-control" :class="{'is-invalid': errors.has('description') }" name="description" v-model="data.description" rows="3" placeholder="Write something..." v-validate="'required'"></textarea>
+      <textarea class="form-control" :class="{'is-invalid': errors.has('description') }" name="description" v-model="data.description" rows="3" placeholder="Write something..."></textarea>
       <div class="invalid-feedback">@{{ errors.first('description') }}</div>
     </div>
   </div>

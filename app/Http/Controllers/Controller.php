@@ -85,7 +85,8 @@ class Controller extends BaseController
         $request = new Client([
             'base_uri' => config('app.api_url'),
             'http_errors' => false,
-            'headers' => $headers
+            'headers' => $headers,
+            'verify' => false
         ]);
 
         $response = $request->request($method, $url, ['json' => $data]);

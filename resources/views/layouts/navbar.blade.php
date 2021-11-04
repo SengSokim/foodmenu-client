@@ -22,12 +22,12 @@
       <li class="nav-item dropdown" style="position: absolute; right: 25px; margin-top: -6px" id="my-profile" title="Profile">
         <a class="nav-link dropdown-toggle"p data-toggle="dropdown" style="border: 0;">
           <img src="{{ $auth->user->media->url ?? asset('adminlte/dist/img/placeholder/square_avatar_placeholder.jpg') }}" class="user-image img-circle elevation-2" alt="User Image" width="30">
-          <span class="d-none d-md-inline">{{$auth->user->name ?? 'Unknown' }}</span>
+          <span class="d-none d-md-inline">{{$auth->user->name ?? 'Unknown' }}</span> 
         </a>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#edit-profile" data-toggle="modal" @click="viewProfile">Account</a>
-          <a class="dropdown-item" href="{{ route('logout') }}">Log Out</a>
-        </div>
+          <a class="dropdown-item" href="{{ route('logout') }}">Log Out</a>    
+        </div>   
       </li>
     </ul>
   </nav>
@@ -93,7 +93,7 @@
         <div class="modal-footer">
           <button class="btn btn-default rounded-pill" data-toggle="modal" data-target="#modal-change-password"><i class="fas fa-lock fa-fw"></i>Change Password</button>
           <button type="button" class="btn btn-default rounded-pill" data-dismiss="modal">Cancel</button>
-          <button type="submit" form="profile" class="btn btn-warning rounded-pill">Save changes</button>
+          <button type="submit" form="profile" class="btn btn-warning rounded-pill" @click="submit()()">Save changes</button>
         </div>
       </div>
     </div>

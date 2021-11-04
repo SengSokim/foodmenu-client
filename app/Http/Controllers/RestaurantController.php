@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 class RestaurantController extends Controller
 {
+    public function profile(){
+        return view('layouts.restaurant_sidebar');
+    }
     public function edit()
     {
         $response_restaurant = $this->api_get('portal/restaurants/show');

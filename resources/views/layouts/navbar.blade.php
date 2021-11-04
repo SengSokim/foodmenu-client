@@ -4,8 +4,23 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button" data-enable-remember="true"><i class="fas fa-bars"></i></a>
       </li>
-      <li class="nav-item dropdown" style="position: absolute; right: 25px; padding: 2px" id="my-profile" title="Profile">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" style="border: 0">
+      <li style="position: absolute; left: 50px; right: 150px;">
+        <form action="{{ route('products') }} " class="form-inline mt-1">
+          <div class="input-group input-group-sm" style="width: 100%;">
+            <input name="search" class="form-control rounded-pill" type="search" placeholder="Search Product..." aria-label="Search" value="{{ request('search') }}" style="border:0; background: #fff">
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-lg btn-default rounded-pill mx-1" style="border:0; background: #fff" title="Search">
+                <i class="far fa-search"></i>
+              </button>
+              <a href="{{ route('products') }}" class="btn btn-lg btn-default rounded-pill" style="border:0; background: #fff" title="Refresh">
+                <i class="far fa-sync-alt"></i>
+              </a>
+            </div>
+          </div>
+        </form>
+      </li>
+      <li class="nav-item dropdown" style="position: absolute; right: 25px; margin-top: -6px" id="my-profile" title="Profile">
+        <a class="nav-link dropdown-toggle"p data-toggle="dropdown" style="border: 0;">
           <img src="{{ $auth->user->media->url ?? asset('adminlte/dist/img/placeholder/square_avatar_placeholder.jpg') }}" class="user-image img-circle elevation-2" alt="User Image" width="30">
           <span class="d-none d-md-inline">{{$auth->user->name ?? 'Unknown' }}</span>
         </a>

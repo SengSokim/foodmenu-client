@@ -22,14 +22,15 @@ Product = new Vue({
         },
         product_category_selected: undefined,
         product_category_id: null,
-        is_loaded_product : 0
+        is_loaded_product : 0,
+        search: search
     },
     mounted() {
         this.init()
     },
     methods:{
         init(){
-            axios.get(`/portal/products/get`
+            axios.get(`/portal/products/get?search=${this.search}`
                 ).then(response => {
                     this.is_loaded_product =1
                 if (response.data.success) {

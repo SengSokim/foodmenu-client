@@ -38,6 +38,7 @@
   <script>
     let EditRestaurant;
     let editProfile;
+    const search = <?php echo ("'".request('search')."'" ?? "''") ?> ;
   </script>
   <script src="{{ mix('dist/js/restaurants/edit.js') }}"></script>
  

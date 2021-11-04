@@ -17,8 +17,9 @@ class ProductController extends Controller
     }
 
     public function product()
-    {
-        $response_products = $this->api_get('portal/products/list');
+    { 
+        $search = request('search');
+        $response_products = $this->api_get('portal/products/list?search='. $search);
         $products = [];
         if($response_products->data){
             $products = $response_products->data;

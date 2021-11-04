@@ -1,9 +1,13 @@
 <div class="sidebar restaurant-sidebar" style="height: 100vh" id="editRestaurant">
   <div class="row pull-right">
     <div class="col-md-12">
-      <div class="p-1 mt-1">
+      <div class="p-1 mt-1 float-right">
           <div class="d-flex justify-content-between">
-            <span class="text-warning btnclose"><i class="fas fa-times"></i></span>
+            <div class="btnclose">
+            <button class="btn btn-default rounded-pill btn-xs px-2 " style="margin-right: 5px">
+              <i class="fas fa-arrow-left text-warning "></i><span class="text-warning " > Back</span>
+            </button>
+          </div>
             <button class="btn btn-default rounded-pill btn-xs px-2" data-toggle="modal" data-target="#edit-restaurant" title="Edit"  @click="showRestaurant">
               <i class="fa fa-edit text-warning"></i><span class="text-warning">Edit</span> 
             </button>

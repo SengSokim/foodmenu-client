@@ -153,5 +153,27 @@
         }
       })
     })
+
+    var is_show_restaurant = false;
+    function showInfo() {
+      var x = document.getElementById("responsive-qr");
+      if(!is_show_restaurant) {
+          x.style.display = "block";
+          x.style.width = "100%";
+          x.style.height = "100%";
+          // x.style.marginTop = "55px";
+          is_show_restaurant = true;
+      } 
+      else {
+          x.style.display = "none";
+          x.style.marginTop = "0px";
+          is_show_restaurant = false;
+      }
+    }
+    $(document).ready(function(){
+      $(".btnclose").click(function(){
+        $("#responsive-qr").hide();
+      });
+    });
   </script> 
 </html>

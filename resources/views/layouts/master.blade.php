@@ -4,7 +4,6 @@
   <div class="row">
     <div class="wrapper col-md-10 col-xs-sm" style="padding: 0">
       @include('layouts.navbar')
-
       <aside class="main-sidebar elevation-1 sidebar-light-warning">
         <a href="#" class="brand-link logo-switch">
           <img src="{{ asset('adminlte/dist/img/logo/emenu-black-transparent.png') }}" alt="Emenu Small" class="brand-image-xl logo-xs" style="height: 20px; margin: 9px 0px">
@@ -35,12 +34,13 @@
       </footer>
     </div>
     <div class="col-md-2" id="responsive-qr" style="z-index: 1100;position: fixed; right: 0;background-color: #f8f9fa; border: 1px solid #dee2e6; ">
-      <aside>
-        @include('layouts.restaurant_sidebar')
-      </aside>
+      <div>
+        <aside>
+          @include('layouts.restaurant_sidebar')
+        </aside>
+      </div>
     </div>
   </div>
 </body>
 @include('layouts.master_footer')
 @include('layouts.alert')
-  

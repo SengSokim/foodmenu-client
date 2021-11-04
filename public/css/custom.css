@@ -8,10 +8,25 @@
     height: 0;
 }
 
-@media (max-width: 992px){
-    /* body .restaurant-sidebar {
-        display:none
-    } */
+@media (max-width: 769px){
+    body .restaurant-sidebar {
+        display:block;
+    }
 }
+@media (min-width: 769px){
+    #responsive {
+        display:none;
+    }
+}
+@media (min-width: 769px){
+    .btnclose {
+        display:none;
+    }
+}
+
+.btnclose{
+    margin-right: 300px;
+}
+
 
 [v-cloak]{display: none};

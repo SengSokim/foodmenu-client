@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/fontawesome-free/css/all.css') }}">   
+    <!--bootstrap-->
+    <link rel="stylesheet" href="">
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
     <!-- Daterange picker -->
@@ -47,8 +49,36 @@
       .dropdown-toggle::after {
           display:none;
       }
+      div ul li{
+        list-style-type: none;
+      }
+
+      .res-name{
+      font-weight: bold;
+        margin: 8px 0 8px 0;
+        text-align: center
+      }
+
+      .res-qrcode{
+        margin: 20px 10px
+      }
+
+      .card-body{
+        padding: 0.5rem !important;
+      }
+
+      .scan-for-menu{
+        text-align: center;
+        margin-top: -10px
+      }
+
+      .poweredby{
+        text-align: center;
+        position: fixed;
+        bottom: 10px
+      }
     </style>
     
     @yield('header-content')
-
+    
   </head>

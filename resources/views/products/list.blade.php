@@ -2,8 +2,8 @@
   <img src="{{ asset('adminlte/dist/img/other/noProductFound.png') }}" alt="" width="35%">
 </div>
 <div class="row" v-else>
-  <div class="col-lg-2 col-md-3" v-for="item in resultQuery">
-    <div class="card">
+  <div class="col-xs-1 col-lg-2 col-md-3" v-for="item in resultQuery">
+    <div class="card" id="margin-product">
       <div class="card-header" style="padding: 10px;">
         <div style="width: 100%; height: 100%;">
           <img :src="item.media.url" width="100%" style="border-top-left-radius: 2%; border-top-right-radius: 2%">

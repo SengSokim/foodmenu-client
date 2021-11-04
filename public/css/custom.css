@@ -8,24 +8,20 @@
     height: 0;
 }
 
-@media (max-width: 769px){
+@media (max-width: 768px){
     body .restaurant-sidebar {
         display:block;
     }
 }
-@media (min-width: 769px){
+@media (min-width: 768px){
     #responsive {
         display:none;
     }
 }
-@media (min-width: 769px){
+@media (min-width: 768px){
     .btnclose {
         display:none;
     }
-}
-
-.btnclose{
-    margin-right: 300px;
 }
 
 

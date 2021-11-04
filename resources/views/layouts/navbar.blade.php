@@ -12,15 +12,8 @@
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#edit-profile" data-toggle="modal" @click="viewProfile">Account</a>
           <a class="dropdown-item" href="{{ route('logout') }}">Log Out</a>    
-        </div>  
+        </div>   
       </li>
-      {{-- responsive --}}
-      {{-- <li class="nav-item dropdown" style="position: absolute; right: 25px" id="user-icon">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" style="border: 0" >
-          <img src="{{ $auth->user->media->url ?? asset('adminlte/dist/img/placeholder/square_avatar_placeholder.jpg') }}" class="user-image img-circle elevation-2" alt="User Image" width="30" onclick="showInfo()">
-          <span class="d-none d-md-inline">{{$auth->user->name ?? 'Unknown' }}</span> 
-        </a>
-      </li> --}}
     </ul>
   </nav>
   <div class="modal fade" id="edit-profile" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static" style="overflow: scroll !important;">

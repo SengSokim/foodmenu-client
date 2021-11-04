@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -164,14 +164,14 @@ new Vue({
 
 /***/ }),
 
-/***/ 8:
+/***/ 7:
 /*!********************************************************!*\
   !*** multi ./resources/assets/js/register/register.js ***!
   \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\wamp64\www\Work Project\emenu\merchant\resources\assets\js\register\register.js */"./resources/assets/js/register/register.js");
+module.exports = __webpack_require__(/*! D:\papa-deliver\e-menu\merchant\resources\assets\js\register\register.js */"./resources/assets/js/register/register.js");
 
 
 /***/ })

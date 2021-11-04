@@ -2112,7 +2112,7 @@ window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js")
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\wamp64\www\Work Project\emenu\merchant\resources\assets\js\axios.js */"./resources/assets/js/axios.js");
+module.exports = __webpack_require__(/*! D:\papa-deliver\e-menu\merchant\resources\assets\js\axios.js */"./resources/assets/js/axios.js");
 
 
 /***/ })

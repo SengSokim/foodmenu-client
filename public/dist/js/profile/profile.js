@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -234,14 +234,14 @@ updatePassword = new Vue({
 
 /***/ }),
 
-/***/ 6:
+/***/ 5:
 /*!**********************************************!*\
   !*** multi ./resources/assets/js/profile.js ***!
   \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\wamp64\www\Work Project\emenu\merchant\resources\assets\js\profile.js */"./resources/assets/js/profile.js");
+module.exports = __webpack_require__(/*! D:\papa-deliver\e-menu\merchant\resources\assets\js\profile.js */"./resources/assets/js/profile.js");
 
 
 /***/ })

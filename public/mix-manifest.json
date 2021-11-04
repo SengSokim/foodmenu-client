@@ -8,6 +8,5 @@
     "/dist/js/profile/profile.js": "/dist/js/profile/profile.js",
     "/dist/js/register/register.js": "/dist/js/register/register.js",
     "/dist/js/restaurants/edit.js": "/dist/js/restaurants/edit.js",
-    "/dist/js/restaurants/showInfo.js": "/dist/js/restaurants/showInfo.js",
     "/dist/js/setting/telegram.js": "/dist/js/setting/telegram.js"
 }

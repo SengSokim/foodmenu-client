@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -161,14 +161,14 @@ new Vue({
 
 /***/ }),
 
-/***/ 9:
+/***/ 8:
 /*!****************************************************************!*\
   !*** multi ./resources/assets/js/setting/telegram/telegram.js ***!
   \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\wamp64\www\Work Project\emenu\merchant\resources\assets\js\setting\telegram\telegram.js */"./resources/assets/js/setting/telegram/telegram.js");
+module.exports = __webpack_require__(/*! D:\papa-deliver\e-menu\merchant\resources\assets\js\setting\telegram\telegram.js */"./resources/assets/js/setting/telegram/telegram.js");
 
 
 /***/ })

@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -127,7 +127,8 @@ Product = new Vue({
     },
     product_category_selected: undefined,
     product_category_id: null,
-    is_loaded_product: 0
+    is_loaded_product: 0,
+    search: search
   },
   mounted: function mounted() {
     this.init();
@@ -136,7 +137,7 @@ Product = new Vue({
     init: function init() {
       var _this = this;
 
-      axios.get("/portal/products/get").then(function (response) {
+      axios.get("/portal/products/get?search=".concat(this.search)).then(function (response) {
         _this.is_loaded_product = 1;
 
         if (response.data.success) {
@@ -291,14 +292,14 @@ Product = new Vue({
 
 /***/ }),
 
-/***/ 7:
+/***/ 6:
 /*!*******************************************************!*\
   !*** multi ./resources/assets/js/products/product.js ***!
   \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\wamp64\www\Work Project\emenu\merchant\resources\assets\js\products\product.js */"./resources/assets/js/products/product.js");
+module.exports = __webpack_require__(/*! D:\papa-deliver\e-menu\merchant\resources\assets\js\products\product.js */"./resources/assets/js/products/product.js");
 
 
 /***/ })

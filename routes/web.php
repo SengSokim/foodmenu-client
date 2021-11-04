@@ -1,6 +1,6 @@
 <?php
-    Route::get('/', 'HomeController@index')->name('home');
-    Route::get('/home', 'HomeController@index')->name('home');
+    // Route::get('/', 'HomeController@index')->name('home');
+    // Route::get('/home', 'HomeController@index')->name('home');
 
     Route::group(['prefix' => 'auth'], function () {
         Route::get('/login', 'AuthController@login')->name('auth.login');

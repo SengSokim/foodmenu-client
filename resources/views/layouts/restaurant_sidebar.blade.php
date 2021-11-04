@@ -1,11 +1,13 @@
-<div class="sidebar restaurant-sidebar" style="height: 100vh" id="editRestaurant" >
+<div class="sidebar restaurant-sidebar" style="height: 100vh" id="editRestaurant">
   <div class="row pull-right">
     <div class="col-md-12">
-      <div class="p-1 mt-1 float-right ">
-        <i class="fas fa-times text-warning btnclose" onclick="btnclose()"></i>
-        <button class="btn btn-default rounded-pill btn-xs px-2" data-toggle="modal" data-target="#edit-restaurant" title="Edit"  @click="showRestaurant">
-          <i class="fa fa-edit text-warning"></i><span class="text-warning">Edit</span> 
-        </button>
+      <div class="p-1 mt-1">
+          <div class="d-flex justify-content-between">
+            <span class="text-warning btnclose"><i class="fas fa-times"></i></span>
+            <button class="btn btn-default rounded-pill btn-xs px-2" data-toggle="modal" data-target="#edit-restaurant" title="Edit"  @click="showRestaurant">
+              <i class="fa fa-edit text-warning"></i><span class="text-warning">Edit</span> 
+            </button>
+        </div>
         <div class="modal fade" id="edit-restaurant" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static" style="overflow: scroll !important;">
           <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">

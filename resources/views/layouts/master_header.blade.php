@@ -78,7 +78,7 @@
         bottom: 10px
       }
     </style>
-    
+
     @yield('header-content')
-    
+      
   </head>

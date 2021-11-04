@@ -25,7 +25,7 @@
 </style>
 <div class="container-fluid" id="product" v-cloak>
   <div class="row mx-1 mx- mb-3">    
-    <div class="col-md-12">
+    <div class="col-md-12" id="margin-filter">
       <button class="btn rounded-pill my-1 py-0" v-on:click="product_category_selected=undefined; product_category_id=null" :class="[product_category_id == null ? 'btn-warning' : 'btn-default']">All</button>
       <button class="btn btn-default rounded-pill my-1 py-0" style="margin:0 2px" v-for="item in product_categories" v-on:click="product_category_id = item.id; product_category_selected = item.id" :class="{'btn-warning' : item.id == product_category_selected}">
         @{{ item.name }}

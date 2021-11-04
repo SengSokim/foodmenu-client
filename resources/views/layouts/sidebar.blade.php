@@ -26,6 +26,14 @@
           </p>
         </a>
       </li>
+      <li class="nav-item" id="responsive" onclick="showInfo()"> 
+        <a href="#" class="nav-link">
+          <i class="nav-icon fas fa-utensils-alt"></i>
+          <p>
+            Restaurant
+          </p>
+        </a>
+      </li>
       <li class="nav-item">
         <a href="{{ route('setting.telegram') }}" class="nav-link {{ request()->is('portal/setting*') ? 'active' : '' }}">
           <i class="nav-icon fas fa-cog"></i>

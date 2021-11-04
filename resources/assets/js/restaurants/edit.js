@@ -8,7 +8,7 @@ EditRestaurant = new Vue({
             banner_image : null
         },
         data:{},
-        share_link:''
+        share_link:'',
     },
 
     methods: {
@@ -102,7 +102,6 @@ EditRestaurant = new Vue({
 
                 reader.readAsDataURL(input.files[0])
             }
-        }
-
+        },
     }
 });

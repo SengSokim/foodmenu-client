@@ -4,7 +4,7 @@ editProfile = new Vue({
         error: {
             image: null
         },
-        data: {}
+        data: {},
     },
     methods: {
         save() {

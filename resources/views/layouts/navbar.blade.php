@@ -4,7 +4,7 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button" data-enable-remember="true"><i class="fas fa-bars"></i></a>
       </li>
-      <li class="nav-item dropdown" style="position: absolute; right: 25px">
+      <li class="nav-item dropdown" style="position: absolute; right: 25px; padding: 2px" id="my-profile" title="Profile">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" style="border: 0">
           <img src="{{ $auth->user->media->url ?? asset('adminlte/dist/img/placeholder/square_avatar_placeholder.jpg') }}" class="user-image img-circle elevation-2" alt="User Image" width="30">
           <span class="d-none d-md-inline">{{$auth->user->name ?? 'Unknown' }}</span>

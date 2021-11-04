@@ -38,11 +38,26 @@
         overflow-y: auto;
       }
 
+      
+      #my-profile:hover{
+          background-color: #fff;
+      }
+
       @media (max-width: 768px) { 
         #responsive-qr {
           display: none;
         }
+
+        #margin-filter{
+          margin: 0 2rem
+        }
+
+        #margin-product{
+          margin: 1rem 2rem
+          
+        }
       }
+
 
       .dropdown-toggle::after {
           display:none;

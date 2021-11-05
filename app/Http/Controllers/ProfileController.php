@@ -22,7 +22,9 @@ class ProfileController extends Controller
         $result = $this->api_post('portal/auth/profile', $request->all());
         if ($result->success == true) {
             session()->put('success', __('dialog_box.update_success', ['name' => 'Profile']));
-
+            $auth = session()->get('auth', []);
+            $auth->user->name = $result->data->name;    
+            $auth->user->media = $result->data->media;    
             return ok('');
         } else {
             return fail($result->message, 200);

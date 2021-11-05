@@ -93,7 +93,7 @@
         <div class="modal-footer">
           <button class="btn btn-default rounded-pill" data-toggle="modal" data-target="#modal-change-password"><i class="fas fa-lock fa-fw"></i>Change Password</button>
           <button type="button" class="btn btn-default rounded-pill" data-dismiss="modal">Cancel</button>
-          <button type="submit" form="profile" class="btn btn-warning rounded-pill" @click="submit()()">Save changes</button>
+          <button type="submit" form="profile" class="btn btn-warning rounded-pill" @click="submit()">Save changes</button>
         </div>
       </div>
     </div>

@@ -159,18 +159,18 @@
   <div class="res-qrcode">
     <div class="card">
       <div class="card-body">
-        {{-- <img src="data:image/png;base64, 
+        <img src="data:image/png;base64, 
           {!! base64_encode(QrCode::format('png')
           ->merge('adminlte/dist/img/logo/emenu-square-black-bg-with-stroke.png', .3, true)
           ->size(300)
           ->errorCorrection('H')
           ->generate($restaurant_info->website_url ?? '' )) !!} " style="width: 100%">
-      </div> --}}
+      </div>
     </div>
   </div>  
   <div class="scan-for-menu">
     <span>Scan For Menu</span><br>
-      {{-- <a href="
+      <a href="
       data:image/png;base64, 
             {!! base64_encode(QrCode::format('png')
             ->merge('adminlte/dist/img/logo/emenu-square-black-bg-with-stroke.png', .3, true)
@@ -180,7 +180,7 @@
             " download
         class="btn btn-default rounded-pill btn-xs" type="button" title="Download" id="qrdownload">
         Download <i class="far fa-download text-warning" style="opacity:1;"></i>
-      </a> --}}
+      </a>
     <button class="btn btn-default rounded-pill btn-xs px-2" type="button" title="share link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Share <i class="far fa-share-all text-warning" style="opacity:1;"></i>
     </button>

@@ -89,7 +89,6 @@
 
       .poweredby{
         text-align: center;
-        position: fixed;
         bottom: 10px
       }
     </style>

@@ -162,7 +162,7 @@
           x.style.display = "block";
           x.style.width = "100%";
           x.style.height = "100%";
-          // x.style.marginTop = "55px";
+          x.style.overflow = "scroll";
           is_show_restaurant = true;
       } 
       else {

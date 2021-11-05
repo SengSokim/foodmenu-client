@@ -162,9 +162,10 @@
         <img src="data:image/png;base64, 
           {!! base64_encode(QrCode::format('png')
           ->merge('adminlte/dist/img/logo/emenu-square-black-bg-with-stroke.png', .3, true)
-          ->size(300)
+          ->size(200)
           ->errorCorrection('H')
           ->generate($restaurant_info->website_url ?? '' )) !!} " style="width: 100%">
+      </div>
       </div>
     </div>
   </div>  

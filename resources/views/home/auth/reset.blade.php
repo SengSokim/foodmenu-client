@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>eMenu</title>
 
@@ -29,16 +29,29 @@
                     @csrf    
                     @php $error = session()->get('error'); @endphp    
                     @include('home.auth.alert_error_message')
-
-                    <div class="form-group">
-                      <label for="password" class=" d-none d-md-block">New Password</label>
-                      <input type="password" class="form-control {{ isset($error['val']['password']) ? 'is-invalid' : '' }}" name="password" id="password" placeholder="********">
-                      <span class="invalid-feedback" role="alert">{{ $error['val']['password'] ?? ''  }}</span> 
+                    <div class="form-no-res">
+                      <div class="form-group ">
+                        <label for="password" class=" d-none d-md-block">New Password</label>
+                        <input type="password" class="form-control {{ isset($error['val']['password']) ? 'is-invalid' : '' }}" name="password" id="password" placeholder="********">
+                        <span class="invalid-feedback" role="alert">{{ $error['val']['password'] ?? ''  }}</span> 
+                      </div>
+                      <div class="form-group">
+                        <label for="confirm_password" class=" d-none d-md-block">Confirm Password</label>
+                        <input type="password" class="form-control {{ isset($error['val']['confirm_password']) ? 'is-invalid' : '' }}" name="confirm_password" id="confirm_password" placeholder="********">
+                        <span class="invalid-feedback" role="alert">{{ $error['val']['confirm_password'] ?? ''  }}</span> 
+                      </div>
                     </div>
-                    <div class="form-group">
-                      <label for="confirm_password" class=" d-none d-md-block">Confirm Password</label>
-                      <input type="password" class="form-control {{ isset($error['val']['confirm_password']) ? 'is-invalid' : '' }}" name="confirm_password" id="confirm_password" placeholder="******">
-                      <span class="invalid-feedback" role="alert">{{ $error['val']['confirm_password'] ?? ''  }}</span> 
+                    <div id="form-res">
+                      <div class="form-group">
+                        <label for="password" class=" d-none d-md-block">New Password</label>
+                        <input type="password" class="form-control {{ isset($error['val']['password']) ? 'is-invalid' : '' }}" name="password" id="password" placeholder="Enter New Password">
+                        <span class="invalid-feedback" role="alert">{{ $error['val']['password'] ?? ''  }}</span> 
+                      </div>
+                      <div class="form-group">
+                        <label for="confirm_password" class=" d-none d-md-block">Confirm Password</label>
+                        <input type="password" class="form-control {{ isset($error['val']['confirm_password']) ? 'is-invalid' : '' }}" name="confirm_password" id="confirm_password" placeholder="Confirm New Password">
+                        <span class="invalid-feedback" role="alert">{{ $error['val']['confirm_password'] ?? ''  }}</span> 
+                      </div>
                     </div>
                     <input type="hidden" name="token" value="{{ $token }}">
                     <input type="hidden" name="phone_number" value="{{ $phone_number }}">

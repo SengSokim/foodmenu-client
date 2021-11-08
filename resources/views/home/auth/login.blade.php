@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>eMenu</title>
 
@@ -17,7 +17,7 @@
   <div class="container h-100">
     <div class="row align-items-center min-vh-100 ">
         <div class="col-12 mx-auto">
-            <div class="card shadow-lg p-3 card-rounded-shape">              
+           <div class="card shadow-lg p-3 card-rounded-shape">            
               <div class="row align-items-center">
                 <div class="col-md-1"></div>
                 <div class="col-md-4 col-sm-6">
@@ -31,13 +31,15 @@
                     @include('home.auth.alert_error_message')
 
                     <div class="form-group">
-                      <label for="phone_number" class=" d-none d-md-block">Phone Number</label>
-                      <input type="text" class="form-control {{ isset($error['val']['phone_number']) ? 'is-invalid' : '' }}" name="phone_number" id="phone_number" placeholder="Phone Number" value="{{ old('phone_number') }}">
+                      <label for="phone_number" class="d-none d-md-block">Phone Number</label>
+                      <input type="text" class="form-control {{ isset($error['val']['phone_number']) ? 'is-invalid' : '' }}" name="phone_number" id="phone_number"
+                       placeholder="Phone Number"
+                       value="{{ old('phone_number') }}">
                       <span class="invalid-feedback" role="alert">{{ $error['val']['phone_number'] ?? ''  }}</span> 
                     </div>
                     <div class="form-group">
                       <label for="password" class=" d-none d-md-block">Password</label>
-                      <input type="password" class="form-control {{ isset($error['val']['password']) ? 'is-invalid' : '' }}" name="password" id="password" placeholder="******">
+                      <input type="password" class="form-control {{ isset($error['val']['password']) ? 'is-invalid' : '' }}" name="password" id="password" placeholder="********">
                       <span class="invalid-feedback" role="alert">{{ $error['val']['password'] ?? ''  }}</span> 
                     </div>
 

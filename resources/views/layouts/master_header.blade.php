@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>eMenu</title>
     <!-- Favicon Icon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('adminlte/dist/img/logo/emenu-square-black-bg-with-no-stroke.png') }}">
@@ -59,8 +59,6 @@
           
         }
       }
-
-
       .dropdown-toggle::after {
           display:none;
       }
@@ -75,7 +73,7 @@
       }
 
       .res-qrcode{
-        margin: 20px 10px
+        margin: 10px 10px
       }
 
       .card-body{
@@ -89,8 +87,10 @@
 
       .poweredby{
         text-align: center;
+        /* position: fixed; */
         bottom: 10px
       }
+   
     </style>
 
     @yield('header-content')

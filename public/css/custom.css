@@ -23,10 +23,6 @@
         display:none;
     }
 }
-@media (max-width: 768px){
-    .poweredby{
-        text-align: center;
-        bottom: 10px
-    }
-}
+
+
 [v-cloak]{display: none};

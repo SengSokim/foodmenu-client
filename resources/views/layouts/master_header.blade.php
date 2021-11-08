@@ -89,7 +89,7 @@
 
       .scan-for-menu{
         text-align: center;
-        margin-top: -10px
+        margin-top: 5px
       }
 
       .poweredby{

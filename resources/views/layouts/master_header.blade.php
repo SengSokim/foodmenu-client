@@ -58,6 +58,12 @@
           margin: 1rem 2rem
           
         }
+
+        #qr-mobile{
+          width: 260px;
+          margin: 0 auto; /* Added */
+          float: none; /* Added */
+        }
       }
       .dropdown-toggle::after {
           display:none;
@@ -67,13 +73,14 @@
       }
 
       .res-name{
-      font-weight: bold;
+        font-weight: bold;
         margin: 8px 0 8px 0;
         text-align: center
       }
 
       .res-qrcode{
-        margin: 10px 10px
+        text-align: center;
+        margin-top: 10px
       }
 
       .card-body{
@@ -87,7 +94,7 @@
 
       .poweredby{
         text-align: center;
-        /* position: fixed; */
+        position: fixed;
         bottom: 10px
       }
    

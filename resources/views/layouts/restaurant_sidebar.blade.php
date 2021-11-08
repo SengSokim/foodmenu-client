@@ -156,28 +156,27 @@
     <span style="font-size: 1rem mt-2">{{ $restaurant_info->name ?? '' }}</span><br>
   </div> 
 
-  <div class="res-qrcode">
-    <div class="card">
+  <div class="res-qrcode text-center">
+    <div class="card" id="qr-mobile">
       <div class="card-body">
         <img src="data:image/png;base64, 
           {!! base64_encode(QrCode::format('png')
           ->merge('adminlte/dist/img/logo/emenu-square-black-bg-with-stroke.png', .3, true)
-          ->size(300)
+          ->size(200)
           ->errorCorrection('H')
           ->generate($restaurant_info->website_url ?? '' )) !!} " style="width: 100%">
-      </div>
+      </div> 
     </div>
   </div>
-</div>  
   <div class="scan-for-menu">
       <a href="
       data:image/png;base64, 
             {!! base64_encode(QrCode::format('png')
             ->merge('adminlte/dist/img/logo/emenu-square-black-bg-with-stroke.png', .3, true)
-            ->size(300)
+            ->size(200)
             ->errorCorrection('H')
             ->generate($restaurant_info->website_url ?? '' )) !!}
-            " download
+            " download="QR Code"
         class="btn btn-default rounded-pill btn-xs" type="button" title="Download" id="qrdownload">
         Download <i class="far fa-download text-warning" style="opacity:1;"></i>
       </a>

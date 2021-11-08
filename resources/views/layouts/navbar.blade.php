@@ -4,7 +4,7 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button" data-enable-remember="true"><i class="fas fa-bars"></i></a>
       </li>
-      <li style="position: absolute; left: 50px; right: 150px;">
+      <li style="position: absolute; left: 20%; right: 20%;">
         <form action="{{ route('products') }} " class="form-inline mt-1">
           <div class="input-group input-group-sm" style="width: 100%;">
             <input name="search" class="form-control rounded-pill" type="search" placeholder="Search Product..." aria-label="Search" value="{{ request('search') }}" style="border:0; background: #fff">

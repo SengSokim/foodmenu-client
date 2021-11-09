@@ -63,14 +63,14 @@
                 @for($i = 1; $i <= 5; $i++)
                 <tr class="text-center">
                   <td>{{ $i }}</td>
-                  <td><img src="{{ asset('img/avatar'.$i.'.png')}}" width="40px"></td>
-                  <td class="text-left">Hun Sovanneth</td>
+                  <td><img src="{{ asset('img/no-image.jpg')}}" width="40px"></td>
+                  <td class="text-left">Chorn Penghong</td>
                   <td>Male</td>
-                  <td>0966206029</td>
+                  <td>0964636342</td>
                   <td>Admin</td>
                   <td>Active</td>
                   <td>
-                    <button class="btn btn-primary btn-sm" title="Edit" data-toggle="modal" data-target="#editUser" onclick="$('.name').val(<?php echo $i ?>)"><i class="fas fa-edit"></i></button>
+                    <button class="btn btn-primary btn-sm" title="Edit" data-toggle="modal" data-target="#editUser"><i class="fas fa-edit"></i></button>
                     <button class="btn btn-danger btn-sm"  title="Delete" data-toggle="modal" data-target="#deleteUser"><i class="fas fa-trash"></i></button>
                     <div class="text-left">
                        @include('users.edit')
@@ -83,14 +83,14 @@
             </table>
           </div>
         </div>
-        <div class="row card-footer">
+        {{-- <div class="row card-footer">
             <div class="col-md-6">
                 <h5>Total: <span class="text-danger">{{ $i - 1 }}</span>{{ $i - 1 > 1 ? 'records' : 'record' }}</h5>
             </div>
             <div class="col-md-6">
                 @include('layouts.pagination') 
             </div>
-        </div>
+        </div> --}}
       </div>
     </div>
   </div>

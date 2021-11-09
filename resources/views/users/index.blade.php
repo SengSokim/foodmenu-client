@@ -1,7 +1,4 @@
 @extends('layouts.master')
-@section('content-header')
-    
-@endsection
 @section('content')
     <div class="row">
         <div class="col-md-6">

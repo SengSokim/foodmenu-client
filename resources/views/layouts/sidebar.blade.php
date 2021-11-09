@@ -34,6 +34,14 @@
           </p>
         </a>
       </li>
+      <li class="nav-item">
+        <a href="{{route('users')}}" class="nav-link active">
+          <i class="nav-icon fas fa-users"></i>
+          <p>
+            Users
+          </p>
+        </a>
+      </li>
    
       <li class="nav-item">
         <a href="{{ route('setting.telegram') }}" class="nav-link {{ request()->is('portal/setting*') ? 'active' : '' }}">

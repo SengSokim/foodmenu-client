@@ -16,7 +16,7 @@
                     <div class="form-group">
                         <label>Gender</label>
                         <select class="form-control">
-                            <option value="">--- Please Select ---</option>
+                            <option value="">Select Gender</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                         </select>
@@ -28,7 +28,7 @@
                     <div class="form-group">
                         <label>Role</label>
                         <select class="form-control">
-                            <option value="">--- Please Select ---</option>
+                            <option value="">Select Role</option>
                             <option value="admin">Admin</option>
                             <option value="manager">Manager</option>
                             <option value="hr">HR</option>

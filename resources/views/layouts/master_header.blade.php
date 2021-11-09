@@ -75,7 +75,9 @@
       .res-name{
         font-weight: bold;
         margin: 8px 0 8px 0;
-        text-align: center
+        text-align: center;
+        /* text-transform: uppercase; */
+        
       }
 
       .res-qrcode{

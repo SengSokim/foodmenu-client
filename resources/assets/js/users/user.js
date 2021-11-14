@@ -1,19 +1,23 @@
-var createUser = new Vue({
-    el: "#createUser",
-    image: null,
-    error: {
-        image: null,
-    },
+var Users = new Vue({
+    el: "#users",
+
     data: {
-        username: '',
-        gender: null,
-        phone_number: '',
-        address: null,
-        roles: [],
         image: null,
-        enable_status: true,
+        error: {
+            image: null,
+        },
+        data:{
+            username: '',
+            gender: null,
+            phone_number: '',
+            password: '',
+            description: null,
+            roles: null,
+            image: null,
+            enable_status: true,
+        }
     },
-    roles: roles,
+    // roles: roles,
     methods: {
         save() {
             console.log("data: ",this.data);
@@ -48,6 +52,7 @@ var createUser = new Vue({
                 } else {
                     this.save();
                 }
+                
             })
         },
         uploadImage(event) {

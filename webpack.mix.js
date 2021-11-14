@@ -38,8 +38,6 @@ mix.js('resources/assets/js/app.js', 'public/dist/js')
 
     //users
     .js('resources/assets/js/users/user.js', 'public/dist/js/users')
-
-
-
-
-
+    
+    //tables
+    .js('resources/assets/js/tables/table.js', 'public/dist/js/tables')

@@ -71,6 +71,7 @@
 
         Route::prefix('tables')->group(function () {
             Route::get('/', 'TableController@index')->name('tables');
+            Route::get('/qr_generate', 'TableController@qr_generate')->name('tables.qr_generate');
         });
 
         Route::prefix('restaurants')->group(function () {

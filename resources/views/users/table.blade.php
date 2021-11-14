@@ -6,7 +6,7 @@
             <div class="col-md-12">
               <div class="card-tools mt-1" style="float:right">
                 <button class="btn btn-warning btn-sm rounded-pill"  title="Create" data-toggle="modal" data-target="#createUser"><i class="far fa-plus fa-fw"></i>Create New</button>
-                @include('users.create')
+                @include('users.create')  
               </div>
             </div>
           </div>
@@ -51,7 +51,7 @@
                 <tr class="text-center">
                   <th>#</th>
                   <th>Image</th>
-                  <th scope="col">Name</th>
+                  <th scope="col">Username</th>
                   <th>Gender</th>
                   <th>Phone</th>
                   <th>Role</th>

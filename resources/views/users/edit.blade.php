@@ -8,14 +8,15 @@
             </button>
             </div>
             <div class="modal-body">
-                <form method="GET">
+                <form autocomplete="off" @submit.prevent = "submit" >
                     @include('users.form')
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default rounded-pill" data-dismiss="modal">Cancel</button>
+                        <button type="sumbit" class="btn btn-warning rounded-pill"> Save Change</button>
+                    </div>
                 </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default rounded-pill" data-dismiss="modal">Cancel</button>
-                <button type="sumbit" class="btn btn-warning rounded-pill"> Save Change</button>
-            </div>
+            
         </div>
     </div>
 </div>

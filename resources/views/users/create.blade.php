@@ -8,14 +8,15 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="createUser">
+                <form @submit.prevent="submit">
                     @include('users.form')
+                    <div class="modal-footer"> 
+                        <button type="button" class="btn btn-default rounded-pill" data-dismiss="modal" >Cancel</button>
+                        <button type="submit" class="btn btn-warning rounded-pill"> Save</button>
+                    </div>
                 </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default rounded-pill" data-dismiss="modal" >Cancel</button>
-                <button type="sumbit" class="btn btn-warning rounded-pill"> Save</button>
-            </div>
+        
         </div>
     </div>
 </div>

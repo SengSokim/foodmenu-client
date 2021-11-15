@@ -35,7 +35,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="{{route('users')}}" class="nav-link active">
+        <a href="{{route('users')}}" class="nav-link {{ request()->is('portal/users') ? 'active' : '' }}">
           <i class="nav-icon fas fa-users"></i>
           <p>
             Users
@@ -43,7 +43,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="{{route('tables')}}" class="nav-link ">
+        <a href="{{route('tables')}}" class="nav-link {{ request()->is('portal/tables') ? 'active' : '' }}">
           <i class="nav-icon fas fa-table"></i>
           <p>
             Table

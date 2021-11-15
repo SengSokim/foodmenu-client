@@ -64,7 +64,7 @@
                         {{--<hr style="height: 1px; background: #134">--}}
                         <center>
                             <span style="font-size: 14px">POWERED BY</span><br>
-                            <a href=""><img src="{{ asset('adminlte/dist/img/papadeliver_v2.png') }}" width="110px"></a>
+                            <a href=""><img src="{{ asset('adminlte/dist/img/papadeliver.png') }}" width="110px"></a>
                         </center>
                     </td>
                 </tr>  
@@ -72,5 +72,5 @@
         </table>
     </div>   
 </body>
-<script src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
+<script src="{{ asset('adminlte/plugins/jquery/jquery.min.js') }}"></script>
 </html>

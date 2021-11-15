@@ -9,7 +9,7 @@
             </button>
           </div>
             <button class="btn btn-default rounded-pill btn-xs px-2" data-toggle="modal" data-target="#edit-restaurant" title="Edit"  @click="showRestaurant">
-              <i class="fa fa-edit text-warning"></i><span class="text-warning">Edit</span> 
+              <i class="fa fa-edit text-warning"></i>Edit
             </button>
         </div>
         <div class="modal fade" id="edit-restaurant" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static" style="overflow: scroll !important;">

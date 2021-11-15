@@ -5,7 +5,7 @@
           <div class="d-flex justify-content-between">
             <div class="btnclose">
             <button class="btn btn-default rounded-pill btn-xs px-2 " style="margin-right: 5px">
-              <i class="fas fa-arrow-left text-warning "></i><span class="text-warning " > Back</span>
+              <i class="fas fa-arrow-left text-warning "></i>Back
             </button>
           </div>
             <button class="btn btn-default rounded-pill btn-xs px-2" data-toggle="modal" data-target="#edit-restaurant" title="Edit"  @click="showRestaurant">

@@ -6,7 +6,7 @@
             <div class="col-md-12">
               <div class="card-tools mt-1" style="float:right">
                 <button class="btn btn-warning btn-sm rounded-pill"  title="Create" data-toggle="modal" data-target="#createUser"><i class="far fa-plus fa-fw"></i>Create New</button>
-                @include('users.create')
+                @include('users.create')  
               </div>
             </div>
           </div>
@@ -51,7 +51,7 @@
                 <tr class="text-center">
                   <th>#</th>
                   <th>Image</th>
-                  <th scope="col">Name</th>
+                  <th scope="col">Username</th>
                   <th>Gender</th>
                   <th>Phone</th>
                   <th>Role</th>
@@ -70,8 +70,8 @@
                   <td>Admin</td>
                   <td>Active</td>
                   <td>
-                    <button class="btn btn-primary btn-sm" title="Edit" data-toggle="modal" data-target="#editUser"><i class="fas fa-edit"></i></button>
-                    <button class="btn btn-danger btn-sm"  title="Delete" data-toggle="modal" data-target="#deleteUser"><i class="fas fa-trash"></i></button>
+                    <button class="btn btn-primary btn-sm rounded-pill" title="Edit" data-toggle="modal" data-target="#editUser" style="padding: .425rem .55rem"><i class="fas fa-edit fa-fw"></i></button>
+                    <button class="btn btn-danger btn-sm rounded-pill"  title="Delete" data-toggle="modal" data-target="#deleteUser" style="padding: .425rem .55rem"><i class="fas fa-trash-alt fa-fw"></i></button>
                     <div class="text-left">
                        @include('users.edit')
                        @include('users.delete')

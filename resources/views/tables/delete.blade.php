@@ -1,14 +1,14 @@
-<div class="modal fade" id="deleteUser" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="deleteTable" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-            <h5 class="modal-title"><i class="fas fa-user"></i> Delete User</h5>
+            <h5 class="modal-title"><i class="fas fa-user"></i> Delete Table</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
             </div>
             <div class="modal-body text-center">
-                <h6>Do you want to delete this user:<span class="text-warning">Chorn Penghong</span>?</h6>
+                <h6>Do you want to delete this Table:<span class="text-warning">Table</span>?</h6>
             </div>
             <div class="modal-footer">
             <form action="">

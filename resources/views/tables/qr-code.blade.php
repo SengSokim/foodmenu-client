@@ -64,7 +64,7 @@
                         {{--<hr style="height: 1px; background: #134">--}}
                         <center>
                             <span style="font-size: 14px">POWERED BY</span><br>
-                            <a href=""><img src="{{ asset('adminlte/dist/img/papadeliver_v2.png') }}" width="110px"></a>
+                            <img src="{{ asset('adminlte/dist/img/papadeliver_v2.png') }}" width="110px">
                         </center>
                     </td>
                 </tr>  

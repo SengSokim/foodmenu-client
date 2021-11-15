@@ -53,6 +53,6 @@
 </div>
 <div class="form-group m-0">
     <label class="inline-label">
-        <input type="checkbox" v-model="data.enable_status">Active
+        <input type="checkbox" v-model="data.enable_status">&nbsp; Active
     </label>
 </div>

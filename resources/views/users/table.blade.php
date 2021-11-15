@@ -63,7 +63,7 @@
                 @for($i = 1; $i <= 5; $i++)
                 <tr class="text-center">
                   <td>{{ $i }}</td>
-                  <td><img src="{{ asset('img/no-image.jpg')}}" width="40px"></td>
+                  <td><img src="" width="40px"></td>
                   <td class="text-left">Chorn Penghong</td>
                   <td>Male</td>
                   <td>0964636342</td>

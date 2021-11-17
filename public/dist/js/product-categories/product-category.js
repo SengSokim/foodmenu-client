@@ -193,7 +193,7 @@ new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\wamp64\www\Work Project\emenu\merchant\resources\assets\js\product-categories\product-category.js */"./resources/assets/js/product-categories/product-category.js");
+module.exports = __webpack_require__(/*! D:\papa-deliver\e-menu\merchant\resources\assets\js\product-categories\product-category.js */"./resources/assets/js/product-categories/product-category.js");
 
 
 /***/ })

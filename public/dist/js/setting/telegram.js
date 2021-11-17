@@ -168,7 +168,7 @@ new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\wamp64\www\Work Project\emenu\merchant\resources\assets\js\setting\telegram\telegram.js */"./resources/assets/js/setting/telegram/telegram.js");
+module.exports = __webpack_require__(/*! D:\papa-deliver\e-menu\merchant\resources\assets\js\setting\telegram\telegram.js */"./resources/assets/js/setting/telegram/telegram.js");
 
 
 /***/ })

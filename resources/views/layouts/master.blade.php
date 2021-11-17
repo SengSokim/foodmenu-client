@@ -28,8 +28,8 @@
 
       <footer class="main-footer text-sm" >
         <div class="clearfix">
-          <a href="#" class="btn btn-link btn-sm rounded-pill" style="color: #1aa7ec"><i class="fas fa-video"></i> Video Tutorials</a> | 
-          <a href="#" class="btn btn-link btn-sm rounded-pill" style="color: #1aa7ec"><i class="fas fa-book"></i> Help Docs</a>
+          <a href="#" class="btn btn-link btn-sm rounded-pill" style="color: #1aa7ec"><i class="fas fa-video"></i> {{ __('app.footer.video-tutorials') }}</a> | 
+          <a href="#" class="btn btn-link btn-sm rounded-pill" style="color: #1aa7ec"><i class="fas fa-book"></i> {{ __('app.footer.help-docs') }}</a>
         </div>
       </footer>
     </div>

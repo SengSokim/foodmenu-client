@@ -3,15 +3,15 @@
         <div class="modal-dialog" role="document" style="max-width: 80vw">
             <div class="modal-content" style="max-width: 65vw">
                 <div class="modal-header">
-                <h5 class="modal-title">Update Variant</h5>
+                <h5 class="modal-title">{{ __('app.product.vaiants.update-variant') }}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
                 <div class="row pt-3 pl-3">
                     <div class="col-md-12">
-                        <button type="button" class="btn btn-default rounded-pill btn-sm" data-dismiss="modal">Back</button>
-                        <button type="submit" form="editProductVariant" class="btn btn-warning rounded-pill btn-sm">Save Change</button>
+                        <button type="button" class="btn btn-default rounded-pill btn-sm" data-dismiss="modal">{{ __('app.global.back') }}</button>
+                        <button type="submit" form="editProductVariant" class="btn btn-warning rounded-pill btn-sm">{{ __('app.global.save-changes') }}</button>
                     </div>
                 </div>
                 <div class="modal-body">
@@ -19,14 +19,14 @@
                        <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="variant_name" class="required">Name</label>
+                                    <label for="variant_name" class="required">{{ __('app.product.vaiants.value.name') }}</label>
                                     <input type="text" class="form-control" :class="{'is-invalid': errors.has('name') }" name="name" v-model="data.name" v-validate="'required'" placeholder="Variant Name...">
                                     <div class="invalid-feedback">@{{ errors.first('name') }}</div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="display_sequence">Display Sequence</label>
+                                    <label for="display_sequence">{{ __('app.product.display-sequence') }}</label>
                                     <input type="number" class="form-control" v-model="data.sequence">
                                 </div>
                             </div>
@@ -39,7 +39,7 @@
                             </div>
                             <div class="form-group m-0">
                                 <input type="checkbox" v-model="data.is_required">
-                                <label for="status"> Required</label>
+                                <label for="status"> {{ __('app.product.vaiants.required') }}</label>
                             </div>
                             </div>
                         </div>
@@ -51,11 +51,11 @@
                         <div class="card-header">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <h5>Variant Values</h5>
+                                    <h5>{{ __('app.product.vaiants.variant-values') }}</h5>
                                 </div>
                                 <div class="col-md-6 text-right">
                                     <div class="card-tools">
-                                        <button class="btn btn-warning btn-sm rounded-pill" :disabled="isAddNew || isEdit" @click="addVariantValue"  title="Create"><i class="far fa-plus fa-fw"></i>Create New</button>
+                                        <button class="btn btn-warning btn-sm rounded-pill" :disabled="isAddNew || isEdit" @click="addVariantValue"  title="Create"><i class="far fa-plus fa-fw"></i>{{ __('app.global.create-new') }}</button>
                                       </div>
                                 </div>
                             </div>
@@ -65,14 +65,13 @@
                             <table class="table table-striped table-hover table-bordered">
                               <thead>
                                 <tr>
-                                  <th class="text-center" style="width: 10%">#</th>
-                                  <th scope="col" style="25%">Name</th>
-                                  <th scope="col" class="text-center" style="width: 20%">Extra Price</th>
-                                  <th scope="col" class="text-center" style="width: 20%">Sequence</th>
-                                  <th scope="col" class="text-center" style="width: 10%">Status</th>
-                                  <th class="text-center" style="width: 15%">Actions</th>
-                                </tr>
-                              </thead>
+                                    <th class="text-center">#</th>
+                                    <th scope="col" class="required"><div style="width: 90px"></div> {{ __('app.product.vaiants.value.name') }}</th>
+                                    <th scope="col" class="text-center"><div style="width: 130px"></div>{{ __('app.product.vaiants.value.extra-price') }}</th>
+                                    <th scope="col" class="text-center">{{ __('app.global.sequence') }}</th>
+                                    <th scope="col" class="text-center">{{ __('app.global.status') }}</th>
+                                    <th class="text-center"><div style="width: 120px"></div>{{ __('app.global.actions') }}</th>
+                                </tr>           
                               <tbody>
                                   <tr v-for="(value, index) in data.values" :key="index + '-' + value.isEdit">
                                       <!-- Edit -->

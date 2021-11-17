@@ -3,7 +3,7 @@
 @section('content-header')
 <div class="row mx-1">
   <div class="col-md-12">
-    <a href="{{ route('products') }}" class="btn btn-default rounded-pill"><i class="far fa-arrow-left fa-fw"></i>Back</a>
+    <a href="{{ route('products') }}" class="btn btn-default rounded-pill"><i class="far fa-arrow-left fa-fw"></i>{{ __('app.global.back') }}</a>
   </div>
 </div>
 @endsection

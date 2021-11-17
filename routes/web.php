@@ -26,63 +26,69 @@
         Route::get('/logout', 'AuthController@logout')->name('logout');
     });
     
-    Route::group(['prefix' =>  'portal', 'middleware' => 'auth'], function () {
-        Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
-        Route::get('/', 'ProductController@index')->name('products');
-
-        Route::group(['prefix' =>'profile'], function(){
-            Route::get('/', 'ProfileController@view');
-            Route::post('/', 'ProfileController@update');
-            Route::post('/change_password/', 'ProfileController@changePassword');
-        });
-
-        Route::prefix('products')->group(function () {
+    Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+    ], function(){
+        Route::group(['prefix' =>  'portal', 'middleware' => 'auth'], function () {
+            Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
             Route::get('/', 'ProductController@index')->name('products');
 
-            Route::get('/get', 'ProductController@product');
-            Route::post('/', 'ProductController@store');
-            
-            Route::post('/{id}', 'ProductController@update');
+            Route::group(['prefix' =>'profile'], function(){
+                Route::get('/', 'ProfileController@view');
+                Route::post('/', 'ProfileController@update');
+                Route::post('/change_password/', 'ProfileController@changePassword');
+            });
 
-            Route::post('/status/{id}', 'ProductController@status');
-            Route::delete('/{id}', 'ProductController@destroy');
+            Route::prefix('products')->group(function () {
+                Route::get('/', 'ProductController@index')->name('products');
 
-        });
+                Route::get('/get', 'ProductController@product');
+                Route::post('/', 'ProductController@store');
+                
+                Route::post('/{id}', 'ProductController@update');
 
-        Route::prefix('product_variants')->group(function () {
-            Route::get('/', 'ProductVariantController@index')->name('product_variants');
-            Route::post('/', 'ProductVariantController@store')->name('product_variants.store');
-            Route::post('/{id}', 'ProductVariantController@update')->name('product_variants.update');
-            Route::delete('/{id}', 'ProductVariantController@destroy')->name('product_variants.destroy');
+                Route::post('/status/{id}', 'ProductController@status');
+                Route::delete('/{id}', 'ProductController@destroy');
 
+            });
 
-        });
-
-        Route::prefix('product-categories')->group(function () {
-            Route::get('/', 'ProductCategoryController@index')->name('product-categories');
-            Route::post('/', 'ProductCategoryController@store')->name('product-categories.store');
-            Route::post('/{id}', 'ProductCategoryController@update')->name('product-categories.update');
-            Route::delete('/{id}', 'ProductCategoryController@destroy')->name('product-categories.destroy');
-        });
-
-        Route::prefix('users')->group(function () {
-            Route::get('/', 'UserController@index')->name('users');
-        });
-
-        Route::prefix('tables')->group(function () {
-            Route::get('/', 'TableController@index')->name('tables');
-            Route::get('/qr_generate', 'TableController@qr_generate')->name('tables.qr_generate');
-        });
-
-        Route::prefix('restaurants')->group(function () {
-            Route::get('/profile', 'RestaurantController@profile')->name('restaurants.profile');
-            Route::get('/', 'RestaurantController@edit')->name('restaurants.edit');
-            Route::post('/', 'RestaurantController@update')->name('restaurants.update');
-        });
+            Route::prefix('product_variants')->group(function () {
+                Route::get('/', 'ProductVariantController@index')->name('product_variants');
+                Route::post('/', 'ProductVariantController@store')->name('product_variants.store');
+                Route::post('/{id}', 'ProductVariantController@update')->name('product_variants.update');
+                Route::delete('/{id}', 'ProductVariantController@destroy')->name('product_variants.destroy');
 
 
-        Route::prefix('setting')->group(function () {
-            Route::get('/telegram', 'SettingController@telegram')->name('setting.telegram');
+            });
+
+            Route::prefix('product-categories')->group(function () {
+                Route::get('/', 'ProductCategoryController@index')->name('product-categories');
+                Route::post('/', 'ProductCategoryController@store')->name('product-categories.store');
+                Route::post('/{id}', 'ProductCategoryController@update')->name('product-categories.update');
+                Route::delete('/{id}', 'ProductCategoryController@destroy')->name('product-categories.destroy');
+            });
+
+            Route::prefix('users')->group(function () {
+                Route::get('/', 'UserController@index')->name('users');
+            });
+
+            Route::prefix('tables')->group(function () {
+                Route::get('/', 'TableController@index')->name('tables');
+                Route::get('/qr_generate', 'TableController@qr_generate')->name('tables.qr_generate');
+            });
+
+            Route::prefix('restaurants')->group(function () {
+                Route::get('/profile', 'RestaurantController@profile')->name('restaurants.profile');
+                Route::get('/', 'RestaurantController@edit')->name('restaurants.edit');
+                Route::post('/', 'RestaurantController@update')->name('restaurants.update');
+            });
+
+
+            Route::prefix('setting')->group(function () {
+                Route::get('/telegram', 'SettingController@telegram')->name('setting.telegram');
+            });
         });
     });
 

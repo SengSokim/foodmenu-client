@@ -13,10 +13,10 @@
             <thead>
               <tr>
                 <th class="text-center">#</th>
-                <th scope="col"><div style="width: 130px"></div> Variant Name</th>
-                <th scope="col" class="text-center"><div style="width: 120px"></div> Sequence</th>
-                <th scope="col" class="text-center"><div style="width: 120px"></div> Status</th>
-                <th class="text-center"><div style="width: 120px"></div> Actions</th>
+                <th scope="col"><div style="width: 130px"></div> {{ __('app.product.vaiants.variant-name') }}</th>
+                <th scope="col" class="text-center"><div style="width: 120px"></div> {{ __('app.global.sequence') }}</th>
+                <th scope="col" class="text-center"><div style="width: 120px"></div> {{ __('app.global.status') }}</th>
+                <th class="text-center"><div style="width: 120px"></div> {{ __('app.global.actions') }}</th>
               </tr>
             </thead>
             <tbody>

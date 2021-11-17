@@ -2,15 +2,15 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Create Variant</h5>
+        <h5 class="modal-title">{{ __('app.product.vaiants.create-variant') }} </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="row pt-3 pl-3">
         <div class="col-md-12">
-          <button type="button" class="btn btn-default btn-sm rounded-pill px-3" data-dismiss="modal">Back</button>
-          <button type="submit" form="createProductVariant" class="btn btn-warning btn-sm rounded-pill px-4">Save</button>
+          <button type="button" class="btn btn-default btn-sm rounded-pill px-3" data-dismiss="modal">{{ __('app.global.back') }}</button>
+          <button type="submit" form="createProductVariant" class="btn btn-warning btn-sm rounded-pill px-4">{{ __('app.global.save') }}</button>
         </div>
       </div>
       <div class="modal-body">
@@ -18,14 +18,14 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label for="variant_name" class="required">Name</label>
+                <label for="variant_name" class="required">{{ __('app.product.vaiants.variant-name') }}</label>
                 <input type="text" class="form-control" :class="{'is-invalid': errors.has('name') }" name="name" v-model="data.name" v-validate="'required'" placeholder="Variant Name...">
                 <div class="invalid-feedback">@{{ errors.first('name') }}</div>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label for="display_sequence">Display Sequence</label>
+                <label for="display_sequence">{{ __('app.product.display-sequence') }}</label>
                 <input type="number" class="form-control" v-model="data.sequence">
               </div>
             </div>
@@ -38,7 +38,7 @@
               </div>
               <div class="form-group m-0">
                 <input type="checkbox" v-model="data.is_required">
-                <label for="status"> Required</label>
+                <label for="status"> {{ __('app.product.vaiants.required') }}</label>
               </div>
             </div>
           </div>
@@ -50,11 +50,11 @@
             <div class="card-header">
               <div class="row">
                 <div class="col-md-6">
-                  <h5 class="required">Variant Values</h5>
+                  <h5 class="required">{{ __('app.product.vaiants.variant-values') }}</h5>
                 </div>
                 <div class="col-md-6 text-right">
                   <div class="card-tools">
-                    <button class="btn btn-warning btn-sm rounded-pill" :disabled="isAddNew || isEdit" @click="addVariantValue"  title="Create Variant"><i class="far fa-plus fa-fw"></i>Create New</button>
+                    <button class="btn btn-warning btn-sm rounded-pill" :disabled="isAddNew || isEdit" @click="addVariantValue"  title="Create Variant"><i class="far fa-plus fa-fw"></i>{{ __('app.global.create-new') }}</button>
                   </div>
                 </div>
               </div>
@@ -65,11 +65,11 @@
                   <thead>
                     <tr>
                       <th class="text-center">#</th>
-                      <th scope="col" class="required"><div style="width: 90px"></div> Name</th>
-                      <th scope="col" class="text-center"><div style="width: 130px"></div>Extra Price</th>
-                      <th scope="col" class="text-center">Sequence</th>
-                      <th scope="col" class="text-center">Status</th>
-                      <th class="text-center"><div style="width: 120px"></div>Actions</th>
+                      <th scope="col" class="required"><div style="width: 90px"></div> {{ __('app.product.vaiants.value.name') }}</th>
+                      <th scope="col" class="text-center"><div style="width: 130px"></div>{{ __('app.product.vaiants.value.extra-price') }}</th>
+                      <th scope="col" class="text-center">{{ __('app.global.sequence') }}</th>
+                      <th scope="col" class="text-center">{{ __('app.global.status') }}</th>
+                      <th class="text-center"><div style="width: 120px"></div>{{ __('app.global.actions') }}</th>
                     </tr>
                   </thead>
                   <tbody>

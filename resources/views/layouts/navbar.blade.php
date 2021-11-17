@@ -19,6 +19,26 @@
           </div>
         </form>
       </li>
+      <li class="dropdown" style="position: absolute; right: 120px;">
+        <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle" title="Translation">
+          <i class="far fa-globe fa-fw" style="size: 40px;">
+          </i><span class="caret"></span></a>
+        <ul class="dropdown-menu border-1 shadow">
+            <li>
+                <a class="dropdown-item" rel="alternate" hreflang="{{ 'en' }}" href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">
+                    <img src="{{asset('adminlte/dist/img/lang_flag/english.png')}}" style="width: 20px; margin:5px;"> 
+                    {{ 'English' }}
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" rel="alternate" hreflang="{{ 'km' }}" href="{{ LaravelLocalization::getLocalizedURL('km', null, [], true) }}" >
+                    <img src="{{asset('adminlte/dist/img/lang_flag/khmer.png')}}" style="width: 20px; margin:5px;"> 
+                    {{ 'ភាសាខ្មែរ' }}
+                </a>
+            </li>
+            
+        </ul>   
+      </li>
       <li class="nav-item dropdown" style="position: absolute; right: 0; margin-top: -6px;cursor: pointer;" id="my-profile" title="Profile">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" style="border: 0;">
           <img src="{{ $auth->user->media->url ?? asset('adminlte/dist/img/placeholder/square_avatar_placeholder.jpg') }}" class="user-image img-circle elevation-2" alt="User Image" width="30">

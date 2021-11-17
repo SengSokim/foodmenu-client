@@ -11,12 +11,12 @@
         <div class="inner">
           <h3>{{ $data->data->total_categories }}</h3>
 
-          <p>Categories</p>
+          <p>{{ __('app.dashboard.total-categories') }}</p>
         </div>
         <div class="icon">
           <i class="fas fa-boxes"></i>
         </div>
-        <a href="{{ url('portal/product-categories') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+        <a href="{{ url('portal/product-categories') }}" class="small-box-footer">{{ __('app.dashboard.more-info') }} <i class="fas fa-arrow-circle-right"></i></a>
       </div>
     </div>
     <!-- ./col -->
@@ -26,12 +26,12 @@
         <div class="inner">
           <h3>{{ $data->data->total_products }}</h3>
 
-          <p>Products</p>
+          <p>{{ __('app.dashboard.total-products') }}</p>
         </div>
         <div class="icon">
           <i class="fas fa-hamburger"></i>
         </div>
-        <a href="{{ url('portal/products') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+        <a href="{{ url('portal/products') }}" class="small-box-footer">{{ __('app.dashboard.more-info') }} <i class="fas fa-arrow-circle-right"></i></a>
       </div>
     </div>
     <!-- ./col -->
@@ -41,12 +41,12 @@
         <div class="inner">
           <h3>{{ $data->data->total_sales }}</h3>
 
-          <p>Orders</p>
+          <p>{{ __('app.dashboard.total-orders') }}</p>
         </div>
         <div class="icon">
           <i class="fas fa-shopping-basket"></i>
         </div>
-        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+        <a href="#" class="small-box-footer">{{ __('app.dashboard.more-info') }} <i class="fas fa-arrow-circle-right"></i></a>
       </div>
     </div>
     <!-- ./col -->
@@ -56,12 +56,12 @@
         <div class="inner">
           <h3>{{ $data->data->total_users }}</h3>
 
-          <p>Users</p>
+          <p>{{ __('app.dashboard.total-user') }}</p>
         </div>
         <div class="icon">
           <i class="fas fa-user"></i>
         </div>
-        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+        <a href="#" class="small-box-footer">{{ __('app.dashboard.more-info') }} <i class="fas fa-arrow-circle-right"></i></a>
       </div>
     </div>
     <!-- ./col -->

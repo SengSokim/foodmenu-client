@@ -3,10 +3,10 @@
     <thead>
       <tr>
         <th class="text-center">#</th>
-        <th scope="col"><div style="width: 120px"></div> Name</th>
-        <th scope="col" class="text-center">Sequence</th>
-        <th scope="col" class="text-center">Status</th>
-        <th scope="col" class="text-center"><div style="width: 100px"></div> Actions</th>
+        <th scope="col"><div style="width: 120px"></div> {{ __('app.categories.name') }}</th>
+        <th scope="col" class="text-center">{{ __('app.categories.sequence') }}</th>
+        <th scope="col" class="text-center">{{ __('app.global.status') }}</th>
+        <th scope="col" class="text-center"><div style="width: 100px"></div> {{ __('app.global.actions') }}</th>
       </tr>
     </thead>
     <tbody>

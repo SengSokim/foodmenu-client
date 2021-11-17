@@ -2,30 +2,30 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title"><i class="fab fa-keycdn fa-fw"></i>Change Password</h5>
+        <h5 class="modal-title"><i class="fab fa-keycdn fa-fw"></i>{{ __('app.profile.change-password') }}</h5>
       </div>
       <form @submit.prevent="submit" id="updatePassword" v-cloak>
         <div class="card-body">
           <div class="row">
             <div class="col-md-12">
               <div class="form-group">
-                <label class="required">Current Password</label>
+                <label class="required">{{ __('app.profile.current-password') }}</label>
                 <input type="password" class="form-control" name="old_password" v-model="data.old_password" placeholder="Enter current password">
               </div>
               <div class="form-group">
-                <label class="required">New Password</label>
+                <label class="required">{{ __('app.profile.new-password') }}</label>
                 <input type="password" class="form-control" name="password" v-model="data.password" placeholder="Enter new password">
               </div>
               <div class="form-group">
-                <label class="required">Confirm Password</label>
+                <label class="required">{{ __('app.profile.confirm-password') }}</label>
                 <input type="password" class="form-control" name="confirm_password" v-model="data.confirm_password"  placeholder="Enter confirm password">
               </div>
             </div>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-          <button type="submit" class="btn btn-primary submit-crop">Save Changes</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">{{ __('app.global.cancel') }}</button>
+          <button type="submit" class="btn btn-primary submit-crop">{{ __('app.global.save-changes') }}</button>
         </div>
       </form>
     </div>

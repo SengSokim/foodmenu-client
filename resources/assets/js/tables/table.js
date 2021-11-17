@@ -1,31 +1,70 @@
 new Vue({
-    el: "#tables",
-    data: {
+    el: '#RestaurantTables',
+    data: {       
+        selected_id: null,
+        restaurant_tables : restaurant_tables,
         data:{
+            id: null,
             name: '',
-            enable_status: true
+            enable_status: 1
         }
     },
+
     methods: {
-        save() {
-            console.log("data: ",this.data);
-            axios.post(`${baseURL}/tables`,
+        clearData() {
+            this.data = {
+                id: null,
+                name: '',
+                enable_status: 1
+            };    
+            
+            setTimeout(() => {
+                this.$validator.errors.remove('name');
+            }, 0);
+        },
+
+        setData (restaurant_tables) {
+            console.log(restaurant_tables);
+            this.clearData();
+              
+            this.data = Object.assign({}, {
+                id: restaurant_tables.id,
+                name: restaurant_tables.name,
+                enable_status: restaurant_tables.enable_status
+            });
+        },
+
+        save(){
+            showLoading();
+
+            var url = '/portal/tables/';
+            if(this.data.id) {
+                url += this.data.id;
+            }
+            axios.post(url,
                 this.data
             ).then(response => {
-                console.log("response: ", response.data);
                 if (response.data.success) {
-                    window.location.href = baseURL + '/tables';
+                    hideLoading();
+                    window.location.href = '/portal/tables';
                 } else {
                     showAlertError(response.data.message);
-                    hideLoading()
+                    hideLoading();
                 }
             }).catch(error => {
                 hideLoading();
-                showAlertError('Can not add table');
                 console.log(error)
-            })
+                if(this.data.id) {
+                showAlertError('Cannot create table');
+
+                } else {
+                showAlertError('Cannot update table');
+
+                }
+            }) 
         },
-        submit() {
+
+        submit(){
             showLoading();
             this.$validator.validate().then((result) => {
                 let save = true;
@@ -36,8 +75,24 @@ new Vue({
                 } else {
                     this.save();
                 }
-                
             })
         },
+        deleteTable () {
+            showLoading();
+            axios.delete(`/portal/tables/${this.data.id}`)
+                .then(response => {
+                    hideLoading();
+                    console.log(response.data);
+                    if (response.data.success) {
+                        window.location.href = '/portal/tables';
+                    } else {
+                        showAlertError(response.data.message);
+                    } 
+            }).catch(error => {
+                console.log(error);
+                hideLoading();
+                showAlertError('Cannot delete table');
+            });
+        }
     }
-})
+});

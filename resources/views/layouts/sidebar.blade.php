@@ -6,7 +6,7 @@
         <a href="#" class="nav-link">
           <i class="nav-icon fas fa-home"></i>
           <p>
-            Restaurant
+            {{ __('app.sidebar.restaurant') }}
           </p>
         </a>
       </li>
@@ -14,7 +14,7 @@
         <a href="{{ route('dashboard') }}" class="nav-link {{ request()->is('portal/dashboard') ? 'active' : '' }}">
           <i class="nav-icon fas fa-tachometer-alt"></i>
           <p>
-            Dashboard
+            {{ __('app.sidebar.dashboard') }}
           </p>
         </a>
       </li>
@@ -22,7 +22,7 @@
         <a href="{{ route('products') }}" class="nav-link {{ request()->is(['portal','portal/products*','portal/product_variants*']) ? 'active' : '' }}">
           <i class="nav-icon fas fa-hamburger"></i>
           <p>
-            Products
+            {{ __('app.sidebar.products') }}
           </p>
         </a>
       </li>    
@@ -30,7 +30,7 @@
         <a href="{{ route('product-categories') }}" class="nav-link {{ request()->is('portal/product-categories') ? 'active' : '' }}">
           <i class="nav-icon fas fa-boxes"></i>
           <p>
-            Categories
+            {{ __('app.sidebar.categories') }}
           </p>
         </a>
       </li>
@@ -46,7 +46,7 @@
         <a href="{{route('tables')}}" class="nav-link {{ request()->is('portal/tables') ? 'active' : '' }}">
           <i class="nav-icon fas fa-table"></i>
           <p>
-            Table
+            {{ __('app.sidebar.tables') }}
           </p>
         </a>
       </li>
@@ -56,7 +56,7 @@
         <a href="{{ route('setting.telegram') }}" class="nav-link {{ request()->is('portal/setting*') ? 'active' : '' }}">
           <i class="nav-icon fas fa-cog"></i>
           <p>
-            Setting
+            {{ __('app.sidebar.settings') }}
           </p>
         </a>
       </li>

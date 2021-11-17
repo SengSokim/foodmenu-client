@@ -5,18 +5,18 @@
           <div class="d-flex justify-content-between">
             <div class="btnclose">
             <button class="btn btn-default rounded-pill btn-xs px-2 " style="margin-right: 5px">
-              <i class="fas fa-arrow-left text-warning "></i>Back
+              <i class="fas fa-arrow-left text-warning "></i>{{ __('app.global.back') }}
             </button>
           </div>
             <button class="btn btn-default rounded-pill btn-xs px-2" data-toggle="modal" data-target="#edit-restaurant" title="Edit"  @click="showRestaurant">
-              <i class="fa fa-edit text-warning"></i>Edit
+              <i class="fa fa-edit text-warning"></i>{{ __('app.global.edit') }}
             </button>
         </div>
         <div class="modal fade" id="edit-restaurant" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static" style="overflow: scroll !important;">
           <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title">Edit Restaurant</h5>
+                <h5 class="modal-title">{{ __('app.right-sidebar.edit-restaurant') }}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                    <span aria-hidden="true">&times;</span>
                 </button>
@@ -50,13 +50,13 @@
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label>Restaurant Name</label>
+                        <label>{{ __('app.right-sidebar.restaurant-name') }}</label>
                         <input type="text" name="name" class="form-control" :class="{'is-invalid': errors.has('name') }" v-model="data.name" placeholder="Restaurant name"/> 
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label>Restaurant Code</label>
+                        <label>{{ __('app.right-sidebar.restaurant-code') }}</label>
                         <input type="text" name="code" class="form-control" v-model="data.code" placeholder="code"/> 
                       </div>
                     </div>
@@ -64,13 +64,13 @@
                   <div class="row">
                     <div class="col-md-6">
                        <div class="form-group">
-                        <label>Website URL</label>
+                        <label>{{ __('app.right-sidebar.website-url') }}</label>
                         <input type="text" name="website_url" class="form-control" v-model="data.website_url" placeholder="www.emenu.com"/> 
                       </div>
                     </div>
                     <div class="col-md-6">
                        <div class="form-group">
-                        <label>Email</label>
+                        <label>{{ __('app.right-sidebar.email') }}</label>
                         <input type="text" name="email" class="form-control" v-model="data.email" placeholder="abc@example.com"/> 
                       </div>
                     </div>
@@ -78,13 +78,13 @@
                   <div class="row">
                     <div class="col-md-6">
                        <div class="form-group">
-                        <label>Phone Number</label>
+                        <label>{{ __('app.right-sidebar.phone-number') }}</label>
                         <input type="text" name="phone_number" class="form-control" :class="{'is-invalid': errors.has('phone_number') }" v-model="data.phone_number"  data-vv-as="phone number"/> 
                       </div>
                     </div>
                     <div class="col-md-6">
                        <div class="form-group">
-                        <label>Other Phone Number</label>
+                        <label>{{ __('app.right-sidebar.other-phone-number') }}</label>
                         <input type="text" name="other_phone_number" class="form-control" v-model="data.other_phone_number"/> 
                       </div>
                     </div>
@@ -106,13 +106,13 @@
                   <div class="row">
                     <div class="col-md-6">
                        <div class="form-group">
-                        <label>Latitude</label>
+                        <label>{{ __('app.right-sidebar.latitude') }}</label>
                         <input type="text" class="form-control" v-model="data.latitude" placeholder="0"/> 
                       </div>
                     </div>
                     <div class="col-md-6">
                        <div class="form-group">
-                        <label>Longitude</label>
+                        <label>{{ __('app.right-sidebar.longitude') }}</label>
                         <input type="text" class="form-control" v-model="data.longitude" placeholder="0"/> 
                       </div>
                     </div>
@@ -120,27 +120,27 @@
                   <div class="row">
                     <div class="col-md-6">
                        <div class="form-group">
-                        <label>About</label>
+                        <label>{{ __('app.right-sidebar.about') }}</label>
                         <textarea rows="5" class="form-control" v-model="data.about"></textarea>
                       </div>
                     </div>
                     <div class="col-md-6">
                        <div class="form-group">
-                        <label>Address</label>
+                        <label>{{ __('app.right-sidebar.address') }}</label>
                         <textarea rows="5" class="form-control" v-model="data.address"></textarea>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-12">
-                      <label><input type="checkbox" v-model="data.is_can_order">Available Order</label>
+                      <label><input type="checkbox" v-model="data.is_can_order">{{ __('app.right-sidebar.available-order') }}</label>
                     </div>
                   </div>
                 </form>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-default rounded-pill" data-dismiss="modal">Cancel</button>
-                <button type="submit" form="submitUpdateRestaurant" class="btn btn-warning rounded-pill">Save changes</button>
+                <button type="button" class="btn btn-default rounded-pill" data-dismiss="modal">{{ __('app.global.cancel') }}</button>
+                <button type="submit" form="submitUpdateRestaurant" class="btn btn-warning rounded-pill">{{ __('app.global.save-changes') }}</button>
               </div>
             </div>
           </div>

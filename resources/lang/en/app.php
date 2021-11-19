@@ -17,7 +17,8 @@ return [
         'actions' => 'Actions',    
         'search-product' => 'Search Product',
         'total' => 'Total',
-        'records' => 'Records'         
+        'records' => 'Records',   
+        'record' => 'Record'   
     ],
 
     'dashboard' => [

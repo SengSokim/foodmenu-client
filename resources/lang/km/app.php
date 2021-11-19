@@ -17,7 +17,8 @@ return [
         'actions' => 'សកម្មភាព',    
         'search-product' => 'ស្វែងរកផលិតផល',
         'total' => 'សរុប',
-        'records' => 'ទិន្នន័យ'                  
+        'records' => 'ទិន្នន័យ',
+        'record' => 'ទិន្នន័យ'               
     ],
 
     'dashboard' => [

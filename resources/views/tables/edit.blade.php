@@ -8,12 +8,14 @@
                 </button>
             </div>
             <div class="modal-body">
-                    @include('tables.form')
-            </div>
-            <div class="modal-footer"> 
-                <button class="btn btn-default rounded-pill" data-dismiss="modal" >Cancel</button>
-                <button type="submit" @click="submit()" class="btn btn-warning rounded-pill" data-dismiss="modal"> Save Change</button>
-            </div>
+                <form @submit.prevent="submit" v-cloak id="updateTable">
+                  @include('tables.form') 
+                </form>
+              </div>
+              <div class="modal-footer">
+              <button type="button" class="btn btn-default rounded-pill btn-sm" data-dismiss="modal">{{ __('app.global.cancel') }}</button>
+              <button type="sumbit" form="updateTable" class="btn btn-warning rounded-pill btn-sm"></i>{{ __('app.global.save-changes') }}</button>
+              </div>
         </div>
     </div>
 </div>

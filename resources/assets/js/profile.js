@@ -8,11 +8,11 @@ editProfile = new Vue({
     },
     methods: {
         save() {
-            axios.post(`/portal/profile`,
+            axios.post(`/admin/profile`,
                 this.data
             ).then(response => {
                 if (response.data.success) {
-                    window.location.href = '/portal/products';
+                    window.location.href = '/admin/products';
                 } else {
                     showAlertError(response.data.message);
                     hideLoading()
@@ -55,7 +55,7 @@ editProfile = new Vue({
                 this.error.image = ''
             }, 0);
 
-            axios.get(`/portal/profile`
+            axios.get(`/admin/profile`
             ).then(response => {
                 if (response.data.success) {
                     this.data = response.data.data
@@ -96,11 +96,11 @@ updatePassword = new Vue({
     },
     methods: {
         save() {
-            axios.post(`/portal/profile/change_password`,
+            axios.post(`/admin/profile/change_password`,
                 this.data
             ).then(response => {
                 if (response.data.success) {
-                    window.location.href ='/portal/products';
+                    window.location.href ='/admin/products';
                 } else {
                     showAlertError(response.data.message);
                     hideLoading()

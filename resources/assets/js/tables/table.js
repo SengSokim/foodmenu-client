@@ -37,7 +37,7 @@ new Vue({
         save(){
             showLoading();
 
-            var url = '/portal/tables/';
+            var url = '/admin/tables/';
             if(this.data.id) {
                 url += this.data.id;
             }
@@ -46,7 +46,7 @@ new Vue({
             ).then(response => {
                 if (response.data.success) {
                     hideLoading();
-                    window.location.href = '/portal/tables';
+                    window.location.href = '/admin/tables';
                 } else {
                     showAlertError(response.data.message);
                     hideLoading();
@@ -79,12 +79,12 @@ new Vue({
         },
         deleteTable () {
             showLoading();
-            axios.delete(`/portal/tables/${this.data.id}`)
+            axios.delete(`/admin/tables/${this.data.id}`)
                 .then(response => {
                     hideLoading();
                     console.log(response.data);
                     if (response.data.success) {
-                        window.location.href = '/portal/tables';
+                        window.location.href = '/admin/tables';
                     } else {
                         showAlertError(response.data.message);
                     } 

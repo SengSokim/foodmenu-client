@@ -11,7 +11,7 @@ new Vue({
     },
     mounted() {
         showLoading();
-        axios.get(`/portal/restaurants`
+        axios.get(`/admin/restaurants`
         ).then(response => {
             if (response.data.success) {
                 this.telegramData = response.data.data
@@ -31,11 +31,11 @@ new Vue({
     methods: {
         save(){
             showLoading()
-            axios.post(`/portal/restaurants`,
+            axios.post(`/admin/restaurants`,
                 this.data
             ).then(response => {
                 if (response.data.success) {
-                    window.location.href = '/portal/setting/telegram';
+                    window.location.href = '/admin/setting/telegram';
                 } else {
                     showAlertError(response.data.message);
                     hideLoading()

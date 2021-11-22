@@ -60,11 +60,11 @@ new Vue({
         },
 
         save() {
-            axios.post(`/portal/product_variants/${this.data.id ?? ''}`,
+            axios.post(`/admin/product_variants/${this.data.id ?? ''}`,
                 this.data
             ).then(response => {
                 if (response.data.success) {
-                    window.location.href = '/portal/product_variants?product_id=' + this.data.product_id;
+                    window.location.href = '/admin/product_variants?product_id=' + this.data.product_id;
                 } else {
                     showAlertError(response.data.message);
                     hideLoading()
@@ -110,13 +110,13 @@ new Vue({
         },
         deleteVariant() {
             showLoading();
-            axios.delete(`/portal/product_variants/${this.data.id}`)
+            axios.delete(`/admin/product_variants/${this.data.id}`)
                 .then(response => {
                     hideLoading();
                     console.log(response.data);
                     if (response.data.success) {
                         console.log(this.data);
-                        window.location.href = '/portal/product_variants?product_id=' + this.data.product_id;
+                        window.location.href = '/admin/product_variants?product_id=' + this.data.product_id;
                     } else {
                         showAlertError(response.data.message);
                     } 

@@ -13,11 +13,11 @@ EditRestaurant = new Vue({
 
     methods: {
         save() {
-            axios.post(`/portal/restaurants`,
+            axios.post(`/admin/restaurants`,
                 this.data
                 ).then(response => {
                     if (response.data.success) {
-                        window.location.href = '/portal/products';
+                        window.location.href = '/admin/products';
                     } else {
                         showAlertError(response.data.message);
                         hideLoading()
@@ -64,7 +64,7 @@ EditRestaurant = new Vue({
         showRestaurant(){
             this.data = {};
 
-            axios.get(`/portal/restaurants`
+            axios.get(`/admin/restaurants`
             ).then(response => {
                 if (response.data.success) {
                     this.data = response.data.data

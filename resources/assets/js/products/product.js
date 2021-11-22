@@ -30,7 +30,7 @@ Product = new Vue({
     },
     methods:{
         init(){
-            axios.get(`/portal/products/get?search=${this.search}`
+            axios.get(`/admin/products/get?search=${this.search}`
                 ).then(response => {
                     this.is_loaded_product =1
                 if (response.data.success) {
@@ -55,11 +55,11 @@ Product = new Vue({
 
         save(){
             showLoading();
-            axios.post(`/portal/products/${this.data.id ?? ''}`,
+            axios.post(`/admin/products/${this.data.id ?? ''}`,
                 this.data
             ).then(response => {
                 if (response.data.success) {
-                    window.location.href = '/portal/products';
+                    window.location.href = '/admin/products';
                 } else {
                     showAlertError(response.data.message);
                     hideLoading()
@@ -137,11 +137,11 @@ Product = new Vue({
 
         updateProductStatus(value){
             showLoading();
-            axios.post(`/portal/products/status/${this.data.id}`,
+            axios.post(`/admin/products/status/${this.data.id}`,
                 { enable_status : value}
             ).then(response => {
                 if (response.data.success) {
-                    window.location.href = '/portal/products';
+                    window.location.href = '/admin/products';
                 } else {
                     showAlertError(response.data.message);
                     hideLoading();
@@ -152,11 +152,11 @@ Product = new Vue({
             })
         },
         deleteProduct() {
-            axios.delete(`/portal/products/${this.data.id}`)
+            axios.delete(`/admin/products/${this.data.id}`)
                 .then(response => {
                     hideLoading();
                     if (response.data.success) {
-                        window.location.href = '/portal/products';
+                        window.location.href = '/admin/products';
                     } else {
                         showAlertError(response.data.message);
                     } 

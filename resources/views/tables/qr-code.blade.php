@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>EMenu</title>
     <!-- Favicon Icon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('adminlte/img/emenu-square-black-bg.png')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('adminlte/dist/img/logo/emenu-square-black-bg-with-no-stroke.png') }}">
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
@@ -57,7 +57,7 @@
                         {{--<hr style="height: 1px; background: #134">--}}
                         <center>
                             <span style="font-size: 14px">POWERED BY</span><br>
-                            <img src="{{ asset('adminlte/dist/img/papadeliver_v2.png') }}" width="110px">
+                            <img src="{{ asset('adminlte/dist/img/logo/papa-deliver.png') }}" alt="" width="20%" style="margin-top: 10px">
                         </center>
                     </td>
                 </tr>  

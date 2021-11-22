@@ -9,7 +9,7 @@
       <div class="card-header">
         Setting up Telegram
       </div>
-      <div class="card-body" id="telegram">
+      <div class="card-body" id="telegram"  v-cloak>
           <div class="row">
               <div class="col-md-6">
                 <div class="form-group">

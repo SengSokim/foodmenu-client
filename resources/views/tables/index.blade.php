@@ -3,8 +3,8 @@
     {!!generateContentHeader('Restaurant Tables', 'Restaurant Tables' )!!}
 @endsection
 @section('content')
-<div class="row" id="RestaurantTables" v-cloak>
-  <div class="col-md-12">
+<div class="row" id="RestaurantTables">
+  <div class="col-md-12" v-cloak>
     <div class="card">
       <div class="card-header">
         <div class="row">

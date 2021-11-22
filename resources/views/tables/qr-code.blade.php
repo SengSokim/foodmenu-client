@@ -39,7 +39,12 @@
                 </tr>
                 <tr align="center" style="display: block">
                     <td colspan="2" style="border: 2px solid #134; padding: 10px; padding-bottom: 0; border-radius: 8px">
-                        <img src="data:image/png;base64, {!! base64_encode($qr) !!}">
+                           <img src="data:image/png;base64, 
+                            {!! base64_encode(QrCode::format('png')
+                            ->merge('adminlte/dist/img/logo/emenu-square-black-bg-with-stroke.png', .3, true)
+                            ->size(200)
+                            ->errorCorrection('H')
+                            ->generate($data->website_url ?? '' )) !!} " style="width: 100%">
                     </td>
                 </tr>
                 <tr>

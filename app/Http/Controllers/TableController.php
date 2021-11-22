@@ -58,27 +58,18 @@ class TableController extends Controller
 
     public function qr_generate($id){
 
-        $response_table_qr_generate = $this->api_get('portal/tables/qr_generate/'.$id);
-        if($response_table_qr_generate->data)
-         {
-            $data = $response_table_qr_generate->data;
-         }
-         if($data->restaurant)
-         {
-             $restaurant = $data->restaurant; 
-         }
+        $response = $this->api_get('portal/tables/qr_generate/'.$id);
 
-         $url = $response_table_qr_generate->data->website_url;
-         $qr = null;
-        $url = 'http://localhost:8001/restaurant/'.$restaurant->id.'?table_id='. $id;
-        $qr = QrCode::format('png')->merge('http://w3adda.com/wp-content/uploads/2019/07/laravel.png', 0.3, true)
-           ->size(100)->errorCorrection('H')
-           ->generate($url);
+        if($response->data)
+        {
+            $data = $response->data;
+        }
 
-            $qr = QrCode::format('png')->merge('adminlte/dist/img/logo/emenu-square-black-bg-with-stroke.png', 0.3, true)
-                ->size(200)->errorCorrection('H')
-                ->generate($url);
-        return view('tables.qr-code', compact('qr','restaurant','url','data'));
+        if($response->data->restaurant)
+        {
+            $restaurant = $response->data->restaurant;
+        }
+        return view('tables.qr-code', compact('restaurant','data'));
     }
     
 }

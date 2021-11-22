@@ -75,7 +75,7 @@ class TableController extends Controller
            ->size(100)->errorCorrection('H')
            ->generate($url);
 
-            $qr = QrCode::format('png')->merge('adminlte/img/emenu-square-black-bg-with-stroke.png', 0.3, true)
+            $qr = QrCode::format('png')->merge('adminlte/dist/img/logo/emenu-square-black-bg-with-stroke.png', 0.3, true)
                 ->size(200)->errorCorrection('H')
                 ->generate($url);
         return view('tables.qr-code', compact('qr','restaurant','url','data'));

@@ -3,9 +3,9 @@
     <thead>
       <tr class="text-center">
         <th>#</th>
-        <th>Name</th>
-        <th>Status</th>
-        <th>Action</th>
+        <th>{{ __('app.table.name') }}</th>
+        <th>{{ __('app.global.status') }}</th>
+        <th>{{ __('app.global.actions') }}</th>
       </tr>
     </thead>
     <tbody>

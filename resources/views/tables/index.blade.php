@@ -10,7 +10,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="card-tools mt-1" style="float:right">
-              <button class="btn btn-warning btn-sm rounded-pill" @click="clearData()" title="Create Table" data-toggle="modal" data-target="#modal-table"><i class="far fa-plus fa-fw"></i>Create New</button>
+              <button class="btn btn-warning btn-sm rounded-pill" @click="clearData()" title="Create Table" data-toggle="modal" data-target="#modal-table"><i class="far fa-plus fa-fw"></i>{{ __('app.global.create-new') }}</button>
               @include('tables.create')
             </div>
           </div>

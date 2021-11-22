@@ -2,17 +2,17 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Delete Table</h5>
+          <h5 class="modal-title">{{ __('app.table.delete-table') }}</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body text-center">
-            <h6>Do you want to delete <span class="text-warning">@{{ data.name }}</span> form Restaurant Table?</h6>
+          <h6>{{ __('app.table.do-you-want-to-delete-this-table:') }} <span class="text-warning"></span>@{{ data.name }}?</h6>
         </div>
         <div class="modal-footer">
-            <button class="btn btn-default rounded-pill btn-sm" data-dismiss="modal">Cancel</button>
-            <button @click="deleteTable()" class="btn btn-danger rounded-pill btn-sm">Confirm</button>
+            <button class="btn btn-default rounded-pill btn-sm" data-dismiss="modal">{{ __('app.global.cancel') }}</button>
+            <button @click="deleteTable()" class="btn btn-danger rounded-pill btn-sm">{{ __('app.global.confirm') }}</button>
         </div>
       </div>
     </div>

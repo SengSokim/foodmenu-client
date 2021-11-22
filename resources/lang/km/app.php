@@ -22,7 +22,7 @@ return [
     ],
 
     'dashboard' => [
-        'total-categories' => 'សរុបកាតាឡុក',
+        'total-categories' => 'សរុបប្រភេទផលិតផល',
         'total-products' => 'សរុបផលិតផល',
         'total-orders' => 'សរុបការបញ្ជាទិញ',
         'total-user' => 'សរុបអ្នកប្រើប្រាស់ប្រព័ន្ធ',
@@ -33,7 +33,7 @@ return [
         'dashboard' => 'ផ្ទាំងគ្រប់គ្រង',
         'restaurant' => 'ភោជនីយដ្ឋាន',
         'products' => 'ផលិតផល',
-        'categories' => 'កាតាឡុក',
+        'categories' => 'ប្រភេទផលិតផល',
         'users' => 'អ្នកប្រើប្រាស់ប្រព័ន្ធ',
         'orders' => 'ការបញ្ជាទិញ',
         'tables' => 'តុ',
@@ -82,20 +82,20 @@ return [
 	],
 
 	'categories' => [
-		'product-categories' => 'កាតាឡុក',
+		'product-categories' => 'ប្រភេទផលិតផល',
 		'name' => 'ឈ្មោះ',
 		'sequence' => 'លំដាប់',
 		'display-sequence' => 'លំដាប់',
-        'create-category' => 'បង្កើតកាតាឡុក',
-        'update-category' => 'កែប្រែកាតាឡុក',
+        'create-category' => 'បង្កើតប្រភេទផលិតផល',
+        'update-category' => 'កែប្រែប្រភេទផលិតផល',
 
-		'delete-category' => 'លុបកាតាឡុក',
-		'do-you-want-to-delete-this-category:' => 'តើអ្នកពិតជាចង់លុបកាតាឡុក:',
+		'delete-category' => 'លុបប្រភេទផលិតផល',
+		'do-you-want-to-delete-this-category:' => 'តើអ្នកពិតជាចង់លុបប្រភេទផលិតផល:',
 	],
 
 	'product' => [
 		'name' => 'ឈ្មោះផលិតផល',
-		'product-category' => 'កាតាឡុក',
+		'product-category' => 'ប្រភេទផលិតផល',
         'price' => 'តម្លៃ',
 		'display-sequence' => 'លំដាប់',
         'description' => 'ការពិពណ៌នា',
@@ -128,7 +128,9 @@ return [
     
 	'table' => [
 		'table' => 'តុ',
-		'name' => 'Name',
+		'name' => 'ឈ្មោះតុ',
+		'create-table' => 'បង្កើតតុ',
+		'edit-table' => 'កែប្រែតុ',
 		'delete-table' => 'លុបតុ',
 		'do-you-want-to-delete-this-table:' => 'តើអ្នកពិតជាចង់លុបតុ:',
 	],

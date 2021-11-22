@@ -55,7 +55,7 @@ class AuthController extends Controller
 
         session()->put('auth', $result->data);
         
-        return redirect()->to('portal');
+        return redirect()->to('admin');
     }
 
     public function loginGet(Request $request)

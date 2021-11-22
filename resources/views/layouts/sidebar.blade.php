@@ -11,7 +11,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="{{ route('dashboard') }}" class="nav-link {{ request()->is('*portal/dashboard') ? 'active' : '' }}">
+        <a href="{{ route('dashboard') }}" class="nav-link {{ request()->is('*admin/dashboard') ? 'active' : '' }}">
           <i class="nav-icon fas fa-tachometer-alt"></i>
           <p>
             {{ __('app.sidebar.dashboard') }}
@@ -19,7 +19,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="{{ route('products') }}" class="nav-link {{ request()->is(['*portal','*portal/products*','*portal/product_variants*']) ? 'active' : '' }}">
+        <a href="{{ route('products') }}" class="nav-link {{ request()->is(['*admin','*admin/products*','*admin/product_variants*']) ? 'active' : '' }}">
           <i class="nav-icon fas fa-hamburger"></i>
           <p>
             {{ __('app.sidebar.products') }}
@@ -27,7 +27,7 @@
         </a>
       </li>    
       <li class="nav-item">
-        <a href="{{ route('product-categories') }}" class="nav-link {{ request()->is('*portal/product-categories') ? 'active' : '' }}">
+        <a href="{{ route('product-categories') }}" class="nav-link {{ request()->is('*admin/product-categories') ? 'active' : '' }}">
           <i class="nav-icon fas fa-boxes"></i>
           <p>
             {{ __('app.sidebar.categories') }}
@@ -35,7 +35,7 @@
         </a>
       </li>
       {{-- <li class="nav-item">
-        <a href="{{route('users')}}" class="nav-link {{ request()->is('*portal/users') ? 'active' : '' }}">
+        <a href="{{route('users')}}" class="nav-link {{ request()->is('*admin/users') ? 'active' : '' }}">
           <i class="nav-icon fas fa-users"></i>
           <p>
             Users
@@ -43,7 +43,7 @@
         </a>
       </li> --}}
       <li class="nav-item">
-        <a href="{{route('tables')}}" class="nav-link {{ request()->is('*portal/tables') ? 'active' : '' }}">
+        <a href="{{route('tables')}}" class="nav-link {{ request()->is('*admin/tables') ? 'active' : '' }}">
           <i class="nav-icon fas fa-table"></i>
           <p>
             {{ __('app.sidebar.tables') }}
@@ -53,7 +53,7 @@
 
    
       <li class="nav-item">
-        <a href="{{ route('setting.telegram') }}" class="nav-link {{ request()->is('*portal/setting*') ? 'active' : '' }}">
+        <a href="{{ route('setting.telegram') }}" class="nav-link {{ request()->is('*admin/setting*') ? 'active' : '' }}">
           <i class="nav-icon fas fa-cog"></i>
           <p>
             {{ __('app.sidebar.settings') }}
@@ -61,7 +61,7 @@
         </a>
       </li>
       {{-- <li class="nav-item">
-        <a href="{{ route('users') }}" class="nav-link {{ request()->is('portal/users') ? 'active' : '' }}">
+        <a href="{{ route('users') }}" class="nav-link {{ request()->is('admin/users') ? 'active' : '' }}">
           <i class="nav-icon fas fa-users"></i>
           <p>
             Users
@@ -69,7 +69,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="{{ route('tables') }}" class="nav-link {{ request()->is('portal/tables') ? 'active' : '' }}">
+        <a href="{{ route('tables') }}" class="nav-link {{ request()->is('admin/tables') ? 'active' : '' }}">
           <i class="nav-icon fas fa-table"></i>
           <p>
             Tables

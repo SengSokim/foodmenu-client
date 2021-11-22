@@ -24,7 +24,7 @@ class Controller extends BaseController
                 // $user_per = $request->user_per;
                 // if(!isset($user_per))
                 // {
-                //     $response = $this->api_get('portal/auth/user_per');
+                //     $response = $this->api_get('admin/auth/user_per');
 
                 //     if ($response->success) {
                 //         $user_per = (array)$response->data;
@@ -113,7 +113,7 @@ class Controller extends BaseController
 
     public function clearAuth()
     {
-        self::api_post('portal/auth/logout');
+        self::api_post('admin/auth/logout');
         session()->put('auth', null);
         return redirect()->to('/auth/login');
     }

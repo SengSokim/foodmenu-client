@@ -39,12 +39,12 @@ new Vue({
 
         save(){
             showLoading();
-            axios.post(`/portal/product-categories/${this.data.id ?? ''}`,
+            axios.post(`/admin/product-categories/${this.data.id ?? ''}`,
                 this.data
             ).then(response => {
                 if (response.data.success) {
                     hideLoading();
-                    window.location.href = '/portal/product-categories';
+                    window.location.href = '/admin/product-categories';
                 } else {
                     showAlertError(response.data.message);
                     hideLoading();
@@ -72,12 +72,12 @@ new Vue({
 
         deleteCategory () {
             showLoading();
-            axios.delete(`/portal/product-categories/${this.data.id}`)
+            axios.delete(`/admin/product-categories/${this.data.id}`)
                 .then(response => {
                     hideLoading();
                     console.log(response.data);
                     if (response.data.success) {
-                        window.location.href = '/portal/product-categories';
+                        window.location.href = '/admin/product-categories';
                     } else {
                         showAlertError(response.data.message);
                     } 

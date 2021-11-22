@@ -40,7 +40,7 @@
         <div class="row pb-3 px-3">
           <div class="col-md-12">
             <button type="submit" class="btn btn-sm btn-info text-white">Filter <i class="fas fa-filter"></i></button>
-            <a href="{{ url('portal/product-categories') }}" class="btn btn-sm btn-danger">Clear <i class="fas fa-sync-alt"></i></a>
+            <a href="{{ url('admin/product-categories') }}" class="btn btn-sm btn-danger">Clear <i class="fas fa-sync-alt"></i></a>
           </div>
         </div>
       </form> --}}

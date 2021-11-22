@@ -16,7 +16,7 @@
         <div class="icon">
           <i class="fas fa-boxes"></i>
         </div>
-        <a href="{{ url('portal/product-categories') }}" class="small-box-footer">{{ __('app.dashboard.more-info') }} <i class="fas fa-arrow-circle-right"></i></a>
+        <a href="{{ url('admin/product-categories') }}" class="small-box-footer">{{ __('app.dashboard.more-info') }} <i class="fas fa-arrow-circle-right"></i></a>
       </div>
     </div>
     <!-- ./col -->
@@ -31,7 +31,7 @@
         <div class="icon">
           <i class="fas fa-hamburger"></i>
         </div>
-        <a href="{{ url('portal/products') }}" class="small-box-footer">{{ __('app.dashboard.more-info') }} <i class="fas fa-arrow-circle-right"></i></a>
+        <a href="{{ url('admin/products') }}" class="small-box-footer">{{ __('app.dashboard.more-info') }} <i class="fas fa-arrow-circle-right"></i></a>
       </div>
     </div>
     <!-- ./col -->

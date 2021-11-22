@@ -1,16 +1,8 @@
 <?php
-    // Route::get('/', 'HomeController@index')->name('home');
-    // Route::get('/home', 'HomeController@index')->name('home');
-
     Route::group(['prefix' => 'auth'], function () {
         Route::get('/login', 'AuthController@login')->name('auth.login');
         Route::get('/login/get', 'AuthController@loginGet')->name('auth.login.get');
         Route::post('/login', 'AuthController@submitLogin')->name('auth.login');
-
-        // //show
-        // Route::post('/register/check_phone', 'AuthController@checkPhone');
-        // Route::post('/register', 'AuthController@register')->name('register');
-
 
         Route::get('/forget', 'AuthController@forget');
         Route::post('/forget', 'AuthController@submitforgetPassword');
@@ -31,7 +23,7 @@
         'prefix' => LaravelLocalization::setLocale(),
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
     ], function(){
-        Route::group(['prefix' =>  'portal', 'middleware' => 'auth'], function () {
+        Route::group(['prefix' =>  'admin', 'middleware' => 'auth'], function () {
             Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
             Route::get('/', 'ProductController@index')->name('products');
 

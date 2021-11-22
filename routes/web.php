@@ -51,7 +51,6 @@
 
                 Route::post('/status/{id}', 'ProductController@status');
                 Route::delete('/{id}', 'ProductController@destroy');
-
             });
 
             Route::prefix('product_variants')->group(function () {
@@ -59,8 +58,6 @@
                 Route::post('/', 'ProductVariantController@store')->name('product_variants.store');
                 Route::post('/{id}', 'ProductVariantController@update')->name('product_variants.update');
                 Route::delete('/{id}', 'ProductVariantController@destroy')->name('product_variants.destroy');
-
-
             });
 
             Route::prefix('product-categories')->group(function () {
@@ -76,7 +73,10 @@
 
             Route::prefix('tables')->group(function () {
                 Route::get('/', 'TableController@index')->name('tables');
-                Route::get('/qr_generate', 'TableController@qr_generate')->name('tables.qr_generate');
+                Route::post('/', 'TableController@store')->name('tables.store');
+                Route::post('/{id}', 'TableController@update')->name('tables.update');
+                Route::delete('/{id}', 'TableController@destroy')->name('tables.destroy');
+                Route::get('/qr_generate/{id}', 'TableController@qr_generate')->name('tables.qr_generate');
             });
 
             Route::prefix('restaurants')->group(function () {

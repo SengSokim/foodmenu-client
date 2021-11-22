@@ -1,21 +1,19 @@
-<div class="modal fade" id="deleteTable" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="delete-table" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title"> Delete Table</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            </div>
-            <div class="modal-body text-center">
-                <h6>Do you want to delete this Table:<span class="text-warning">Table</span>?</h6>
-            </div>
-            <div class="modal-footer">
-            <form action="">
-                <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal"><i class="fas fa-ban"></i> Cancel</button>
-                <button type="sumbit" class="btn btn-success  btn-sm"><i class="fas fa-check-circle"></i> Confirm</button>
-            </form>
-            </div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Delete Table</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
+        <div class="modal-body text-center">
+            <h6>Do you want to delete <span class="text-warning">@{{ data.name }}</span> form Restaurant Table?</h6>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-default rounded-pill btn-sm" data-dismiss="modal">Cancel</button>
+            <button @click="deleteTable()" class="btn btn-danger rounded-pill btn-sm">Confirm</button>
+        </div>
+      </div>
     </div>
-</div>
+  </div>

@@ -50,7 +50,6 @@ class ProductCategoryController extends Controller
 
     public function destroy($id)
     {
-        
         $result = $this->api_post('portal/product_categories/delete/'. $id);
 
         if ($result->success == true) {

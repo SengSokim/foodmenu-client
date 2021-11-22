@@ -1,21 +1,36 @@
 @extends('layouts.master')
+@section('content-header')
+    {!!generateContentHeader('Restaurant Tables', 'Restaurant Tables' )!!}
+@endsection
 @section('content')
-<div id="tables">
-    <div class="row"> 
-        <div class="col-md-6">
-            <h4>Restaurant Table</h4>
+<div class="row" id="RestaurantTables" v-cloak>
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card-tools mt-1" style="float:right">
+              <button class="btn btn-warning btn-sm rounded-pill" @click="clearData()" title="Create Table" data-toggle="modal" data-target="#modal-table"><i class="far fa-plus fa-fw"></i>Create New</button>
+              @include('tables.create')
+            </div>
+          </div>
         </div>
-        <div class="col-md-6 text-right">
-            <h5>
-                <a href="{{ route('dashboard') }}">Dashboard</a> / Table
-            </h5>
-        </div>
+      </div>
+      <div class="card-body">
+        @include('tables.table')  
+        @include('tables.edit')
+        @include('tables.delete')
+      </div>
+      <div class="card-footer">
+        @include('layouts.pagination') 
+      </div>
     </div>
-    @include('tables.table')
-    @include('tables.create')
-    @include('tables.edit')
+  </div>
 </div>
 @endsection
 @section('footer-content')
+<script>
+    const restaurant_tables = @json($data)
+</script>
     <script src="{{ mix('dist/js/tables/table.js')}}"></script>
 @endsection

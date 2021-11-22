@@ -19,7 +19,7 @@
           </div>
         </form>
       </li>
-      <li class="dropdown" style="position: absolute; right: 120px;">
+      <li class="dropdown" style="position: absolute; right: 10%">
         <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle" title="Translation">
           <i class="far fa-globe fa-fw" style="size: 40px;">
           </i><span class="caret"></span></a>

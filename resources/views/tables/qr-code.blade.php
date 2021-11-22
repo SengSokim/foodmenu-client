@@ -25,16 +25,6 @@
                     </th>
                     
                 </tr> 
-                {{--
-                <tr>
-                    <th colspan="2" style="position: relative">
-                        <hr style="height: 1px; background: #134">
-                        <h3  style="position: absolute; top: -50%; right: 0; left: 0; background: white;width: 100px; display: block; margin: 0px auto">
-                            មើលមុខម្ហូប
-                        </h3>
-                    </th>
-                </tr>   
-               --}}
             </thead>
             <tbody>
                 <tr>

@@ -14,7 +14,7 @@
         <td>@{{ item.name }}</td>
         <td class="text-center">@{{ item.enable_status ? "Active" : "Deactive" }}</td>
         <td class="text-center"> 
-          <a href="{{ route('tables.qr_generate') }}" target="_blank">
+          <a :href='"{{ url('portal/tables/qr_generate').'/' }}" + item.id' target="_blank">
             <button class="btn btn-warning btn-sm rounded-pill" title="QR Code" style="padding: .425rem .70rem"><i class="fas fa-qrcode"></i></button>
           </a>
           <button class="btn btn-primary rounded-pill btn-sm" style="padding: .425rem .55rem" data-toggle="modal" data-target="#editTable" @click="setData(item);" title="Edit"><i class="fas fa-edit fa-fw"></i></button>

@@ -76,12 +76,7 @@
                 Route::post('/', 'TableController@store')->name('tables.store');
                 Route::post('/{id}', 'TableController@update')->name('tables.update');
                 Route::delete('/{id}', 'TableController@destroy')->name('tables.destroy');
-                Route::get('/qr_generate', 'TableController@qr_generate')->name('tables.qr_generate');
-            });
-
-            Route::prefix('tables')->group(function () {
-                Route::get('/', 'TableController@index')->name('tables');
-                Route::get('/qr_generate', 'TableController@qr_generate')->name('tables.qr_generate');
+                Route::get('/qr_generate/{id}', 'TableController@qr_generate')->name('tables.qr_generate');
             });
 
             Route::prefix('restaurants')->group(function () {

@@ -159,17 +159,17 @@
   <div class="res-qrcode text-center">
     <div class="card" id="qr-mobile">
       <div class="card-body">
-        {{-- <img src="data:image/png;base64, 
+        <img src="data:image/png;base64, 
           {!! base64_encode(QrCode::format('png')
           ->merge('adminlte/dist/img/logo/emenu-square-black-bg-with-stroke.png', .3, true)
           ->size(200)
           ->errorCorrection('H')
-          ->generate($restaurant_info->website_url ?? '' )) !!} " style="width: 100%"> --}}
+          ->generate($restaurant_info->website_url ?? '' )) !!} " style="width: 100%">
       </div> 
     </div>
   </div>
   <div class="scan-for-menu">
-      {{-- <a href="
+      <a href="
       data:image/png;base64, 
             {!! base64_encode(QrCode::format('png')
             ->merge('adminlte/dist/img/logo/emenu-square-black-bg-with-stroke.png', .3, true)
@@ -179,7 +179,7 @@
             " download="QR Code"
         class="btn btn-default rounded-pill btn-xs" type="button" title="Download" id="qrdownload">
         {{ __('app.right-sidebar.download') }} <i class="far fa-download text-warning" style="opacity:1;"></i>
-      </a> --}}
+      </a>
     <button class="btn btn-default rounded-pill btn-xs px-2" type="button" title="share link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       {{ __('app.right-sidebar.share') }} <i class="far fa-share-all text-warning" style="opacity:1;"></i>
     </button>

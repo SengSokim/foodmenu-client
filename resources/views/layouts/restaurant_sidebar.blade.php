@@ -9,7 +9,7 @@
             </button>
           </div>
             <button class="btn btn-default rounded-pill btn-xs px-2" data-toggle="modal" data-target="#edit-restaurant" title="Edit"  @click="showRestaurant">
-              {{ __('app.global.edit') }}<i class="fa fa-edit text-warning"></i>
+              {{ __('app.global.edit') }} &nbsp; <i class="fa fa-edit text-warning"></i>
             </button>
         </div>
         <div class="modal fade" id="edit-restaurant" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static" style="overflow: scroll !important;">
@@ -159,24 +159,24 @@
   <div class="res-qrcode text-center">
     <div class="card" id="qr-mobile">
       <div class="card-body">
-        <img src="data:image/png;base64, 
+        {{-- <img src="data:image/png;base64, 
           {!! base64_encode(QrCode::format('png')
           ->merge('adminlte/dist/img/logo/emenu-square-black-bg-with-stroke.png', .3, true)
           ->size(200)
           ->errorCorrection('H')
-          ->generate($restaurant_info->website_url ?? '' )) !!} " style="width: 100%">
+          ->generate($restaurant_info->website_url ?? '' )) !!} " style="width: 100%"> --}}
       </div> 
     </div>
   </div>
   <div class="scan-for-menu">
-      <a href="
-      data:image/png;base64, 
+      <a href=""
+      {{-- "data:image/png;base64, 
             {!! base64_encode(QrCode::format('png')
             ->merge('adminlte/dist/img/logo/emenu-square-black-bg-with-stroke.png', .3, true)
             ->size(200)
             ->errorCorrection('H')
             ->generate($restaurant_info->website_url ?? '' )) !!}
-            " download="QR Code"
+            " download="QR Code" --}}
         class="btn btn-default rounded-pill btn-xs" type="button" title="Download" id="qrdownload">
         {{ __('app.right-sidebar.download') }} <i class="far fa-download text-warning" style="opacity:1;"></i>
       </a>

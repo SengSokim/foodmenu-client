@@ -59,11 +59,11 @@ CreateProductVariant = new Vue({
             this.data.values.splice(this.selected_variant_index, 1); 
         },
         save() {
-            axios.post(`${baseURL}/portal/product-variants/`,
+            axios.post(`${baseURL}/admin/product-variants/`,
                 this.data
             ).then(response => {
                 if (response.data.success) {
-                    window.location.href = baseURL+'/portal/product-variants?product_id=' + this.data.product_id;
+                    window.location.href = baseURL+'/admin/product-variants?product_id=' + this.data.product_id;
                 } else {
                     showAlertError(response.data.message);
                     hideLoading()

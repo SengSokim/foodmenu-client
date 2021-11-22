@@ -19,7 +19,7 @@ class AuthMiddleware
          if(!session()->get('auth') && !$guest) {
             return redirect()->to('auth/login');
          }else if(session()->get('auth') && $guest) {
-            return redirect()->to('portal');
+            return redirect()->to('admin');
          }
 
         return $next($request);

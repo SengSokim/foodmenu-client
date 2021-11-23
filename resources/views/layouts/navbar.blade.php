@@ -4,9 +4,9 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button" data-enable-remember="true"><i class="fas fa-bars"></i></a>
       </li>
-      <li style="position: absolute; left: 20%; right: 20%;">
+      <li style="position: absolute; left: 10%; right: 23%;">
         <form action="{{ route('products') }} " class="form-inline mt-1">
-          <div class="input-group input-group-sm" style="width: 100%;">
+          <div class="input-group input-group-sm" style="width: 78%;">
             <input name="search" class="form-control rounded-pill" type="search" placeholder="{{ __('app.global.search-product') }}..." aria-label="Search" value="{{ request('search') }}" style="border:0; background: #fff">
             <div class="input-group-append">
               <button type="submit" class="btn btn-lg btn-default rounded-pill mx-1" style="border:0; background: #fff" title="Search">
@@ -19,7 +19,7 @@
           </div>
         </form>
       </li>
-      <li class="dropdown" style="position: absolute; right: 10%">
+      <li class="dropdown" style="position: absolute; right: 23.8%">
         <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle" title="Translation">
           <i class="far fa-globe fa-fw" style="size: 40px;">
           </i><span class="caret"></span></a>

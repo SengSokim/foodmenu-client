@@ -130,6 +130,9 @@ return [
     
 	'table' => [
 		'table' => 'Table',
+        'create-table' => 'Create Table',
+        'edit-table' => 'Edit Table',
+        
 		'name' => 'Name',
 		'delete-table' => 'Delete Table',
 		'do-you-want-to-delete-this-table:' => 'Do you want to delete this table:',

@@ -8,7 +8,7 @@
           </button>
         </div>
         <div class="modal-body text-center">
-          <h6>{{ __('app.table.do-you-want-to-delete-this-table:') }} <span class="text-warning"></span>@{{ data.name }}?</h6>
+          <h6>{{ __('app.table.do-you-want-to-delete-this-table:') }} <span class="text-warning">@{{ data.name }}</span>?</h6>
         </div>
         <div class="modal-footer">
             <button class="btn btn-default rounded-pill btn-sm" data-dismiss="modal">{{ __('app.global.cancel') }}</button>

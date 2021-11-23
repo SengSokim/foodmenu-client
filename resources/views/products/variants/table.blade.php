@@ -9,7 +9,7 @@
       </div>
       <div class="card-body">
         <div class="table-responsive">
-          <table class="table table-striped table-hover table-bordered">
+          <table class="table table-striped table-hover table-bordered" v-cloak>
             <thead>
               <tr>
                 <th class="text-center">#</th>

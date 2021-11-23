@@ -159,7 +159,7 @@
   <div class="res-qrcode text-center">
     <div class="card" id="qr-mobile">
       <div class="card-body">
-        @if (config('app.env') === 'development' && config('app.env') === 'production') 
+        @if (config('app.env') === 'development' || config('app.env') === 'production') 
           <img src="data:image/png;base64,{!! base64_encode(QrCode::format('png')
             ->merge('adminlte/dist/img/logo/emenu-square-black-bg-with-stroke.png', .3, true)
             ->size(200)
@@ -172,7 +172,7 @@
     </div>
   </div>
   <div class="scan-for-menu">
-    @if (config('app.env') === 'development' && config('app.env') === 'production') 
+    @if (config('app.env') === 'development' || config('app.env') === 'production') 
       <a href="data:image/png;base64, 
             {!! base64_encode(QrCode::format('png')
             ->merge('adminlte/dist/img/logo/emenu-square-black-bg-with-stroke.png', .3, true)

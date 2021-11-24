@@ -20,7 +20,7 @@
         </form>
       </li>
       <div class="localization">
-        @include('layouts.localization')
+        @include('layouts.Localization')
       </div>
       <li class="nav-item dropdown" title="{{ $auth->user->name }}" id="my-profile">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" style="border: 0;">

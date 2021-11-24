@@ -4,9 +4,9 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button" data-enable-remember="true"><i class="fas fa-bars"></i></a>
       </li>
-      <li style="position: absolute; left: 10%; right: 23%;">
+      <li style=" position: absolute; right: 35%; left: 10%;">
         <form action="{{ route('products') }} " class="form-inline mt-1">
-          <div class="input-group input-group-sm" style="width: 78%;">
+          <div class="input-group input-group-sm" style="width: 100%">
             <input name="search" class="form-control rounded-pill" type="search" placeholder="{{ __('app.global.search-product') }}..." aria-label="Search" value="{{ request('search') }}" style="border:0; background: #fff">
             <div class="input-group-append">
               <button type="submit" class="btn btn-lg btn-default rounded-pill mx-1" style="border:0; background: #fff" title="Search">
@@ -19,30 +19,13 @@
           </div>
         </form>
       </li>
-      <li class="dropdown" style="position: absolute; right: 23.8%">
-        <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle" title="Translation">
-          <i class="far fa-globe fa-fw" style="size: 40px;">
-          </i><span class="caret"></span></a>
-        <ul class="dropdown-menu border-1 shadow">
-            <li>
-                <a class="dropdown-item" rel="alternate" hreflang="{{ 'en' }}" href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">
-                    <img src="{{asset('adminlte/dist/img/lang_flag/english.png')}}" style="width: 20px; margin:5px;"> 
-                    {{ 'English' }}
-                </a>
-            </li>
-            <li>
-                <a class="dropdown-item" rel="alternate" hreflang="{{ 'km' }}" href="{{ LaravelLocalization::getLocalizedURL('km', null, [], true) }}" >
-                    <img src="{{asset('adminlte/dist/img/lang_flag/khmer.png')}}" style="width: 20px; margin:5px;"> 
-                    {{ 'ភាសាខ្មែរ' }}
-                </a>
-            </li>
-            
-        </ul>   
-      </li>
-      <li class="nav-item dropdown" style="position: absolute; right: 0; margin-top: -6px;cursor: pointer;" id="my-profile" title="Profile">
+      <div class="localization">
+        @include('layouts.localization')
+      </div>
+      <li class="nav-item dropdown" title="{{ $auth->user->name }}" id="my-profile">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" style="border: 0;">
           <img src="{{ $auth->user->media->url ?? asset('adminlte/dist/img/placeholder/square_avatar_placeholder.jpg') }}" class="user-image img-circle elevation-2" alt="User Image" width="30">
-          <span class="d-none d-md-inline">{{$auth->user->name ?? 'Unknown' }}</span> 
+          <span class="d-none d-md-inline" title="{{ $auth->user->name }}">{{ Str::limit($auth->user->name, 8) ?? 'Unknown' }}</span> 
         </a>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#edit-profile" data-toggle="modal" @click="viewProfile">{{ __('app.profile.account') }}</a>

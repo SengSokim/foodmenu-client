@@ -44,7 +44,28 @@
       #my-profile:hover{
           background-color: #fff;
       }
-
+      #my-profile {
+        position: absolute; 
+        right: 0; 
+        margin-top: -6px;
+        cursor: pointer;
+      }
+      
+      @media (max-width:768px) { 
+        .localization {
+            position: absolute; 
+            right: 40px;
+            cursor: pointer;
+          } 
+        }
+        @media (min-width: 768px){
+          .localization {
+            position: absolute; 
+            right: 130px;
+            cursor: pointer;
+          }
+        }
+      
       @media (max-width: 768px) { 
         #responsive-qr {
           display: none;
@@ -82,7 +103,7 @@
 
       .res-qrcode{
         text-align: center;
-        margin-top: 10px
+        margin-top: 10px;
       }
 
       .card-body{
@@ -91,7 +112,7 @@
 
       .scan-for-menu{
         text-align: center;
-        margin-top: 5px
+        margin-top: 5px;
       }
 
       .poweredby{

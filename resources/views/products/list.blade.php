@@ -9,8 +9,8 @@
           <img :src="item.media.url" width="100%" style="border-top-left-radius: 2%; border-top-right-radius: 2%">
         </div>
       </div>
-      <div class="card-body p-2 mx-2">
-        <span>@{{item.name_en}}</span><br>
+      <div class="card-body p-2 mx-2" style="font-size: 12px">
+        <span>@{{item.name_en | str_limit(10)}}</span><br>
         <span>@{{ formatCurrency(item.price) }}</span>
       </div>
       <div class="overlay">

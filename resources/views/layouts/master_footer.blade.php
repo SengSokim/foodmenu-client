@@ -176,7 +176,18 @@
       });
     });
 
-    //- AREA CHART -
+    Vue.filter('str_limit', function (value, size) {
+      if (!value) return '';
+      value = value.toString();
+
+      if (value.length <= size) {
+        return value;
+      }
+      return value.substr(0, size) + '...';
+    });
+    
+
+    //AREA CHART
     // $(function () {
     //   var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
     //   var areaChartData = {
@@ -245,5 +256,13 @@
     //     options: lineChartOptions
     //   })
     // });
+
+    // //Auto Resize Text
+    // import ResizeText from 'vue-resize-text'
+    //   export default {
+    //   directives: {
+    //     ResizeText
+    //   }
+    // };
   </script> 
 </html>

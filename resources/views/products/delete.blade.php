@@ -8,7 +8,7 @@
         </button>
       </div>
       <div class="modal-body text-center">
-          <h6>{{ __('app.product.do-you-want-to-delete-this-product:') }} <span class="text-warning"></span>@{{ data.name }}?</h6>
+          <h6>{{ __('app.product.do-you-want-to-delete-this-product:') }} <span class="text-warning">@{{ data.name }}</span>?</h6>
       </div>
       <div class="modal-footer">
         <form @submit.prevent="deleteProduct">

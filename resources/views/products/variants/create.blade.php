@@ -34,7 +34,7 @@
             <div class="col-md-12">
               <div class="form-group m-0">
                 <input type="checkbox" v-model="data.enable_status">
-                <label for="status"> Active</label>
+                <label for="status">{{ __('app.product.active') }}</label>
               </div>
               <div class="form-group m-0">
                 <input type="checkbox" v-model="data.is_required">

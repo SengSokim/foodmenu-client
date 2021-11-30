@@ -8,8 +8,8 @@
         </button>
       </div>
       <div class="modal-body text-center">
-          <h6 v-if="data.enable_status==1">{{ __('app.product.do-you-want-to-update-this-product-deactive:') }}: <span class="text-warning"></span>@{{ data.name }}?</h6>
-          <h6 v-else>{{ __('app.product.do-you-want-to-update-this-product-active:') }}: <span class="text-warning"></span>@{{ data.name }}?</h6>
+          <h6 v-if="data.enable_status==1">{{ __('app.product.do-you-want-to-update-this-product-deactive:') }} <span class="text-warning">@{{data.name}}</span>?</h6>
+          <h6 v-else>{{ __('app.product.do-you-want-to-update-this-product-active:') }}: <span class="text-warning">@{{ data.name }}</span>?</h6>
       </div>
       <div class="modal-footer">
         <form @submit.prevent="deleteProduct">

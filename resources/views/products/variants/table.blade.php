@@ -3,7 +3,7 @@
     <div class="card">
       <div class="card-header">
         <div class="card-tools">
-          <button class="btn btn-warning btn-sm rounded-pill px-4" data-toggle="modal" data-target="#create-product-variant" @click="clearData()"><i class="far fa-plus fa-fw"></i>Create New</button>
+          <button class="btn btn-warning btn-sm rounded-pill px-4" data-toggle="modal" data-target="#create-product-variant" @click="clearData()"><i class="far fa-plus fa-fw"></i>{{ __('app.global.create-new') }}</button>
             @include('products.variants.create')
         </div>
       </div>

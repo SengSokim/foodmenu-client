@@ -32,16 +32,16 @@
                     <div class="form-no-res">
                       <div class="form-group ">
                         <label for="password" class=" d-none d-md-block">New Password</label>
-                        <input type="password" class="form-control {{ isset($error['val']['password']) ? 'is-invalid' : '' }}" name="password" id="password" placeholder="********">
+                        <input type="password" class="form-control {{ isset($error['val']['password']) ? 'is-invalid' : '' }}" name="password" id="password">
                         <span class="invalid-feedback" role="alert">{{ $error['val']['password'] ?? ''  }}</span> 
                       </div>
                       <div class="form-group">
                         <label for="confirm_password" class=" d-none d-md-block">Confirm Password</label>
-                        <input type="password" class="form-control {{ isset($error['val']['confirm_password']) ? 'is-invalid' : '' }}" name="confirm_password" id="confirm_password" placeholder="********">
+                        <input type="password" class="form-control {{ isset($error['val']['confirm_password']) ? 'is-invalid' : '' }}" name="confirm_password" id="confirm_password">
                         <span class="invalid-feedback" role="alert">{{ $error['val']['confirm_password'] ?? ''  }}</span> 
                       </div>
                     </div>
-                    <div id="form-res">
+                    {{-- <div id="form-res">
                       <div class="form-group">
                         <label for="password" class=" d-none d-md-block">New Password</label>
                         <input type="password" class="form-control {{ isset($error['val']['password']) ? 'is-invalid' : '' }}" name="password" id="password" placeholder="Enter New Password">
@@ -52,7 +52,7 @@
                         <input type="password" class="form-control {{ isset($error['val']['confirm_password']) ? 'is-invalid' : '' }}" name="confirm_password" id="confirm_password" placeholder="Confirm New Password">
                         <span class="invalid-feedback" role="alert">{{ $error['val']['confirm_password'] ?? ''  }}</span> 
                       </div>
-                    </div>
+                    </div> --}}
                     <input type="hidden" name="token" value="{{ $token }}">
                     <input type="hidden" name="phone_number" value="{{ $phone_number }}">
 
@@ -71,6 +71,35 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  //Make responsive placeholder 
+  <script>
+    if ($(window).width() < 768) {
+        $("#password").attr("placeholder", "Enter New Password");
+    }
+    else {
+        $("#password").attr("placeholder", "********");
+    }
+    $(window).resize(function () {
+        if ($(window).width() < 768) {
+            $("#password").attr("placeholder", "Enter New Password");
+        }
+        else {
+            $("#password").attr("placeholder", "********");
+        }
+    });
+    if( $(window).width() < 768 ) {
+      $("#confirm_password").attr("placeholder", "Confirm New Password");
+    } else {
+      $("#confirm_password").attr("placeholder", "********");
+    }
+    $(window).resize( function() {
+      if($(window).width() < 768){
+        $("#confirm_password").attr("placeholder", "Confirm New Password");
+      } else {
+        $("#confirm_password").attr("placeholder", "********")
+      }
+    });
+  </script>
 </body>
 </html>
 

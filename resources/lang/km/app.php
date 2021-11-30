@@ -144,5 +144,27 @@ return [
         'your-telegram' => 'Telegram របស់អ្នក',
         'not-set' => 'មិនបានកំណត់',
 
-    ]
+    ],
+    'orders' => [
+		'from-date' => 'ចាប់ពីថ្ងៃ',
+		'to-date' => 'ដល់ថ្ងៃ',
+		'code' => 'លេខកូដបញ្ជាទិញ',
+
+		'phone-number' => 'លេខទូរស័ព្ទ',
+		'order-date' => 'ថ្ងៃបញ្ជាទិញ',
+		'ordered-mode' => 'បញ្ជាទិញតាមរយះ',
+        'delete-order' => 'លុបការបញ្ជាទិញ',
+
+		'order-detail-information' => 'ពត៍មានលម្អិតនៃការបញ្ជាទិញ',
+		'product-name' => 'ឈ្មោះផលិតផល',
+		'qty' => 'ចំនួន',
+		'price' => 'តម្លៃរាយ',
+		'subtotal' => 'តម្លៃសរុប',
+
+        'reject-order' => 'មិនទទួលការបញ្ជាទិញ',
+        'confirmation-order' => 'ទទួលការបញ្ជាទិញ',
+        'reject' => 'មិនទទួល',
+        'are-you-sure-you-want-to-reject-this-order' => 'មិនទទួលការបញ្ជាទិញលេខកូដ:',
+        'you-are-confirmation-order-code' => 'យល់ព្រមទទួលការបញ្ជាទិញលេខកូដ:'
+	],
 ];

@@ -39,38 +39,20 @@
         height: 80vh; 
         overflow-y: auto;
       }
-
-      
-      #my-profile:hover{
-          background-color: #fff;
-      }
-      #my-profile {
-        position: absolute; 
-        right: 0; 
-        margin-top: -6px;
-        cursor: pointer;
-      }
-      
-      @media (max-width:768px) { 
-        .localization {
-            position: absolute; 
-            right: 40px;
-            cursor: pointer;
-          } 
-        }
-        @media (min-width: 768px){
-          .localization {
-            position: absolute; 
-            right: 130px;
-            cursor: pointer;
-          }
-        }
       
       @media (max-width: 768px) { 
         #responsive-qr {
           display: none;
         }
+/* 
+        #order-notification {
+          display: none
+        } */
 
+        #user-dropdown {
+          margin-top: -3px
+        }
+        
         #margin-filter{
           margin: 0 2rem
         }
@@ -120,6 +102,18 @@
         position: fixed;
         bottom: 10px
       }
+
+      @media (max-width: 992px){
+        #user-dropdown {
+          margin-top: -3px
+        }
+
+        #pl-0{
+          padding-left: 0px !important 
+        }
+        
+      }
+
    
     </style>
 

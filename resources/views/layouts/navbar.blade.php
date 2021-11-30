@@ -4,7 +4,7 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button" data-enable-remember="true"><i class="fas fa-bars"></i></a>
       </li>
-      <li style=" position: absolute; right: 35%; left: 10%;">
+      <li style=" position: absolute; right: 35%; left: 12%;">
         <form action="{{ route('products') }} " class="form-inline mt-1">
           <div class="input-group input-group-sm" style="width: 100%">
             <input name="search" class="form-control rounded-pill" type="search" placeholder="{{ __('app.global.search-product') }}..." aria-label="Search" value="{{ request('search') }}" style="border:0; background: #fff">
@@ -19,13 +19,42 @@
           </div>
         </form>
       </li>
-      <div class="localization">
-        @include('layouts.Localization')
-      </div>
-      <li class="nav-item dropdown" title="{{ $auth->user->name }}" id="my-profile">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" style="border: 0;">
-          <img src="{{ $auth->user->media->url ?? asset('adminlte/dist/img/placeholder/square_avatar_placeholder.jpg') }}" class="user-image img-circle elevation-2" alt="User Image" width="30">
-          <span class="d-none d-md-inline" title="{{ $auth->user->name }}">{{ Str::limit($auth->user->name, 8) ?? 'Unknown' }}</span> 
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item" id="order-notification">
+        <a class="nav-link" href="{{ route('orders.index') . "?status=pending" }}">          
+          @if ($count_order == 0)
+            <i class="far fa-bell"></i>
+            <span class="badge badge-warning navbar-badge"></span></a>
+          @else
+            <i class="fas fa-bell"></i>
+            <span class="badge badge-warning navbar-badge">{{ $count_order }}</span></a>
+          @endif
+      </li>
+      <li class="dropdown">
+        <a href="#" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false" class="nav-link dropdown-toggle" title="Translation" id="pl-0"  >
+          <i class="far fa-globe fa-fw">
+          </i><span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu border-1 shadow">
+          <li>
+            <a class="dropdown-item" rel="alternate" hreflang="{{ 'en' }}" href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">
+                <img src="{{asset('adminlte/dist/img/lang_flag/english.png')}}" style="width: 20px; margin:5px;"> 
+                {{ 'English' }}
+              </a>
+          </li>
+          <li>
+            <a class="dropdown-item" rel="alternate" hreflang="{{ 'km' }}" href="{{ LaravelLocalization::getLocalizedURL('km', null, [], true) }}" >
+              <img src="{{asset('adminlte/dist/img/lang_flag/khmer.png')}}" style="width: 20px; margin:5px;"> 
+              {{ 'ភាសាខ្មែរ' }}
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown user-menu" title="{{ $auth->user->name }}" id="user-dropdown">
+        <a class="nav-link dropdown-toggle" id="pl-0" data-toggle="dropdown" style="border: 0;">
+          <img src="{{ $auth->user->media->url ?? asset('adminlte/dist/img/placeholder/square_avatar_placeholder.jpg') }}" class="user-image img-circle elevation-1" alt="User Image">
+          <span class="d-none d-md-inline" title="{{ $auth->user->name }}">{{ $auth->user->name ?? 'Unknown' }}</span> 
         </a>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#edit-profile" data-toggle="modal" @click="viewProfile">{{ __('app.profile.account') }}</a>

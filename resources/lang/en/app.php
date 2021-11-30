@@ -166,7 +166,6 @@ return [
 		'qty' => 'QTY',
 		'price' => 'Price',
 		'subtotal' => 'Subtotal',
-		'name' => 'Name',
 
         'reject-order' => 'Reject Order',
         'confirmation-order' => 'Confirmation Order',

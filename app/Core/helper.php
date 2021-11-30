@@ -35,8 +35,10 @@
             $controller->setAuth($auth);
 
             $response_restaurant = $controller->api_get('portal/restaurants');
+            $response_count_oder = $controller->api_get('portal/orders/count');
             
             view()->share('restaurant_info', $response_restaurant->data ?? null);
+            view()->share('count_order', $response_count_oder->data ?? 0);
         }
 
     }

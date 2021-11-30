@@ -38,7 +38,7 @@
         <a href="{{route('orders.index')}}" class="nav-link {{ request()->is('*admin/orders') ? 'active' : '' }}">
           <i class="nav-icon fas fa-box"></i>
           <p>
-            Orders
+            {{ __('app.sidebar.orders') }}
           </p>
         </a>
       </li>

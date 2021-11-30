@@ -41,8 +41,8 @@
                       </div>
                     </div>
                   </div>
-                  <button type="submit" class="btn btn-warning btn-sm rounded-pill" v-if="telegramData.telegram_user === null && telegramData.telegram_group === null">{{ __('app.global.save') }}</button>
-                  <button type="submit" class="btn btn-warning btn-sm rounded-pill" v-else>{{ __('app.global.save-changes') }}</button>
+                  <button type="submit" class="btn btn-warning btn-sm rounded-pill px-5" v-if="telegramData.telegram_user === null && telegramData.telegram_group === null">{{ __('app.global.save') }}</button>
+                  <button type="submit" class="btn btn-warning btn-sm rounded-pill px-3" v-else>{{ __('app.global.save-changes') }}</button>
                 </div>
               </div>
             </form>

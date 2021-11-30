@@ -23,4 +23,6 @@
     </div>
   </div>
 </div>
- 
+ <button class="btn btn-warning btn-sm rounded-pill px-3" style="position: fixed; bottom: 10%; right: 20%; z-index: 1" data-toggle="modal" data-target="#create-product" @click="clearData()">
+    <i class="far fa-plus fa-fw"></i>{{ __('app.product.create-product') }}
+  </button>

@@ -34,6 +34,14 @@
           </p>
         </a>
       </li>
+      <li class="nav-item">
+        <a href="{{route('orders.index')}}" class="nav-link {{ request()->is('*admin/orders') ? 'active' : '' }}">
+          <i class="nav-icon fas fa-box"></i>
+          <p>
+            Orders
+          </p>
+        </a>
+      </li>
       {{-- <li class="nav-item">
         <a href="{{route('users')}}" class="nav-link {{ request()->is('*admin/users') ? 'active' : '' }}">
           <i class="nav-icon fas fa-users"></i>

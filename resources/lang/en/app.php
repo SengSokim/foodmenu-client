@@ -147,5 +147,31 @@ return [
         'your-telegram' => 'Your Telegram',
         'not-set' => 'Not Set',
 
-    ]
+    ],
+
+    'orders' => [
+		'from-date' => 'From Date',
+		'to-date' => 'To Date',
+		'code' => 'Code',
+
+		'phone-number' => 'Phone Number',
+		'order-date' => 'Ordered Date',
+		'rejected-by' => 'Rejected By',
+		'seller' => 'Seller',
+		'ordered-mode' => 'Ordered Mode',
+        'delete-order' => 'Delete Order',
+
+		'order-detail-information' => 'Order Detail Infomation',
+		'product-name' => 'Product Name',
+		'qty' => 'QTY',
+		'price' => 'Price',
+		'subtotal' => 'Subtotal',
+		'name' => 'Name',
+
+        'reject-order' => 'Reject Order',
+        'confirmation-order' => 'Confirmation Order',
+        'reject' => 'Reject',
+        'are-you-sure-you-want-to-reject-this-order' => 'Are you sure, you want to reject this order:',
+        'you-are-confirmation-order-code' => 'You are confirmation order code:'
+	],
 ];

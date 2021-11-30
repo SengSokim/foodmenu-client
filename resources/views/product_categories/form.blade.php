@@ -9,5 +9,5 @@
     <div class="invalid-feedback">@{{ errors.first('sequence') }}</div>
 </div>
 <div class="form-group m-0">
-    <input type="checkbox" v-model="data.enable_status"> <label>Active</label>
+    <input type="checkbox" v-model="data.enable_status"> <label>{{ __('app.product.active') }}</label>
 </div>

@@ -38,7 +38,7 @@ class AuthController extends Controller
 
         session()->put('auth', $result->data);
         
-        return redirect()->to('portal');
+        return redirect()->to('admin');
     }
 
     public function login()
@@ -67,7 +67,7 @@ class AuthController extends Controller
 
         session()->put('auth', $result->data);
         
-        return redirect()->to('portal');
+        return redirect()->to('admin');
     }
 
     public function forget()

@@ -16,7 +16,7 @@ class TableController extends Controller
             $search,
             $order,
             $sort,
-            url('portal/tables'),
+            url('admin/tables'),
             $current_page,
             [
                 'enable_status' => request('enable_status')

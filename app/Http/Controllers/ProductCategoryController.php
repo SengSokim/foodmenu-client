@@ -16,7 +16,7 @@ class ProductCategoryController extends Controller
             $search,
             $order,
             $sort,
-            url('portal/product-categories'),
+            url('admin/product-categories'),
             $current_page,
             [
                 'enable_status' => request('enable_status')

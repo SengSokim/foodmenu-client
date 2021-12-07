@@ -30,9 +30,10 @@ Product = new Vue({
     },
     methods:{
         init(){
-            axios.get(`/admin/products/get?search=${this.search}`
+            axios.get(`/admin/products/get?search=${this.search}&limit=1000&offset={this.products.length}`
                 ).then(response => {
                     this.is_loaded_product =1
+                
                 if (response.data.success) {
                     hideLoading()
                     this.products.push(...response.data.data.list);

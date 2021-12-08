@@ -1,4 +1,4 @@
-{{-- @php(getGeneralData($auth)) --}}
+@php(getGeneralData($auth))
 @extends('layouts.master')
 @section('content')
 <style>
@@ -50,7 +50,7 @@
   </script>
   <script src="{{ mix('dist/js/products/product.js') }}"></script>
   <script>
-    $('.product-category-select2').select2()
+    $('.product-category-select2').select2();
   </script> 
 
 

@@ -1,7 +1,7 @@
 <div v-if="is_loaded_product == 1 && resultQuery.length === 0" class="d-flex justify-content-center align-items-center">
   <img src="{{ asset('adminlte/dist/img/other/noProductFound.png') }}" alt="" width="35%">
 </div>
-<div class="row" v-else>
+<div class="row" v-else id="showmore">
   <div class="col-xs-1 col-lg-2 col-md-3" v-for="item in resultQuery">
     <div class="card" id="margin-product">
       <div class="card-header" style="padding: 10px;">
@@ -20,16 +20,24 @@
           <a href="#" class="btn btn-primary rounded-pill btn-xs mx-2" style="padding: .8rem .9rem" data-toggle="modal" data-target="#editProduct" @click="setData(item)" title="Edit"><i class="fas fa-edit"></i></a>
           <a href="#" class="btn btn-danger rounded-pill btn-xs mx-1" style="padding: .8rem 1rem" data-toggle="modal" data-target="#deleteProduct" @click="setData(item)" title="Delete"><i class="fas fa-trash"></i></a> <br>
           
-          {{-- <a href="#" class="btn btn-warning rounded-pill btn-xs mx-1" style="padding: .8rem .9rem;" title="Share" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-share" style="opacity:1;"></i></a>
-          <div class="dropdown-menu" style="cursor: pointer;">
-            <a class="dropdown-item" :href='"https://www.facebook.com/sharer/sharer.php?u={{ $restaurant_info->website_url . '?product_id='}}&display=popup" + item.id' target="_blank"><i class="fab fa-facebook fa-fw"></i>Facebook</a>
+          <a href="#" class="btn btn-warning rounded-pill btn-xs mx-1" style="padding: .8rem .9rem;" title="Share" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-share"></i></a>
+          <div class="dropdown-menu" style="position: relative; z-index:9999">
+            <a class="dropdown-item" :href='"https://www.facebook.com/sharer/sharer.php?u={{ $restaurant_info->website_url . '?product_id='}}" + item.id ' target="_blank"><i class="fab fa-facebook fa-fw"></i>Facebook</a>
             <a class="dropdown-item" :href='"https://twitter.com/intent/tweet?url={{ $restaurant_info->website_url . '?product_id='}}" + item.id' target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
-            <a class="dropdown-item" :href='"https://t.me/share/url?url={{ config('app.website_url') . '?product_id=' }}" + item.id' target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
-          </div> --}}
+            <a class="dropdown-item" :href='"https://t.me/share/url?url={{ $restaurant_info->website_url . '?product_id=' }}" + item.id' target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
+            <a class="dropdown-item" href="#" @click.stop.prevent="shareLinkProduct()">
+              <input type="hidden" :value='"{{ $restaurant_info->website_url . '?product_id=' }}" + item.id' id="share-link-Product">
+              <i class="far fa-link fa-fw"></i>Copy Link</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+<div class="loading">
+  <div class="ball"></div>
+  <div class="ball"></div>
+  <div class="ball"></div>
 </div>
 <button class="btn btn-warning btn-sm rounded-pill px-3" style="position: fixed; bottom: 10%; right: 20%; z-index: 1" data-toggle="modal" data-target="#create-product" @click="clearData()">
   <i class="far fa-plus fa-fw"></i>{{ __('app.product.create-product') }}

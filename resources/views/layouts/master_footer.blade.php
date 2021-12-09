@@ -184,6 +184,6 @@
       }
       return value.substr(0, size) + '...';
     });
-  
+
   </script> 
 </html>

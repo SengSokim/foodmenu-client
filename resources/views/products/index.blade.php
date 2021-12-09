@@ -2,13 +2,14 @@
 @extends('layouts.master')
 @section('content')
 <style>
-  .card:hover{
+  /* .card:hover{
     transform: translate(0, -8px);
     transition: transform 1s;
-  }
+  } */
  
  .overlay{
     position: absolute;
+    z-index: -1;
     top: 0;
     bottom: 0;
     left: 0;
@@ -22,6 +23,7 @@
   .card:hover .overlay {
     opacity: 1;
     background-color: rgba(0,0,0,0.8);
+
   }
 </style>
 <div class="container-fluid" id="product" v-cloak>
@@ -46,11 +48,29 @@
 @endsection
 @section('footer-content')
   <script>
-    const product_categories = <?php echo json_encode($product_categories); ?>;
+    const product_categories = @json($product_categories);
+    let app;
   </script>
   <script src="{{ mix('dist/js/products/product.js') }}"></script>
   <script>
     $('.product-category-select2').select2();
+    
+    //Show More
+    const container = document.getElementById('showmore');
+    const loading = document.querySelector('.loading');
+    const contentWrapper = document.getElementById('content-wrapper');
+
+    contentWrapper.addEventListener('scroll', () => {
+      const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+      if(clientHeight + scrollTop >= scrollHeight - 5) {
+        showLoading1();
+      }
+    });
+
+    function showLoading1() {
+      loading.classList.add('show');
+      app.showMore()
+    }
   </script> 
 
 

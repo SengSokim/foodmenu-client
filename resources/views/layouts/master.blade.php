@@ -12,7 +12,7 @@
         @include('layouts.sidebar')       
       </aside>
       
-      <div class="content-wrapper">
+      <div class="content-wrapper" id="content-wrapper">
         <section class="content-header">
           <div class="container-fluid">
             @yield('content-header')             

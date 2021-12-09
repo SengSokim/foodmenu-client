@@ -1,4 +1,4 @@
-Product = new Vue({
+app = new Vue({
     el: '#product',
     data: {  
         image: null,
@@ -23,15 +23,47 @@ Product = new Vue({
         product_category_selected: undefined,
         product_category_id: null,
         is_loaded_product : 0,
+        isLoading: 0,
         search: search
     },
     mounted() {
         this.init()
     },
     methods:{
+        shareLinkProduct() {
+            const el = document.querySelector('#share-link-Product')
+            el.setAttribute('type', 'text')    // 不是 hidden 才能複製
+            el.select()
+
+            try {
+                var successful = document.execCommand('copy');
+                var msg = successful ? 'successful' : 'unsuccessful';
+                alert('Link copied ' + msg);
+            } catch (err) {
+                alert('Oops, unable to copy');
+            }
+
+            /* unselect the range */
+            el.setAttribute('type', 'hidden')
+            window.getSelection().removeAllRanges()
+        },
+
+        showMore() {
+            if(this.products.length >= this.total) {
+                return;
+            }
+
+            this.init();
+        },
         init(){
-            axios.get(`/admin/products/get?search=${this.search}&limit=1000&offset={this.products.length}`
+            if(this.isLoading) {
+                return;
+            }
+            showLoading()
+            this.isLoading = true;
+            axios.get(`/admin/products/get?search=${this.search}&limit=10&offset=${this.products.length}`
                 ).then(response => {
+                    this.isLoading = false;
                     this.is_loaded_product =1
                 
                 if (response.data.success) {
@@ -41,6 +73,9 @@ Product = new Vue({
                 } else {
                     console.log('response not success');
                 }
+            }).catch(err => {
+                this.isLoading = false;
+                hideLoading()
             })
         }, 
         

@@ -2,14 +2,14 @@
 @extends('layouts.master')
 @section('content')
 <style>
-  /* .card:hover{
+  .card:hover{
     transform: translate(0, -8px);
     transition: transform 1s;
-  } */
+  }
  
  .overlay{
     position: absolute;
-    z-index: -1;
+    z-index: 999999;
     top: 0;
     bottom: 0;
     left: 0;
@@ -20,7 +20,11 @@
     transition: .4s ease;
   }
 
-  .card:hover .overlay {
+  .dropdown-menu.show {
+    top: -1% !important;
+    transform: none !important;
+  }
+  .margin-product:hover .overlay {
     opacity: 1;
     background-color: rgba(0,0,0,0.8);
 
@@ -53,6 +57,11 @@
   </script>
   <script src="{{ mix('dist/js/products/product.js') }}"></script>
   <script>
+      function myFunction() {
+        
+      }
+  </script>
+  <script>
     $('.product-category-select2').select2();
     
     //Show More
@@ -71,6 +80,7 @@
       loading.classList.add('show');
       app.showMore()
     }
+    
   </script> 
 
 

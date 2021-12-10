@@ -30,24 +30,7 @@ app = new Vue({
         this.init()
     },
     methods:{
-        shareLinkProduct() {
-            const el = document.querySelector('#share-link-Product')
-            el.setAttribute('type', 'text')    // 不是 hidden 才能複製
-            el.select()
-
-            try {
-                var successful = document.execCommand('copy');
-                var msg = successful ? 'successful' : 'unsuccessful';
-                alert('Link copied ' + msg);
-            } catch (err) {
-                alert('Oops, unable to copy');
-            }
-
-            /* unselect the range */
-            el.setAttribute('type', 'hidden')
-            window.getSelection().removeAllRanges()
-        },
-
+        
         showMore() {
             if(this.products.length >= this.total) {
                 return;
@@ -61,7 +44,7 @@ app = new Vue({
             }
             showLoading()
             this.isLoading = true;
-            axios.get(`/admin/products/get?search=${this.search}&limit=10&offset=${this.products.length}`
+            axios.get(`/admin/products/get?search=${this.search}&limit=24&offset=${this.products.length}`
                 ).then(response => {
                     this.isLoading = false;
                     this.is_loaded_product =1
@@ -200,7 +183,26 @@ app = new Vue({
                 hideLoading();
                 showAlertError('Cannot delete product');
             });
-        }   
+        },
+        shareLinkProduct() {
+            const el = document.querySelector('#share_link_product')
+            el.setAttribute('type', 'text')   
+            el.select()
+            console.log(el);
+
+            try {
+                var successful = document.execCommand('copy');
+                var msg = successful ? 'successful' : 'unsuccessful';
+                alert('Link copied ' + msg);
+            } catch (err) {
+                alert('Oops, unable to copy');
+            }
+
+            /* unselect the range */
+            el.setAttribute('type', 'hidden')
+            window.getSelection().removeAllRanges()
+        },
+
 
     },
     computed: {

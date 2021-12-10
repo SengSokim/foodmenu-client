@@ -41,3 +41,4 @@ mix.js('resources/assets/js/app.js', 'public/dist/js')
     
     //tables
     .js('resources/assets/js/tables/table.js', 'public/dist/js/tables')
+    .version();

@@ -30,6 +30,13 @@ class Controller extends BaseController
                 //         $user_per = (array)$response->data;
                 //     }
                 // }
+                if(!$request->isJson()) {
+                    $response_restaurant = $this->api_get('portal/restaurants');
+                    $response_count_oder = $this->api_get('portal/orders/count');
+                    
+                    view()->share('restaurant_info', $response_restaurant->data ?? null);
+                    view()->share('count_order', $response_count_oder->data ?? 0);
+                }
             }
 
             view()->share('auth', $this->auth);

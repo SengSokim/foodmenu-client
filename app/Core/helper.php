@@ -30,6 +30,7 @@
 
     function getGeneralData($auth)
     {
+
         if ($auth) {
             $controller = new \App\Http\Controllers\Controller();
             $controller->setAuth($auth);
@@ -40,6 +41,7 @@
             view()->share('restaurant_info', $response_restaurant->data ?? null);
             view()->share('count_order', $response_count_oder->data ?? 0);
         }
+        
 
     }
 

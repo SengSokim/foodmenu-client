@@ -1,4 +1,5 @@
 <?php
+    Route::get('/', 'AuthController@login')->name('auth.login');
     Route::group(['prefix' => 'auth'], function () {
         Route::get('/login', 'AuthController@login')->name('auth.login');
         Route::get('/login/get', 'AuthController@loginGet')->name('auth.login.get');
@@ -61,6 +62,9 @@
 
             Route::prefix('users')->group(function () {
                 Route::get('/', 'UserController@index')->name('users');
+                Route::post('/store', 'UserController@store')->name('users.store');
+                Route::post('/{id}', 'UserController@update')->name('users.update');
+                Route::delete('/{id}', 'UserController@destroy')->name('users.destroy');
             });
 
             Route::prefix('tables')->group(function () {

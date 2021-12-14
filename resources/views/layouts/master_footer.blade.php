@@ -147,7 +147,7 @@
           EditRestaurant.data.banner_image = res
         }else if(isImgInput == 2){
           $('#product-upload').attr('src', res);
-          Product.data.image = res
+          app.data.image = res
         }else if(isImgInput == 3){
           $('#user-profile-upload').attr('src', res);
           editProfile.data.image = res

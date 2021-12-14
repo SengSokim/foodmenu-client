@@ -19,14 +19,13 @@
           <a :href="'{{ url('admin/product_variants') }}?product_id=' + item.id" class="btn btn-info rounded-pill btn-xs my-3" style="padding: .8rem .9rem" title="Set Variant"><i class="fas fa-sitemap"></i></a> <br>
           <a href="#" class="btn btn-primary rounded-pill btn-xs mx-2" style="padding: .8rem .9rem" data-toggle="modal" data-target="#editProduct" @click="setData(item)" title="Edit"><i class="fas fa-edit"></i></a>
           <a href="#" class="btn btn-danger rounded-pill btn-xs mx-1" style="padding: .8rem 1rem" data-toggle="modal" data-target="#deleteProduct" @click="setData(item)" title="Delete"><i class="fas fa-trash"></i></a> <br>
-      
+    
           <a href="#" class="btn btn-warning rounded-pill btn-xs mx-1" style="padding: .8rem .9rem;" title="Share" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-share"></i></a>
           <div class="dropdown-menu" style="position: fixed; z-index:1">
             <a class="dropdown-item" :href='"https://www.facebook.com/sharer/sharer.php?u={{ $restaurant_info->website_url . '?product_id='}}" + item.id' target="_blank"><i class="fab fa-facebook fa-fw"></i>Facebook</a>
             <a class="dropdown-item" :href='"https://twitter.com/intent/tweet?url={{ $restaurant_info->website_url . '?product_id='}}" + item.id' target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
             <a class="dropdown-item" :href='"https://t.me/share/url?url={{ $restaurant_info->website_url . '?product_id=' }}" + item.id' target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
-            <a class="dropdown-item" href="#" @click.stop.prevent ="shareLinkProduct()">  
-              <input type="hidden" :value='"{!! $restaurant_info->website_url . '?product_id=' !!}" + item.id' id="share_link_product">
+            <a class="dropdown-item" href="#" @click.stop.prevent ="copy('{{ $restaurant_info->website_url . "?product_id=" }}' + item.id)">  
               <i class="far fa-link fa-fw"></i>Copy Link
             </a>
           </div>

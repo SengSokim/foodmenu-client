@@ -27,7 +27,7 @@
 
       <footer class="main-footer text-sm" >
         <div class="clearfix">
-          <a href="https://www.youtube.com/watch?v=KYHOm7V2H5Q&t=5s" target="_blank" class="btn btn-link btn-sm rounded-pill" style="color: #1aa7ec"><i class="fas fa-video"></i> {{ __('app.footer.video-tutorials') }}</a> | 
+          <a href="https://www.youtube.com/watch?v=Q742xYQAKnM" target="_blank" class="btn btn-link btn-sm rounded-pill" style="color: #1aa7ec"><i class="fas fa-video"></i> {{ __('app.footer.video-tutorials') }}</a> | 
           <a href="#" class="btn btn-link btn-sm rounded-pill" style="color: #1aa7ec"><i class="fas fa-book"></i> {{ __('app.footer.help-docs') }}</a>
         </div>
       </footer>

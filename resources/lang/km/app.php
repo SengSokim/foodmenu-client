@@ -135,6 +135,18 @@ return [
 		'do-you-want-to-delete-this-table:' => 'តើអ្នកពិតជាចង់លុបតុ:',
 	],
 
+    'user' => [
+        'user' => 'អ្នកប្រើប្រាស់',
+        'create-user' => 'បង្កើតអ្នកប្រើប្រាស់',
+        'edit-user' => 'កែប្រែអ្នកប្រើប្រាស់',
+        'name' => 'ឈ្មោះ',
+        'gender' => 'ភេទ',
+        'phone-number' => 'លេខទូរស័ព្ទ',
+        'password' => 'ពាក្យសំងាត់',
+        'role' => 'តួនាទី',
+        'address' => 'អាស័យដ្ឋាន',
+    ],
+
     'setting' => [
         'objective-setup-telegram' => 'សូមធ្វើការរៀបចំ Telegram ដើម្បីអាចឲ្យអតិថិជនរបស់អ្នកធ្វើការទំនាក់ទំនង ឬ ទទួលពត៍មានអំពីអ្នក.',
         'create-telegram-group' => 'បង្កើតក្រុមTelegram',
@@ -143,6 +155,8 @@ return [
         'telegram-group' => 'Telegram Group',
         'your-telegram' => 'Telegram របស់អ្នក',
         'not-set' => 'មិនបានកំណត់',
+        'setting-up-telegram' => 'ដើម្បីយល់ដឹងពីការដំឡើងតេលេក្រាមជាមួយកម្មវិធី PAPA eMenu',
+        'click-here' => 'សូមចុចទីនេះ'
 
     ],
     'orders' => [
@@ -165,6 +179,7 @@ return [
         'confirmation-order' => 'ទទួលការបញ្ជាទិញ',
         'reject' => 'មិនទទួល',
         'are-you-sure-you-want-to-reject-this-order' => 'មិនទទួលការបញ្ជាទិញលេខកូដ:',
-        'you-are-confirmation-order-code' => 'យល់ព្រមទទួលការបញ្ជាទិញលេខកូដ:'
+        'you-are-confirmation-order-code' => 'យល់ព្រមទទួលការបញ្ជាទិញលេខកូដ:',
+
 	],
 ];

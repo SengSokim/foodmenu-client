@@ -18,7 +18,9 @@ return [
         'search-product' => 'Search Product',
         'total' => 'Total',
         'records' => 'Records',   
-        'record' => 'Record'   
+        'record' => 'Record',
+        'browse' => 'Browse'
+
     ],
 
     'dashboard' => [
@@ -138,6 +140,18 @@ return [
 		'do-you-want-to-delete-this-table:' => 'Do you want to delete this table:',
 	],
 
+    'user' => [
+        'user' => 'Users',
+        'create-user' => 'Create User',
+        'edit-user' => 'Edit User',
+        'name' => 'Name',
+        'gender' => 'Gender',
+        'phone-number' => 'Phone Number',
+        'password' => 'Password',
+        'role' => 'Role',
+        'address' => 'Address',
+    ],
+
     'setting' => [
         'objective-setup-telegram' => 'Setting up Telegram allowed your customer to contact or make communication with you.',
         'create-telegram-group' => 'Create Telegram Group',
@@ -146,6 +160,8 @@ return [
         'telegram-group' => 'Telegram Group',
         'your-telegram' => 'Your Telegram',
         'not-set' => 'Not Set',
+        'setting-up-telegram' => 'To understand how to set up Telegram with PAPA eMenu',
+        'click-here' => 'Click here'
 
     ],
 

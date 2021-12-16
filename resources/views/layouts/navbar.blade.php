@@ -125,7 +125,7 @@
         <div class="modal-footer">
           <button class="btn btn-default rounded-pill" data-toggle="modal" data-target="#modal-change-password"><i class="fas fa-lock fa-fw"></i>{{ __('app.profile.change-now') }}</button>
           <button type="button" class="btn btn-default rounded-pill" data-dismiss="modal">{{ __('app.global.cancel') }}</button>
-          <button type="submit" form="profile" class="btn btn-warning rounded-pill" @click="submit()">{{ __('app.global.save-changes') }}</button>
+          <button type="submit" form="profile" class="btn btn-warning rounded-pill" @click="submit()">{{ __('app.global.save-change') }}</button>
         </div>
       </div>
     </div>

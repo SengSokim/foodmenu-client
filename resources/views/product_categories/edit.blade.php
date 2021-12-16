@@ -14,7 +14,7 @@
       </div>
       <div class="modal-footer">
       <button type="button" class="btn btn-default rounded-pill btn-sm" data-dismiss="modal">{{ __('app.global.cancel') }}</button>
-      <button type="sumbit" form="updateProductCategory" class="btn btn-warning rounded-pill btn-sm"></i>{{ __('app.global.save-changes') }}</button>
+      <button type="sumbit" form="updateProductCategory" class="btn btn-warning rounded-pill btn-sm"></i>{{ __('app.global.save-change') }}</button>
       </div>
     </div>
   </div>

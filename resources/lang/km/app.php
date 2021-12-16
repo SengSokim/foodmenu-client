@@ -10,7 +10,7 @@ return [
         'edit' => 'កែប្រែ',
         'back' => 'ត្រឡប់ក្រោយ',
         'confirm' => 'យល់ព្រម',
-        'save-changes' => 'រក្សាទុក',
+        'save-change' => 'រក្សាទុក',
         'status' => 'ស្ថានភាព',
         'deactive' => 'បិទបណ្តោះអាសន្ន',
         'sequence' => 'លំដាប់',
@@ -18,7 +18,8 @@ return [
         'search-product' => 'ស្វែងរកផលិតផល',
         'total' => 'សរុប',
         'records' => 'ទិន្នន័យ',
-        'record' => 'ទិន្នន័យ'               
+        'record' => 'ទិន្នន័យ',
+        'browse' => 'រើសរូបភាព'             
     ],
 
     'dashboard' => [
@@ -139,12 +140,24 @@ return [
         'user' => 'អ្នកប្រើប្រាស់',
         'create-user' => 'បង្កើតអ្នកប្រើប្រាស់',
         'edit-user' => 'កែប្រែអ្នកប្រើប្រាស់',
+        'delete-user' => 'លុបអ្នកប្រើប្រាស់',
         'name' => 'ឈ្មោះ',
         'gender' => 'ភេទ',
+        'select-gender' => 'ជ្រើសរើសភេទ',
+        'male' => 'ប្រុស',
+        'female' => 'ស្រី',
         'phone-number' => 'លេខទូរស័ព្ទ',
         'password' => 'ពាក្យសំងាត់',
         'role' => 'តួនាទី',
+        'select-role' => 'ជ្រើសរើសតួនាទី',
+        'manager' => 'ប្រធាន',
+        'admin' => 'អេដមីន',
+        'staff' => 'បុគ្គលិក',
         'address' => 'អាស័យដ្ឋាន',
+        'your-address' => 'អាស័យដ្ឋានរបស់អ្នក',
+        'image' => 'រូបភាព',
+        'do-you-want-to-delete-this-user:' => 'តើអ្នកពិតជាចង់លុបអ្នកប្រើប្រាស់:',
+        'search-user' => 'ស្វែងរកអ្នកប្រើប្រាស់'
     ],
 
     'setting' => [

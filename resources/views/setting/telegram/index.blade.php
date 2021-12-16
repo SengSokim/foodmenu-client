@@ -20,7 +20,7 @@
               <p>{{ __('app.setting.setting-up-telegram') }}<a href="https://www.youtube.com/watch?v=KYHOm7V2H5Q&t=5s" target="_blank">  {{ __('app.setting.click-here')}}</a>
                  <i class="far fa-hand-point-down"></i>.
               </p>
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/KYHOm7V2H5Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/KYHOm7V2H5Q" title="Video Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
           <div class="col-md-6 pr-5">

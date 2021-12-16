@@ -140,7 +140,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default rounded-pill" data-dismiss="modal">{{ __('app.global.cancel') }}</button>
-                <button type="submit" form="submitUpdateRestaurant" class="btn btn-warning rounded-pill">{{ __('app.global.save-changes') }}</button>
+                <button type="submit" form="submitUpdateRestaurant" class="btn btn-warning rounded-pill">{{ __('app.global.save-change') }}</button>
               </div>
             </div>
           </div>

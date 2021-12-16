@@ -42,14 +42,14 @@
           </p>
         </a>
       </li>
-      {{-- <li class="nav-item">
+      <li class="nav-item">
         <a href="{{route('users')}}" class="nav-link {{ request()->is('*admin/users') ? 'active' : '' }}">
           <i class="nav-icon fas fa-users"></i>
           <p>
-            Users
+            {{ __('app.sidebar.users') }}
           </p>
         </a>
-      </li> --}}
+      </li>
       <li class="nav-item">
         <a href="{{route('tables')}}" class="nav-link {{ request()->is('*admin/tables') ? 'active' : '' }}">
           <i class="nav-icon fas fa-table"></i>

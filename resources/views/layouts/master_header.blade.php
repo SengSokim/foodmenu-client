@@ -118,5 +118,5 @@
     </style>
 
     @yield('header-content')
-      
+    @yield('style')
   </head>

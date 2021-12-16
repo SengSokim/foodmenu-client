@@ -57,11 +57,6 @@
   </script>
   <script src="{{ mix('dist/js/products/product.js') }}"></script>
   <script>
-      function myFunction() {
-        
-      }
-  </script>
-  <script>
     $('.product-category-select2').select2();
     
     //Show More

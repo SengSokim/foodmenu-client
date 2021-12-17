@@ -16,8 +16,8 @@
       <tr class="text-center" v-for="(item, index) in restaurant_users.data">
         <td>@{{ index + 1 }}</td>
         <td><img :src="item.media.url" class="user_image"></td>
-        <td>@{{ item.name}}</td>
-        <td >@{{ item.gender }}</td>
+        <td class="text-left">@{{ item.name}}</td>
+        <td style="text-transform: capitalize">@{{ item.gender }}</td>
         <td>@{{ item.phone_number }}</td>
         <td style="text-transform: capitalize">@{{ item.role }}</td>
         <td>@{{ item.enable_status ? 'Active' : 'Deactive' }}</td>

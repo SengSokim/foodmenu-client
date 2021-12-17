@@ -19,6 +19,14 @@
         </a>
       </li>
       <li class="nav-item">
+        <a href="{{ route('product-categories') }}" class="nav-link {{ request()->is('*admin/product-categories') ? 'active' : '' }}">
+          <i class="nav-icon fa fa-cubes"></i>
+          <p>
+            {{ __('app.sidebar.categories') }}
+          </p>
+        </a>
+      </li>
+      <li class="nav-item">
         <a href="{{ route('products') }}" class="nav-link {{ request()->is(['*admin','*admin/products*','*admin/product_variants*']) ? 'active' : '' }}">
           <i class="nav-icon fas fa-hamburger"></i>
           <p>
@@ -26,14 +34,6 @@
           </p>
         </a>
       </li>    
-      <li class="nav-item">
-        <a href="{{ route('product-categories') }}" class="nav-link {{ request()->is('*admin/product-categories') ? 'active' : '' }}">
-          <i class="nav-icon fas fa-boxes"></i>
-          <p>
-            {{ __('app.sidebar.categories') }}
-          </p>
-        </a>
-      </li>
       <li class="nav-item">
         <a href="{{route('orders.index')}}" class="nav-link {{ request()->is('*admin/orders') ? 'active' : '' }}">
           <i class="nav-icon fas fa-box"></i>

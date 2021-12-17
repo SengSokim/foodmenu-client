@@ -51,7 +51,7 @@ EditRestaurant = new Vue({
             try {
                 var successful = document.execCommand('copy');
                 var msg = successful ? 'successful' : 'unsuccessful';
-                alert('Link copied ' + msg);
+                showToastSuccess('Link copied successfully');
             } catch (err) {
                 alert('Oops, unable to copy');
             }

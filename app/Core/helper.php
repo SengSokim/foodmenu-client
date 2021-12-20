@@ -3,20 +3,20 @@
     {
         $output = '<div class="row mb-2">';
         $output .= '<div class="col-sm-6">';
-        $output .= '<h1 class="m-0">'. ucwords($parent).'</h1>';
+        $output .= '<h1 class="m-0"​ style="text-transform: capitalize;">'. $parent.'</h1>';
 
         if($child)
         {
             $output .= '</div>';
             $output .= '<div class="col-sm-6">';
             $output .= '<ol class="breadcrumb float-sm-right">';
-            $output .= '<li class="breadcrumb-item"><a href="'.route('dashboard').'">Dashboard</a></li>';
+            $output .= '<li class="breadcrumb-item"><a href="'.route('dashboard').'">'. __('app.global.dashboard').'</a></li>';
 
             if($action) {
                 $output .= '<li class="breadcrumb-item"><a href="'. route(str_replace(' ', '-', strtolower($child))) .'">'. ucwords($child) .'</a></li>';
-                $output .= '<li class="breadcrumb-item active">'. ucwords($action) .'</li>';
+                $output .= '<li class="breadcrumb-item active" style="text-transform: capitalize">'. $action .'</li>';
             } else {
-                $output .= '<li class="breadcrumb-item  active">'. ucwords($child) .'</li>';
+                $output .= '<li class="breadcrumb-item  active" style="text-transform: capitalize">'. $child .'</li>';
             }
 
             $output .= '</ol>';

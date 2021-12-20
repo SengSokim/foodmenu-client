@@ -19,7 +19,8 @@ return [
         'total' => 'សរុប',
         'records' => 'ទិន្នន័យ',
         'record' => 'ទិន្នន័យ',
-        'browse' => 'រើសរូបភាព'             
+        'browse' => 'រើសរូបភាព',
+        'dashboard' => 'ផ្ទាំងគ្រប់គ្រង'
     ],
 
     'dashboard' => [
@@ -92,6 +93,7 @@ return [
 
 		'delete-category' => 'លុបប្រភេទផលិតផល',
 		'do-you-want-to-delete-this-category:' => 'តើអ្នកពិតជាចង់លុបប្រភេទផលិតផល:',
+        'search-product-category' => 'ស្វេងរកប្រភេទផលិតផល',
 	],
 
 	'product' => [
@@ -134,10 +136,13 @@ return [
 		'edit-table' => 'កែប្រែតុ',
 		'delete-table' => 'លុបតុ',
 		'do-you-want-to-delete-this-table:' => 'តើអ្នកពិតជាចង់លុបតុ:',
+        'search-table' => 'ស្វែងរកតុនៅក្នុងអាហារដ្ឋាន',
+        'restaurant-table' => 'តុអាហារ',
 	],
 
     'user' => [
-        'user' => 'អ្នកប្រើប្រាស់',
+        'user' => 'អ្នកប្រើប្រាស់ប្រព័ន្ធ',
+        'restaurant-user' => 'អ្នកប្រើប្រាស់ប្រព័ន្ធ',
         'create-user' => 'បង្កើតអ្នកប្រើប្រាស់',
         'edit-user' => 'កែប្រែអ្នកប្រើប្រាស់',
         'delete-user' => 'លុបអ្នកប្រើប្រាស់',
@@ -163,20 +168,21 @@ return [
     'setting' => [
         'objective-setup-telegram' => 'សូមធ្វើការរៀបចំ Telegram ដើម្បីអាចឲ្យអតិថិជនរបស់អ្នកធ្វើការទំនាក់ទំនង ឬ ទទួលពត៍មានអំពីអ្នក.',
         'create-telegram-group' => 'បង្កើតក្រុមTelegram',
-        'you-can-create-telegram-group-by-click-this-link' => 'អ្នកអាចបង្កើតTelegramតាមរយះតំណរនេះ',
+        'you-can-create-telegram-group-by-click-this-link' => 'អ្នកអាចបង្កើត Telegram តាមរយះតំណរនេះ',
         'telegram-user' => 'Telegram User',
         'telegram-group' => 'Telegram Group',
         'your-telegram' => 'Telegram របស់អ្នក',
         'not-set' => 'មិនបានកំណត់',
-        'setting-up-telegram' => 'ដើម្បីយល់ដឹងពីការដំឡើងតេលេក្រាមជាមួយកម្មវិធី PAPA eMenu',
-        'click-here' => 'សូមចុចទីនេះ'
-
+        'setting-up-telegram-with-papa-emenu' => 'ដើម្បីយល់ដឹងពីការតម្លើង Telegram ជាមួយកម្មវិធី PAPA eMenu',
+        'click-here' => 'សូមចុចទីនេះ',
+        'setting-up-telegram' => 'ការតម្លើងTelegram',
+        'setting' => 'ការកំណត់'
     ],
     'orders' => [
 		'from-date' => 'ចាប់ពីថ្ងៃ',
 		'to-date' => 'ដល់ថ្ងៃ',
 		'code' => 'លេខកូដបញ្ជាទិញ',
-
+        'order' => 'ការបញ្ជាទិញ',
 		'phone-number' => 'លេខទូរស័ព្ទ',
 		'order-date' => 'ថ្ងៃបញ្ជាទិញ',
 		'ordered-mode' => 'បញ្ជាទិញតាមរយះ',

@@ -11,7 +11,7 @@
     </style>
 @endsection
 @section('content-header')
-    {!! generateContentHeader('Restaurant Users', 'Restaurant Users') !!}
+    {!! generateContentHeader(__('app.user.restaurant-user'), __('app.user.restaurant-user')) !!}
 @endsection
 @section('content')
 <div class="row" id="Users" v-cloak>
@@ -45,6 +45,9 @@
                 @include('users.create')
                 @include('users.edit')
                 @include('users.delete')
+            </div>
+            <div class="card-footer">
+                @include('layouts.pagination')
             </div>
         </div>
     </div>

@@ -19,8 +19,8 @@ return [
         'total' => 'Total',
         'records' => 'Records',   
         'record' => 'Record',
-        'browse' => 'Browse'
-
+        'browse' => 'Browse',
+        'dashboard' => 'Dashboard'
     ],
 
     'dashboard' => [
@@ -90,10 +90,10 @@ return [
 		'display-sequence' => 'Display Sequence',
         'create-category' => 'Create Category',
         'update-category' => 'Update Category',
-
 		'delete-category' => 'Delete Category',
 		'do-you-want-to-delete-this-category:' => 'Do you want to delete this category:',
-	],
+        'search-product-category' => 'Search Product Category'
+    ],
 
 	'product' => [
 		'name' => 'Name',
@@ -134,14 +134,15 @@ return [
 		'table' => 'Table',
         'create-table' => 'Create Table',
         'edit-table' => 'Edit Table',
-        
 		'name' => 'Name',
 		'delete-table' => 'Delete Table',
 		'do-you-want-to-delete-this-table:' => 'Do you want to delete this table:',
+        'restaurant-table' => 'Restaurant Tables'
 	],
 
     'user' => [
         'user' => 'Users',
+        'restaurant-user' => 'Restaurant User',
         'create-user' => 'Create User',
         'edit-user' => 'Edit User',
         'delete-user' => 'Delete User',
@@ -159,7 +160,7 @@ return [
         'staff' => 'Staff',
         'address' => 'Address',
         'your-address' => 'Your Address',
-        'image' => 'image',
+        'image' => 'Image',
         'do-you-want-to-delete-this-user:' => 'Do you want to delete this user:',
         'search-user' => 'Search User'
     ],
@@ -172,8 +173,10 @@ return [
         'telegram-group' => 'Telegram Group',
         'your-telegram' => 'Your Telegram',
         'not-set' => 'Not Set',
-        'setting-up-telegram' => 'To understand how to set up Telegram with PAPA eMenu',
-        'click-here' => 'Click here'
+        'setting-up-telegram-with-papa-emenu' => 'To understand how to set up Telegram with PAPA eMenu',
+        'click-here' => 'Click here',
+        'setting-up-telegram' => 'Setting up Telegram',
+        'setting' => 'Setting'
 
     ],
 
@@ -181,7 +184,7 @@ return [
 		'from-date' => 'From Date',
 		'to-date' => 'To Date',
 		'code' => 'Code',
-
+        'order' => 'Orders',
 		'phone-number' => 'Phone Number',
 		'order-date' => 'Ordered Date',
 		'rejected-by' => 'Rejected By',

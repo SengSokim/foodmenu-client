@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content-header')
-{!! generateContentHeader('Dashboard', 'Dashboard') !!}
+{!! generateContentHeader(__('app.sidebar.dashboard'), __('app.sidebar.dashboard')) !!}
 @endsection
 @section('content')
 <div class="container-fluid">

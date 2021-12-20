@@ -1,13 +1,13 @@
 @extends('layouts.master')
 @section('content-header')
-{!! generateContentHeader('Setting', 'Setting') !!}
+{!! generateContentHeader(__('app.setting.setting'), __('app.setting.setting')) !!}
 @endsection
 @section('content')
 <div class="row">
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">
-        Setting up Telegram
+        <h5 style="font-weight: 600">{{ __('app.setting.setting-up-telegram') }}</h5>
       </div>
       <div class="card-body" id="telegram"  v-cloak>
         <div class="row">
@@ -16,11 +16,11 @@
               <h5>Telegram</h5>
               <p>{{ __('app.setting.objective-setup-telegram') }}</p>
             </div>
-            <div class="col-md-12">
-              <p>{{ __('app.setting.setting-up-telegram') }}<a href="https://www.youtube.com/watch?v=KYHOm7V2H5Q&t=5s" target="_blank">  {{ __('app.setting.click-here')}}</a>
+            <div class="col-md-12" style="width: 80%">
+              <p>{{ __('app.setting.setting-up-telegram-with-papa-emenu') }}<a href="https://www.youtube.com/watch?v=KYHOm7V2H5Q&t=5s" target="_blank">  {{ __('app.setting.click-here')}}</a>
                  <i class="far fa-hand-point-down"></i>.
               </p>
-              <iframe src="https://www.youtube.com/embed/KYHOm7V2H5Q" title="Video Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe width="100%" height="315px" src="https://www.youtube.com/embed/KYHOm7V2H5Q" title="Video Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
           <div class="col-md-6 pr-5">

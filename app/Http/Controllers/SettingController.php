@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 
 class SettingController extends Controller
 {
-    public function telegram()
+    public function telegram($id)
     {
-        return view('setting.telegram.index');
+        $restaurant = $this->api_get('web/restaurants/show/' . $id)->data ?? [];
+        return view('setting.telegram.index',compact('restaurant'));
     }
 }

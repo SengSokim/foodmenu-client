@@ -78,12 +78,12 @@
             Route::prefix('restaurants')->group(function () {
                 Route::get('/profile', 'RestaurantController@profile')->name('restaurants.profile');
                 Route::get('/', 'RestaurantController@edit')->name('restaurants.edit');
-                Route::post('/', 'RestaurantController@update')->name('restaurants.update');
+                Route::post('/update', 'RestaurantController@update')->name('restaurants.update');
             });
 
 
             Route::prefix('setting')->group(function () {
-                Route::get('/telegram', 'SettingController@telegram')->name('setting.telegram');
+                Route::get('/telegram/{id}', 'SettingController@telegram')->name('setting.telegram');
             });
 
             Route::prefix('orders')->group(function () {

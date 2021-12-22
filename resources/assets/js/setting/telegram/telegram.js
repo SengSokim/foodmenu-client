@@ -2,11 +2,8 @@ new Vue({
     el: '#telegram',
     data: {       
         telegramData: {},
-        data:{
-            telegram_user: '',
-            telegram_group: '',
-            name: ''
-        },
+        restaurant: restaurant,
+        data: {},
         is_exist : false,
     },
     mounted() {
@@ -15,9 +12,7 @@ new Vue({
         ).then(response => {
             if (response.data.success) {
                 this.telegramData = response.data.data
-                this.data.name = this.telegramData.name
-                this.data.telegram_user = this.telegramData.telegram_user
-                this.data.telegram_group = this.telegramData.telegram_group
+                this.data = response.data.data
                 hideLoading()
             } else {
                 showAlertError(response.data.message);
@@ -29,7 +24,6 @@ new Vue({
         })
     },
     methods: {
-
         preview(param){
             switch (param) {
                 case 'user':
@@ -55,11 +49,10 @@ new Vue({
         },
         save(){
             showLoading()
-            axios.post(`/admin/restaurants`,
-                this.data
+            axios.post(`/admin/restaurants/update`, this.restaurant
             ).then(response => {
                 if (response.data.success) {
-                    window.location.href = '/admin/setting/telegram';
+                    window.location.href = '/admin/setting/telegram/'+ this.restaurant.id;
                 } else {
                     showAlertError(response.data.message);
                     hideLoading()
@@ -88,5 +81,8 @@ new Vue({
         created(){
             return  this.data.telegram_user ==null;
         }
+
+        
+
     }
 });

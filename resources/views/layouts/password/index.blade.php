@@ -25,7 +25,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">{{ __('app.global.cancel') }}</button>
-          <button type="submit" class="btn btn-primary submit-crop">{{ __('app.global.save-changes') }}</button>
+          <button type="submit" class="btn btn-primary submit-crop">{{ __('app.global.save-change') }}</button>
         </div>
       </form>
     </div>

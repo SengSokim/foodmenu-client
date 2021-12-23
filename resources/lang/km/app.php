@@ -93,7 +93,7 @@ return [
 
 		'delete-category' => 'លុបប្រភេទផលិតផល',
 		'do-you-want-to-delete-this-category:' => 'តើអ្នកពិតជាចង់លុបប្រភេទផលិតផល:',
-        'search-product-category' => 'ស្វេងរកប្រភេទផលិតផល',
+        'search-category' => 'ស្វេងរកប្រភេទផលិតផល',
 	],
 
 	'product' => [
@@ -176,7 +176,8 @@ return [
         'setting-up-telegram-with-papa-emenu' => 'ដើម្បីយល់ដឹងពីការតម្លើង Telegram ជាមួយកម្មវិធី PAPA eMenu',
         'click-here' => 'សូមចុចទីនេះ',
         'setting-up-telegram' => 'ការតម្លើងTelegram',
-        'setting' => 'ការកំណត់'
+        'setting' => 'ការកំណត់',
+        'ask-customers-location' => 'ស្នើរសុំទីតាំងរបស់អតិថិជន'
     ],
     'orders' => [
 		'from-date' => 'ចាប់ពីថ្ងៃ',

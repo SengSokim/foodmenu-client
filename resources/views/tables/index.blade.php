@@ -9,7 +9,7 @@
       <div class="card-header">
         <div class="row">
           <div class="col-md-12 d-flex justify-content-between">
-            <div class="col-md-4">
+            <div class="col-md-6">
               <form action="{{ route('tables')}}">
                 <div class="input-group">
                     <input name="search" class="form-control" type="search" placeholder="{{ __('app.table.search-table') }}..." aria-label="Search" value="{{ request('search') }}">

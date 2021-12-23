@@ -46,7 +46,7 @@
         <div class="icon">
           <i class="fas fa-shopping-basket"></i>
         </div>
-        <a href="#" class="small-box-footer">{{ __('app.dashboard.more-info') }} <i class="fas fa-arrow-circle-right"></i></a>
+        <a href="{{ route('orders.index')}}" class="small-box-footer">{{ __('app.dashboard.more-info') }} <i class="fas fa-arrow-circle-right"></i></a>
       </div>
     </div>
     <!-- ./col -->
@@ -61,10 +61,18 @@
         <div class="icon">
           <i class="fas fa-user"></i>
         </div>
-        <a href="#" class="small-box-footer">{{ __('app.dashboard.more-info') }} <i class="fas fa-arrow-circle-right"></i></a>
+        <a href="{{ route('users')}}" class="small-box-footer">{{ __('app.dashboard.more-info') }} <i class="fas fa-arrow-circle-right"></i></a>
       </div>
     </div>
     <!-- ./col --> 
   </div>
+  {{-- <div class="row">
+    <div class="col-md-6">
+      @include('chart.sale-chart.index')
+    </div>
+    <div class="col-md-6">
+      @include('chart.order-chart.index')
+    </div>
+  </div> --}}
 </div>
 @endsection

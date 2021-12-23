@@ -9,10 +9,10 @@
       <div class="card-header">
         <div class="row">
           <div class="col-md-12 d-flex justify-content-between">
-            <div class="col-md-4">
+            <div class="col-md-6">
               <form action="{{ route('product-categories')}}">
                 <div class="input-group">
-                    <input name="search" class="form-control" type="search" placeholder="{{ __('app.categories.search-product-category') }}..." aria-label="Search" value="{{ request('search') }}">
+                    <input name="search" class="form-control" type="search" placeholder="{{ __('app.categories.search-category') }}..." aria-label="Search" value="{{ request('search') }}">
                     <div class="input-group-append">
                         <button type="submit" class="btn btn-sm" style="border:1; width: 50px; background: #FFC107" title="Search">
                             <i class="far fa-search"></i>

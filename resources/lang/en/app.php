@@ -92,7 +92,7 @@ return [
         'update-category' => 'Update Category',
 		'delete-category' => 'Delete Category',
 		'do-you-want-to-delete-this-category:' => 'Do you want to delete this category:',
-        'search-product-category' => 'Search Product Category'
+        'search-category' => 'Search Category'
     ],
 
 	'product' => [
@@ -137,7 +137,8 @@ return [
 		'name' => 'Name',
 		'delete-table' => 'Delete Table',
 		'do-you-want-to-delete-this-table:' => 'Do you want to delete this table:',
-        'restaurant-table' => 'Restaurant Tables'
+        'restaurant-table' => 'Restaurant Tables',
+        'search-table' => 'Search Table'
 	],
 
     'user' => [
@@ -176,7 +177,8 @@ return [
         'setting-up-telegram-with-papa-emenu' => 'To understand how to set up Telegram with PAPA eMenu',
         'click-here' => 'Click here',
         'setting-up-telegram' => 'Setting up Telegram',
-        'setting' => 'Setting'
+        'setting' => 'Setting',
+        'ask-customers-location' => 'Ask Customers Location'
 
     ],
 

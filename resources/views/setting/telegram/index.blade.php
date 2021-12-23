@@ -48,7 +48,7 @@
                     </div>
                   </div>
                   <div style="margin-top: 10px; margin-bottom: 10px">
-                    <input type="checkbox" v-model="restaurant.is_allow_location"> Ask Customers Location
+                    <input type="checkbox" v-model="restaurant.is_allow_location"> {{ __('app.setting.ask-customers-location') }}
                   </div>
                   <button type="submit" class="btn btn-warning btn-sm rounded-pill px-5" v-if="telegramData.telegram_user === null && telegramData.telegram_group === null">{{ __('app.global.save') }}</button>
                   <button type="submit" class="btn btn-warning btn-sm rounded-pill px-3" v-else>{{ __('app.global.save-change') }}</button>

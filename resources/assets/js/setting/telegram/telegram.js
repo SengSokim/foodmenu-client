@@ -49,7 +49,7 @@ new Vue({
         },
         save(){
             showLoading()
-            axios.post(`/admin/restaurants/update`, this.restaurant
+            axios.post(`/admin/restaurants/`, this.restaurant
             ).then(response => {
                 if (response.data.success) {
                     window.location.href = '/admin/setting/telegram/'+ this.restaurant.id;

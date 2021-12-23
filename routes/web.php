@@ -78,7 +78,7 @@
             Route::prefix('restaurants')->group(function () {
                 Route::get('/profile', 'RestaurantController@profile')->name('restaurants.profile');
                 Route::get('/', 'RestaurantController@edit')->name('restaurants.edit');
-                Route::post('/update', 'RestaurantController@update')->name('restaurants.update');
+                Route::post('/', 'RestaurantController@update')->name('restaurants.update');
             });
 
 

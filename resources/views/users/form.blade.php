@@ -10,7 +10,7 @@
     <div class="col-md-9">
         <div class="form-group" :class="{'has-error' : error.name}">
             <label class="required">{{ __('app.user.name') }}</label>
-            <input type="text" class="form-control" name="name" :class="{'is-invalid': errors.has('name') }" name="name" v-model="data.name" v-validate="'required'" placeholder="{{ __('app.user.name') }}..." >
+            <input type="text" class="form-control" :class="{'is-invalid': errors.has('name') }" name="name" v-model="data.name" v-validate="'required'" placeholder="{{ __('app.user.name') }}..." >
             <span class="invalid-feedback">@{{errors.first('name')}}</span>
         </div>
         <div class="form-group">

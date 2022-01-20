@@ -26,6 +26,8 @@
     ], function(){
         Route::group(['prefix' =>  'admin', 'middleware' => 'auth'], function () {
             Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+            Route::get('/dashboard/chart/{year}/{month}', 'DashboardController@chart');
+            // Route::get('/dashboard/totalPerMonth/{year}/{month}', 'DashboardController@totalPerMonth');
             Route::get('/', 'ProductController@index')->name('products');
 
             Route::group(['prefix' =>'profile'], function(){

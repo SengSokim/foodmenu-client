@@ -33,7 +33,9 @@
   <!-- AdminLTE App -->
   <script src="{{ asset('adminlte/dist/js/adminlte.js') }}"></script>
   <script src="{{ asset('adminlte/dist/js/demo.js') }}"></script>
-
+  <!--Chart Js-->
+  <script src="{{ asset('adminlte/dist/js/chart.js') }}"></script>
+  <!--mix file-->
   <script src="{{ mix('dist/js/app.js') }}"></script>
   <script>
     let EditRestaurant;

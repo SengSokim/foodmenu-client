@@ -64,15 +64,22 @@
         <a href="{{ route('users')}}" class="small-box-footer">{{ __('app.dashboard.more-info') }} <i class="fas fa-arrow-circle-right"></i></a>
       </div>
     </div>
-    <!-- ./col --> 
+    
+    <!--Sale Chart-->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="col-md-12">
+          @include('chart.daily_chart.index')               
+        </div>
+      </div>
+    </div>
+    {{-- <div class="col-md-6">
+      <div class="card">
+        <div class="col-md-12">
+          @include('chart.monthly_chart.index')               
+        </div>
+      </div>
+    </div> --}}
   </div>
-  {{-- <div class="row">
-    <div class="col-md-6">
-      @include('chart.sale-chart.index')
-    </div>
-    <div class="col-md-6">
-      @include('chart.order-chart.index')
-    </div>
-  </div> --}}
 </div>
 @endsection

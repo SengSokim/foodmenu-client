@@ -3,7 +3,7 @@
 {!! generateContentHeader(__('app.sidebar.dashboard'), __('app.sidebar.dashboard')) !!}
 @endsection
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid" id="chart">
   <div class="row">
     <div class="col-lg-3 col-6">
       <!-- small box -->
@@ -64,22 +64,7 @@
         <a href="{{ route('users')}}" class="small-box-footer">{{ __('app.dashboard.more-info') }} <i class="fas fa-arrow-circle-right"></i></a>
       </div>
     </div>
-    
-    <!--Sale Chart-->
-    <div class="col-md-6">
-      <div class="card">
-        <div class="col-md-12">
-          @include('chart.daily_chart.index')               
-        </div>
-      </div>
-    </div>
-    {{-- <div class="col-md-6">
-      <div class="card">
-        <div class="col-md-12">
-          @include('chart.monthly_chart.index')               
-        </div>
-      </div>
-    </div> --}}
+    @include('chart.index')               
   </div>
 </div>
 @endsection

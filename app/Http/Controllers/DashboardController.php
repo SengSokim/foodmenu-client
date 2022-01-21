@@ -23,13 +23,13 @@ class DashboardController extends Controller
         return ok($chart->data);
     }
 
-    // public function totalPerMonth($year, $month) 
-    // {
-    //     $totalPerMonth = $this->api_get('portal/chartMonthly/'. $year. '/'.$month);
+    public function totalPerMonth($year) 
+    {
+        $totalPerMonth = $this->api_get('portal/chartMonthly/'. $year);
         
-    //     if(!$totalPerMonth->success) {
-    //         return fail($totalPerMonth->message);
-    //     }
-    //     return ok($totalPerMonth->data);
-    // }
+        if(!$totalPerMonth->success) {
+            return fail($totalPerMonth->message);
+        }
+        return ok($totalPerMonth->data);
+    }
 }

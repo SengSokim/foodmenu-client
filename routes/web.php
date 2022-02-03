@@ -95,6 +95,10 @@
                 Route::delete('/{id}', 'OrderController@deleteOrder')->name('orders.delete');                
 
             });
+
+            Route::prefix('drivers')->group(function() {
+                Route::get('/list', 'FindDriverController@list')->name('drivers');
+            });
         });
     });
 

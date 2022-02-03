@@ -8,6 +8,72 @@ new Vue({
         monthYear: [],
         data: [],
     },
+    mounted() {
+        new Chart("saleChart", {
+            type: "bar",
+            data: {
+                labels: [],
+                datasets: [
+                    { 
+                        label: 'ទឹកប្រាក់លក់បាន',
+                        backgroundColor: 'rgba(23,162,184,1)',
+                        fillColor: 'rgba(210, 214, 222, 1)',
+                        strokeColor: 'rgba(210, 214, 222, 1)',
+                        pointColor: 'rgba(210, 214, 222, 1)',
+                        pointStrokeColor: '#c1c7d1',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(220,220,220,1)',
+                        data: []
+                    },
+                ]
+            },
+            options: {
+            legend: {
+                display: true,
+            },
+            scales: {
+                yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+                }],
+            }
+            }
+        });
+
+        new Chart("saleMonthly", {
+            type: "bar",
+            data: {
+                labels: [],
+                datasets: [
+                    { 
+                        label: 'ទឹកប្រាក់លក់បានក្នុងមួយខែ',
+                        backgroundColor: 'rgba(40,167,69,1)',
+                        fillColor: 'rgba(210, 214, 222, 1)',
+                        strokeColor: 'rgba(210, 214, 222, 1)',
+                        pointColor: 'rgba(210, 214, 222, 1)',
+                        pointStrokeColor: '#c1c7d1',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(220,220,220,1)',
+                        data: []
+                    },
+                ]
+            },
+            options: {
+                legend: {
+                    display: true,
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }],
+                }
+            }
+        });
+
+    },
     methods: {
         changeSaleDate() {
             if(!this.selected_month_year) {

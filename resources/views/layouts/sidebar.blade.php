@@ -59,6 +59,14 @@
         </a>
       </li>
       <li class="nav-item">
+        <a href="{{route('drivers')}}" class="nav-link {{ request()->is('*admin/drivers/list') ? 'active' : '' }}">
+          <i class="nav-icon fas fa-user"></i>
+          <p>
+            Find driver
+          </p>
+        </a>
+      </li>
+      <li class="nav-item">
         <a href="{{ url('admin/setting/telegram/'.$restaurant_info->id) }}" class="nav-link {{ request()->is('*admin/setting*') ? 'active' : '' }}">
           <i class="nav-icon fas fa-cog"></i>
           <p>

@@ -39,7 +39,8 @@ return [
         'users' => 'អ្នកប្រើប្រាស់ប្រព័ន្ធ',
         'orders' => 'ការបញ្ជាទិញ',
         'tables' => 'តុ',
-        'settings' => 'ការកំណត់'
+        'settings' => 'ការកំណត់',
+        'find_drivers' => 'ស្វែងរកអ្នកដឹកជញ្ជូន'
     ],
 
     'right-sidebar' => [
@@ -200,6 +201,18 @@ return [
         'reject' => 'មិនទទួល',
         'are-you-sure-you-want-to-reject-this-order' => 'មិនទទួលការបញ្ជាទិញលេខកូដ:',
         'you-are-confirmation-order-code' => 'យល់ព្រមទទួលការបញ្ជាទិញលេខកូដ:',
-
 	],
+    'find_driver' => [
+        'find_driver' => 'ស្វែងរកអ្នកដឹកជញ្ជូន',
+        'driver_name' => 'ឈ្មោះអ្នកដឹក',
+        'gender' => 'ភេទ',
+        'phone_number' => 'លេខទូរស័ព្ទ',
+        'district (Khan)' => 'ខ័ណ្ឌ',
+    ],
+    'chart' => [
+        'daily_sale_chart' => 'តារាងលក់ប្រចាំថ្ងៃ',
+        'monthly_sale_chart' => 'តារាងលក់ប្រចាំខែ',
+        'select_month_year' => 'ជ្រើសរើសខែ & ឆ្នាំ',
+        'select_year' => 'ជ្រើសរើសឆ្នាំ',
+    ]
 ];

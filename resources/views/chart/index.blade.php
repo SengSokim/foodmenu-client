@@ -4,7 +4,7 @@
     <div class="col-md-12">
       <div class="d-flex justify-content-between">
         <div class="chart-title">
-          <h5>Daily Sale Chart</h5> 
+          <h5> {{ __('app.chart.daily_sale_chart')}} </h5> 
         </div>
         <div class="select-date pt-1">
           @php
@@ -19,7 +19,7 @@
             }
           @endphp
           <select class="form-control" v-model="selected_month_year" @change="changeSaleDate()" style="cursor: pointer;">
-            <option :value="null">Select Year & Month</option>
+            <option :value="null">{{ __('app.chart.select_month_year') }}</option>
             @foreach ($monthOfYear as $item)
               <option value="{{ $item }}" @if(request('date') == $item) selected @endif>{{ $item }}</option>
             @endforeach
@@ -38,11 +38,11 @@
     <div class="col-md-12">
       <div class="d-flex justify-content-between">
         <div class="chart-title">
-          <h5>Monthly Sale Chart</h5> 
+          <h5>{{ __('app.chart.monthly_sale_chart') }}</h5> 
         </div>
         <div class="select-date pt-1">
           <select class="form-control" v-model="selected_year" @change="changeSalePerMonth()" style="cursor: pointer;">
-            <option :value="null">Select Year</option>
+            <option :value="null">{{ __('app.chart.select_year') }}</option>
             @foreach(range(0, now()->format('Y') - 2022) as $year)
               <option value="{{ 2022 + $year }}">{{ 2022 + $year }}</option>
             @endforeach

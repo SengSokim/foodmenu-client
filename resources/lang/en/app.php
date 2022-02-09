@@ -39,7 +39,8 @@ return [
         'users' => 'Users',
         'orders' => 'Orders',
         'tables' => 'Tables',
-        'settings' => 'Settings'
+        'settings' => 'Settings',
+        'find_drivers' => 'Find Drivers'
     ],
 
     'right-sidebar' => [
@@ -206,4 +207,19 @@ return [
         'are-you-sure-you-want-to-reject-this-order' => 'Are you sure, you want to reject this order:',
         'you-are-confirmation-order-code' => 'You are confirmation order code:'
 	],
+
+    'find_driver' => [
+        'find_driver'=>'Find Driver',
+        'driver_name' => 'Driver Name',
+        'gender' => 'Gender',
+        'phone_number' => 'Phone Number',
+        'district (Khan)' => 'District (Khan)',
+    ], 
+
+    'chart' => [
+        'daily_sale_chart' => 'Daily Sale Chart',
+        'monthly_sale_chart' => 'Monthly Sale Chart',
+        'select_month_year' => 'Select Month & Year',
+        'select_year' => 'Select Year',
+    ]
 ];

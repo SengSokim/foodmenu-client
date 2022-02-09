@@ -4,10 +4,10 @@
       <tr class="text-center">
           <th class="text-center" style="width: 30px">#</th>
           <th class="text-center"><i class="fa fa-image"></i></th>
-          <th class="text-center">Driver Name</th>
-          <th class="text-center">Gender</th>
-          <th class="text-center">Phone Number</th>
-          <th class="text-center">District (Khan)</th>
+          <th class="text-center">{{ __('app.find_driver.driver_name') }}</th>
+          <th class="text-center">{{ __('app.find_driver.gender') }}</th>
+          <th class="text-center">{{ __('app.find_driver.phone_number') }}</th>
+          <th class="text-center">{{ __('app.find_driver.district (Khan)') }}</th>
       </tr>
     </thead>
     <tbody>

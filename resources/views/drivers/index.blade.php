@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content-header')
-{!! generateContentHeader("Find Driver", "Find Driver") !!}
+{!! generateContentHeader(__('app.find_driver.find_driver') , __('app.find_driver.find_driver')) !!}
 @endsection
 @section('content')
 <div class="row">

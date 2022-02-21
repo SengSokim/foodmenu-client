@@ -15,7 +15,7 @@
       <tr>
         <td class="text-center">{{ $data->firstItem() + $index }}</td>
         <td class="text-center">
-            <img src="{{ $list->image->url ?? url('adminlte/img/deliver-icon.png') }}" alt="Product Image" class="thumbnail" style=" height: 50px; margin-bottom:0px">
+            <img src="{{ $list->image->url ?? url('adminlte/img/deliver-icon.png') }}" data-lity alt="Product Image" class="thumbnail" style=" height: 50px; margin-bottom:0px; cursor: pointer">
         </td>
         <td class="text-center">
           @if($list->status == 'verified')

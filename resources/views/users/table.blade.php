@@ -13,9 +13,9 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="text-center" v-for="(item, index) in restaurant_users.data">
+      <tr class="text-center" v-for="(item, index) in restaurant_users.data" >
         <td>@{{ index + 1 }}</td>
-        <td><img :src="item.media?.url" class="user_image"></td>
+        <td><img :src="item.media ? item.media.url : '{{ asset("adminlte/dist/img/placeholder/square-placeholder.png") }}'" class="user_image" data-lity style="cursor: pointer"></td>
         <td class="text-left">@{{ item.name}}</td>
         <td style="text-transform: capitalize">@{{ item.gender }}</td>
         <td>@{{ item.phone_number }}</td>

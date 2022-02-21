@@ -19,7 +19,6 @@
     opacity: 0;
     transition: .4s ease;
   }
-
   .dropdown-menu.show {
     top: -1% !important;
     transform: none !important;

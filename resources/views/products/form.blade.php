@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-3">
       <div class="form-group">
-        <img id="product-upload" class="img-fluid img-circle mb-3" :src="data.image ? data.image : (data.media ? data.media.url : '{{ asset('adminlte/dist/img/placeholder/square-placeholder.png') }}')">
+        <img data-lity id="product-upload" class="img-fluid img-circle mb-3" :src="data.image ? data.image : (data.media ? data.media.url : '{{ asset('adminlte/dist/img/placeholder/square-placeholder.png') }}')">
         <input type='file' id="product-input" name="image" accept=".jpg,.png" @change="uploadImage"  style="display: none"/>
         <input class="btn-upload btn btn-default" type="button" :class="{'is-invalid' : error.image}" value="Browse" onclick="document.getElementById('product-input').click();" style="width: 100%"/>
         <div class="invalid-feedback">@{{ error.image }}</div>

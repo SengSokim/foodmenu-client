@@ -73,7 +73,7 @@
           @endif
         </thead>
           <tbody>
-              @foreach($list->sale_products as $index => $item)
+              @foreach($list->products as $index => $item)
               <tr>
                   <td class="text-center">{{ $data->firstItem() + $index }}</td>
                   <td style="vertical-align: middle">

@@ -10,7 +10,7 @@ return [
         'edit' => 'Edit',
         'back' => 'Back',
         'confirm' => 'Confirm',
-        'save-changes' => 'Save Changes',
+        'save-change' => 'Save Change',
         'status' => 'Status',
         'deactive' => 'Deactive',
         'sequence' => 'Sequence',
@@ -18,7 +18,9 @@ return [
         'search-product' => 'Search Product',
         'total' => 'Total',
         'records' => 'Records',   
-        'record' => 'Record'   
+        'record' => 'Record',
+        'browse' => 'Browse',
+        'dashboard' => 'Dashboard'
     ],
 
     'dashboard' => [
@@ -37,7 +39,8 @@ return [
         'users' => 'Users',
         'orders' => 'Orders',
         'tables' => 'Tables',
-        'settings' => 'Settings'
+        'settings' => 'Settings',
+        'find_drivers' => 'Find Drivers'
     ],
 
     'right-sidebar' => [
@@ -88,10 +91,10 @@ return [
 		'display-sequence' => 'Display Sequence',
         'create-category' => 'Create Category',
         'update-category' => 'Update Category',
-
 		'delete-category' => 'Delete Category',
 		'do-you-want-to-delete-this-category:' => 'Do you want to delete this category:',
-	],
+        'search-category' => 'Search Category'
+    ],
 
 	'product' => [
 		'name' => 'Name',
@@ -132,11 +135,37 @@ return [
 		'table' => 'Table',
         'create-table' => 'Create Table',
         'edit-table' => 'Edit Table',
-        
 		'name' => 'Name',
 		'delete-table' => 'Delete Table',
 		'do-you-want-to-delete-this-table:' => 'Do you want to delete this table:',
+        'restaurant-table' => 'Restaurant Tables',
+        'search-table' => 'Search Table'
 	],
+
+    'user' => [
+        'user' => 'Users',
+        'restaurant-user' => 'Restaurant User',
+        'create-user' => 'Create User',
+        'edit-user' => 'Edit User',
+        'delete-user' => 'Delete User',
+        'name' => 'Name',
+        'gender' => 'Gender',
+        'select-gender' => 'Select Gender',
+        'male' => 'Male',
+        'female' => 'Female',
+        'phone-number' => 'Phone Number',
+        'password' => 'Password',
+        'role' => 'Role',
+        'select-role' => 'Select Role',
+        'manager' => 'Manager',
+        'admin' => 'Admin',
+        'staff' => 'Staff',
+        'address' => 'Address',
+        'your-address' => 'Your Address',
+        'image' => 'Image',
+        'do-you-want-to-delete-this-user:' => 'Do you want to delete this user:',
+        'search-user' => 'Search User'
+    ],
 
     'setting' => [
         'objective-setup-telegram' => 'Setting up Telegram allowed your customer to contact or make communication with you.',
@@ -146,6 +175,11 @@ return [
         'telegram-group' => 'Telegram Group',
         'your-telegram' => 'Your Telegram',
         'not-set' => 'Not Set',
+        'setting-up-telegram-with-papa-emenu' => 'To understand how to set up Telegram with PAPA eMenu',
+        'click-here' => 'Click here',
+        'setting-up-telegram' => 'Setting up Telegram',
+        'setting' => 'Setting',
+        'ask-customers-location' => 'Ask Customers Location'
 
     ],
 
@@ -153,7 +187,7 @@ return [
 		'from-date' => 'From Date',
 		'to-date' => 'To Date',
 		'code' => 'Code',
-
+        'order' => 'Orders',
 		'phone-number' => 'Phone Number',
 		'order-date' => 'Ordered Date',
 		'rejected-by' => 'Rejected By',
@@ -173,4 +207,19 @@ return [
         'are-you-sure-you-want-to-reject-this-order' => 'Are you sure, you want to reject this order:',
         'you-are-confirmation-order-code' => 'You are confirmation order code:'
 	],
+
+    'find_driver' => [
+        'find_driver'=>'Find Driver',
+        'driver_name' => 'Driver Name',
+        'gender' => 'Gender',
+        'phone_number' => 'Phone Number',
+        'district (Khan)' => 'District (Khan)',
+    ], 
+
+    'chart' => [
+        'daily_sale_chart' => 'Daily Sale Chart',
+        'monthly_sale_chart' => 'Monthly Sale Chart',
+        'select_month_year' => 'Select Month & Year',
+        'select_year' => 'Select Year',
+    ]
 ];

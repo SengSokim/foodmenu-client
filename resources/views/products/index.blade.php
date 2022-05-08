@@ -19,7 +19,6 @@
     opacity: 0;
     transition: .4s ease;
   }
-
   .dropdown-menu.show {
     top: -1% !important;
     transform: none !important;
@@ -57,11 +56,6 @@
     let app;
   </script>
   <script src="{{ mix('dist/js/products/product.js') }}"></script>
-  <script>
-      function myFunction() {
-        
-      }
-  </script>
   <script>
     $('.product-category-select2').select2();
     

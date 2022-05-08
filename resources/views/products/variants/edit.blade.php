@@ -11,7 +11,7 @@
                 <div class="row pt-3 pl-3">
                     <div class="col-md-12">
                         <button type="button" class="btn btn-default rounded-pill btn-sm" data-dismiss="modal">{{ __('app.global.back') }}</button>
-                        <button type="submit" form="editProductVariant" class="btn btn-warning rounded-pill btn-sm">{{ __('app.global.save-changes') }}</button>
+                        <button type="submit" form="editProductVariant" class="btn btn-warning rounded-pill btn-sm">{{ __('app.global.save-change') }}</button>
                     </div>
                 </div>
                 <div class="modal-body">

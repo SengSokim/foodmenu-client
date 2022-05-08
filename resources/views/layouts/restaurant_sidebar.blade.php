@@ -140,7 +140,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default rounded-pill" data-dismiss="modal">{{ __('app.global.cancel') }}</button>
-                <button type="submit" form="submitUpdateRestaurant" class="btn btn-warning rounded-pill">{{ __('app.global.save-changes') }}</button>
+                <button type="submit" form="submitUpdateRestaurant" class="btn btn-warning rounded-pill">{{ __('app.global.save-change') }}</button>
               </div>
             </div>
           </div>
@@ -149,7 +149,7 @@
     </div>
   </div>
   <div class="text-center mt-5">
-    <img class="img-circle" src="{{ $restaurant_info->media->url ?? asset('adminlte/dist/img/placeholder/square-placeholder.png')}}" width="40%" style="margin: auto">
+    <img class="img-circle" src="{{ $restaurant_info->media->url ?? asset('adminlte/dist/img/placeholder/square-placeholder.png')}}" data-lity width="40%" style="margin: auto; cursor: pointer;">
   </div>
 
   <div class="res-name dropdown text-center">

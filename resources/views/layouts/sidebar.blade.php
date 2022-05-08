@@ -19,6 +19,14 @@
         </a>
       </li>
       <li class="nav-item">
+        <a href="{{ route('product-categories') }}" class="nav-link {{ request()->is('*admin/product-categories') ? 'active' : '' }}">
+          <i class="nav-icon fa fa-cubes"></i>
+          <p>
+            {{ __('app.sidebar.categories') }}
+          </p>
+        </a>
+      </li>
+      <li class="nav-item">
         <a href="{{ route('products') }}" class="nav-link {{ request()->is(['*admin','*admin/products*','*admin/product_variants*']) ? 'active' : '' }}">
           <i class="nav-icon fas fa-hamburger"></i>
           <p>
@@ -27,14 +35,6 @@
         </a>
       </li>    
       <li class="nav-item">
-        <a href="{{ route('product-categories') }}" class="nav-link {{ request()->is('*admin/product-categories') ? 'active' : '' }}">
-          <i class="nav-icon fas fa-boxes"></i>
-          <p>
-            {{ __('app.sidebar.categories') }}
-          </p>
-        </a>
-      </li>
-      <li class="nav-item">
         <a href="{{route('orders.index')}}" class="nav-link {{ request()->is('*admin/orders') ? 'active' : '' }}">
           <i class="nav-icon fas fa-box"></i>
           <p>
@@ -42,14 +42,14 @@
           </p>
         </a>
       </li>
-      {{-- <li class="nav-item">
+      <li class="nav-item">
         <a href="{{route('users')}}" class="nav-link {{ request()->is('*admin/users') ? 'active' : '' }}">
           <i class="nav-icon fas fa-users"></i>
           <p>
-            Users
+            {{ __('app.sidebar.users') }}
           </p>
         </a>
-      </li> --}}
+      </li>
       <li class="nav-item">
         <a href="{{route('tables')}}" class="nav-link {{ request()->is('*admin/tables') ? 'active' : '' }}">
           <i class="nav-icon fas fa-table"></i>
@@ -58,10 +58,16 @@
           </p>
         </a>
       </li>
-
-   
       <li class="nav-item">
-        <a href="{{ route('setting.telegram') }}" class="nav-link {{ request()->is('*admin/setting*') ? 'active' : '' }}">
+        <a href="{{route('drivers')}}" class="nav-link {{ request()->is('*admin/drivers/list') ? 'active' : '' }}">
+          <i class="nav-icon fas fa-user"></i>
+          <p>
+            {{ __('app.sidebar.find_drivers')}}
+          </p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ url('admin/setting/telegram/'.$restaurant_info->id) }}" class="nav-link {{ request()->is('*admin/setting*') ? 'active' : '' }}">
           <i class="nav-icon fas fa-cog"></i>
           <p>
             {{ __('app.sidebar.settings') }}

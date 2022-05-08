@@ -1,96 +1,31 @@
-<div class="row">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-header">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="card-tools mt-1" style="float:right">
-                <button class="btn btn-warning btn-sm rounded-pill"  title="Create" data-toggle="modal" data-target="#createUser"><i class="far fa-plus fa-fw"></i>Create New</button>
-                @include('users.create')  
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card-body">
-          <form>
-            <div class="row py-3"> 
-                <div class="col-md-3">
-                    <select name="role" class="form-control">
-                        <option value="" @if(request('role') == '') selected @endif>All Role</option>
-                        <option value="admin" @if(request('role') == 'admin') selected @endif>Admin</option>
-                        <option value="manager" @if(request('role') == 'manager') selected @endif>Manager</option>
-                        <option value="hr" @if(request('role') == 'hr') selected @endif>HR</option>
-                    </select>
-                </div>
-                <div class="col-md-3">
-                    <select name="enable_status" class="form-control">
-                        <option value="" @if(request('enable_status') == '') selected @endif>All Status</option>
-                        <option value="1" @if(request('enable_status') == '1') selected @endif>Active</option>
-                        <option value="0" @if(request('enable_status') == '0') selected @endif>Deactive</option>
-                    </select>
-                </div>
-                <div class="col-md-6">
-                    <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" name="search" value="{{ request('search') }}">
-                    <div class="input-group-append">
-                        <span class="input-group-text"><i class="fas fa-search"></i></span>
-                    </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row pb-3">
-                <div class="col-md-12">
-                    <button type="submit" class="btn btn-sm btn-info text-white">Filter <i class="fas fa-filter"></i></button>
-                    <a href="{{ url('admin/product-categories') }}" class="btn btn-sm btn-danger">Clear <i class="fas fa-sync-alt"></i></a>
-                </div>
-            </div>
-          </form>
-          <div class="table-responsive">
-            <table class="table table-striped table-hover table-bordered">
-              <thead>
-                <tr class="text-center">
-                  <th>#</th>
-                  <th>Image</th>
-                  <th scope="col">Username</th>
-                  <th>Gender</th>
-                  <th>Phone</th>
-                  <th>Role</th>
-                  <th>Status</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                @for($i = 1; $i <= 5; $i++)
-                <tr class="text-center">
-                  <td>{{ $i }}</td>
-                  <td><img src="" width="40px"></td>
-                  <td class="text-left">Chorn Penghong</td>
-                  <td>Male</td>
-                  <td>0964636342</td>
-                  <td>Admin</td>
-                  <td>Active</td>
-                  <td>
-                    <button class="btn btn-primary btn-sm rounded-pill" title="Edit" data-toggle="modal" data-target="#editUser" style="padding: .425rem .55rem"><i class="fas fa-edit fa-fw"></i></button>
-                    <button class="btn btn-danger btn-sm rounded-pill"  title="Delete" data-toggle="modal" data-target="#deleteUser" style="padding: .425rem .55rem"><i class="fas fa-trash-alt fa-fw"></i></button>
-                    <div class="text-left">
-                       @include('users.edit')
-                       @include('users.delete')
-                    </div>
-                  </td>
-                </tr>
-                @endfor
-              </tbody>
-            </table>
-          </div>
-        </div>
-        {{-- <div class="row card-footer">
-            <div class="col-md-6">
-                <h5>Total: <span class="text-danger">{{ $i - 1 }}</span>{{ $i - 1 > 1 ? 'records' : 'record' }}</h5>
-            </div>
-            <div class="col-md-6">
-                @include('layouts.pagination') 
-            </div>
-        </div> --}}
-      </div>
-    </div>
-  </div>
+<div class="table-responsive">
+  <table class="table table-striped table-hover table-bordered" v-cloak>
+    <thead>
+      <tr class="text-center">
+        <th>#</th>
+        <th>{{ __('app.user.image') }}</th>
+        <th>{{ __('app.user.name') }}</th>
+        <th>{{ __('app.user.gender') }}</th>
+        <th>{{ __('app.user.phone-number') }}</th>
+        <th>{{ __('app.user.role') }}</th>
+        <th>{{ __('app.global.status') }}</th>
+        <th>{{ __('app.global.actions') }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="text-center" v-for="(item, index) in restaurant_users.data" >
+        <td>@{{ index + 1 }}</td>
+        <td><img :src="item.media ? item.media.url : '{{ asset("adminlte/dist/img/placeholder/square-placeholder.png") }}'" class="user_image" data-lity style="cursor: pointer"></td>
+        <td class="text-left">@{{ item.name}}</td>
+        <td style="text-transform: capitalize">@{{ item.gender }}</td>
+        <td>@{{ item.phone_number }}</td>
+        <td style="text-transform: capitalize">@{{ item.role }}</td>
+        <td>@{{ item.enable_status ? 'Active' : 'Deactive' }}</td>
+        <td>
+          <button @click="setData(item)" class="btn btn-primary btn-sm rounded-pill" title="Edit" data-toggle="modal" data-target="#editUser" style="padding: .425rem .55rem"><i class="fas fa-edit fa-fw"></i></button>
+          <button @click="setData(item)" class="btn btn-danger btn-sm rounded-pill"  title="Delete" data-toggle="modal" data-target="#delete-user" style="padding: .425rem .55rem"><i class="fas fa-trash-alt fa-fw"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

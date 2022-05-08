@@ -10,7 +10,7 @@ return [
         'edit' => 'កែប្រែ',
         'back' => 'ត្រឡប់ក្រោយ',
         'confirm' => 'យល់ព្រម',
-        'save-changes' => 'រក្សាទុក',
+        'save-change' => 'រក្សាទុក',
         'status' => 'ស្ថានភាព',
         'deactive' => 'បិទបណ្តោះអាសន្ន',
         'sequence' => 'លំដាប់',
@@ -18,7 +18,9 @@ return [
         'search-product' => 'ស្វែងរកផលិតផល',
         'total' => 'សរុប',
         'records' => 'ទិន្នន័យ',
-        'record' => 'ទិន្នន័យ'               
+        'record' => 'ទិន្នន័យ',
+        'browse' => 'រើសរូបភាព',
+        'dashboard' => 'ផ្ទាំងគ្រប់គ្រង'
     ],
 
     'dashboard' => [
@@ -37,7 +39,8 @@ return [
         'users' => 'អ្នកប្រើប្រាស់ប្រព័ន្ធ',
         'orders' => 'ការបញ្ជាទិញ',
         'tables' => 'តុ',
-        'settings' => 'ការកំណត់'
+        'settings' => 'ការកំណត់',
+        'find_drivers' => 'ស្វែងរកអ្នកដឹកជញ្ជូន'
     ],
 
     'right-sidebar' => [
@@ -91,6 +94,7 @@ return [
 
 		'delete-category' => 'លុបប្រភេទផលិតផល',
 		'do-you-want-to-delete-this-category:' => 'តើអ្នកពិតជាចង់លុបប្រភេទផលិតផល:',
+        'search-category' => 'ស្វេងរកប្រភេទផលិតផល',
 	],
 
 	'product' => [
@@ -133,23 +137,54 @@ return [
 		'edit-table' => 'កែប្រែតុ',
 		'delete-table' => 'លុបតុ',
 		'do-you-want-to-delete-this-table:' => 'តើអ្នកពិតជាចង់លុបតុ:',
+        'search-table' => 'ស្វែងរកតុនៅក្នុងអាហារដ្ឋាន',
+        'restaurant-table' => 'តុអាហារ',
 	],
+
+    'user' => [
+        'user' => 'អ្នកប្រើប្រាស់ប្រព័ន្ធ',
+        'restaurant-user' => 'អ្នកប្រើប្រាស់ប្រព័ន្ធ',
+        'create-user' => 'បង្កើតអ្នកប្រើប្រាស់',
+        'edit-user' => 'កែប្រែអ្នកប្រើប្រាស់',
+        'delete-user' => 'លុបអ្នកប្រើប្រាស់',
+        'name' => 'ឈ្មោះ',
+        'gender' => 'ភេទ',
+        'select-gender' => 'ជ្រើសរើសភេទ',
+        'male' => 'ប្រុស',
+        'female' => 'ស្រី',
+        'phone-number' => 'លេខទូរស័ព្ទ',
+        'password' => 'ពាក្យសំងាត់',
+        'role' => 'តួនាទី',
+        'select-role' => 'ជ្រើសរើសតួនាទី',
+        'manager' => 'ប្រធាន',
+        'admin' => 'អេដមីន',
+        'staff' => 'បុគ្គលិក',
+        'address' => 'អាស័យដ្ឋាន',
+        'your-address' => 'អាស័យដ្ឋានរបស់អ្នក',
+        'image' => 'រូបភាព',
+        'do-you-want-to-delete-this-user:' => 'តើអ្នកពិតជាចង់លុបអ្នកប្រើប្រាស់:',
+        'search-user' => 'ស្វែងរកអ្នកប្រើប្រាស់'
+    ],
 
     'setting' => [
         'objective-setup-telegram' => 'សូមធ្វើការរៀបចំ Telegram ដើម្បីអាចឲ្យអតិថិជនរបស់អ្នកធ្វើការទំនាក់ទំនង ឬ ទទួលពត៍មានអំពីអ្នក.',
         'create-telegram-group' => 'បង្កើតក្រុមTelegram',
-        'you-can-create-telegram-group-by-click-this-link' => 'អ្នកអាចបង្កើតTelegramតាមរយះតំណរនេះ',
+        'you-can-create-telegram-group-by-click-this-link' => 'អ្នកអាចបង្កើត Telegram តាមរយះតំណរនេះ',
         'telegram-user' => 'Telegram User',
         'telegram-group' => 'Telegram Group',
         'your-telegram' => 'Telegram របស់អ្នក',
         'not-set' => 'មិនបានកំណត់',
-
+        'setting-up-telegram-with-papa-emenu' => 'ដើម្បីយល់ដឹងពីការតម្លើង Telegram ជាមួយកម្មវិធី PAPA eMenu',
+        'click-here' => 'សូមចុចទីនេះ',
+        'setting-up-telegram' => 'ការតម្លើងTelegram',
+        'setting' => 'ការកំណត់',
+        'ask-customers-location' => 'ស្នើរសុំទីតាំងរបស់អតិថិជន'
     ],
     'orders' => [
 		'from-date' => 'ចាប់ពីថ្ងៃ',
 		'to-date' => 'ដល់ថ្ងៃ',
 		'code' => 'លេខកូដបញ្ជាទិញ',
-
+        'order' => 'ការបញ្ជាទិញ',
 		'phone-number' => 'លេខទូរស័ព្ទ',
 		'order-date' => 'ថ្ងៃបញ្ជាទិញ',
 		'ordered-mode' => 'បញ្ជាទិញតាមរយះ',
@@ -165,6 +200,19 @@ return [
         'confirmation-order' => 'ទទួលការបញ្ជាទិញ',
         'reject' => 'មិនទទួល',
         'are-you-sure-you-want-to-reject-this-order' => 'មិនទទួលការបញ្ជាទិញលេខកូដ:',
-        'you-are-confirmation-order-code' => 'យល់ព្រមទទួលការបញ្ជាទិញលេខកូដ:'
+        'you-are-confirmation-order-code' => 'យល់ព្រមទទួលការបញ្ជាទិញលេខកូដ:',
 	],
+    'find_driver' => [
+        'find_driver' => 'ស្វែងរកអ្នកដឹកជញ្ជូន',
+        'driver_name' => 'ឈ្មោះអ្នកដឹក',
+        'gender' => 'ភេទ',
+        'phone_number' => 'លេខទូរស័ព្ទ',
+        'district (Khan)' => 'ខ័ណ្ឌ',
+    ],
+    'chart' => [
+        'daily_sale_chart' => 'តារាងលក់ប្រចាំថ្ងៃ',
+        'monthly_sale_chart' => 'តារាងលក់ប្រចាំខែ',
+        'select_month_year' => 'ជ្រើសរើសខែ & ឆ្នាំ',
+        'select_year' => 'ជ្រើសរើសឆ្នាំ',
+    ]
 ];

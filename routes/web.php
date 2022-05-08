@@ -1,5 +1,8 @@
 <?php
-    Route::group(['prefix' => 'auth'], function () {
+    Route::get('/', 'AuthController@login')->middleware('auth:guest')->name('auth.login');
+
+    Route::group(['prefix' => 'auth', "middleware" => "auth:guest"], function () {
+        Route::get('/', 'AuthController@login')->name('auth.login');
         Route::get('/login', 'AuthController@login')->name('auth.login');
         Route::get('/login/get', 'AuthController@loginGet')->name('auth.login.get');
         Route::post('/login', 'AuthController@submitLogin')->name('auth.login');
@@ -12,11 +15,9 @@
 
         Route::get('/reset/{phone_number}/{token}', 'AuthController@reset');
         Route::post('/reset', 'AuthController@submitResetPassword');
-
-        
-        Route::get('/profile', 'AuthController@logout')->name('logout');
-        Route::get('/logout', 'AuthController@logout')->name('logout');
     });
+
+    Route::get('/auth/logout', 'AuthController@logout')->name('logout');
     
     Route::group(
     [
@@ -25,6 +26,8 @@
     ], function(){
         Route::group(['prefix' =>  'admin', 'middleware' => 'auth'], function () {
             Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+            Route::get('/dashboard/chart/{year}/{month}', 'DashboardController@chart');
+            Route::get('/dashboard/totalPerMonth/{year}', 'DashboardController@totalPerMonth');
             Route::get('/', 'ProductController@index')->name('products');
 
             Route::group(['prefix' =>'profile'], function(){
@@ -61,6 +64,9 @@
 
             Route::prefix('users')->group(function () {
                 Route::get('/', 'UserController@index')->name('users');
+                Route::post('/', 'UserController@store')->name('users.store');
+                Route::post('/{id}', 'UserController@update')->name('users.update');
+                Route::delete('/{id}', 'UserController@destroy')->name('users.destroy');
             });
 
             Route::prefix('tables')->group(function () {
@@ -79,7 +85,7 @@
 
 
             Route::prefix('setting')->group(function () {
-                Route::get('/telegram', 'SettingController@telegram')->name('setting.telegram');
+                Route::get('/telegram/{id}', 'SettingController@telegram')->name('setting.telegram');
             });
 
             Route::prefix('orders')->group(function () {
@@ -88,6 +94,10 @@
                 Route::delete('/product/delete/{id}', 'OrderController@deleteProduct')->name('orders.product.delete');    
                 Route::delete('/{id}', 'OrderController@deleteOrder')->name('orders.delete');                
 
+            });
+
+            Route::prefix('drivers')->group(function() {
+                Route::get('/list', 'FindDriverController@list')->name('drivers');
             });
         });
     });

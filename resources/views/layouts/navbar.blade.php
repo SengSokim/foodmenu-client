@@ -77,7 +77,7 @@
             <div class="row">
               <div class="col-md-4 offset-md-4">
                 <div class="form-group">
-                  <img id="user-profile-upload" class="profile-user-img img-fluid img-circle mb-1" :src="data.image ? data.image : (data.media ? data.media.url : '{{ asset('adminlte/dist/img/placeholder/square_avatar_placeholder.jpg') }}')" style="width: 120px; height: 120px">
+                  <img data-lity id="user-profile-upload" class="profile-user-img img-fluid img-circle mb-1" :src="data.image ? data.image : (data.media ? data.media.url : '{{ asset('adminlte/dist/img/placeholder/square_avatar_placeholder.jpg') }}')" style="width: 120px; height: 120px; cursor: pointer">
                   <input type='file' id="user-profile-input" name="image" class="hide-file-name" accept=".jpg,.png" @change="uploadImage"/>
                   <input class="btn-upload btn btn-default form-control" type="button" value="Browse" onclick="document.getElementById('user-profile-input').value='';document.getElementById('user-profile-input').click();" style="width: 120px;">
                 </div>
@@ -125,7 +125,7 @@
         <div class="modal-footer">
           <button class="btn btn-default rounded-pill" data-toggle="modal" data-target="#modal-change-password"><i class="fas fa-lock fa-fw"></i>{{ __('app.profile.change-now') }}</button>
           <button type="button" class="btn btn-default rounded-pill" data-dismiss="modal">{{ __('app.global.cancel') }}</button>
-          <button type="submit" form="profile" class="btn btn-warning rounded-pill" @click="submit()">{{ __('app.global.save-changes') }}</button>
+          <button type="submit" form="profile" class="btn btn-warning rounded-pill" @click="submit()">{{ __('app.global.save-change') }}</button>
         </div>
       </div>
     </div>

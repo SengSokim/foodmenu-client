@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content-header')
-{!! generateContentHeader('Orders', 'Orders') !!}
+{!! generateContentHeader( __('app.orders.order'), __('app.orders.order')) !!}
 @endsection
 @section('content')
 <style>

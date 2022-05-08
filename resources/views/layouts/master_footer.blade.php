@@ -33,11 +33,14 @@
   <!-- AdminLTE App -->
   <script src="{{ asset('adminlte/dist/js/adminlte.js') }}"></script>
   <script src="{{ asset('adminlte/dist/js/demo.js') }}"></script>
-
+  <!--Chart Js-->
+  <script src="{{ asset('adminlte/dist/js/chart.js') }}"></script>
+  <!--mix file-->
   <script src="{{ mix('dist/js/app.js') }}"></script>
   <script>
     let EditRestaurant;
     let editProfile;
+    let Users;
     const search = <?php echo ("'".request('search')."'" ?? "''") ?> ;
   </script>
   <script src="{{ mix('dist/js/restaurants/edit.js') }}"></script>
@@ -109,6 +112,12 @@
         isImgInput = 3;
         $('#square').hide()
         $('#landscape').hide()
+      } else if(idClicked == 'user-input') {
+        viewport={width:300, height:300};
+        result={width:400, height:400};
+        isImgInput = 4;
+        $('#square').hide()
+        $('#landscape').hide()
       }
 
       image_crop = $('#image-crop').croppie({
@@ -119,7 +128,7 @@
       });
     });
 
-    $('#user-profile-input, #restaurant-profile-input, #restaurant-banner-input, #product-input').on('change', function(){
+    $('#user-profile-input, #restaurant-profile-input, #restaurant-banner-input, #product-input, #user-input').on('change', function(){
       var reader = new FileReader();
       reader.onload = function (event) {
         imageBind = event.target.result;
@@ -147,10 +156,13 @@
           EditRestaurant.data.banner_image = res
         }else if(isImgInput == 2){
           $('#product-upload').attr('src', res);
-          Product.data.image = res
+          app.data.image = res
         }else if(isImgInput == 3){
           $('#user-profile-upload').attr('src', res);
           editProfile.data.image = res
+        }else if(isImgInput == 4) {
+          $('#user-upload').attr('src', res);
+          Users.data.image = res
         }
       })
     })

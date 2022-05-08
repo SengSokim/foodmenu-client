@@ -12,7 +12,7 @@
         {{ __('app.global.total') }}
       </div>
       <div class="col-md-6 col-sm-6">
-        <label>{{ formatCurrency($list->total) }}</label>
+        <label>{{ formatCurrency($list->total, $restaurant_info->currency_code) }}</label>
       </div>
     </div>
   </div> 
@@ -85,14 +85,14 @@
                           <span class="bg-light rounded-pill px-2 py-1">{{ $v->variant->name_en }} : {{ $v->name_en }}</span>
                         @endforeach
                         @if($v->extra_price != 0)
-                          <br><em class="ml-2">Extra Price: {{  formatCurrency($v->extra_price)  }} </em>
+                          <br><em class="ml-2">Extra Price: {{  formatCurrency($v->extra_price, $restaurant_info->currency_code)  }} </em>
                         @endif
                       </small>
                     @endif
                   </td>
                   <td class="text-center">{{$item->qty}}</td>
-                  <td class="text-right">{{formatCurrency($item->selling_price)}}</td>
-                  <td class="text-right">{{formatCurrency($item->sub_total)}}</td>
+                  <td class="text-right">{{formatCurrency($item->selling_price, $restaurant_info->currency_code)}}</td>
+                  <td class="text-right">{{formatCurrency($item->sub_total, $restaurant_info->currency_code)}}</td>
                   @if ($list->status == 'pending')
                   <td class="text-center">
                     <button class="btn btn-danger rounded-pill btn-sm" style="padding: 0 .38rem" data-toggle="modal" data-target="#remove-item-{{ $item->id }}" title="Remove Item"><i class="fas fa-times"></i></button>

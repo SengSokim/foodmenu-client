@@ -53,6 +53,7 @@
 @section('footer-content')
   <script>
     const product_categories = @json($product_categories);
+    const restaurant = @json($restaurant_info);
     let app;
   </script>
   <script src="{{ mix('dist/js/products/product.js') }}"></script>

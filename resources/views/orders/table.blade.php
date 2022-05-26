@@ -19,7 +19,9 @@
           @if ($list->status == 'pending')
             <span class="badge badge-info"><em>{{ $list->status }}</em></span>
           @elseif($list->status == 'confirmed')
-            <span class="badge badge-success"><em>{{ $list->status }}</em></span>
+            <span class="badge badge-primary"><em>{{ $list->status }}</em></span>
+          @elseif($list->status == 'received')
+          <span class="badge badge-success"><em>{{ $list->status }}</em></span>
           @elseif($list->status == 'rejected')
             <span class="badge badge-danger"><em>{{ $list->status }}</em></span>
           @endif
@@ -31,11 +33,11 @@
             <button class="btn btn-info rounded-pill btn-sm" style="padding: .425rem .55rem" title="Location not available" disabled><i class="fas fa-map-marker-slash"></i></button>
           @endif
 
-          @if ($list->status != 'confirmed')
+          @if ($list->status == 'confirmed' || $list->status == 'received')
+            <button class="btn btn-danger rounded-pill btn-sm" style="padding: .425rem .55rem" title="Order confirmed, you cannot delete the order!" disabled><i class="fas fa-ban fa-fw"></i></button>
+          @else
             <button class="btn btn-danger rounded-pill btn-sm" style="padding: .425rem .55rem" data-toggle="modal" data-target="#delete-order-{{ $list->id }}" title="Delete"><i class="fas fa-trash fa-fw"></i></button>
             @include('orders.delete')
-          @else
-            <button class="btn btn-danger rounded-pill btn-sm" style="padding: .425rem .55rem" title="Order confirmed, you cannot delete the order!" disabled><i class="fas fa-ban fa-fw"></i></button>
           @endif
         </td>
       </tr>

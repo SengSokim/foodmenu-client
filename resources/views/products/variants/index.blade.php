@@ -21,7 +21,7 @@
         <div class="info-box-content">
           <span class="info-box-text" style="line-height: 1.2"></a> {{$data->data->product->name}}</span>
           <span class="info-box-text text-muted" style="line-height: 1.2;font-size: 13px">{{$data->data->product->product_category}}</span>
-          <span class="info-box-text" style="line-height: 1.2"><b>{{formatCurrency($data->data->product->price)}}</b></span>
+          <span class="info-box-text" style="line-height: 1.2"><b>{{formatCurrency($data->data->product->price, $restaurant_info->currency_code)}}</b></span>
         </div>
       </div>
     </div>

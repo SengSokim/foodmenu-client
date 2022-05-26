@@ -61,15 +61,14 @@ app = new Vue({
                 hideLoading()
             })
         }, 
-        
-        formatCurrency(money)
-        {
-            var formatter = new Intl.NumberFormat('en-US', {
-                style: 'currency',
-                currency: 'USD',
-                minimumFractionDigits: 2
-            });
-            return formatter.format(money);
+
+        formatCurrency(money) {
+            switch (restaurant.currency_code) {
+                case 'khr':
+                    return number_format(money, 0, '', ',') + ' ៛';
+                default:
+                    return '$' + number_format(money, 2, '.', ',');
+            }
         },
 
         save(){

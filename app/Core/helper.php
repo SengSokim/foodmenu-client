@@ -49,7 +49,8 @@
     {
         switch ($code) {
             case 'riel':
-                return number_format($money, 0, '', ',') . '';
+            case 'khr':
+                return number_format($money, 0, '', ',') . ' ៛';
             default:
                 return '$' . number_format($money, 2, '.', ',');
         }

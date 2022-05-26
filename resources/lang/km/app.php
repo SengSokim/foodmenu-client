@@ -201,6 +201,12 @@ return [
         'reject' => 'មិនទទួល',
         'are-you-sure-you-want-to-reject-this-order' => 'មិនទទួលការបញ្ជាទិញលេខកូដ:',
         'you-are-confirmation-order-code' => 'យល់ព្រមទទួលការបញ្ជាទិញលេខកូដ:',
+
+        'receive-order' => 'អ្នកទិញបានទទូលទំនិញ',
+        'receive' => 'ទទូល',
+        'are-you-sure-you-this-order' => 'ការបញ្ជាទិញលេខកូដ',
+        'is-received' => 'ត្រូវបានទទួល',
+        'you-are-confirmation-order-code' => 'You are confirmation order code:'
 	],
     'find_driver' => [
         'find_driver' => 'ស្វែងរកអ្នកដឹកជញ្ជូន',

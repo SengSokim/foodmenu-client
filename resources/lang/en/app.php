@@ -205,6 +205,12 @@ return [
         'confirmation-order' => 'Confirmation Order',
         'reject' => 'Reject',
         'are-you-sure-you-want-to-reject-this-order' => 'Are you sure, you want to reject this order:',
+        'you-are-confirmation-order-code' => 'You are confirmation order code:',
+        
+        'receive-order' => 'Receive Order',
+        'receive' => 'Receive',
+        'are-you-sure-you-this-order' => 'Are you sure, this order',
+        'is-received' => 'is received',
         'you-are-confirmation-order-code' => 'You are confirmation order code:'
 	],
 

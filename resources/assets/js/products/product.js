@@ -63,13 +63,13 @@ app = new Vue({
         }, 
 
         formatCurrency(money) {
-            var formatter = new Intl.NumberFormat('en-US', {
-                style: 'currency',
-                currency: 'USD',
-                minimumFractionDigits: 2
-            });
-            return formatter.format(money);
-        },  
+            switch (restaurant.currency_code) {
+                case 'khr':
+                    return number_format(money, 0, '', ',') + ' ៛';
+                default:
+                    return '$' + number_format(money, 2, '.', ',');
+            }
+        },
 
         save(){
             showLoading();

@@ -56,6 +56,7 @@
                     <td colspan="2" style="padding-top: 14px">
                         {{--<hr style="height: 1px; background: #134">--}}
                         <center>
+                            <span style="font-size: 14px">{{ $restaurant->phone_number }}</span><br><br>
                             <span style="font-size: 14px">POWERED BY</span><br>
                             <img src="{{ asset('adminlte/dist/img/logo/papa-deliver.png') }}" alt="" width="20%" style="margin-top: 10px">
                         </center>

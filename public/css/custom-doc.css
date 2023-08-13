@@ -1,0 +1,483 @@
+h3 {
+    text-align: center;
+    font-family: 'Moul', cursive;
+    margin: 0px;
+
+}
+
+#hero_page h5{
+    text-align: center;
+    font-family: 'Moul', cursive;
+    margin: 0px;
+    font-size: 16px;
+    line-height: 50px;
+}
+
+.header{
+    width: 65%;
+    margin: auto;
+}
+.logo img {
+    width: 150px;
+    height: 150px;
+}
+
+#hero_page p{
+    font-family: 'Khmer', cursive;
+    line-height:35px ;
+    font-size: 18px;
+    
+}
+#hero_page pre{
+    font-family: 'Content', cursive;
+    line-height: 35px;
+}
+#hero_page .content p {
+    width: 65%;
+    margin: auto;
+} 
+                                        /* Span */
+#name{
+    font-family: 'Khmer', cursive;
+    position: absolute;
+    top: 196px;
+    font-size: 16px;
+    left: 395px;
+}
+#sex{
+    font-family: 'Khmer', cursive;
+    position: absolute;
+    top: 196px;
+    font-size: 16px;
+    left: 545px;
+}
+#date_of_birth{
+    font-family: 'Khmer', cursive;
+    position: absolute;
+    top: 196px;
+    font-size: 16px;
+    left: 720px;
+}
+#member_id{
+    font-family: 'Khmer', cursive;
+    font-size: 16px;
+    position: absolute;
+    top: 232px;
+    left: 500px;
+}
+#member_team{
+    font-family: 'Khmer', cursive;
+    font-size: 16px;
+    position: absolute;
+    top: 232px;
+    left: 705px;
+}
+#number_phone{
+    font-family: 'Khmer', cursive;
+    font-size: 16px;
+    position: absolute;
+    top: 266px;
+    left: 395px;
+}
+#day{
+    font-family: 'Khmer', cursive;
+    font-size: 16px;
+    position: absolute;
+    top: 374px;
+    left: 615px;
+}
+#month{
+    font-family: 'Khmer', cursive;
+    font-size: 16px;
+    position: absolute;
+    top: 374px;
+    left: 680px;
+}
+#year{
+    font-family: 'Khmer', cursive;
+    font-size: 16px;
+    position: absolute;
+    top: 374px;
+    left: 762px;
+}
+#reason{
+    font-family: 'Khmer', cursive;
+    font-size: 16px;
+    position: absolute;
+    top: 510px;
+    left: 305px;
+}
+#building{
+    font-family: 'Khmer', cursive;
+    font-size: 16px;
+    position: absolute;
+    top: 545px;
+    left: 325px;
+}
+#description{
+    font-family: 'Khmer', cursive;
+    font-size: 16px;
+    position: absolute;
+    top: 581px;
+    left: 615px;
+}
+#home_id{
+    font-family: 'Khmer', cursive;
+    font-size: 16px;
+    position: absolute;
+    top: 652px;
+    left: 506px;
+}
+#road{
+    font-family: 'Khmer', cursive;
+    font-size: 16px;
+    position: absolute;
+    top: 652px;
+    left: 606px;
+}
+#village{
+    font-family: 'Khmer', cursive;
+    font-size: 16px;
+    position: absolute;
+    top: 652px;
+    left: 810px;
+}
+#district{
+    font-family: 'Khmer', cursive;
+    font-size: 16px;
+    position: absolute;
+    top: 686px;
+    left: 315px;
+}
+#province{
+    font-family: 'Khmer', cursive;
+    font-size: 16px;
+    position: absolute;
+    top: 686px;
+    left: 515px;
+}
+#location{
+    font-family: 'Khmer', cursive;
+    font-size: 16px;
+    position: absolute;
+    top: 648px;
+    left: 435px;
+}
+#signature_day{
+    font-family: 'Khmer', cursive;
+    font-size: 16px;
+    position: absolute;
+    top: 939px;
+    left: 345px;   
+}
+#signature_month{
+    font-family: 'Khmer', cursive;
+    font-size: 16px;
+    position: absolute;
+    top: 939px;
+    left: 415px;
+}
+#signature_year{
+    font-family: 'Khmer', cursive;
+    font-size: 16px;
+    position: absolute;
+    top: 939px;
+    left: 525px;
+}
+#signature_right_day{
+    font-family: 'Khmer', cursive;
+    font-size: 16px;
+    position: absolute;
+    top: 899px;
+    left: 855px;
+}
+#signature_right_month{
+    font-family: 'Khmer', cursive;
+    font-size: 16px;
+    position: absolute;
+    top: 899px;
+    left: 930px;
+}
+#signature_right_year{
+    font-family: 'Khmer', cursive;
+    font-size: 16px;
+    position: absolute;
+    top: 934px;
+    left: 924px;
+}
+
+#hero_page .content2 p {
+    width: 65%;
+    margin: auto;
+}
+#hero_page .content2 pre {
+    width: 65%;
+    margin:auto;
+    font-size:16px;
+    padding: 0;
+}
+.hi{
+    margin: auto;
+    width: 90%;
+}
+.content3{
+    width: 65%;
+    margin: auto;
+}
+.footer{
+    width: 65%;
+    height: 260px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.left{
+    width: 50%;
+    height: 100%;
+    border: 2px solid black;
+}
+.box-left {
+    margin: auto;
+    width: 80%;
+    height: 100%;
+}
+.box-left p{
+    text-align: center;
+}
+.right2{
+    width: 30%;
+    height: 100%;
+    border: 2px solid black;
+}
+.right2{
+    text-align: center;
+}
+
+/* Media print style */
+
+@media print{
+    #hero_page h3 {
+        text-align: center;
+        font-family: 'Moul', cursive;
+        margin: 0px;
+    }
+    #hero_page h5{
+        text-align: center;
+        font-size: 28px;
+        line-height: 80px;
+    }
+
+    #hero_page p{
+        font-family: 'Khmer', cursive;
+        line-height:52px;
+        font-size: 28px;
+    }
+
+    #hero_page pre{
+        font-family: 'Khmer', cursive;
+        line-height:35px ;
+        font-size: 24px;
+    }
+    #hero_page .content p {
+        width: 100%;
+        margin: auto;
+    }
+                        /* span */
+    #name{
+        font-family: 'Khmer', cursive;
+        position: absolute;
+        top: 168px;
+        font-size: 24px;
+        left: 280px;
+    }#sex{
+        font-family: 'Khmer', cursive;
+        position: absolute;
+        top: 168px;
+        font-size:24px;
+        left: 510px;
+    }
+    #date_of_birth{
+        font-family: 'Khmer', cursive;
+        position: absolute;
+        top: 168px;
+        font-size: 24px;
+        left:765px;
+    }
+    #member_id{
+        font-family: 'Khmer', cursive;
+        font-size: 24px;
+        position: absolute;
+        top: 222px;
+        left: 450px;
+    }
+    #member_team{
+        font-family: 'Khmer', cursive;
+        font-size: 24px;
+        position: absolute;
+        top: 227px;
+        left: 755px;
+    }
+    #number_phone{
+        font-family: 'Khmer', cursive;
+        font-size: 24px;
+        position: absolute;
+        top: 276px;
+        left: 275px;
+    }
+    #day{
+        font-family: 'Khmer', cursive;
+        font-size: 24px;
+        position: absolute;
+        top: 426px;
+        left: 675px;
+    }
+    #month{
+        font-family: 'Khmer', cursive;
+        font-size: 24px;
+        position: absolute;
+        top: 426px;
+        left: 770px;
+    }
+    #year{
+        font-family: 'Khmer', cursive;
+        font-size: 24px;
+        position: absolute;
+        top: 428px;
+        left: 890px;
+    }
+    #reason{
+        font-family: 'Khmer', cursive;
+        font-size: 24px;
+        position: absolute;
+        top: 666px;
+        left: 165px;
+    }
+    #building{
+        font-family: 'Khmer', cursive;
+        font-size: 24px;
+        position: absolute;
+        top: 720px;
+        left: 195px;
+    }
+    #description{
+        font-family: 'Khmer', cursive;
+        font-size: 24px;
+        position: absolute;
+        top: 772px;
+        left: 645px;
+    }
+    /* #description_two{
+        font-family: 'Khmer', cursive;
+        font-size: 24px;
+        position: absolute;
+        top: 727px;
+    } */
+
+    #home_id{
+        font-family: 'Khmer', cursive;
+        font-size: 24px;
+        position: absolute;
+        top: 882px;
+        left: 475px;
+    }
+    #road{
+        font-family: 'Khmer', cursive;
+        font-size: 24px;
+        position: absolute;
+        top: 882px;
+        left: 635px;
+    }
+    #village{
+        font-family: 'Khmer', cursive;
+        font-size: 24px;
+        position: absolute;
+        top: 882px;
+        left: 950px;
+    }
+    #district{
+        font-family: 'Khmer', cursive;
+        font-size: 24px;
+        position: absolute;
+        top: 935px;
+        left: 177px;
+    }
+    #province{
+        font-family: 'Khmer', cursive;
+        font-size: 24px;
+        position: absolute;
+        top: 935px;
+        left: 495px;
+    }
+    #location{
+        font-family: 'Khmer', cursive;
+        font-size: 24px;
+        position: absolute;
+        top: 875px;
+        left: 365px;
+    }
+
+    #hero_page .content2 p {
+        width: 95%;
+        margin: auto;
+    }
+
+    #hero_page .content2 pre {
+        width: 95%;
+        margin: auto;
+        font-size:16px;
+        padding: 0;
+        border: 0;
+        font-size:24px;
+        line-height: 35px;
+
+    }
+
+    #hero_page .header{
+        width: 100%;
+        margin: auto;
+    }
+  
+    #hero_page .logo img {
+        width: 100px;
+        height: 100px;
+    }
+    .hi{
+        margin: auto;
+        width: 85%;
+    }
+    #hero_page .content3{
+        width: 50%;
+        margin: auto;
+    }
+    #hero_page .footer{
+        width:95%;
+        height: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    #hero_page .left{
+        width: 45%;
+        height: 100%;
+        border: 2px solid black;
+    }
+    #hero_page .box-left {
+        margin: auto;
+        width: 70%;
+        height: 100%;
+    }
+    #hero_page .box-left p{
+        text-align: center;
+    }
+    #hero_page .right2{
+        width: 30%;
+        margin-right: 5rem;
+        height: 100%;
+        border: 2px solid black;
+    }
+    #hero_page .right2{
+        text-align: center;
+    }   
+}

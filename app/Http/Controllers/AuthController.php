@@ -8,7 +8,7 @@ class AuthController extends Controller
 {
     public function checkPhone(Request $request)
     {
-        $res = $this->api_post('portal/auth/check_phone', $request->all());
+        $res = $this->api_post('admin/auth/check_phone', $request->all());
 
         if ($res->success == false) {
             return fail($res->message, 200);
@@ -19,7 +19,7 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
-        $res = $this->api_post('portal/auth/register', $request->all());
+        $res = $this->api_post('admin/auth/register', $request->all());
 
         if ($res->success == false) {
             return fail($res->message, 200);
@@ -31,42 +31,42 @@ class AuthController extends Controller
 
     public function submitRegister(Request $request)
     {
-        $result = $this->api_post('portal/auth/register', $request->all());
+        $result = $this->api_post('admin/auth/register', $request->all());
         if ($result->success == false) {
             return back()->withInput(request()->except('password'))->with('error', self::getErrorMessage($result->message));
         }
 
         session()->put('auth', $result->data);
-        
+
         return redirect()->to('admin');
     }
 
     public function login()
     {
-        return view('home.auth.login');
+        return view('auth.login');
     }
 
     public function submitLogin(Request $request)
     {
-        $result = $this->api_post('portal/auth/login', $request->all());
+        $result = $this->api_post('admin/auth/login', $request->all());
         if ($result->success == false) {
             return back()->withInput(request()->except('password'))->with('error', self::getErrorMessage($result->message));
         }
 
         session()->put('auth', $result->data);
-        
+
         return redirect()->to('admin');
     }
 
     public function loginGet(Request $request)
     {
-        $result = $this->api_post('portal/auth/login', $request->all());
+        $result = $this->api_post('admin/auth/login', $request->all());
         if ($result->success == false) {
             return back()->withInput(request()->except('password'))->with('error', self::getErrorMessage($result->message));
         }
 
         session()->put('auth', $result->data);
-        
+
         return redirect()->to('admin');
     }
 
@@ -77,7 +77,7 @@ class AuthController extends Controller
 
     public function submitForgetPassword(Request $request)
     {
-        $result = $this->api_post('portal/auth/forgetPassword', $request->all());
+        $result = $this->api_post('admin/auth/forgetPassword', $request->all());
         if ($result->success == false) {
             return back()->withInput()->with('error', self::getErrorMessage($result->message));
         }
@@ -92,7 +92,7 @@ class AuthController extends Controller
 
     public function submitVerify(Request $request)
     {
-        $result = $this->api_post('portal/auth/forgetPassword/verify',$request->all());
+        $result = $this->api_post('admin/auth/forgetPassword/verify',$request->all());
 
         if ($result->success == false) {
             return back()->withInput()->with('error', self::getErrorMessage($result->message));
@@ -110,11 +110,11 @@ class AuthController extends Controller
 
     public function submitResetPassword(Request $request)
     {
-    
+
         $password = $request->password;
         $confirm_password = $request->confirm_password;
         if($password == $confirm_password && $password!=null&$confirm_password!=null){
-            $result = $this->api_post('portal/auth/forgetPassword/reset', $request->all());  
+            $result = $this->api_post('admin/auth/forgetPassword/reset', $request->all());
             if ($result->success == false) {
                 return back()->withInput()->with('error', self::getErrorMessage($result->message));
             }

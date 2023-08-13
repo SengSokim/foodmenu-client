@@ -2,18 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class DashboardController extends Controller
 {
     public function index()
     {
-        $data = $this->api_get('portal/dashboard');
-
+        $data = $this->api_get('admin/dashboard/dashboard_count')->data ?? [];
         return view('dashboard', compact('data'));
     }
-    
-    public function chart($year, $month) 
+
+    public function chart($year, $month)
     {
         $chart = $this->api_get('portal/chart/'. $year.'/'.$month);
 
@@ -23,10 +20,10 @@ class DashboardController extends Controller
         return ok($chart->data);
     }
 
-    public function totalPerMonth($year) 
+    public function totalPerMonth($year)
     {
         $totalPerMonth = $this->api_get('portal/chartMonthly/'. $year);
-        
+
         if(!$totalPerMonth->success) {
             return fail($totalPerMonth->message);
         }

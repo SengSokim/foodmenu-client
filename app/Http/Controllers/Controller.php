@@ -33,7 +33,7 @@ class Controller extends BaseController
                 if(!$request->isJson()) {
                     $response_restaurant = $this->api_get('portal/restaurants');
                     $response_count_oder = $this->api_get('portal/orders/count');
-                    
+
                     view()->share('restaurant_info', $response_restaurant->data ?? null);
                     view()->share('count_order', $response_count_oder->data ?? 0);
                 }
@@ -122,8 +122,9 @@ class Controller extends BaseController
     {
         self::api_post('admin/auth/logout');
         session()->put('auth', null);
-        return redirect()->to('/auth/login');
+        return redirect()->to('auth/login');
     }
+
 
     public function all($api ,$limit, $offset, $search, $order, $sort, $more_query_string = [])
     {
@@ -194,7 +195,7 @@ class Controller extends BaseController
 
         return $data;
     }
-    
+
     protected function isPageNotFound($api)
     {
         $data = $this->api_get($api);

@@ -8,39 +8,38 @@ class ProductCategoryController extends Controller
 {
     public function index(){
         list($current_page, $limit, $offset, $search, $order, $sort) = $this->getParams();
-
         $data = $this->pagination(
-            'portal/product_categories/list',
+            'admin/category/list',
             $limit,
             $offset,
             $search,
             $order,
             $sort,
-            url('admin/product-categories'),
+            url('admin/categories'),
             $current_page,
             [
                 'enable_status' => request('enable_status')
             ]
         );
-        return view('product_categories.index', compact('data'));
+        return view('categories.index', compact('data'));
     }
 
     public function store(Request $request)
     {
-        $result = $this->api_post('portal/product_categories/create', $request->all());
+        $result = $this->api_post('admin/category/create', $request->all());
         if ($result->success == true) {
-            session()->put('success', __('dialog_box.create_success', ['name' => 'product category']));
+            session()->put('success', __('dialog_box.create_success', ['name' => 'Category']));
             return ok('');
         } else {
             return fail($result->message, 200);
-        } 
+        }
     }
 
     public function update(Request $request, $id){
-        $result = $this->api_post('portal/product_categories/update/'. $id, $request->all());
+        $result = $this->api_post('admin/category/update/'. $id, $request->all());
 
         if ($result->success == true) {
-            session()->put('success', __('dialog_box.update_success', ['name' => 'product category']));
+            session()->put('success', __('dialog_box.update_success', ['name' => 'category']));
 
             return ok('');
         } else {
@@ -50,10 +49,10 @@ class ProductCategoryController extends Controller
 
     public function destroy($id)
     {
-        $result = $this->api_post('portal/product_categories/delete/'. $id);
+        $result = $this->api_post('admin/category/delete/'. $id);
 
         if ($result->success == true) {
-            session()->put('success', __('dialog_box.delete_success', ['name' => 'product category']));
+            session()->put('success', __('dialog_box.delete_success', ['name' => 'category']));
 
             return ok('');
         } else {

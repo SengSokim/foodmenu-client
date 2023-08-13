@@ -8,7 +8,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $response_product_categories = $this->api_get('portal/product_categories/list_all');
+        $response_product_categories = $this->api_get('admin/product/list/all');
         $product_categories = [];
         if($response_product_categories->data){
             $product_categories = $response_product_categories->data;
@@ -17,7 +17,7 @@ class ProductController extends Controller
     }
 
     public function product()
-    { 
+    {
         $search = request('search');
         $limit = request('limit');
         $offset = request('offset');
@@ -37,7 +37,7 @@ class ProductController extends Controller
             return ok('');
         } else {
             return fail($result->message, 200);
-        } 
+        }
     }
 
     public function update(Request $request, $id){

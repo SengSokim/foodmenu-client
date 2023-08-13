@@ -8,7 +8,7 @@ class ProfileController extends Controller
 {
     public function view()
     {
-        $response = $this->api_get('portal/auth/profile');
+        $response = $this->api_get('admin/profile');
         $data = null;
         if ($response->data) {
              $data = $response->data;
@@ -18,13 +18,13 @@ class ProfileController extends Controller
     }
 
     public function update(Request $request)
-    {        
+    {
         $result = $this->api_post('portal/auth/profile', $request->all());
         if ($result->success == true) {
             session()->put('success', __('dialog_box.update_success', ['name' => 'Profile']));
             $auth = session()->get('auth', []);
-            $auth->user->name = $result->data->name;    
-            $auth->user->media = $result->data->media;    
+            $auth->user->name = $result->data->name;
+            $auth->user->media = $result->data->media;
             return ok('');
         } else {
             return fail($result->message, 200);

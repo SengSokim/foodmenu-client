@@ -13,14 +13,15 @@ const mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/dist/js')
     .js('resources/assets/js/axios.js', 'public/dist/js')
+    .js('resources/assets/js/general.js', 'public/dist/js')
     .sass('resources/assets/sass/app.scss', 'public/dist/css')
 
     //Product Variant
     .js('resources/assets/js/product-variants/product-variant.js', 'public/dist/js/product-variants')
 
     //Product Category
-    .js('resources/assets/js/product-categories/product-category.js', 'public/dist/js/product-categories')
-    
+    .js('resources/assets/js/categories/category.js', 'public/dist/js/categories')
+
     //Restaurant
     .js('resources/assets/js/restaurants/edit.js', 'public/dist/js/restaurants')
 
@@ -38,11 +39,12 @@ mix.js('resources/assets/js/app.js', 'public/dist/js')
 
     //users
     .js('resources/assets/js/users/user.js', 'public/dist/js/users')
-    
+
     //tables
     .js('resources/assets/js/tables/table.js', 'public/dist/js/tables')
 
     //chart
     .js('resources/assets/js/charts/chart.js', 'public/dist/js/charts')
+
     .version();
-  
+

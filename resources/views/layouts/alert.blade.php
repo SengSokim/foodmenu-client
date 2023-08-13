@@ -3,13 +3,7 @@
         if (!(event.persisted || window.performance && window.performance.navigation.type == 2))
         {
             @if (session()->has('success'))
-                $.toast({
-                    heading: 'Success',
-                    text: '{!! session()->get('success') !!}',
-                    showHideTransition: 'slide',
-                    icon: 'success'
-                })
-                localStorage.setItem('action', '');
+                showToastSuccess('{!! session()->get('success') !!}');
                 @php session()->forget('success'); @endphp
             @endif
 
@@ -29,17 +23,7 @@
                         }
                     }
                 @endphp
-                $.alert({
-                    title: 'Message!',
-                    content: '{{ $message }}',
-                    type: 'orange',
-                    typeAnimated: true,
-                    escapeKey: 'close',
-                    buttons: {
-                        close: function () {
-                        }
-                    }
-                });
+                showAlertError('{{ $message }}');
                 @php session()->forget('error'); @endphp
             @endif
         }

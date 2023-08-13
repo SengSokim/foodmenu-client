@@ -4,7 +4,7 @@
     <div class="col-md-12">
       <div class="d-flex justify-content-between">
         <div class="chart-title">
-          <h5> {{ __('app.chart.daily_sale_chart')}} </h5> 
+          <h5> {{ __('app.chart.daily_sale_chart')}} </h5>
         </div>
         <div class="select-date pt-1">
           @php
@@ -38,7 +38,7 @@
     <div class="col-md-12">
       <div class="d-flex justify-content-between">
         <div class="chart-title">
-          <h5>{{ __('app.chart.monthly_sale_chart') }}</h5> 
+          <h5>{{ __('app.chart.monthly_sale_chart') }}</h5>
         </div>
         <div class="select-date pt-1">
           <select class="form-control" v-model="selected_year" @change="changeSalePerMonth()" style="cursor: pointer;">

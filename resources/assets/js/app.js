@@ -1,10 +1,12 @@
 window.Vue = require('vue');
-window.axios = require('axios');
 window._ = require('lodash');
 
+require('./bootstrap');
+import Vue from 'vue';
 import VeeValidate from 'vee-validate';
 
 Vue.use(VeeValidate);
+
 
 Vue.directive('select2', {
     inserted(el) {

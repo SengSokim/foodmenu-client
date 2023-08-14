@@ -99,6 +99,157 @@
     // });
 
 </script>
+<script>
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+  
+        reader.onload = function (e) {
+            $('#user-profile-upload').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  
+    $("#user-profile-input").change(function(){
+        readURL(this);
+    });
+  
+    function readURL_RP(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#restaurant-profile-upload').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+    var image_crop = $('#image-crop').croppie({
+        enableExif: true,
+        enableOrientation: true,
+        viewport:{width: 300, height: 300},
+        boundary:{width: 400, height: 400}
+    });    
+
+    var imageBind;
+    var isImgInput =0 ;
+    var result={width: 1080, height: 1080};  
+
+    $('input[type=file]').change(function(e){
+      var idClicked= e.target.id;
+      image_crop.croppie('destroy');
+      if(idClicked == 'restaurant-profile-input'){
+        viewport={width: 300, height: 300};
+        result={width: 400, height: 400};  
+        isImgInput = 1;
+        $('#square').show()
+        $('#landscape').hide()
+      }else if(idClicked == 'restaurant-banner-input'){
+        viewport={width: 300, height: 168};
+        result={width: 1080, height: 608}; 
+        isImgInput = 0;
+        $('#square').hide()
+        $('#landscape').show()
+      }else if(idClicked == 'product-input'){
+        viewport={width: 300, height: 300};
+        result={width: 400, height: 400}; 
+        isImgInput = 2;
+        $('#square').hide()
+        $('#landscape').hide()
+      }else if(idClicked == 'user-profile-input'){
+        viewport={width: 300, height: 300};
+        result={width: 400, height: 400}; 
+        isImgInput = 3;
+        $('#square').hide()
+        $('#landscape').hide()
+      } else if(idClicked == 'user-input') {
+        viewport={width:300, height:300};
+        result={width:400, height:400};
+        isImgInput = 4;
+        $('#square').hide()
+        $('#landscape').hide()
+      }
+
+      image_crop = $('#image-crop').croppie({
+        enableExif: true,
+        enableOrientation: true,
+        viewport: viewport,
+        boundary: {width:400, height:400}
+      });
+    });
+
+    $('#user-profile-input, #restaurant-profile-input, #restaurant-banner-input, #product-input, #user-input').on('change', function(){
+      var reader = new FileReader();
+      reader.onload = function (event) {
+        imageBind = event.target.result;
+        image_crop.croppie('bind', {
+          url: event.target.result,
+        })
+      }
+      reader.readAsDataURL(this.files[0]);
+      $('#modal-crop-image').modal('show');
+    });
+    
+    $('.submit-crop').click(function(){
+      image_crop.croppie('result', {
+        type: 'base64',
+        size: result,
+        quality: 1,
+      }).then(function(res){
+        $('#modal-crop-image').modal('hide');
+        if(isImgInput == 1){
+          $('#restaurant-profile-upload').attr('src', res);
+          EditRestaurant.data.image = res
+        }
+        else if(isImgInput == 0){
+          $('#restaurant-banner-upload').attr('src', res);
+          EditRestaurant.data.banner_image = res
+        }else if(isImgInput == 2){
+          $('#product-upload').attr('src', res);
+          app.data.image = res
+        }else if(isImgInput == 3){
+          $('#user-profile-upload').attr('src', res);
+          editProfile.data.image = res
+        }else if(isImgInput == 4) {
+          $('#user-upload').attr('src', res);
+          Users.data.image = res
+        }
+      })
+    })
+
+    var is_show_restaurant = false;
+    function showInfo() {
+      var x = document.getElementById("responsive-qr");
+      if(!is_show_restaurant) {
+          x.style.display = "block";
+          x.style.width = "100%";
+          x.style.height = "100%";
+          x.style.overflow = "scroll";
+      } 
+      else {
+          x.style.display = "none";
+          x.style.marginTop = "0px";
+          is_show_restaurant = false;
+      }
+    }
+    $(document).ready(function(){
+      $(".btnclose").click(function(){
+        $("#responsive-qr").hide();
+      });
+    });
+    Vue.filter('str_limit', function (value, size) {
+      if (!value) return '';
+      value = value.toString();
+
+      if (value.length <= size) {
+        return value;
+      }
+      return value.substr(0, size) + '...';
+    });
+
+  </script>
 </body>
 
 </html>

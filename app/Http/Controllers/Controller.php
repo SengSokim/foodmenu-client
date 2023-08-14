@@ -88,14 +88,14 @@ class Controller extends BaseController
         ];
 
         if($this->auth) $headers['Authorization'] = 'Bearer ' . $this->auth->access_token;
-
+        
         $request = new Client([
             'base_uri' => config('app.api_url'),
             'http_errors' => false,
             'headers' => $headers,
             'verify' => false
         ]);
-
+      
         $response = $request->request($method, $url, ['json' => $data]);
 
         $data = json_decode($response->getBody());

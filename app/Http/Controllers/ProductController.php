@@ -8,12 +8,27 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $response_product_categories = $this->api_get('admin/product/list/all');
+        list($current_page, $limit, $offset, $search, $order, $sort) = $this->getParams();
+        $data = $this->pagination(
+            'admin/product/list',
+            $limit,
+            $offset,
+            $search,
+            $order,
+            $sort,
+            url('admin/products'),
+            $current_page,
+            [
+                'enable_status' => request('enable_status')
+            ]
+        );
+        $categories = $this->api_get('admin/category/list/all');
         $product_categories = [];
-        if($response_product_categories->data){
-            $product_categories = $response_product_categories->data;
+        if($categories->data){
+            $product_categories = $categories->data;
         }
-        return view('products.index', compact('product_categories'));
+       
+        return view('products.index', compact('data','product_categories'));
     }
 
     public function product()
@@ -31,9 +46,10 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-        $result = $this->api_post('portal/products/create', $request->all());
+        $result = $this->api_post('admin/product/create', $request->all());
+        
         if ($result->success == true) {
-            session()->put('success', __('dialog_box.create_success', ['name' => 'product']));
+            // session()->put('success', __('dialog_box.create_success', ['name' => 'product']));
             return ok('');
         } else {
             return fail($result->message, 200);
@@ -41,10 +57,10 @@ class ProductController extends Controller
     }
 
     public function update(Request $request, $id){
-        $result = $this->api_post('portal/products/update/'. $id, $request->all());
+        $result = $this->api_post('admin/product/update/'. $id, $request->all());
 
         if ($result->success == true) {
-            session()->put('success', __('dialog_box.update_success', ['name' => 'product']));
+            // session()->put('success', __('dialog_box.update_success', ['name' => 'product']));
 
             return ok('');
         } else {
@@ -54,7 +70,7 @@ class ProductController extends Controller
 
     public function status(Request $request, $id)
     {
-        $result = $this->api_post('portal/products/status/'. $id, $request->all());
+        $result = $this->api_post('admin/product/status/'. $id, $request->all());
         if ($result->success == true) {
             session()->put('success', __('dialog_box.update_success', ['name' => 'product']));
 
@@ -66,7 +82,7 @@ class ProductController extends Controller
 
     public function destroy($id)
     {
-        $result = $this->api_post('portal/products/delete/'. $id);
+        $result = $this->api_post('admin/product/delete/'. $id);
 
         if ($result->success == true) {
             session()->put('success', __('dialog_box.delete_success', ['name' => 'product']));

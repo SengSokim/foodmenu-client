@@ -49,6 +49,7 @@ class AuthController extends Controller
     public function submitLogin(Request $request)
     {
         $result = $this->api_post('admin/auth/login', $request->all());
+        
         if ($result->success == false) {
             return back()->withInput(request()->except('password'))->with('error', self::getErrorMessage($result->message));
         }

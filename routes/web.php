@@ -70,6 +70,19 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::delete('/{id}', 'UserController@destroy')->name('users.destroy');
     });
 
+
+    /**
+     * ROLES FEATURE
+     */
+    Route::group(['prefix' => 'roles'], function () {
+        Route::get('/', 'RoleController@index')->name('roles');
+        Route::get('/create', 'RoleController@create')->name('roles.create');
+        Route::post('/store', 'RoleController@store')->name('roles.store');
+        Route::get('/show/{id}', 'RoleController@show')->name('roles.show');
+        Route::post('/update/{id}', 'RoleController@update')->name('roles.update');
+        Route::post('/delete/{id}', 'RoleController@destroy')->name('roles.destroy');
+    });
+
     Route::prefix('tables')->group(function () {
         Route::get('/', 'TableController@index')->name('tables');
         Route::post('/', 'TableController@store')->name('tables.store');

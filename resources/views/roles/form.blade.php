@@ -14,9 +14,9 @@
         </div>
     </div>
 </div>
-@include('roles.features.sales')
-@include('roles.features.customers')
-@include('roles.features.orders')
-@include('roles.features.payment_histories')
-@include('roles.features.security')
-@include('roles.features.info')
+<div class="row">
+    @include('roles.features.category')
+    @include('roles.features.product')
+    @include('roles.features.orders')
+    @include('roles.features.security')
+</div>

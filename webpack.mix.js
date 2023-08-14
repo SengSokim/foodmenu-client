@@ -46,5 +46,10 @@ mix.js('resources/assets/js/app.js', 'public/dist/js')
     //chart
     .js('resources/assets/js/chart/chart.js', 'public/dist/js/chart')
 
+
+    // Role
+    .js('resources/assets/js/roles/create.js', 'public/dist/js/roles')
+    .js('resources/assets/js/roles/edit.js', 'public/dist/js/roles')
+
     .version();
 

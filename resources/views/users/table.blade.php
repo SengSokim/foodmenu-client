@@ -22,8 +22,9 @@
         <td style="text-transform: capitalize">@{{ item.role.name }}</td>
         <td>@{{ item.enable_status ? 'Active' : 'Deactive' }}</td>
         <td>
-          <button @click="setData(item)" class="btn btn-primary btn-sm rounded-pill" title="Edit" data-toggle="modal" data-target="#editUser" style="padding: .425rem .55rem"><i class="fas fa-edit fa-fw"></i></button>
-          <button @click="setData(item)" class="btn btn-danger btn-sm rounded-pill"  title="Delete" data-toggle="modal" data-target="#delete-user" style="padding: .425rem .55rem"><i class="fas fa-trash-alt fa-fw"></i></button>
+          <button class="btn btn-info btn-sm" title="Edit" data-toggle="modal" data-target="#editPassword" style="padding: .425rem .55rem"><i class="fas fa-edit fa-fw"></i></button>
+          <button @click="setData(item)" class="btn btn-primary btn-sm" title="Edit" data-toggle="modal" data-target="#editUser" style="padding: .425rem .55rem"><i class="fas fa-edit fa-fw"></i></button>
+          <button @click="setData(item)" class="btn btn-danger btn-sm"  title="Delete" data-toggle="modal" data-target="#delete-user" style="padding: .425rem .55rem"><i class="fas fa-trash-alt fa-fw"></i></button>
         </td>
       </tr>
     </tbody>

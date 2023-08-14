@@ -72,7 +72,7 @@
                             </li>
                         @endif
 
-                        {{-- @if (checkPermission($auth->user->permissions, 'role-read'))
+                        @if (checkPermission($auth->user->permissions, 'role-read'))
                             <li class="nav-item">
                                 <a href="{{ route('roles') }}"
                                     class="nav-link {{ request()->is('admin/roles*') ? 'active' : '' }}">
@@ -80,7 +80,7 @@
                                     <p>Roles</p>
                                 </a>
                             </li>
-                        @endif --}}
+                        @endif
                     </ul>
                 </li>
             @endif

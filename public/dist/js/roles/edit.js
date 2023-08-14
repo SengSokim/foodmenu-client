@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 14);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -104,18 +104,18 @@ editRole = new Vue({
         if (response.data.success) {
           window.location.href = '/admin/roles';
         } else {
-          showAlertError(response.data.message);
-          hideLoading();
+          // showAlertError(response.data.message);
+          // hideLoading()
         }
       })["catch"](function (error) {
-        hideLoading();
-        showAlertError('Can not update role!');
+        // hideLoading();
+        // showAlertError('Can not update role!');
         console.log(error);
       });
     },
     submit: function submit() {
       var _this = this;
-      showLoading();
+      // showLoading();
       this.$validator.validate().then(function (result) {
         if (!result) {
           // hideLoading();
@@ -131,14 +131,14 @@ editRole = new Vue({
 
 /***/ }),
 
-/***/ 7:
+/***/ 14:
 /*!*************************************************!*\
   !*** multi ./resources/assets/js/roles/edit.js ***!
   \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\NU lessons\Year IV School Lessons\Theses\project\admin\resources\assets\js\roles\edit.js */"./resources/assets/js/roles/edit.js");
+module.exports = __webpack_require__(/*! D:\Projects\Food Menu\admin\resources\assets\js\roles\edit.js */"./resources/assets/js/roles/edit.js");
 
 
 /***/ })

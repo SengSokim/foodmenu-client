@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 13);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -107,22 +107,22 @@ createRole = new Vue({
         if (response.data.success) {
           window.location.href = '/admin/roles';
         } else {
-          showAlertError(response.data.message);
-          hideLoading();
+          // showAlertError(response.data.message);
+          // hideLoading()
         }
       })["catch"](function (error) {
-        hideLoading();
-        showAlertError('Can not add role!');
+        // hideLoading();
+        // showAlertError('Can not add role!');
         console.log(error);
       });
     },
     submit: function submit() {
       var _this = this;
-      showLoading();
+      // showLoading();
       this.$validator.validate().then(function (result) {
         var save = true;
         if (!result || !save) {
-          hideLoading();
+          // hideLoading();
           //set Window location to top
           window.scrollTo(0, 0);
         } else {
@@ -135,14 +135,14 @@ createRole = new Vue({
 
 /***/ }),
 
-/***/ 6:
+/***/ 13:
 /*!***************************************************!*\
   !*** multi ./resources/assets/js/roles/create.js ***!
   \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\NU lessons\Year IV School Lessons\Theses\project\admin\resources\assets\js\roles\create.js */"./resources/assets/js/roles/create.js");
+module.exports = __webpack_require__(/*! D:\Projects\Food Menu\admin\resources\assets\js\roles\create.js */"./resources/assets/js/roles/create.js");
 
 
 /***/ })

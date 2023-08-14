@@ -14,23 +14,26 @@ var setToastMessage = function (message) {
         message: message
     }));
 };
+const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000
+});
 
-var showToastSuccess = function (message) {
-    $.toast({
-        heading: 'Success',
-        text: message,
-        showHideTransition: 'slide',
-        icon: 'success'
-    })
+
+function showToastSuccess (message) {
+    Toast.fire({
+        type: 'success',
+        title: message
+      })
 };
 
-var showToastError = function (message) {
-    $.toast({
-        heading: 'Error',
-        text: message,
-        showHideTransition: 'slide',
-        icon: 'error'
-    })
+function showToastError (message) {
+    Toast.fire({
+        type: 'error',
+        title: message
+      })
 };
 
 $(function () {

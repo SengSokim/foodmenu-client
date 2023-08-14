@@ -7,7 +7,7 @@ app = new Vue({
         },    
        
         product_categories:product_categories,
-        products:[],
+        products:products,
         total: 0,
 
         data:{
@@ -16,7 +16,7 @@ app = new Vue({
             price: 0,
             sequence: 0,
             enable_status: 1,
-            product_category_id: null,
+            category_id: null,
             description:'',
             image:null
         },
@@ -24,7 +24,7 @@ app = new Vue({
         product_category_id: null,
         is_loaded_product : 0,
         isLoading: 0,
-        search: search
+        // search: search
     },
     mounted() {
         this.init()
@@ -42,24 +42,24 @@ app = new Vue({
             if(this.isLoading) {
                 return;
             }
-            showLoading()
-            this.isLoading = true;
-            axios.get(`/admin/products/get?search=${this.search}&limit=24&offset=${this.products.length}`
-                ).then(response => {
-                    this.isLoading = false;
-                    this.is_loaded_product =1
+            // showLoading()
+            // this.isLoading = true;
+            // axios.get(`/admin/products/get?search=${this.search}&limit=24&offset=${this.products.length}`
+            //     ).then(response => {
+            //         this.isLoading = false;
+            //         this.is_loaded_product =1
                 
-                if (response.data.success) {
-                    hideLoading()
-                    this.products.push(...response.data.data.list);
-                    this.total = response.data.data.total;
-                } else {
-                    console.log('response not success');
-                }
-            }).catch(err => {
-                this.isLoading = false;
-                hideLoading()
-            })
+            //     if (response.data.success) {
+            //         hideLoading()
+            //         this.products.push(...response.data.data.list);
+            //         this.total = response.data.data.total;
+            //     } else {
+            //         console.log('response not success');
+            //     }
+            // }).catch(err => {
+            //     this.isLoading = false;
+            //     hideLoading()
+            // })
         }, 
 
         formatCurrency(money) {
@@ -72,7 +72,7 @@ app = new Vue({
         },
 
         save(){
-            showLoading();
+            // showLoading();
             axios.post(`/admin/products/${this.data.id ?? ''}`,
                 this.data
             ).then(response => {
@@ -80,16 +80,16 @@ app = new Vue({
                     window.location.href = '/admin/products';
                 } else {
                     showAlertError(response.data.message);
-                    hideLoading()
+                    // hideLoading()
                 }
             }).catch(error => {
-                hideLoading();
-                showAlertError('Cannot update product');
+                // hideLoading();
+                // showAlertError('Cannot update product');
             }) 
         },
 
         submit() {
-            showLoading();
+            // showLoading();
             this.$validator.validate().then((result) => {
                 let save = true;
                 if(!this.data.id && !this.data.image) {
@@ -98,7 +98,7 @@ app = new Vue({
                 }
 
                 if (!result || !save) {
-                    hideLoading();
+                    // hideLoading();
                     //set Window location to top
                     window.scrollTo(0, 0);
                 } else {
@@ -127,7 +127,7 @@ app = new Vue({
                 price: 0,
                 sequence: 0,
                 enable_status: 1,
-                product_category_id: null,
+                category_id: null,
                 description:'',
                 image:null
             }
@@ -141,16 +141,16 @@ app = new Vue({
         setData (product) {              
             this.data = Object.assign({}, {
                 id: product.id,
-                name: product.name_en,
-                product_category_id: product.product_category_id,
+                name: product.name,
+                category_id: product.category.id,
                 price: product.price,
                 sequence: product.sequence,
                 enable_status: product.enable_status,
                 media: product.media,
-                description: product.long_description
+                description: product.description
             });
-
-            $('.product-category-select2').val(product.product_category_id ? product.product_category_id: null).trigger('change');
+            $("#product_category").select2();
+            $('.product-category-select2').val(product.category_id ? product.category_id: null).trigger('change');
         },
 
         updateProductStatus(value){
@@ -172,15 +172,17 @@ app = new Vue({
         deleteProduct() {
             axios.delete(`/admin/products/${this.data.id}`)
                 .then(response => {
-                    hideLoading();
+                    // hideLoading();
                     if (response.data.success) {
                         window.location.href = '/admin/products';
                     } else {
-                        showAlertError(response.data.message);
+                        alert(response.data.message);
+                        // showAlertError(response.data.message);
                     } 
             }).catch(error => {
-                hideLoading();
-                showAlertError('Cannot delete product');
+                alert('Cannot delete product');
+                // hideLoading();
+                // showAlertError('Cannot delete product');
             });
         },
         copy(text) {
@@ -213,7 +215,7 @@ app = new Vue({
             
             var vm = this, lists = vm.products
             return _.filter(lists, function(query){
-                var product_category = vm.product_category_id ? (query.product_category_id == vm.product_category_id) : true;
+                var product_category = vm.category_ids ? (query.category_ids == vm.category_ids) : true;
                 return product_category;
             });
         },

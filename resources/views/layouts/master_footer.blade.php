@@ -103,18 +103,18 @@
     function readURL(input) {
       if (input.files && input.files[0]) {
         var reader = new FileReader();
-  
+
         reader.onload = function (e) {
             $('#user-profile-upload').attr('src', e.target.result);
         }
         reader.readAsDataURL(input.files[0]);
       }
     }
-  
+
     $("#user-profile-input").change(function(){
         readURL(this);
     });
-  
+
     function readURL_RP(input) {
       if (input.files && input.files[0]) {
         var reader = new FileReader();
@@ -131,36 +131,36 @@
         enableOrientation: true,
         viewport:{width: 300, height: 300},
         boundary:{width: 400, height: 400}
-    });    
+    });
 
     var imageBind;
     var isImgInput =0 ;
-    var result={width: 1080, height: 1080};  
+    var result={width: 1080, height: 1080};
 
     $('input[type=file]').change(function(e){
       var idClicked= e.target.id;
       image_crop.croppie('destroy');
       if(idClicked == 'restaurant-profile-input'){
         viewport={width: 300, height: 300};
-        result={width: 400, height: 400};  
+        result={width: 400, height: 400};
         isImgInput = 1;
         $('#square').show()
         $('#landscape').hide()
       }else if(idClicked == 'restaurant-banner-input'){
         viewport={width: 300, height: 168};
-        result={width: 1080, height: 608}; 
+        result={width: 1080, height: 608};
         isImgInput = 0;
         $('#square').hide()
         $('#landscape').show()
       }else if(idClicked == 'product-input'){
         viewport={width: 300, height: 300};
-        result={width: 400, height: 400}; 
+        result={width: 400, height: 400};
         isImgInput = 2;
         $('#square').hide()
         $('#landscape').hide()
       }else if(idClicked == 'user-profile-input'){
         viewport={width: 300, height: 300};
-        result={width: 400, height: 400}; 
+        result={width: 400, height: 400};
         isImgInput = 3;
         $('#square').hide()
         $('#landscape').hide()
@@ -191,7 +191,7 @@
       reader.readAsDataURL(this.files[0]);
       $('#modal-crop-image').modal('show');
     });
-    
+
     $('.submit-crop').click(function(){
       image_crop.croppie('result', {
         type: 'base64',
@@ -227,7 +227,7 @@
           x.style.width = "100%";
           x.style.height = "100%";
           x.style.overflow = "scroll";
-      } 
+      }
       else {
           x.style.display = "none";
           x.style.marginTop = "0px";

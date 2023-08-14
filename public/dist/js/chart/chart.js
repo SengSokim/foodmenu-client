@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 22);
+/******/ 	return __webpack_require__(__webpack_require__.s = 12);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -96,8 +96,8 @@
 new Vue({
   el: '#chart',
   data: {
-    daily_confirmed_order: daily_confirmed_order,
-    daily_pending_order: daily_pending_order
+    daily_order: daily_order,
+    monthly_order: monthly_order
   },
   methods: {
     filterConfirmedOrder: function filterConfirmedOrder(yearAndMonth) {
@@ -106,7 +106,7 @@ new Vue({
       var monthYear = yearAndMonth.split("-");
       var y = monthYear[0];
       var m = monthYear[1];
-      axios.get("/admin/chart/daily_confirmed_order/".concat(y, "/").concat(m)).then(function (response) {
+      axios.get("/admin/chart/daily_order/".concat(y, "/").concat(m)).then(function (response) {
         if (response.data.success) {
           hideLoading();
           _this.OrderChart(response.data.data.total, "confirmed_order");
@@ -127,7 +127,7 @@ new Vue({
       var monthYear = yearAndMonth.split("-");
       var y = monthYear[0];
       var m = monthYear[1];
-      axios.get("/admin/chart/daily_pending_order/".concat(y, "/").concat(m)).then(function (response) {
+      axios.get("/admin/chart/monthly_order/".concat(y, "/").concat(m)).then(function (response) {
         if (response.data.success) {
           hideLoading();
           _this2.OrderChart(response.data.data.total, "pending_order");
@@ -179,41 +179,44 @@ new Vue({
     }
   },
   mounted: function mounted() {
-    var _this3 = this;
-    $("#filter_date_confirmed_order").datetimepicker({
-      defaultDate: new Date(),
-      orientation: 'bottom',
-      format: 'yyyy-MM',
-      autoclose: true,
-      viewMode: 'months',
-      dateFormat: 'MM yy',
-      changeMonth: true,
-      changeYear: true,
-      showButtonPanel: true
-    }), $("#filter_date_confirmed_order").on("change.datetimepicker", function (e) {
-      _this3.filterConfirmedOrder($('#filter_date_confirmed_order_input').val());
-    });
-    $("#filter_date_pending_order").datetimepicker({
-      defaultDate: new Date(),
-      orientation: 'bottom',
-      format: 'yyyy-MM',
-      autoclose: true,
-      viewMode: 'months',
-      dateFormat: 'MM yy',
-      changeMonth: true,
-      changeYear: true,
-      showButtonPanel: true
-    }), $("#filter_date_pending_order").on("change.datetimepicker", function (e) {
-      _this3.filterPendingOrder($('#filter_date_pending_order_input').val());
-    });
-    new Chart("confirmed_order", {
+    // $("#filter_date_confirmed_order").datetimepicker({
+    //     defaultDate: new Date(),
+    //     orientation: 'bottom',
+    //     format: 'yyyy-MM',
+    //     autoclose: true,
+    //     viewMode: 'months',
+    //     dateFormat: 'MM yy',
+    //     changeMonth: true,
+    //     changeYear: true,
+    //     showButtonPanel: true,
+    // }),
+    // $("#filter_date_confirmed_order").on("change.datetimepicker", (e) => {
+    //     this.filterConfirmedOrder($('#filter_date_confirmed_order_input').val());
+    // });
+
+    // $("#filter_date_pending_order").datetimepicker({
+    //     defaultDate: new Date(),
+    //     orientation: 'bottom',
+    //     format: 'yyyy-MM',
+    //     autoclose: true,
+    //     viewMode: 'months',
+    //     dateFormat: 'MM yy',
+    //     changeMonth: true,
+    //     changeYear: true,
+    //     showButtonPanel: true,
+    // }),
+    // $("#filter_date_pending_order").on("change.datetimepicker", (e) => {
+    //     this.filterPendingOrder($('#filter_date_pending_order_input').val());
+    // });
+
+    new Chart("daily_order", {
       type: "line",
       data: {
-        labels: _.range(1, this.daily_confirmed_order.length + 1),
+        labels: _.range(1, this.daily_order.length + 1),
         datasets: [{
           label: '',
           backgroundColor: 'rgb(18,44,75)',
-          data: this.daily_confirmed_order
+          data: this.daily_order
         }]
       },
       options: {
@@ -239,14 +242,14 @@ new Vue({
         }
       }
     });
-    new Chart("pending_order", {
+    new Chart("monthly_order", {
       type: "bar",
       data: {
-        labels: _.range(1, this.daily_pending_order.length + 1),
+        labels: _.range(1, this.monthly_order.length + 1),
         datasets: [{
           label: '',
           backgroundColor: 'rgb(18,44,75)',
-          data: this.daily_pending_order
+          data: this.monthly_order
         }]
       },
       options: {
@@ -277,14 +280,14 @@ new Vue({
 
 /***/ }),
 
-/***/ 22:
+/***/ 12:
 /*!**************************************************!*\
   !*** multi ./resources/assets/js/chart/chart.js ***!
   \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\NU lessons\Year IV School Lessons\Theses\project\admin\resources\assets\js\chart\chart.js */"./resources/assets/js/chart/chart.js");
+module.exports = __webpack_require__(/*! D:\Projects\Food Menu\admin\resources\assets\js\chart\chart.js */"./resources/assets/js/chart/chart.js");
 
 
 /***/ })

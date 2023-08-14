@@ -92,7 +92,7 @@
                                 </div>
                             </div>
                             <div id="block_confirmed_order">
-                                <canvas id="confirmed_order" class="rounded shadow"></canvas>
+                                <canvas id="daily_order" class="rounded shadow"></canvas>
                             </div>
                         </div>
                     </div>
@@ -129,7 +129,7 @@
                                 </div>
                             </div>
                             <div id="block_confirmed_order">
-                                <canvas id="pending_order" class="rounded shadow"></canvas>
+                                <canvas id="monthly_order" class="rounded shadow"></canvas>
                             </div>
                         </div>
                     </div>
@@ -138,4 +138,14 @@
         </div>
     </div>
 </div>
+@endsection
+@section('footer-content')
+    <script>
+        var current_month_year = @json($current_month_year);
+        var daily_order = @json($daily_order->total ?? []);
+        var monthly_order = @json($monthly_order->total ?? []);
+    </script>
+    <script src="{{ asset('adminlte/plugins/chart.js/Chart.min.js') }}"></script>
+    <script src="{{ mix('dist/js/app.js') }}"></script>
+    <script src="{{ mix('dist/js/chart/chart.js') }}"></script>
 @endsection

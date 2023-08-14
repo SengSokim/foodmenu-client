@@ -44,7 +44,7 @@ mix.js('resources/assets/js/app.js', 'public/dist/js')
     .js('resources/assets/js/tables/table.js', 'public/dist/js/tables')
 
     //chart
-    .js('resources/assets/js/charts/chart.js', 'public/dist/js/charts')
+    .js('resources/assets/js/chart/chart.js', 'public/dist/js/chart')
 
     .version();
 

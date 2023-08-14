@@ -31,6 +31,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::post('/change_password', 'ProfileController@changePassword');
     });
 
+    // Dashboard
+    Route::group(['prefix' => 'chart'], function () {
+        Route::get('/daily_order/{y}/{m}', 'DashboardController@dailyOrder');
+        Route::get('/monthly_order/{y}', 'DashboardController@monthlyOrder');
+    });
+
     Route::prefix('products')->group(function () {
         Route::get('/', 'ProductController@index')->name('products');
 

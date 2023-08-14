@@ -84,7 +84,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     });
 
     Route::prefix('orders')->group(function () {
-        Route::get('/', 'OrderController@index')->name('orders.index');
+        Route::get('/', 'OrderController@index')->name('orders');
         Route::post('/{id}', 'OrderController@update')->name('orders.update');
         Route::delete('/product/delete/{id}', 'OrderController@deleteProduct')->name('orders.product.delete');
         Route::delete('/{id}', 'OrderController@deleteOrder')->name('orders.delete');

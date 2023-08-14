@@ -9,7 +9,7 @@ class UserController extends Controller
     public function index() {
         list($current_page, $limit, $offset, $search, $order, $sort) = $this->getParams();
         $data = $this->pagination(
-            'portal/users/list',
+            'admin/users/list',
             $limit,
             $offset,
             $search,
@@ -20,7 +20,7 @@ class UserController extends Controller
             [
                 'enable_status' => request('enable_status')
             ]
-            
+
         );
         // dd($data);
 
@@ -28,7 +28,7 @@ class UserController extends Controller
     }
 
     public function store(Request $request) {
-        $result = $this->api_post('portal/users/create', $request->all());
+        $result = $this->api_post('admin/users/create', $request->all());
 
         if($result->success == true) {
             session()->put('success', __('dialog_box.create_success', ['name' => 'User']));
@@ -39,7 +39,7 @@ class UserController extends Controller
     }
 
     public function update(Request $request, $id) {
-        $result = $this->api_post('portal/users/update/' . $id, $request->all());
+        $result = $this->api_post('admin/users/update/' . $id, $request->all());
         // dd($request);
         if($result->success== true) {
             session()->put('success', __('dialog_box.update_success', ['name' => 'User']));
@@ -50,7 +50,7 @@ class UserController extends Controller
     }
     public function destroy($id) {
 
-        $result = $this->api_post('portal/users/delete/' . $id);
+        $result = $this->api_post('admin/users/delete/' . $id);
 
         if($result->success == true) {
             session()->put('success', __('dialog_box.delete_success', ['name' => 'User']));

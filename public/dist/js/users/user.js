@@ -105,7 +105,7 @@ Users = new Vue({
       id: '',
       name: '',
       gender: null,
-      phone_number: '',
+      phone: '',
       password: '',
       address: null,
       role: null,
@@ -120,7 +120,7 @@ Users = new Vue({
         id: '',
         name: '',
         gender: null,
-        phone_number: '',
+        phone: '',
         password: '',
         address: null,
         role: null,
@@ -134,12 +134,11 @@ Users = new Vue({
       }, 0);
     },
     setData: function setData(restaurant_users) {
-      console.log(restaurant_users);
       this.data = Object.assign({}, {
         id: restaurant_users.id,
         name: restaurant_users.name,
         gender: restaurant_users.gender,
-        phone_number: restaurant_users.phone_number,
+        phone: restaurant_users.phone,
         password: restaurant_users.password,
         address: restaurant_users.address,
         role: restaurant_users.role,
@@ -149,7 +148,7 @@ Users = new Vue({
     },
     save: function save() {
       var _this2 = this;
-      showLoading();
+      // showLoading();
       var url = '/admin/users/';
       if (this.data.id) {
         url += this.data.id;
@@ -158,22 +157,22 @@ Users = new Vue({
         if (response.data.success) {
           window.location.href = '/admin/users';
         } else {
-          showAlertError(response.data.message);
-          hideLoading();
+          // showAlertError(response.data.message);
+          // hideLoading()
         }
       })["catch"](function (error) {
-        hideLoading();
+        // hideLoading();
         console.log(error);
         if (_this2.data.id) {
-          showAlertError('Cannot update user');
+          // showAlertError('Cannot update user');
         } else {
-          showAlertError('Cannot create user');
+          // showAlertError('Cannot create user');
         }
       });
     },
     submit: function submit() {
       var _this3 = this;
-      showLoading();
+      // showLoading();
       this.$validator.validate().then(function (result) {
         var save = true;
         if (!_this3.data.id && !_this3.data.image) {
@@ -181,7 +180,7 @@ Users = new Vue({
           save = false;
         }
         if (!result || !save) {
-          hideLoading();
+          // hideLoading();
           //set Window location to top
           window.scrollTo(0, 0);
         } else {

@@ -32,13 +32,13 @@
                     <label>{{ __('app.orders.from-date') }}</label>
                     <input type="text" name="from_date" class="form-control" value="{{ request('from_date') }}">
                   </div>
-                </div> 
+                </div>
                 <div class="col-md-3">
                   <div class="form-group">
                     <label>{{ __('app.orders.to-date') }}</label>
                     <input type="text" name="to_date" class="form-control" value="{{ request('to_date') }}">
                   </div>
-                </div> 
+                </div>
                 <div class="col-md-2">
                   <div class="form-group">
                   <label>{{ __('app.global.status') }}</label>
@@ -59,7 +59,7 @@
               </div>
               <div class="button">
                 <button type="submit" class="btn btn-primary"><i class="fas fa-filter fa-fw"></i>Filter</button>
-                <a href="{{ route('orders.index') }}" class="btn btn-default"><i class="fas fa-sync-alt fa-fw"></i>Clear</a>
+                <a href="{{ route('orders') }}" class="btn btn-default"><i class="fas fa-sync-alt fa-fw"></i>Clear</a>
               </div>
             </div>
           </div>
@@ -70,7 +70,7 @@
       {{-- <div class="card-header">
         <h3 class="card-title"></h3>
       </div> --}}
-      <div class="card-body">      
+      <div class="card-body">
         @include('orders.table')
       </div>
       <div class="card-footer">

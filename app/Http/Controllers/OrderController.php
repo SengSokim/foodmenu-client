@@ -10,13 +10,13 @@ class OrderController extends Controller
         list($current_page, $limit, $offset, $search, $order, $sort) = $this->getParams();
 
         $data = $this->pagination(
-            'portal/orders/list',
+            'admin/order/list',
             $limit,
             $offset,
             $search,
             $order,
             $sort,
-            url('portal/orders'),
+            url('admin/orders'),
             $current_page,
             [
                 'search' => request('search'),

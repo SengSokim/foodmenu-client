@@ -18,8 +18,8 @@
         <td><img :src="item.media ? item.media.url : '{{ asset("adminlte/dist/img/placeholder/square-placeholder.png") }}'" class="user_image" data-lity style="cursor: pointer"></td>
         <td class="text-left">@{{ item.name}}</td>
         <td style="text-transform: capitalize">@{{ item.gender }}</td>
-        <td>@{{ item.phone_number }}</td>
-        <td style="text-transform: capitalize">@{{ item.role }}</td>
+        <td>@{{ item.phone }}</td>
+        <td style="text-transform: capitalize">@{{ item.role.name }}</td>
         <td>@{{ item.enable_status ? 'Active' : 'Deactive' }}</td>
         <td>
           <button @click="setData(item)" class="btn btn-primary btn-sm rounded-pill" title="Edit" data-toggle="modal" data-target="#editUser" style="padding: .425rem .55rem"><i class="fas fa-edit fa-fw"></i></button>

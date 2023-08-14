@@ -9,16 +9,16 @@
           <th scope="col">Price</th>
           <th scope="col">Sequence</th>
           <th scope="col">Category Name</th>
-          <th scope="col" class="text-center"><div style="width: 100px"></div> Action</th>
+          <th scope="col" class="text-center"><div style="width: 100px"></div>Action</th>
         </tr>
       </thead>
       <tbody>
-            
+         
             <tr v-for="(item, index) in products.data">
                 <td class="text-center">@{{ index + 1 }}</td>
                 {{-- :src="data.image ? data.image : (data.media ? data.media.url : '{{ asset('adminlte/dist/img/placeholder/square-placeholder.png') }}')" --}}
                 <td>
-                    <img :src="item.media?.url ?? '{{ asset('adminlte/dist/img/placeholder/square-placeholder.png')}}'" alt="" width="50px">
+                    <img data-lity :src="item.media?.url ?? '{{ asset('adminlte/dist/img/placeholder/square-placeholder.png')}}'" alt="" width="50px">
                 </td>
                 <td>@{{ item.name }}</td>
                 <td class="text-center">@{{ item.description }}</td>

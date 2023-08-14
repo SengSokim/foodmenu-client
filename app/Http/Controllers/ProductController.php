@@ -49,7 +49,7 @@ class ProductController extends Controller
         $result = $this->api_post('admin/product/create', $request->all());
         
         if ($result->success == true) {
-            // session()->put('success', __('dialog_box.create_success', ['name' => 'product']));
+            session()->put('success', __('dialog_box.create_success', ['name' => 'product']));
             return ok('');
         } else {
             return fail($result->message, 200);
@@ -60,7 +60,7 @@ class ProductController extends Controller
         $result = $this->api_post('admin/product/update/'. $id, $request->all());
 
         if ($result->success == true) {
-            // session()->put('success', __('dialog_box.update_success', ['name' => 'product']));
+            session()->put('success', __('dialog_box.update_success', ['name' => 'product']));
 
             return ok('');
         } else {

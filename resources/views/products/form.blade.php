@@ -24,8 +24,7 @@
   <div class="col-md-12">
     <div class="form-group">
       <label class="required">{{ __('app.product.product-category') }}</label>
-      <select name="category_id" v-model="data.category_id" v-select2 class="form-control product-category-select2" :class="{'is-invalid': errors.has('product_category_id') }" v-validate="'required'" style="width: 100%" data-vv-as="product category">
-        <option :value="null">Choose Category</option>
+      <select name="category_id" id="product_category" v-model="data.category_id" v-select2 class="form-control select2" v-validate="'required'" data-vv-as="product category">
         <option v-for="item in product_categories" :value="item.id">@{{ item.name }}</option>
       </select>
       <div class="invalid-feedback">@{{ errors.first('category_id') }}</div>

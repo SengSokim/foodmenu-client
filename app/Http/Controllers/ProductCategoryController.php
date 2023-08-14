@@ -28,7 +28,7 @@ class ProductCategoryController extends Controller
     {
         $result = $this->api_post('admin/category/create', $request->all());
         if ($result->success == true) {
-            // session()->put('success', __('dialog_box.create_success', ['name' => 'Category']));
+            session()->put('success', __('dialog_box.create_success', ['name' => 'Category']));
             return ok('');
         } else {
             return fail($result->message, 200);
@@ -39,7 +39,7 @@ class ProductCategoryController extends Controller
         $result = $this->api_post('admin/category/update/'. $id, $request->all());
 
         if ($result->success == true) {
-            // session()->put('success', __('dialog_box.update_success', ['name' => 'category']));
+            session()->put('success', __('dialog_box.update_success', ['name' => 'category']));
 
             return ok('');
         } else {

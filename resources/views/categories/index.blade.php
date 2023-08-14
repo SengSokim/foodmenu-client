@@ -80,7 +80,6 @@
 @section('footer-content')
     <script>
         const categories = @json($data)
-        
     </script>
     <script src="{{ mix('dist/js/app.js') }}"></script>
     <script src="{{ mix('dist/js/categories/category.js') }}"></script>

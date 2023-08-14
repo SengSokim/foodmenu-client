@@ -25,6 +25,7 @@ class OrderController extends Controller
                 'to_date' => request('to_date'),
             ]
         );
+
         return view('orders.index', compact('data'));
     }
 

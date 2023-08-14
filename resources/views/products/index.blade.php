@@ -1,7 +1,7 @@
 {{-- @php(getGeneralData($auth)) --}}
 @extends('layouts.master')
 @section('content')
-<div class="row" id="product">
+<div class="row" id="product" v-cloak>
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
@@ -26,7 +26,7 @@
                         </select>
                     </div>
                     <div class="col-md-6">
-                        
+
                             <div class="input-group">
                                 <input name="search" class="form-control" type="search"
                                     placeholder="Search..." aria-label="Search"
@@ -42,29 +42,29 @@
                                     </a>
                                 </div>
                             </div>
-                        
+
                     </div>
                     <div class="col-md-6 mt-3">
-                       
+
                             <button class="btn btn-info text-white" id="btn_filter">Filter <i
                                     class="fas fa-filter"></i></button>
-                            <a href="{{ url('admin/employees') }}" class="btn btn-danger">
+                            <a href="{{ url('admin/products') }}" class="btn btn-danger">
                                 Clear
                                 <i class="fas fa-sync-alt"></i>
                             </a>
-                      
-                       
-                            <a class="btn btn-primary" data-toggle="modal" data-target="#importModal" title="Import Excel">
+
+
+                            {{-- <a class="btn btn-primary" data-toggle="modal" data-target="#importModal" title="Import Excel">
                                 Import
                                 <i class="fas fa-upload"></i>
                             </a>
-                        
+
                             <button type="button" id="export_employee" class="btn btn-success"
                                 title="Export Excel">
                                 Export
                                 <i class="fas fa-download"></i>
-                            </button>
-                            
+                            </button> --}}
+
                     </div>
                 </div>
                 </form>
@@ -101,7 +101,7 @@
                 @include('products.table')
                 @include('products.edit')
                 @include('products.delete')
-                
+
             </div>
             <div class="card-footer">
                 @include('layouts.pagination')
@@ -136,7 +136,7 @@
                     height: 350
                 }
             });
-            
+
             // product input
             $('#product-input').on('change', function() {
                 var reader = new FileReader();
@@ -175,7 +175,7 @@
             });
             $("#product_category").select2();
         });
-        
+
         function readURL(input) {
             if (input.files && input.files[0]) {
               const size = (input.files[0].size / 1024 / 1024).toFixed(2);

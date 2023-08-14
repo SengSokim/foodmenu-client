@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="application-name" content="AMBOJA" />
+    <title> AMBOJA </title>
+    <meta name="apple-mobile-web-app-title" content="AMBOJA" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="apple-touch-icon" href="https://papadeliver.co/img/logo%20-%20blue.png" />
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="http://127.0.0.1:8000/assets/images/logo.jpg">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="http://127.0.0.1:8000/adminlte/plugins/fontawesome-free/css/all.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+    <!-- Adminlte -->
+    <link rel="stylesheet" href="http://127.0.0.1:8000/adminlte/dist/css/adminlte.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="http://127.0.0.1:8000/adminlte/plugins/summernote/summernote-bs4.min.css">
+    <!-- croppie -->
+    <link rel="stylesheet" href="http://127.0.0.1:8000/adminlte/plugins/croppie-2.6.4/croppie.css">
+    <!--  Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet"
+        href="http://127.0.0.1:8000/adminlte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.css">
+    <!--  BS-Stepper  -->
+    <link rel="stylesheet" href="http://127.0.0.1:8000/adminlte/plugins/bs-stepper/css/bs-stepper.min.css">
+    <!--  Lity  -->
+    <link rel="stylesheet" href="http://127.0.0.1:8000/adminlte/plugins/lity-2.4.1/dist/lity.css">
+    <!-- custom css -->
+    <link rel="stylesheet" href="http://127.0.0.1:8000/css/custom.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/css/custom-doc.css">
+    <!-- DataTable -->
+    <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="http://127.0.0.1:8000/adminlte/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/adminlte/dist/css/docs.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/css/app.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/plugins/confirm/jquery-confirm.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/plugins/loading/jquery.loading.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/plugins/toast/jquery.toast.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/plugins/toastr/toastr.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/plugins/sweetalert2/sweetalert2.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="http://127.0.0.1:8000/adminlte/plugins/daterangepicker/daterangepicker.css">
+    <!-- jQuery -->
+    <script src="http://127.0.0.1:8000/adminlte/plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="http://127.0.0.1:8000/adminlte/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="/dist/js/axios.js?id=77bd5ceaedb12880a5bc"></script>
+            <style>
+        @import  url('https://fonts.googleapis.com/css2?family=Source Sans Pro&family=Metal&display=swap');
+
+        .wrapper {
+            font-family: 'Source Sans Pro', 'Metal';
+        }
+
+        #company_name:hover {
+            color: lightskyblue !important
+        }
+
+        @media  print {
+            .noprint {
+                visibility: hidden;
+            }
+        }
+
+        .menu-is-opening>a.nav-link>p>svg {
+            -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+        }
+
+        :root {
+            --primary: #007bff;
+            --orange: #ff7e00;
+            --light-purple: #B565A7;
+            --blue-lzis: #5B5EA6;
+            --marigold: #FDAC53;
+            --french-blue: #0072B5;
+            --mint: #00A170;
+            --willow: #9A8B4F;
+            --apen-gold: #FFD662;
+            --light-grey: #ced4da;
+        }
+    </style>
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+      <nav class="main-header navbar navbar-expand navbar-light">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+        </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="btn btn-outline-success" data-target="#qr-code" data-toggle="modal"><i class="fas fa-qrcode"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                <i class="fas fa-expand-arrows-alt"></i>
+            </a>
+        </li>
+        <li class="nav-item dropdown user-menu">
+    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+      <img src="http://127.0.0.1:8000/img/no-image-user.png" class="user-image img-circle elevation-2" alt="User Image" title="User Profile">
+      
+    </a>
+
+    <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="left: inherit; right: 0px;">
+      <li class="user-header bg-primary">
+        <img src="http://127.0.0.1:8000/img/no-image-user.png" class="img-circle elevation-2" alt="User Image">
+        <p>Supper User</p>
+      </li>
+      <li class="user-footer">
+        <a href="http://127.0.0.1:8000/admin/profile" class="btn btn-default btn-flat">Profile</a>
+        <a href="http://127.0.0.1:8000/logout"  class="btn btn-default btn-flat float-right">
+            Sign Out
+        </a>
+      </li>
+    </ul>
+</li>
+    </ul>
+</nav>
+<div class="modal" id="qr-code" tabindex="-1" role="dialog" aria-hidden="true">
+    <div style="width: 400px; border-radius: 8px; margin: 20px auto;">
+        <table id="qrcode" style="margin: auto; background: white; width: 350px;border-radius: 8px;  border: 5px solid #154D97">
+            <thead>
+                <tr>
+                    <th style="text-align: center" colspan="2"><img src="" width="70px" style="border: 1px solid black; border-radius: 50%"></th>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        <h3 style="margin: 0; text-transform: uppercase; font-family: 'Khmer OS Content'"></h3>
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <center style="padding-bottom: 20px !important;">
+                            <h3 style="margin: 0;font-weight: normal; font-family: 'Khmer OS Content'">
+                               ស្កេនមើលមុខម្ហូប
+                            </h3>
+                        </center>
+                    </td>
+                </tr>
+                <tr align="center" style="display: block">
+                    <td colspan="2" style="border: 2px solid #134; padding: 10px; padding-bottom: 0; border-radius: 8px; margin-top: 1rem;">
+                        <img src="http://127.0.0.1:8000/assets/images/qr-code.png" alt="" width="150px" height="150px">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; padding-top: 8px">
+                        <h3 style="margin: -7px; font-size: 22px; letter-spacing: -1px; font-family: 'Khmer OS Bokor', 'Arial'"></h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; padding-top: 8px">
+                        <a href="" download="http://127.0.0.1:8000/assets/images/qr-code.png" class="btn btn-primary btn-sm"><i class="fas fa-download"></i> ទាញយក</a>
+                    </td>
+                </tr>
+                <tr style="padding-bottom: 1rem;">
+                    <td colspan="2" style="padding-top: 14px">
+                        
+                        <center  style="padding-bottom: 35px !important;">
+                            <span style="font-size: 14px">POWERED BY</span><br>
+                            <img src="http://127.0.0.1:8000/assets/images/logo.jpg" alt="" width="20%" style="margin-top: 10px; border-radius: 13px;">
+                        </center>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+      <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <div class="sidebar">
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+            <img data-lity src="http://127.0.0.1:8000/assets/images/logo.jpg"
+                style="min-height: 50px; max-height: 50px; width: 50px;" class="elevation-2" alt="User Profile">
+        </div>
+        <div class="pull-left info mt-2">
+            <h5 class="text-light" id="company_name">AMBOJA</h5>
+        </div>
+    </div>
+    <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            
+                            <li class="nav-item">
+                    <a href="http://127.0.0.1:8000/admin" class="nav-link active">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                                        <li class="nav-item">
+                    <a href="http://127.0.0.1:8000/admin/categories"
+                        class="nav-link ">
+                        <i class="nav-icon fas fa-star"></i>
+                        <p>Categories</p>
+                    </a>
+                </li>
+                                        <li class="nav-item">
+                    <a href="http://127.0.0.1:8000/admin/products"
+                        class="nav-link ">
+                        <i class="nav-icon fas fa-hamburger"></i>
+                        <p>Products</p>
+                    </a>
+                </li>
+                        
+                            <li class="nav-item">
+                    <a href="http://127.0.0.1:8000/admin/orders"
+                        class="nav-link ">
+                        <i class="nav-icon fas fa-cart-plus"></i>
+                        <p>Orders</p>
+                    </a>
+                </li>
+                        
+                            <li
+                    class="nav-item has-treeview ">
+                    <a href="#" class="nav-link   ">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            Authentications
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview" >
+                                                    <li class="nav-item">
+                                <a href="http://127.0.0.1:8000/admin/users"
+                                    class="nav-link ">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Users</p>
+                                </a>
+                            </li>
+                        
+                                                    <li class="nav-item">
+                                <a href="http://127.0.0.1:8000/admin/roles"
+                                    class="nav-link ">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Roles</p>
+                                </a>
+                            </li>
+                                            </ul>
+                </li>
+            
+        </ul>
+    </nav>
+</div>
+      </aside>
+
+      <div class="content-wrapper">
+        <section class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2"><div class="col-sm-6"><h1 class="m-0">Dashboard</h1></div><div class="col-sm-6"><ol class="breadcrumb float-sm-right"><li class="breadcrumb-item"><a href="http://127.0.0.1:8000/admin">Dashboard</a></li><li class="breadcrumb-item  active">Dashboard</li></ol></div>
+          </div>
+        </section>
+
+        <section class="content">
+          <div class="container-fluid">
+                <div class="col-md-12">
+        <div class="row">
+            <div class="col-lg-3 col-6">
+                <div class="small-box" style="background: var(--french-blue); color: white">
+                    <div class="inner">
+                        <h4><b>1</b></h4>
+                        <p>Total Category</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-bag"></i>
+                    </div>
+                    <a href="" class="small-box-footer">See more... <i
+                            class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-success">
+                    <div class="inner">
+                        <h4><b>2</b></h4>
+                        <p>Total Products</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-stats-bars"></i>
+                    </div>
+                    <a href="" class="small-box-footer">See more... <i
+                            class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="small-box text-white" style="background: var(--blue-lzis);">
+                    <div class="inner">
+                        <h4><b>2</b></h4>
+                        <p>Pending Orders</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-person-add"></i>
+                    </div>
+                    <a href="" class="small-box-footer">See more... <i
+                            class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-danger">
+                    <div class="inner">
+                        <h4><b>2</b></h4>
+                        <p>Total Orders</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-pie-graph"></i>
+                    </div>
+                    <a href="" class="small-box-footer">See more... <i
+                            class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Daily Order</h4>
+                        <div class="card-tools">
+                            <div class="form-group">
+                                <div class="input-group date_confirmed_order" id="filter_date_confirmed_order"
+                                    data-target-input="nearest">
+                                    <input type="text" value=""
+                                        class="form-control datetimepicker-input" id="filter_date_confirmed_order_input"
+                                        data-target="#filter_date_confirmed_order" name="date" autocomplete="off"
+                                        placeholder="YYYY-MM">
+                                    <div class="input-group-append" data-target="#filter_date_confirmed_order"
+                                        data-toggle="datetimepicker">
+                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart">
+                            <div class="chartjs-size-monitor">
+                                <div class="chartjs-size-monitor-expand">
+                                    <div class=""></div>
+                                </div>
+                                <div class="chartjs-size-monitor-shrink">
+                                    <div class=""></div>
+                                </div>
+                            </div>
+                            <div id="block_confirmed_order">
+                                <canvas id="daily_order" class="rounded shadow"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Monthly Order</h4>
+                        <div class="card-tools">
+                            <div class="form-group">
+                                <div class="input-group date_confirmed_order" id="filter_date_pending_order"
+                                    data-target-input="nearest">
+                                    <input type="text" value=""
+                                        class="form-control datetimepicker-input" id="filter_date_pending_order_input"
+                                        data-target="#filter_date_pending_order" name="date" autocomplete="off"
+                                        placeholder="YYYY-MM">
+                                    <div class="input-group-append" data-target="#filter_date_pending_order"
+                                        data-toggle="datetimepicker">
+                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart">
+                            <div class="chartjs-size-monitor">
+                                <div class="chartjs-size-monitor-expand">
+                                    <div class=""></div>
+                                </div>
+                                <div class="chartjs-size-monitor-shrink">
+                                    <div class=""></div>
+                                </div>
+                            </div>
+                            <div id="block_confirmed_order">
+                                <canvas id="monthly_order" class="rounded shadow"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+          </div>
+        </section>
+      </div>
+
+      <footer class="main-footer no-print">
+        <strong>Copyright &copy; <script>document.write(new Date().getFullYear());</script> <a href="#" target="_blank">DRC Technology</a>.</strong>
+      </footer>
+
+      <aside class="control-sidebar control-sidebar-dark">
+      </aside>
+    </div>
+    <!-- jQuery UI 1.11.4 -->
+<script src="http://127.0.0.1:8000/adminlte/plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="http://127.0.0.1:8000/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Fontawesome 5-->
+<script src="http://127.0.0.1:8000/adminlte/plugins/fontawesome-free/js/all.js"></script>
+<!-- daterangepicker -->
+<script src="http://127.0.0.1:8000/adminlte/plugins/moment/moment.min.js"></script>
+<script src="http://127.0.0.1:8000/adminlte/plugins/daterangepicker/daterangepicker.js"></script>
+<!-- Summernote -->
+<script src="http://127.0.0.1:8000/adminlte/plugins/summernote/summernote-bs4.min.js"></script>
+<!-- croppie -->
+<script src="http://127.0.0.1:8000/adminlte/plugins/croppie-2.6.4/croppie.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="http://127.0.0.1:8000/adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.js"></script>
+<!-- BS-Stepper -->
+<script src="http://127.0.0.1:8000/adminlte/plugins/bs-stepper/js/bs-stepper.min.js"></script>
+<!-- Lity -->
+<script src="http://127.0.0.1:8000/adminlte/plugins/lity-2.4.1/dist/lity.js"></script>
+<script src="/dist/js/general.js?id=b96042d83439a3a8d7b2"></script>
+<script src="http://127.0.0.1:8000/plugins/select2/js/select2.full.min.js"></script>
+<script src="http://127.0.0.1:8000/plugins/sweetalert2/sweetalert2.min.js"></script>
+<script src="http://127.0.0.1:8000/loading/jquery.loading.min.js"></script>
+<script src="http://127.0.0.1:8000/plugins/confirm/jquery-confirm.min.js"></script>
+<script src="http://127.0.0.1:8000/plugins/toastr/toastr.min.js"></script>
+
+ 
+
+
+   <!-- Helper -->
+<script src="http://127.0.0.1:8000/js/helper.js"></script>
+<!-- AdminLTE App -->
+<script src="http://127.0.0.1:8000/adminlte/dist/js/adminlte.min.js"></script>
+ <!-- chart js -->
+
+    <script>
+        var current_month_year = "2023-08";
+        var daily_order = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+        var monthly_order = [0,0,0,0,0,0,0,70,0,0,0,0];
+    </script>
+    <script src="http://127.0.0.1:8000/adminlte/plugins/chart.js/Chart.min.js"></script>
+    <script src="/dist/js/app.js?id=bc7046cdef0ff2bcd157"></script>
+    <script src="/dist/js/chart/chart.js?id=6356ffb9d9fd77a45dd4"></script>
+<script>
+        var profile = {
+        name: "Supper User",
+        phone: "081699750",
+        email: "admin@gmail.com",
+        image: "",
+    };
+    
+
+</script>
+
+</body>
+
+</html>
+    <script>
+    window.addEventListener('pageshow', function (event) {
+        if (!(event.persisted || window.performance && window.performance.navigation.type == 2))
+        {
+            
+                    }
+    },false);
+</script>
+
+

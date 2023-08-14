@@ -6,6 +6,9 @@
     </ul>
     <ul class="navbar-nav ml-auto">
         <li class="nav-item">
+            <a class="btn btn-outline-success" data-target="#qr-code" data-toggle="modal"><i class="fas fa-qrcode"></i></a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                 <i class="fas fa-expand-arrows-alt"></i>
             </a>
@@ -13,3 +16,5 @@
         @include('layouts.user_profile')
     </ul>
 </nav>
+@include('layouts.qr-code')
+

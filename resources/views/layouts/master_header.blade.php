@@ -91,6 +91,5 @@
             --apen-gold: #FFD662;
             --light-grey: #ced4da;
         }
-
     </style>
 </head>

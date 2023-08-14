@@ -23,7 +23,7 @@
       </div>
 
       <footer class="main-footer no-print">
-        <strong>Copyright &copy; <script>document.write(new Date().getFullYear());</script> <a href="#" target="_blank">DRC Technology</a>.</strong>
+        <strong>Copyright &copy; <script>document.write(new Date().getFullYear());</script> AMING Holding Company.</strong>
       </footer>
 
       <aside class="control-sidebar control-sidebar-dark">

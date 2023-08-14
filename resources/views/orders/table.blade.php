@@ -9,7 +9,7 @@
         <th class="text-center"><div style="width: 90px"></div>{{ __('app.global.actions') }}</th>
       </tr>
     </thead>
-    <tbody>      
+    <tbody>
       @forelse ($data as $index => $list)
       <tr id='tr{{$index}}'>
         <td class="text-warning text-bold">{{ "#".sprintf("%'.06d", $list->code) }}</td>
@@ -27,11 +27,11 @@
           @endif
         </td>
         <td class="text-center">
-          @if ($list->latitude != '' || $list->longitude != '')
+          {{-- @if ($list->latitude != '' || $list->longitude != '')
             <a href="https://www.google.com/maps/search/?api=1&query={{$list->latitude}},{{$list->longitude}}" class="btn btn-info rounded-pill btn-sm" style="padding: .425rem .75rem" target="_blank" title="View location"><i class="fas fa-map-marker-alt"></i></a>
           @else
             <button class="btn btn-info rounded-pill btn-sm" style="padding: .425rem .55rem" title="Location not available" disabled><i class="fas fa-map-marker-slash"></i></button>
-          @endif
+          @endif --}}
 
           @if ($list->status == 'confirmed' || $list->status == 'received')
             <button class="btn btn-danger rounded-pill btn-sm" style="padding: .425rem .55rem" title="Order confirmed, you cannot delete the order!" disabled><i class="fas fa-ban fa-fw"></i></button>

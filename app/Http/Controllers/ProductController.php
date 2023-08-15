@@ -19,7 +19,8 @@ class ProductController extends Controller
             url('admin/products'),
             $current_page,
             [
-                'enable_status' => request('enable_status')
+                'enable_status' => request('enable_status'),
+                'category_id' => request('category_id')
             ]
         );
         $categories = $this->api_get('admin/category/list/all');
@@ -27,7 +28,7 @@ class ProductController extends Controller
         if($categories->data){
             $product_categories = $categories->data;
         }
-       
+
         return view('products.index', compact('data','product_categories'));
     }
 
@@ -47,7 +48,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $result = $this->api_post('admin/product/create', $request->all());
-        
+
         if ($result->success == true) {
             session()->put('success', __('dialog_box.create_success', ['name' => 'product']));
             return ok('');

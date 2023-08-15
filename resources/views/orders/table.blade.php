@@ -12,7 +12,7 @@
     <tbody>
       @forelse ($data as $index => $list)
       <tr id='tr{{$index}}'>
-        <td class="text-warning text-bold">{{ "#".sprintf("%'.06d", $list->code) }}</td>
+        <td class="text-primary text-bold">{{ "#".sprintf("%'.06d", $list->code) }}</td>
         <td>{{ $list->phone_number }}</td>
         <td>{{ $list->created_at }}</td>
         <td class="text-center">
@@ -33,10 +33,10 @@
             <button class="btn btn-info rounded-pill btn-sm" style="padding: .425rem .55rem" title="Location not available" disabled><i class="fas fa-map-marker-slash"></i></button>
           @endif --}}
 
-          @if ($list->status == 'confirmed' || $list->status == 'received')
-            <button class="btn btn-danger rounded-pill btn-sm" style="padding: .425rem .55rem" title="Order confirmed, you cannot delete the order!" disabled><i class="fas fa-ban fa-fw"></i></button>
+          @if ($list->status == 'confirmed')
+            <button class="btn btn-danger btn-sm" style="padding: .425rem .55rem" title="Order confirmed, you cannot delete the order!" disabled><i class="fas fa-ban fa-fw"></i></button>
           @else
-            <button class="btn btn-danger rounded-pill btn-sm" style="padding: .425rem .55rem" data-toggle="modal" data-target="#delete-order-{{ $list->id }}" title="Delete"><i class="fas fa-trash fa-fw"></i></button>
+            <button class="btn btn-danger btn-sm" style="padding: .425rem .55rem" data-toggle="modal" data-target="#delete-order-{{ $list->id }}" title="Delete"><i class="fas fa-trash fa-fw"></i></button>
             @include('orders.delete')
           @endif
         </td>

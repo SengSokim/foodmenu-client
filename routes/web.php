@@ -39,12 +39,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
     Route::prefix('products')->group(function () {
         Route::get('/', 'ProductController@index')->name('products');
-
         Route::get('/get', 'ProductController@product');
         Route::post('/', 'ProductController@store');
-
         Route::post('/{id}', 'ProductController@update');
-
         Route::post('/status/{id}', 'ProductController@status');
         Route::delete('/{id}', 'ProductController@destroy');
     });
@@ -105,8 +102,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::prefix('orders')->group(function () {
         Route::get('/', 'OrderController@index')->name('orders');
         Route::post('/{id}', 'OrderController@update')->name('orders.update');
-        Route::delete('/product/delete/{id}', 'OrderController@deleteProduct')->name('orders.product.delete');
+        Route::post('/product/delete/{id}', 'OrderController@deleteProduct')->name('orders.product.delete');
         Route::delete('/{id}', 'OrderController@deleteOrder')->name('orders.delete');
+        Route::post('/status/{id}', 'OrderController@updateStatus')->name('orders.status');
 
     });
 

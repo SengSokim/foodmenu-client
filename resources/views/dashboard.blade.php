@@ -9,12 +9,12 @@
                 <div class="small-box" style="background: var(--french-blue); color: white">
                     <div class="inner">
                         <h4><b>{{ $data->count_all_category ?? 0 }}</b></h4>
-                        <p>Total Category</p>
+                        <p>All Categories</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-bag"></i>
                     </div>
-                    <a href="" class="small-box-footer">See more... <i
+                    <a href="{{ route('categories') }}" class="small-box-footer">See more... <i
                             class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
@@ -22,12 +22,12 @@
                 <div class="small-box bg-success">
                     <div class="inner">
                         <h4><b>{{ $data->count_all_products ?? 0 }}</b></h4>
-                        <p>Total Products</p>
+                        <p>All Products</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-stats-bars"></i>
                     </div>
-                    <a href="" class="small-box-footer">See more... <i
+                    <a href="{{ route('products') }}" class="small-box-footer">See more... <i
                             class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                     <div class="icon">
                         <i class="ion ion-person-add"></i>
                     </div>
-                    <a href="" class="small-box-footer">See more... <i
+                    <a href="{{ route('orders', ['status' => 'pending']) }}" class="small-box-footer">See more... <i
                             class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
@@ -48,12 +48,12 @@
                 <div class="small-box bg-danger">
                     <div class="inner">
                         <h4><b>{{ $data->count_all_orders ?? 0 }}</b></h4>
-                        <p>Total Orders</p>
+                        <p>All Orders</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-pie-graph"></i>
                     </div>
-                    <a href="" class="small-box-footer">See more... <i
+                    <a href="{{ route('orders') }}" class="small-box-footer">See more... <i
                             class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>

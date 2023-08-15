@@ -16,8 +16,8 @@
         <td class="text-center">@{{ item.sequence }}</td>
         <td class="text-center">@{{ item.enable_status ? "Active" : "Deactive" }}</td>
         <td class="text-center">
-          <button class="btn btn-primary rounded-pill btn-sm" style="padding: .425rem .55rem" data-toggle="modal" data-target="#editCategory" @click="setData(item);" title="Edit"><i class="fas fa-edit fa-fw"></i></button>
-          <button class="btn btn-danger rounded-pill btn-sm" style="padding: .425rem .55rem" data-toggle="modal" data-target="#delete-category" @click="setData(item)" title="Delete"><i class="fas fa-trash fa-fw"></i></button>
+          <button class="btn btn-primary btn-sm" style="padding: .425rem .55rem" data-toggle="modal" data-target="#editCategory" @click="setData(item);" title="Edit"><i class="fas fa-edit fa-fw"></i></button>
+          <button class="btn btn-danger btn-sm" style="padding: .425rem .55rem" data-toggle="modal" data-target="#delete-category" @click="setData(item)" title="Delete"><i class="fas fa-trash fa-fw"></i></button>
         </td>
       </tr>
     </tbody>

@@ -1,115 +1,70 @@
-{{-- @php(getGeneralData($auth)) --}}
 @extends('layouts.master')
+@section('content-header')
+    {!! generateContentHeader('Products', 'Products') !!}
+@endsection
 @section('content')
-<div class="row" id="product" v-cloak>
-    <div class="col-md-12">
-        <div class="card">
-            <div class="card-header">
-                <div class="row mb-3">
-                    <div class="col-md-12 d-flex justify-content-between">
-                        <div></div>
-                        <div class="card-tools mt-1" style="float:right">
-                            <button class="btn btn-primary" @click="clearData()"
-                                title="Create Product" data-toggle="modal" data-target="#create-product"><i
-                                    class="far fa-plus fa-fw"></i>{{ __('app.global.create-new') }}</button>
-                            @include('products.create')
+    <div class="row" id="product" v-cloak>
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row mb-3">
+                        <div class="col-md-12 d-flex justify-content-between">
+                            <div></div>
+                            <div class="card-tools mt-1" style="float:right">
+                                <button class="btn btn-success" @click="clearData()" title="Create Product"
+                                    data-toggle="modal" data-target="#create-product"><i
+                                        class="far fa-plus fa-fw"></i>{{ __('app.global.create-new') }}</button>
+                                @include('products.create')
+                            </div>
                         </div>
                     </div>
-                </div>
-                <form action="{{ route('products') }}">
-                <div class="row">
-                    <div class="col-md-6">
-                        <select name="category_id" id="" class="form-control select2" v-select2>
-                            <option value="1">Category</option>
-                            <option value="2">Category</option>
-                            <option value="3">Category</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6">
+                    <form action="{{ route('products') }}">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <select name="category_id" id="" v-select2 class="form-control category_id_select2">
+                                    <option value=""></option>
+                                    <option :value="product_category.id" v-for="product_category in product_categories">
+                                        @{{ product_category.name }}</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
 
-                            <div class="input-group">
-                                <input name="search" class="form-control" type="search"
-                                    placeholder="Search..." aria-label="Search"
-                                    value="{{ request('search') }}">
-                                <div class="input-group-append">
-                                    <button type="submit" class="btn btn-sm btn-primary"
-                                        style="border:1; width: 50px;" title="Search">
-                                        <i class="far fa-search"></i>
-                                    </button>
-                                    <a href="{{ route('products') }}" style="border: 0; background-color: #F2F2F2"
-                                        class="btn btn-default" title="refresh">
-                                        <i class="far fa-sync-alt"></i>
-                                    </a>
+                                <div class="input-group">
+                                    <input name="search" class="form-control" type="search"
+                                        placeholder="Search By: Name | Price" aria-label="Search"
+                                        value="{{ request('search') }}">
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-sm btn-primary" style="border:1; width: 50px;"
+                                            title="Search">
+                                            <i class="far fa-search"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-
-                    </div>
-                    <div class="col-md-6 mt-3">
-
-                            <button class="btn btn-info text-white" id="btn_filter">Filter <i
-                                    class="fas fa-filter"></i></button>
-                            <a href="{{ url('admin/products') }}" class="btn btn-danger">
-                                Clear
-                                <i class="fas fa-sync-alt"></i>
-                            </a>
-
-
-                            {{-- <a class="btn btn-primary" data-toggle="modal" data-target="#importModal" title="Import Excel">
-                                Import
-                                <i class="fas fa-upload"></i>
-                            </a>
-
-                            <button type="button" id="export_employee" class="btn btn-success"
-                                title="Export Excel">
-                                Export
-                                <i class="fas fa-download"></i>
-                            </button> --}}
-
-                    </div>
+                            <div class="col-md-6 mt-3">
+                                <button class="btn btn-info text-white" id="btn_filter">Filter <i
+                                        class="fas fa-filter"></i></button>
+                                <a href="{{ url('admin/products') }}" class="btn btn-danger">
+                                    Clear
+                                    <i class="fas fa-sync-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                </form>
-            </div>
-            {{-- <form>
-    <div class="row py-3 px-3">
-      <div class="col-md-3">
-        <div class="form-group">
-          <label>Status</label>
-          <select name="enable_status" class="form-control">
-              <option value="" @if (request('enable_status') == '') selected @endif>All</option>
-              <option value="1" @if (request('enable_status') == '1') selected @endif>Active</option>
-              <option value="0" @if (request('enable_status') == '0') selected @endif>Deactive</option>
-          </select>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="form-group">
-          <label>Search</label>
-          <div class="input-group">
-            <input type="search" class="form-control" name="search" value="{{ request('search') }}" placeholder="Search..." >
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row pb-3 px-3">
-      <div class="col-md-12">
-        <button type="submit" class="btn btn-sm btn-info text-white">Filter <i class="fas fa-filter"></i></button>
-        <a href="{{ url('admin/categories') }}" class="btn btn-sm btn-danger">Clear <i class="fas fa-sync-alt"></i></a>
-      </div>
-    </div>
-  </form> --}}
-            <div class="card-body">
-                @include('products.table')
-                @include('products.edit')
-                @include('products.delete')
-
-            </div>
-            <div class="card-footer">
-                @include('layouts.pagination')
-                @include('products.modal-crop-image')
+                <div class="card-body">
+                    @include('products.table')
+                    @include('products.edit')
+                    @include('products.status')
+                    @include('products.delete')
+                </div>
+                <div class="card-footer">
+                    @include('layouts.pagination')
+                    @include('products.modal-crop-image')
+                </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
 @section('footer-content')
     <script>
@@ -120,7 +75,9 @@
     <script src="{{ mix('dist/js/app.js') }}"></script>
     <script src="{{ mix('dist/js/products/product.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.full.min.js" integrity="sha512-RtZU3AyMVArmHLiW0suEZ9McadTdegwbgtiQl5Qqo9kunkVg1ofwueXD8/8wv3Af8jkME3DDe3yLfR8HSJfT2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.full.min.js"
+        integrity="sha512-RtZU3AyMVArmHLiW0suEZ9McadTdegwbgtiQl5Qqo9kunkVg1ofwueXD8/8wv3Af8jkME3DDe3yLfR8HSJfT2g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         $(document).ready(function() {
             // demo profile
@@ -178,13 +135,13 @@
 
         function readURL(input) {
             if (input.files && input.files[0]) {
-              const size = (input.files[0].size / 1024 / 1024).toFixed(2);
+                const size = (input.files[0].size / 1024 / 1024).toFixed(2);
                 if (size > 1) {
                     showAlertError("Image size must be less than 1MB");
                 } else {
                     var reader = new FileReader();
 
-                    reader.onload = function (e) {
+                    reader.onload = function(e) {
                         $('#img-upload').attr('src', e.target.result);
                     }
                     reader.readAsDataURL(input.files[0]);
@@ -194,20 +151,19 @@
 
         function readURL1(input, upload) {
             if (input.files && input.files[0]) {
-              const size = (input.files[0].size / 1024 / 1024).toFixed(2);
+                const size = (input.files[0].size / 1024 / 1024).toFixed(2);
                 if (size > 1) {
                     showAlertError("Image size must be less than 1MB");
                 } else {
-                  var reader = new FileReader();
+                    var reader = new FileReader();
 
-                  reader.onload = function (e) {
-                      $(upload).attr('src', e.target.result);
-                  }
+                    reader.onload = function(e) {
+                        $(upload).attr('src', e.target.result);
+                    }
 
-                  reader.readAsDataURL(input.files[0]);
+                    reader.readAsDataURL(input.files[0]);
                 }
             }
         }
-
     </script>
 @endsection

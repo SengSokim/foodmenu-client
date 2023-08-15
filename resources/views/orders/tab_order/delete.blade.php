@@ -9,13 +9,13 @@
       </div>
       <form action="{{ route('orders.product.delete', $item->id) }}" method="POST">
         @csrf
-        @method('DELETE')
         <div class="modal-body text-center">
             <h6>{{ __('app.order.do-you-want-to-delete-this-item:') }} ?</h6>
+            <input type="hidden" name="product_id" value="{{ $item->id }}">
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default rounded-pill btn-sm" data-dismiss="modal">{{ __('app.global.cancel') }}</button>
-          <button type="submit" class="btn btn-danger rounded-pill btn-sm">{{ __('app.global.confirm') }}</button>
+          <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">{{ __('app.global.cancel') }}</button>
+          <button type="submit" class="btn btn-danger btn-sm">{{ __('app.global.confirm') }}</button>
         </div>
       </form>
     </div>

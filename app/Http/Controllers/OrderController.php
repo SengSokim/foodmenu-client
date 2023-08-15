@@ -31,7 +31,7 @@ class OrderController extends Controller
 
     public function update(Request $request, $id)
     {
-        $result = $this->api_post('portal/orders/update/'. $id, $request->all());
+        $result = $this->api_post('admin/orders/update/'. $id, $request->all());
         if ($result->success == true) {
             session()->put('success', __('dialog_box.update_success', ['name' => 'order']));
             return redirect()->route('orders.index')->with('success','Order updated successfully');
@@ -44,14 +44,14 @@ class OrderController extends Controller
     public function deleteOrder($id)
     {
         try {
-            $result = $this->api_post('portal/orders/delete/'. $id);
+            $result = $this->api_post('admin/order/delete/'. $id);
             if ($result->success == false) {
                 $msg = self::getErrorMessage($result->message);
                 return back()->with('error', $msg);
             }
 
-            return back()->with('success', __('dialog_box.delete_success', ['name' => 'order']));
-        } catch (Exception $e) {
+            return back()->with('success', __('dialog_box.delete_success', ['name' => 'Order']));
+        } catch (\Exception $e) {
             return back()->with('error', $e->getMessage())->withInput();
         }
     }
@@ -59,15 +59,28 @@ class OrderController extends Controller
     public function deleteProduct($id)
     {
         try {
-            $result = $this->api_post('portal/orders/product/delete/'. $id);
+            $result = $this->api_post('admin/order/remove_product/'. $id, request()->all());
             if ($result->success == false) {
                 $msg = self::getErrorMessage($result->message);
                 return back()->with('error', $msg);
             }
 
-            return back()->with('success', __('dialog_box.delete_success', ['name' => 'product']));
-        } catch (Exception $e) {
+            return back()->with('success', __('dialog_box.delete_success', ['name' => 'Product']));
+        } catch (\Exception $e) {
             return back()->with('error', $e->getMessage())->withInput();
+        }
+    }
+
+    public function updateStatus(Request $request, $id)
+    {
+        $result = $this->api_post('admin/order/status/'. $id, $request->all());
+        // dd($result);
+        if ($result->success == true) {
+            session()->put('success', __('dialog_box.update_success', ['name' => 'order']));
+            return redirect()->route('orders.index')->with('success','Order updated successfully');
+
+        } else {
+            return fail($result->message, 200);
         }
     }
 }

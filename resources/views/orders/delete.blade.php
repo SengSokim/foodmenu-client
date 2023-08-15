@@ -11,11 +11,11 @@
         @csrf
         @method('delete')
         <div class="modal-body text-center">
-            <h6>Do you want to delete this order:  <span class="text-warning text-bold">{{ "#".sprintf("%'.06d", $list->code) }}</span>?</h6>
+            <h6>Do you want to delete this order:  <span class="text-danger text-bold">{{ "#".sprintf("%'.06d", $list->code) }}</span>?</h6>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-default rounded-pill btn-sm" data-dismiss="modal">{{ __('app.global.cancel') }}</button>
-            <button type="submit" class="btn btn-danger rounded-pill btn-sm">{{ __('app.global.confirm') }}</button>
+            <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">{{ __('app.global.cancel') }}</button>
+            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
           </div>
       </form>
     </div>

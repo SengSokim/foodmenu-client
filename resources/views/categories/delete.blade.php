@@ -8,12 +8,12 @@
         </button>
       </div>
       <div class="modal-body text-center">
-          <h6>{{ __('app.categories.do-you-want-to-delete-this-category:') }} <span class="text-warning">@{{ data.name}}</span>?</h6>
+          <h6>{{ __('app.categories.do-you-want-to-delete-this-category:') }} <span class="text-danger">@{{ data.name}}</span>?</h6>
       </div>
       <div class="modal-footer">
         <form @submit.prevent="deleteCategory">
-          <button type="button" class="btn btn-default rounded-pill btn-sm" data-dismiss="modal">{{ __('app.global.cancel') }}</button>
-          <button type="submit" class="btn btn-danger rounded-pill btn-sm">{{ __('app.global.confirm') }}</button>
+          <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">{{ __('app.global.cancel') }}</button>
+          <button type="submit" class="btn btn-danger btn-sm">{{ __('app.global.confirm') }}</button>
         </form>
       </div>
     </div>

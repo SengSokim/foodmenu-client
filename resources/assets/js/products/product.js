@@ -1,11 +1,11 @@
 app = new Vue({
     el: '#product',
-    data: {  
+    data: {
         image: null,
         error: {
             image: null
-        },    
-       
+        },
+
         product_categories:product_categories,
         products:products,
         total: 0,
@@ -30,7 +30,7 @@ app = new Vue({
         this.init()
     },
     methods:{
-        
+
         showMore() {
             if(this.products.length >= this.total) {
                 return;
@@ -48,7 +48,7 @@ app = new Vue({
             //     ).then(response => {
             //         this.isLoading = false;
             //         this.is_loaded_product =1
-                
+
             //     if (response.data.success) {
             //         hideLoading()
             //         this.products.push(...response.data.data.list);
@@ -60,7 +60,7 @@ app = new Vue({
             //     this.isLoading = false;
             //     hideLoading()
             // })
-        }, 
+        },
 
         formatCurrency(money) {
             switch (restaurant.currency_code) {
@@ -85,7 +85,7 @@ app = new Vue({
             }).catch(error => {
                 // hideLoading();
                 // showAlertError('Cannot update product');
-            }) 
+            })
         },
 
         submit() {
@@ -138,7 +138,7 @@ app = new Vue({
             }, 0);
         },
 
-        setData (product) {              
+        setData (product) {
             this.data = Object.assign({}, {
                 id: product.id,
                 name: product.name,
@@ -154,19 +154,21 @@ app = new Vue({
         },
 
         updateProductStatus(value){
-            showLoading();
+            // showLoading();
             axios.post(`/admin/products/status/${this.data.id}`,
                 { enable_status : value}
             ).then(response => {
                 if (response.data.success) {
                     window.location.href = '/admin/products';
                 } else {
-                    showAlertError(response.data.message);
-                    hideLoading();
+                    // alert('Error')
+                    // showAlertError(response.data.message);
+                    // hideLoading();
                 }
             }).catch(error => {
-                hideLoading();
-                showAlertError('Cannot update product');
+                alert('Cannot update product');
+                // hideLoading();
+                // showAlertError('');
             })
         },
         deleteProduct() {
@@ -178,7 +180,7 @@ app = new Vue({
                     } else {
                         alert(response.data.message);
                         // showAlertError(response.data.message);
-                    } 
+                    }
             }).catch(error => {
                 alert('Cannot delete product');
                 // hideLoading();
@@ -212,7 +214,7 @@ app = new Vue({
     computed: {
         resultQuery()
         {
-            
+
             var vm = this, lists = vm.products
             return _.filter(lists, function(query){
                 var product_category = vm.category_ids ? (query.category_ids == vm.category_ids) : true;
@@ -220,5 +222,5 @@ app = new Vue({
             });
         },
     }
-  
+
 });

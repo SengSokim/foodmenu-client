@@ -75,9 +75,9 @@
     };
     @endif
 
-
+    $(".category_id_select2").select2({
+            placeholder : "Select a category"
+        });
 </script>
-
 </body>
-
 </html>

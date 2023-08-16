@@ -1,5 +1,6 @@
 <?php
-Route::get('/', 'AuthController@login')->middleware('auth:guest')->name('auth.login');
+
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'auth', "middleware" => "auth:guest"], function () {
     Route::get('/', 'AuthController@login')->name('auth.login');

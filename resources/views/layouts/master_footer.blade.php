@@ -65,6 +65,7 @@
  <!-- chart js -->
 
 @yield('footer-content')
+@stack('stack-content')
 <script>
     @if(isset($auth->user))
     var profile = {

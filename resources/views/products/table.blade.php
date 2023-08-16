@@ -21,7 +21,7 @@
                 </td>
                 <td>@{{ item.name }}</td>
                 <td class="text-center">@{{ item.description }}</td>
-                <td class="text-center">$@{{ item.price }}. 00</td>
+                <td class="text-center">$@{{ item.price }}</td>
                 <td>@{{ item.sequence }}</td>
                 <td>@{{ item.category.name }}</td>
                 <td class="text-center">

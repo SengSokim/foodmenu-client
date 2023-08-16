@@ -51,5 +51,9 @@ mix.js('resources/assets/js/app.js', 'public/dist/js')
     .js('resources/assets/js/roles/create.js', 'public/dist/js/roles')
     .js('resources/assets/js/roles/edit.js', 'public/dist/js/roles')
 
+    // product
+    .js('resources/assets/js/home/index.js', 'public/dist/js/home')
+    .js('resources/assets/js/home/edit.js', 'public/dist/js/home')
+
     .version();
 

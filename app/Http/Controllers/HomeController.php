@@ -8,6 +8,18 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('home.index');
+        list($current_page, $limit, $offset, $search, $order, $sort) = $this->getParams();
+
+        $data = $this->pagination(
+            'admin/category/list/web',
+            $limit,
+            $offset,
+            $search,
+            $order,
+            $sort,
+            url(''),
+            $current_page
+        );
+        return view('home.main',compact('data'));
     }
 }

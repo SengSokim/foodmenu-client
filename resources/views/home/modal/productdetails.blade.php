@@ -15,7 +15,7 @@
                     </div>
                     <div class="card-detail">
                         <span class="menu-name">@{{ productDetail.name }}</span>
-                        <span class="main-price">@{{ dollar(productDetail.price) }}</span>
+                        <span class="main-price">@{{ formatCurrency(productDetail.price) }}</span>
                         <hr class="hr-style">
                         <p>
                             @{{ productDetail.description }}
@@ -23,7 +23,7 @@
                         <hr class="hr-style">
                             <h3>
                                 Total:
-                                <span>@{{ dollar(productDetail.price * toAdd.qty) }}</span>
+                                <span>@{{ formatCurrency(productDetail.price * toAdd.qty) }}</span>
                             </h3>
                         <hr class="hr-style">
                         <div class="d-flex justify-content-between">
@@ -36,7 +36,7 @@
                                 <span class="icon"><i class="fa-solid fa-cart-arrow-down"></i></span>
                                 <span class="text" >Cart</span>
                             </button>
-                         
+
                         </div>
                     </div>
                 </div>

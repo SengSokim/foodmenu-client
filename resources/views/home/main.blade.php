@@ -25,14 +25,14 @@
         </nav>
         <section class="items-section" v-for="list in data">
             <div class="card-scroll">
-                <p class="card-category">@{{ list.name }}</p>
+                <p class="card-category mt-3" >@{{ list.name }}</p>
                 <div class="card" v-for="product in list.products">
                     <div class="card-image-container">
                         <img class="card-image" :src="product.image?.url" alt="img">
                     </div>
                     <div class="card-detail">
                         <span class="menu-name">@{{ product.name }}</span>
-                        <span class="main-price">@{{dollar(product.price)}}</span>
+                        <span class="main-price">@{{formatCurrency(product.price)}}</span>
                         <hr class="hr-style">
                         <p class="menu-detail">
                             @{{ product.description }}

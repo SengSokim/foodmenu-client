@@ -36,14 +36,14 @@
                             @{{ item.name }}
                         </div>
                         <div class="col-md-3 text-center" >
-                            @{{ dollar(item.price) }}
+                            @{{ formatCurrency(item.price) }}
                         </div>
                         <div class="col-md-3 text-center">
                             @{{ item.qty }}
                         </div>
                         <div class="col-md-3">
                             <span class="float-right">
-                                @{{ dollar(item.subtotal) }}
+                                @{{ formatCurrency(item.subtotal) }}
                             </span>
                         </div>
                         
@@ -54,7 +54,7 @@
                     <div class="d-flex justify-content-between">
                         <h4>Grand Total:</h4>
                         <div>&nbsp;</div>
-                        <span class="text-bold">@{{ dollar(grandtotal) }}</span>
+                        <span class="text-bold">@{{ formatCurrency(grandtotal) }}</span>
                     </div>  
                 </div>
                 <div class="modal-footer">

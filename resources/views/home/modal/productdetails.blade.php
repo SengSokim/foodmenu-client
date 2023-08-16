@@ -32,11 +32,11 @@
                                 <span id="quantityDisplay">@{{ toAdd.qty }}</span>
                                 <button type="button" class="increase-btn" @click="increment()">+</button>
                             </div>
-                            <button class="card-button" type="button" @click="addToCart()">
+                            <button class="card-button" type="button" @click="addToCart(productDetail.id)">
                                 <span class="icon"><i class="fa-solid fa-cart-arrow-down"></i></span>
                                 <span class="text" >Cart</span>
                             </button>
-                            <button class="buy-now-button">Buy Now</button>
+                         
                         </div>
                     </div>
                 </div>

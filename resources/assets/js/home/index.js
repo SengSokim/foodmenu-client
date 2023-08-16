@@ -22,6 +22,7 @@ app = new Vue({
         getDetail(product)
         {
             this.productDetail = product;
+            this.toAdd.id = this.productDetail.id;
             this.toAdd.name = this.productDetail.name;
             this.toAdd.img = this.productDetail.image.url;
             this.toAdd.price = this.productDetail.price;
@@ -39,19 +40,28 @@ app = new Vue({
             this.toAdd.qty += 1;
         },
 
-        addToCart(){
+        addToCart(id){
+            for(var i = 0; i < this.carts.length; i++) {
+                if(this.carts[i].id == id) {
+                    this.carts[i].qty += this.toAdd.qty;
+                    this.carts[i].subtotal = this.carts[i].price* this.carts[i].qty;
+                    this.grandtotal = this.carts.map((product) => product.subtotal).reduce((acc,curr) => acc + curr)
+                    showToastSuccess(this.carts[i].name + ' +'+this.carts[i].qty)
+                    return;
+                }
+            }
             this.carts.push({
+                id:this.toAdd.id,
                 name:this.toAdd.name,
                 img: this.toAdd.img,
                 price: this.toAdd.price,
                 qty: this.toAdd.qty,
                 subtotal: this.toAdd.subtotal
             })
-            alert('added to cart!')
+            
+            showToastSuccess('Added to Cart!')
             this.grandtotal = this.carts.map((product) => product.subtotal).reduce((acc,curr) => acc + curr)
         },
-
-
 
         number_format(number, decimals, dec_point, thousands_sep) {
             // Strip all characters but numerical ones.

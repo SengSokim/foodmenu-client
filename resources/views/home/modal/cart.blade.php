@@ -1,10 +1,14 @@
-<div class="modal fade" id="cart-modal" tabindex="-1" aria-hidden="true" >
+<div class="modal fade" id="cart-modal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title text-bold" style="color:#154d97">Order Detail</h5>
+                <h5 class="modal-title text-bold" style="color:#154d97">
+                    <i class="fas fa-shopping-cart fa-fw"></i> Order Detail
+                </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="clear()">
-                    <span aria-hidden="true"><i class="far fa-times fa-fw text-secondary"></i></span>
+                    <span aria-hidden="true">
+                        <i class="far fa-times fa-fw text-secondary"></i>
+                    </span>
                 </button>
             </div>
             <form action="" method="POST">
@@ -12,28 +16,28 @@
                 <div class="modal-body">
                     <div class="row align-items-center" style="color:#154d97">
                         <div class="col-md-3">
-                            Item
+                            <i class="fas fa-tags fa-fw"></i> Item
                         </div>
                         <div class="col-md-3 text-center">
-                            Price
+                            <i class="fas fa-dollar-sign fa-fw"></i> Price
                         </div>
                         <div class="col-md-3 text-center">
-                            Quantity
+                            <i class="fas fa-sort-numeric-up fa-fw"></i> Quantity
                         </div>
                         <div class="col-md-3">
                             <span class="float-right">
-                                Total
+                                <i class="fas fa-dollar-sign fa-fw"></i> Total
                             </span>
                         </div>
                     </div>
                     <hr>
                     <div class="row align-items-center my-1" v-for="item in carts">
-                        
-                        <div class="col-md-3" >
+
+                        <div class="col-md-3">
                             <img :src="item.img" alt="" width="50px" height="50px">
                             @{{ item.name }}
                         </div>
-                        <div class="col-md-3 text-center" >
+                        <div class="col-md-3 text-center">
                             @{{ formatCurrency(item.price) }}
                         </div>
                         <div class="col-md-3 text-center">
@@ -44,25 +48,95 @@
                                 @{{ formatCurrency(item.subtotal) }}
                             </span>
                         </div>
-                        
+
                     </div>
-                    
+
                     <div v-if="carts.length == 0" class="text-center text-bold">No Item in cart!</div>
                     <hr>
                     <div class="d-flex justify-content-between">
                         <h4>Grand Total:</h4>
                         <div>&nbsp;</div>
                         <span class="text-bold">@{{ formatCurrency(grandtotal) }}</span>
-                    </div>  
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal" @click="clear()"><i class="far fa-times fa-fw"></i> Close</button>
-                    <button type="button" class="btn" @click="clear()" style="background-color:#154d97;color:white">
-                        <i class="far fa-receipt fa-fw"></i> 
-                        Checkout
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">
+                        <i class="far fa-times fa-fw"></i> Cancel
+                    </button>
+                    <button type="button" class="btn" @click="clear()" data-toggle="modal" data-target="#myModal"
+                        style="background-color:#154d97;color:white">
+                        <i class="far fa-receipt fa-fw"></i> Checkout
                     </button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+<div class="modal fade" id="myModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    <i class="fas fa-info-circle"></i> Enter Details
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="clear()">
+                    <span aria-hidden="true">
+                        <i class="far fa-times fa-fw text-secondary"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="phone">
+                            <i class="fas fa-user"></i> Name <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" class="form-control" id="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">
+                            <i class="fas fa-phone"></i> Phone Number <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" class="form-control" id="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">
+                            <i class="fas fa-map-marker-alt"></i> Address <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" class="form-control" id="address">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">
+                    <i class="far fa-times-circle"></i> Cancel
+                </button>
+                <button type="button" class="btn btn-warning" id="backButton">
+                    <i class="fas fa-arrow-left"></i> Back
+                </button>
+                <button type="button" class="btn btn-primary" style="background-color: #154d97;">
+                    <i class="far fa-check-circle"></i> Submit
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#myModal').on('show.bs.modal', function () {
+            $('#cart-modal').modal('hide');
+        });
+
+        $('#myModal').on('hidden.bs.modal', function () {
+            $('body').removeClass('modal-open');
+            $('.modal-backdrop').remove();
+        });
+
+        $('#backButton').on('click', function () {
+            $('#myModal').modal('hide');
+            $('#cart-modal').modal('show');
+        });
+    });
+
+</script>

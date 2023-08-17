@@ -10,9 +10,9 @@
                 <div v-if="carts">
                     <li>
                         <button class="add-card-btn" type="button" data-toggle="modal" data-target="#cart-modal">
-                            <i class="fa-solid fa-cart-arrow-down">
-                                @{{ carts?.length }}
-                            </i>
+                            <i class="fa-solid fa-cart-arrow-down"></i>
+                            <span>Cart</span>
+                            <span class="cart-qty">@{{ carts?.length }}</span>
                         </button>
                     </li>
                 </div>
@@ -21,8 +21,10 @@
                         cart</button></li>
                 </div>
             </ul>
-            
         </nav>
+        <div class="food-title-container">
+            <p class="food-title">AMBOJA Food Menu</p>
+        </div>
         <section class="items-section" v-for="list in data">
             <div class="card-scroll">
                 <p class="card-category mt-3" >@{{ list.name }}</p>
@@ -37,9 +39,9 @@
                         <p class="menu-detail">
                             @{{ product.description }}
                         </p>
-                        <button  class="order-detail-btn" data-target="#product-detail-modal" data-toggle="modal" @click="getDetail(product)">
-                            Order
-                            <i class="fa fa-arrow-right"></i>
+                        <button class="order-detail-btn" data-target="#product-detail-modal" data-toggle="modal" @click="getDetail(product)">
+                            <span>Order Detail</span>
+                            <span class="order-detail-btn-arrow"><i class="fa fa-arrow-right"></i></span>
                         </button>
                     </div>
                     @include('home.modal.productdetails')
@@ -52,7 +54,7 @@
     </div>
     
     <div class="create-text-container">
-        <p class="create-text">Created with <a href="#"><b>AMBOJA</b></a></p>
+        <p class="create-text">Created with <a href="#"><u><b>AMBOJA</b></u></a></p>
     </div>
     
     

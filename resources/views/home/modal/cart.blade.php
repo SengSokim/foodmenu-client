@@ -9,7 +9,6 @@
             </div>
             <form action="" method="POST">
                 @csrf
-                
                 <div class="modal-body">
                     <div class="row align-items-center" style="color:#154d97">
                         <div class="col-md-3">
@@ -25,7 +24,6 @@
                             <span class="float-right">
                                 Total
                             </span>
-                            
                         </div>
                     </div>
                     <hr>

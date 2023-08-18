@@ -1,0 +1,7 @@
+[v-cloak] {
+  display: none;
+}
+
+li .checkbox-permission:first-child {
+  padding-left: 30px !important;
+}/*# sourceMappingURL=app.css.map */

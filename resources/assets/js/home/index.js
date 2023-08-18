@@ -4,6 +4,7 @@ const app = new Vue({
       data: data.data,
       productDetail: "",
       toAdd: {
+        code: '',
         name: '',
         img: '',
         qty: '',
@@ -27,6 +28,7 @@ const app = new Vue({
         this.productDetail = product;
         this.toAdd = {
           id: this.productDetail.id,
+          code: this.productDetail.code,
           name: this.productDetail.name,
           img: this.productDetail.image.url,
           price: this.productDetail.price,

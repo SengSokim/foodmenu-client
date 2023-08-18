@@ -12,6 +12,7 @@ app = new Vue({
 
         data:{
             id: null,
+            code: '',
             name: '',
             price: 0,
             sequence: 0,
@@ -76,10 +77,11 @@ app = new Vue({
             axios.post(`/admin/products/${this.data.id ?? ''}`,
                 this.data
             ).then(response => {
+            
                 if (response.data.success) {
                     window.location.href = '/admin/products';
                 } else {
-                    showAlertError(response.data.message);
+                    alert(response.data.message.code[0]);
                     // hideLoading()
                 }
             }).catch(error => {
@@ -90,6 +92,7 @@ app = new Vue({
 
         submit() {
             // showLoading();
+           
             this.$validator.validate().then((result) => {
                 let save = true;
                 if(!this.data.id && !this.data.image) {
@@ -101,6 +104,7 @@ app = new Vue({
                     // hideLoading();
                     //set Window location to top
                     window.scrollTo(0, 0);
+                    
                 } else {
                     this.save();
                 }
@@ -123,6 +127,7 @@ app = new Vue({
         clearData(){
              this.data={
                 id: null,
+                code: '',
                 name: '',
                 price: 0,
                 sequence: 0,
@@ -141,6 +146,7 @@ app = new Vue({
         setData (product) {
             this.data = Object.assign({}, {
                 id: product.id,
+                code: product.code,
                 name: product.name,
                 category_id: product.category.id,
                 price: product.price,

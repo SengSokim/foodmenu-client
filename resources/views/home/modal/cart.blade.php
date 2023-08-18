@@ -114,7 +114,7 @@
                 <button type="button" class="btn btn-warning" id="backButton">
                     <i class="fas fa-arrow-left"></i> Back
                 </button>
-                <button type="button" class="btn btn-primary" style="background-color: #154d97;" @click="submitOrder">
+                <button type="button" class="btn btn-primary" style="background-color: #154d97;" @click="createOrder">
                     <i class="far fa-check-circle"></i> Submit
                 </button>
             </div>

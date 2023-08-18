@@ -113,3 +113,4 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::get('/list', 'FindDriverController@list')->name('drivers');
     });
 });
+Route::post('/createorder','OrderController@createOrder')->name('order.create');

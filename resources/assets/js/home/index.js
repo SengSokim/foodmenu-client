@@ -117,41 +117,9 @@ const app = new Vue({
         this.carts =[];
         this.grandtotal = "";
         },
-      submitOrder() {
-          const token = '6357184660:AAFQRBXntuUJHfGjep2-dZSydkXrIb54ew4';// Replace with your actual bot token
-          const chatId = '-882376119'; // Replace with your desired chat ID
-          const messages = JSON.stringify(this.carts, null, 4); 
       
-          const formattedMessages = `<pre>${messages}</pre>`;
-          //  // Wrapping JSON in <pre> tag for HTML formatting
-          // axios.get(`https://api.telegram.org/bot${token}/sendPhoto?chat_id=${chatId}&photo=https://as1.ftcdn.net/v2/jpg/01/05/43/24/1000_F_105432459_fl1Ag0kyXxNp4fvI4S77cVmxPG9fT3gy.jpg`)
-          //     .then(response => {
-          //         console.log(response);
-          //         // You might want to handle successful submission here
-          //     })
-          //     .catch(error => {
-          //         alert('Cannot submit order');
-          //         console.error(error);
-          //         // You can also handle error cases here
-          //     });
-
-          axios.get(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(formattedMessages)}&parse_mode=HTML`)
-              .then(response => {
-                  console.log(response);
-                  this.createOrder();
-                  $('#myModal').modal('toggle');
-                  
-                  // You might want to handle successful submission here
-              })
-              .catch(error => {
-                  alert('Cannot submit order');
-                  console.error(error);
-                  // You can also handle error cases here
-              });
-
-      },
       createOrder() {
-        axios.post('http://127.0.0.1:8002/api/admin/order/create',
+        axios.post('/createorder',
           this.orderDetails
         ).then(response => {
           console.log(response);

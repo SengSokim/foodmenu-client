@@ -9,14 +9,14 @@
 
     <div class="row" style="border-bottom: solid 1px #ccc; text-align: left;">
       <div class="col-md-6 col-sm-6">
-        {{ __('app.global.total') }}
+        Grand Total
       </div>
       <div class="col-md-6 col-sm-6">
         <label>{{ formatCurrency($list->total) }}</label>
       </div>
     </div>
   </div>
-
+  
   <div class="col-md-1 sol-sm-1"></div>
 
   <div class="col-md-5 col-sm-5 info-line">
@@ -28,6 +28,14 @@
             <label>{{ $list->created_at }}</label>
         </div>
     </div>
+    <div class="row" style="border-bottom: solid 1px #ccc; text-align: left;">
+      <div class="col-md-6 col-sm-6">
+          Order By
+      </div>
+      <div class="col-md-6 col-sm-6">
+          <label>{{ $list->customer_name }}</label>
+      </div>
+  </div>
     {{-- <div class="row" style="border-bottom: solid 1px #ccc; text-align: left;">
         <div class="col-md-6 col-sm-6">
             {{ __('app.global.status') }}
@@ -55,17 +63,23 @@
         <thead class="table-primary">
           <th class="text-center">#</th>
           <th>{{ __('app.orders.product-name') }}</th>
-          <th class="text-center">{{ __('app.orders.qty') }}</th>
           <th class="text-right">{{ __('app.orders.price') }}</th>
+          <th class="text-center">{{ __('app.orders.qty') }}</th>
+          
+          <th class="text-right">Sub Total</th>
         </thead>
           <tbody>
+           
               @foreach($list->products as $index => $item)
+              
               <tr>
                   <td class="text-center">{{ $data->firstItem() + $index }}</td>
                   <td style="vertical-align: middle">
                     <span>{{ $item->name }}</span>
                   </td>
+                  <td class="text-right">{{formatCurrency($item->price)}}</td>
                   <td class="text-center">{{$item->qty}}</td>
+                  
                   <td class="text-right">{{formatCurrency($item->total)}}</td>
                   {{-- @if ($list->status == 'pending')
                   <td class="text-center">

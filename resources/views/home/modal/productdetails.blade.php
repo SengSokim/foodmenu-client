@@ -11,7 +11,7 @@
                     </span>
                 </button>
             </div>
-            <form action="" method="POST">
+           
                 @csrf
                 <div class="modal-body">
                     <div class="card-image-container">
@@ -61,7 +61,7 @@
                         <i class="fas fa-plus-circle"></i> View More
                     </button>
                 </div>
-            </form>
+            
         </div>
     </div>
 </div>

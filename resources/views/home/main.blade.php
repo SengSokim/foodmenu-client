@@ -65,4 +65,22 @@
     </script>
     <script src="{{ mix('dist/js/app.js') }}"></script>
     <script src="{{ mix('dist/js/home/index.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            $('#myModal').on('show.bs.modal', function () {
+                $('#cart-modal').modal('hide');
+            });
+    
+            $('#myModal').on('hidden.bs.modal', function () {
+                $('body').removeClass('modal-open');
+                $('.modal-backdrop').remove();
+            });
+    
+            $('#backButton').on('click', function () {
+                $('#myModal').modal('hide');
+                $('#cart-modal').modal('show');
+            });
+        });
+    
+    </script>
 @endsection

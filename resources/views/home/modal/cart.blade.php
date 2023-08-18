@@ -5,7 +5,7 @@
                 <h5 class="modal-title text-bold" style="color:#154d97">
                     <i class="fas fa-shopping-cart fa-fw"></i> Order Detail
                 </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="clear()">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">
                         <i class="far fa-times fa-fw text-secondary"></i>
                     </span>
@@ -63,7 +63,7 @@
                     <button type="button" class="btn btn-danger" data-dismiss="modal">
                         <i class="far fa-times fa-fw"></i> Cancel
                     </button>
-                    <button type="button" class="btn" @click="clear()" data-toggle="modal" data-target="#myModal"
+                    <button type="button" class="btn" data-toggle="modal" data-target="#myModal"
                         style="background-color:#154d97;color:white">
                         <i class="far fa-receipt fa-fw"></i> Checkout
                     </button>
@@ -88,22 +88,22 @@
             <div class="modal-body">
                 <form>
                     <div class="form-group">
-                        <label for="phone">
+                        <label for="name">
                             <i class="fas fa-user"></i> Name <span class="text-danger">*</span>
                         </label>
-                        <input type="text" class="form-control" id="phone">
+                        <input type="text" class="form-control" id="customer-name" v-model="orderDetails.customer_name">
                     </div>
                     <div class="form-group">
                         <label for="phone">
                             <i class="fas fa-phone"></i> Phone Number <span class="text-danger">*</span>
                         </label>
-                        <input type="text" class="form-control" id="phone">
+                        <input type="text" class="form-control" id="customer-phone" v-model="orderDetails.phone_number">
                     </div>
                     <div class="form-group">
                         <label for="address">
-                            <i class="fas fa-map-marker-alt"></i> Address <span class="text-danger">*</span>
+                            <i class="fas fa-map-marker-alt"></i> Address
                         </label>
-                        <input type="text" class="form-control" id="address">
+                        <input type="text" class="form-control" id="customer-address" v-model="orderDetails.address">
                     </div>
                 </form>
             </div>
@@ -114,7 +114,7 @@
                 <button type="button" class="btn btn-warning" id="backButton">
                     <i class="fas fa-arrow-left"></i> Back
                 </button>
-                <button type="button" class="btn btn-primary" style="background-color: #154d97;">
+                <button type="button" class="btn btn-primary" style="background-color: #154d97;" @click="submitOrder">
                     <i class="far fa-check-circle"></i> Submit
                 </button>
             </div>
@@ -122,21 +122,4 @@
     </div>
 </div>
 
-<script>
-    $(document).ready(function () {
-        $('#myModal').on('show.bs.modal', function () {
-            $('#cart-modal').modal('hide');
-        });
 
-        $('#myModal').on('hidden.bs.modal', function () {
-            $('body').removeClass('modal-open');
-            $('.modal-backdrop').remove();
-        });
-
-        $('#backButton').on('click', function () {
-            $('#myModal').modal('hide');
-            $('#cart-modal').modal('show');
-        });
-    });
-
-</script>

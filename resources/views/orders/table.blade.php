@@ -11,6 +11,7 @@
     </thead>
     <tbody>
       @forelse ($data as $index => $list)
+      
       <tr id='tr{{$index}}'>
         <td class="text-primary text-bold">{{ "#".sprintf("%'.06d", $list->code) }}</td>
         <td>{{ $list->phone_number }}</td>

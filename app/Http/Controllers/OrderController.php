@@ -83,4 +83,16 @@ class OrderController extends Controller
             return fail($result->message, 200);
         }
     }
+    public function createOrder(Request $request, $id)
+    {
+        $result = $this->api_post('api/admin/order/create', $request->all());
+        // dd($result);
+        if ($result->success == true) {
+            session()->put('success', __('dialog_box.update_success', ['name' => 'order']));
+            return redirect()->route('orders.index')->with('success','Order Created successfully');
+
+        } else {
+            return fail($result->message, 200);
+        }
+    }
 }

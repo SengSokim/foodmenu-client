@@ -9,18 +9,27 @@
     </div>
     <div class="col-md-9">
       <div class="form-group">
+        <label class="required">Product Code</label>
+        <input type="text" class="form-control" :class="{'is-invalid': errors.has('code') }" name="code" v-model="data.code" v-validate="'required'" placeholder="Product Code...">
+        <div class="invalid-feedback">@{{ errors.first('code') }}</div>
+      </div>
+      <div class="form-group">
         <label class="required">{{ __('app.product.name') }}</label>
         <input type="text" class="form-control" :class="{'is-invalid': errors.has('name') }" name="name" v-model="data.name" v-validate="'required'" placeholder="Product Name...">
         <div class="invalid-feedback">@{{ errors.first('name') }}</div>
       </div>
-      <div class="form-group">
-        <label class="required">{{ __('app.product.price') }}</label>
-        <input type="number" name="price" class="form-control" :class="{'is-invalid': errors.has('price') }" v-model="data.price"  v-validate="'required'" step="0.01" min="0"/>
-        <div class="invalid-feedback">@{{ errors.first('price') }}</div>
-      </div>
+      
     </div>
 </div>
 <div class="row">
+  <div class="col-md-12">
+    <div class="form-group">
+      <label class="required">{{ __('app.product.price') }}</label>
+      <input type="number" name="price" class="form-control" :class="{'is-invalid': errors.has('price') }" v-model="data.price"  v-validate="'required'" step="0.01" min="0"/>
+      <div class="invalid-feedback">@{{ errors.first('price') }}</div>
+    </div>
+  </div>
+  
   <div class="col-md-12">
     <div class="form-group">
       <label class="required">{{ __('app.product.product-category') }}</label>

@@ -4,6 +4,7 @@
         <tr>
           <th class="text-center">#</th>
           <th scope="col">Media</th>
+          <th scope="col">Product Code</th>
           <th scope="col">Name</th>
           <th scope="col">Description</th>
           <th scope="col">Price</th>
@@ -19,6 +20,7 @@
                 <td>
                     <img data-lity :src="item.media?.url ?? '{{ asset('adminlte/dist/img/placeholder/square-placeholder.png')}}'" alt="" width="50px">
                 </td>
+                <td>@{{ item.code ?? '' }}</td>
                 <td>@{{ item.name }}</td>
                 <td class="text-center">@{{ item.description }}</td>
                 <td class="text-center">$@{{ item.price }}</td>

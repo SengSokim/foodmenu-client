@@ -31,11 +31,17 @@
                         </div>
                     </div>
                     <hr>
+
                     <div class="row align-items-center my-1" v-for="item in carts">
 
-                        <div class="col-md-3">
+                        <div class="col-md-3 d-flex">
                             <img :src="item.img" alt="" width="50px" height="50px">
-                            @{{ item.name }}
+                            <div class="ml-2">
+                                @{{ item.name }} <br>
+                                <span class="text-secondary" >@{{ item.code }}</span>
+                                
+                            </div>
+                            
                         </div>
                         <div class="col-md-3 text-center">
                             @{{ formatCurrency(item.price) }}
@@ -114,7 +120,7 @@
                 <button type="button" class="btn btn-warning" id="backButton">
                     <i class="fas fa-arrow-left"></i> Back
                 </button>
-                <button type="button" class="btn btn-primary" style="background-color: #154d97;" @click="submitOrder">
+                <button type="button" class="btn btn-primary" style="background-color: #154d97;" @click="createOrder">
                     <i class="far fa-check-circle"></i> Submit
                 </button>
             </div>

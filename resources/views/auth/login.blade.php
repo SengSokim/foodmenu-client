@@ -56,9 +56,6 @@
                                 </div>
 
                                 <button type="submit" class="btn btn-primary col-md-12 mt-3">Login</button>
-                                <div class="mb-3 mt-2 text-center">
-                                    <a href="{{ url('forget') }}">Forgot password?</a>
-                                </div>
                             </form>
                         </div>
                         <div class="col-md-6 col-sm-6 d-none d-md-block">

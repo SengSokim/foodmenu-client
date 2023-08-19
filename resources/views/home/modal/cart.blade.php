@@ -102,31 +102,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Item 1</td>
-                            <td>$10</td>
-                            <td>2</td>
-                            <td>$20</td>
+                        <tr v-for="item in carts">
+                            <td>@{{ item.name }} | @{{ item.code }}</td>
+                            <td>@{{ formatCurrency(item.price) }}</td>
+                            <td>@{{ item.qty }}</td>
+                            <td> @{{ formatCurrency(item.subtotal) }}</td>
                         </tr>
-                        <tr>
-                            <td>Item 2</td>
-                            <td>$15</td>
-                            <td>3</td>
-                            <td>$45</td>
-                        </tr>
-                        <tr>
-                            <td>Item 3</td>
-                            <td>$5</td>
-                            <td>1</td>
-                            <td>$5</td>
-                        </tr>
+                    
                     </tbody>
                 </table>
             </div>
             <div class="modal-footer">
                 <h5 class="mr-auto">
                     <strong>
-                        <i class="fas fa-coins mr-1"></i>Grand Total: $70
+                        <i class="fas fa-coins mr-1"></i>Grand Total: @{{ grandtotal }}
                     </strong>
                 </h5>
                 <button type="button" class="btn btn-danger" data-dismiss="modal"><i
@@ -214,17 +203,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Burger</td>
-                            <td>$5.99</td>
-                            <td>2</td>
-                            <td>$11.98</td>
-                        </tr>
-                        <tr>
-                            <td>Pizza</td>
-                            <td>$8.99</td>
-                            <td>1</td>
-                            <td>$8.99</td>
+                        <tr v-for="item in carts">
+                            <td>@{{ item.name }} | @{{ item.code }}</td>
+                            <td>@{{ formatCurrency(item.price) }}</td>
+                            <td>@{{ item.qty }}</td>
+                            <td> @{{ formatCurrency(item.subtotal) }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -232,13 +215,13 @@
                     <div>
                         <h5>
                             <strong><i class="fas fa-phone mr-1"></i>Phone:</strong>
-                            <span>010223344</span>
+                            <span>@{{ orderDetails.phone_number }}</span>
                         </h5>
                     </div>
                     <div>
                         <h5 class="mr-auto">
                             <strong>
-                                <i class="fas fa-coins mr-1"></i>Grand Total: $7023
+                                <i class="fas fa-coins mr-1"></i>Grand Total: @{{ grandtotal }}
                             </strong>
                         </h5>
                     </div>

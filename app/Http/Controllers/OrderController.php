@@ -83,7 +83,7 @@ class OrderController extends Controller
             return fail($result->message, 200);
         }
     }
-    public function createOrder(Request $request, $id)
+    public function createOrder(Request $request)
     {
         $result = $this->api_post('api/admin/order/create', $request->all());
         // dd($result);

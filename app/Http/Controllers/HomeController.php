@@ -20,6 +20,8 @@ class HomeController extends Controller
             url(''),
             $current_page
         );
+        self::clearAuth();
+
         return view('home.main',compact('data'));
     }
 }

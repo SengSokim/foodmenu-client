@@ -5,7 +5,9 @@ new Vue({
         monthly_order: monthly_order,
     },
     methods: {
-
+        alert() {
+            alert('123')
+        },  
         filterConfirmedOrder(yearAndMonth) {
             showLoading();
 
@@ -92,35 +94,35 @@ new Vue({
     },
 
     mounted() {
-        // $("#filter_date_confirmed_order").datetimepicker({
-        //     defaultDate: new Date(),
-        //     orientation: 'bottom',
-        //     format: 'yyyy-MM',
-        //     autoclose: true,
-        //     viewMode: 'months',
-        //     dateFormat: 'MM yy',
-        //     changeMonth: true,
-        //     changeYear: true,
-        //     showButtonPanel: true,
-        // }),
-        // $("#filter_date_confirmed_order").on("change.datetimepicker", (e) => {
-        //     this.filterConfirmedOrder($('#filter_date_confirmed_order_input').val());
-        // });
+        $("#filter_date_confirmed_order").datetimepicker({
+            defaultDate: new Date(),
+            orientation: 'bottom',
+            format: 'yyyy-MM',
+            autoclose: true,
+            viewMode: 'months',
+            dateFormat: 'MM yy',
+            changeMonth: true,
+            changeYear: true,
+            showButtonPanel: true,
+        }),
+        $("#filter_date_confirmed_order").on("change.datetimepicker", (e) => {
+            this.filterConfirmedOrder($('#filter_date_confirmed_order_input').val());
+        });
 
-        // $("#filter_date_pending_order").datetimepicker({
-        //     defaultDate: new Date(),
-        //     orientation: 'bottom',
-        //     format: 'yyyy-MM',
-        //     autoclose: true,
-        //     viewMode: 'months',
-        //     dateFormat: 'MM yy',
-        //     changeMonth: true,
-        //     changeYear: true,
-        //     showButtonPanel: true,
-        // }),
-        // $("#filter_date_pending_order").on("change.datetimepicker", (e) => {
-        //     this.filterPendingOrder($('#filter_date_pending_order_input').val());
-        // });
+        $("#filter_date_pending_order").datetimepicker({
+            defaultDate: new Date(),
+            orientation: 'bottom',
+            format: 'yyyy-MM',
+            autoclose: true,
+            viewMode: 'months',
+            dateFormat: 'MM yy',
+            changeMonth: true,
+            changeYear: true,
+            showButtonPanel: true,
+        }),
+        $("#filter_date_pending_order").on("change.datetimepicker", (e) => {
+            this.filterPendingOrder($('#filter_date_pending_order_input').val());
+        });
 
 
         new Chart("daily_order", {

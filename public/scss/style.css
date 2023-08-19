@@ -1,659 +1,658 @@
 * {
-  padding: 0px;
-  margin: 0px;
-  box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #b6b6b6;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #7a7a7a;
 }
 
 body {
-  width: 100%;
-  height: auto;
-  background: #F8FAFC;
-  display: flex;
-  flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    background: #F8FAFC;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .container {
-  width: 70%;
-  height: auto;
-  margin: 0 auto;
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
 }
 
 .navbar {
-  color: #fff;
-  align-items: center;
-  padding-top: 10px;
-  padding-bottom: 8px;
-  display: flex;
-  top: 0;
-  z-index: 1;
-  position: sticky;
-  background-color: #F8FAFC;
+    color: #fff;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    display: flex;
+    top: 0;
+    z-index: 1;
+    position: sticky;
+    background-color: #F8FAFC;
 }
 
 .navbar-brand {
-  margin-right: auto;
+    margin-right: auto;
 }
 
 .logo {
-  width: 60px;
-  object-fit: cover;
+    width: 60px;
+    object-fit: cover;
 }
 
 .logo:hover {
-  transform: scale(1.05, 1.05);
-  transition: 0.5s;
+    transform: scale(1.05, 1.05);
+    transition: 0.5s;
 }
 
 .navbar-menu {
-  list-style: none;
-  display: flex;
+    list-style: none;
+    display: flex;
 }
 
 .navbar-menu li {
-  margin-left: 30px;
+    margin-left: 30px;
 }
 
 @media (max-width: 768px) {
-  .navbar-menu li {
-    margin-left: 15px;
-  }
+    .navbar-menu li {
+        margin-left: 15px;
+    }
 }
 
 .navbar-menu li a {
-  color: #000000;
-  font-size: 20px;
-  text-decoration: none;
+    color: #000000;
+    font-size: 20px;
+    text-decoration: none;
 }
 
 .add-card-btn {
-  padding: 8px 10px;
-  border-width: 0px;
-  border-radius: 10px;
-  color: #fff;
-  font-size: 17px;
-  background-color: #154D96;
-  transition: all 0.4s ease;
+    padding: 8px 10px;
+    border-width: 0px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 17px;
+    background-color: #154D96;
+    transition: all 0.4s ease;
+    margin-top: 15px;
 }
 
 .add-card-btn span {
-  margin-left: 5px;
+    margin-left: 5px;
 }
 
 .add-card-btn .cart-qty {
-  font-size: 19px;
-  margin-left: 5px;
-  padding: 1px 8px;
-  background-color: white;
-  border-radius: 100%;
-  color: #154D96;
-  font-weight: bold;
+    font-size: 19px;
+    margin-left: 5px;
+    padding: 1px 8px;
+    background-color: white;
+    border-radius: 100%;
+    color: #154D96;
+    font-weight: bold;
 }
 
 .add-card-btn:hover {
-  transform: scale(0.9);
-  cursor: pointer;
+    transform: scale(0.9);
+    cursor: pointer;
 }
 
 .food-title-container {
-  width: 100%;
-  height: auto;
-  margin-top: 47px;
+    width: 100%;
+    height: auto;
+    margin-top: 47px;
 }
 
 .food-title {
-  text-align: center;
-  font-size: 36px;
-  font-weight: bold;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
 }
 
 .items-section {
-  width: 100%;
-  height: auto;
-  margin-top: 35px;
+    width: 100%;
+    height: auto;
+    margin-top: 35px;
 }
 
 .card-category {
-  font-weight: bold;
-  font-size: 25px;
-  color: #000000;
-  text-transform: capitalize;
+    font-weight: bold;
+    font-size: 25px;
+    color: #000000;
+    text-transform: capitalize;
 }
 
 .card-scroll {
-  width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
-  height: 521;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    height: 521;
 }
 
 .card-scroll .card {
-  width: 80%;
-  max-width: 288px;
-  height: 431px;
-  display: inline-block;
-  background-color: #fff;
-  margin-right: 10px;
-  cursor: pointer;
-  border-radius: 15px;
-  box-shadow: 0px 0px 3px 0px silver;
+    width: 80%;
+    max-width: 288px;
+    height: 431px;
+    display: inline-block;
+    background-color: #fff;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 15px;
+    box-shadow: 0px 0px 3px 0px silver;
 }
 
 @media (min-width: 576px) {
-  .card-scroll .card {
-    width: 50%;
-  }
+    .card-scroll .card {
+        width: 50%;
+    }
 }
 
 @media (min-width: 768px) {
-  .card-scroll .card {
-    width: 35%;
-  }
+    .card-scroll .card {
+        width: 35%;
+    }
 }
 
 @media (min-width: 992px) {
-  .card-scroll .card {
-    width: 30%;
-  }
+    .card-scroll .card {
+        width: 30%;
+    }
 }
 
 .card-scroll .card-image-container {
-  width: 100%;
-  height: 50%;
-  -o-object-fit: fill;
-  object-fit: fill;
+    width: 100%;
+    height: 50%;
+    -o-object-fit: fill;
+    object-fit: fill;
 }
 
 .card-scroll .card-image {
-  width: 100%;
-  height: 100%;
-  border-radius: 15px 15px 0px 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px 15px 0px 0px;
 }
 
 .card-scroll .card-image:hover {
-  transform: scale(1.05, 1.05);
-  transition: 0.5s;
+    transform: scale(1.05, 1.05);
+    transition: 0.5s;
 }
 
 .card-scroll .card-detail {
-  width: 100%;
-  height: 50%;
-  padding: 15px;
-  position: relative;
+    width: 100%;
+    height: 50%;
+    padding: 15px;
+    position: relative;
 }
 
 .card-scroll .menu-name {
-  font-weight: bold;
-  color: #000000;
-  font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+    font-size: 20px;
 }
 
 .card-scroll .main-price {
-  font-weight: bold;
-  color: #154D96;
-  font-size: 20px;
-  position: absolute;
-  right: 15px;
+    font-weight: bold;
+    color: #154D96;
+    font-size: 20px;
+    position: absolute;
+    right: 15px;
 }
 
 .card-scroll .hr-style {
-  border: 0.7px solid #797f87;
-  margin-top: 7px;
-  margin-bottom: 7px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+.popup-dolar {
+    margin-right: -4px;
+}
+
+.card-scroll .popup-descrip-product {
+    white-space: normal;
 }
 
 .card-scroll .quantity {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .card-scroll .quantity button {
-  padding: 5px 10px;
-  font-size: 16px;
-  background-color: #fff;
-  border: 1px solid silver;
-  cursor: pointer;
-  color: #000000;
-  font-size: 16px;
-  border-radius: 5px 0px 0px 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #fff;
+    border: 1px solid silver;
+    cursor: pointer;
+    color: #000000;
+    font-size: 16px;
+    border-radius: 5px 0px 0px 5px;
 }
 
 .card-scroll .quantity button:hover {
-  background-color: #154D96;
-  color: #fff;
-  font-size: 16px;
-  border: 1px solid #154D96;
+    background-color: #154D96;
+    color: #fff;
+    font-size: 16px;
+    border: 1px solid #154D96;
 }
 
 .card-scroll .quantity .increase-btn {
-  border-radius: 0px 5px 5px 0px;
+    border-radius: 0px 5px 5px 0px;
 }
 
 .card-scroll .quantity span {
-  padding: 5px 10px;
-  font-size: 16px;
-  border: 1px solid silver;
-  border-left: 0px;
-  border-right: 0px;
+    padding: 5px 10px;
+    font-size: 16px;
+    border: 1px solid silver;
+    border-left: 0px;
+    border-right: 0px;
 }
 
 .card-scroll .bottom-btn-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  position: absolute;
-  width: 90%;
-  bottom: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    width: 90%;
+    bottom: 15px;
 }
 
 .card-scroll .card-button {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  padding: 5px 7px;
-  background-color: #154D96;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: all 0.4s ease;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 5px 7px;
+    background-color: #154D96;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.4s ease;
 }
 
 .card-scroll .card-button .icon {
-  font-size: 16px;
-  margin-right: 5px;
-  color: #fff;
+    font-size: 16px;
+    margin-right: 5px;
+    color: #fff;
 }
 
 .card-scroll .card-button .text {
-  font-size: 16px;
-  color: #fff;
+    font-size: 16px;
+    color: #fff;
 }
 
 .card-scroll .card-button:hover {
-  transform: scale(1.04);
+    transform: scale(1.04);
 }
 
 .card-scroll .buy-now-button {
-  padding: 4px 7px;
-  background-color: #fff;
-  border: 1px solid #154D96;
-  color: #154D96;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 5px;
-  transition: all 0.4s ease;
+    padding: 4px 7px;
+    background-color: #fff;
+    border: 1px solid #154D96;
+    color: #154D96;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: all 0.4s ease;
 }
 
 .card-scroll .buy-now-button:hover {
-  transform: scale(1.04);
+    transform: scale(1.04);
 }
 
 .card-scroll .menu-detail {
-  color: #797f87;
-  font-size: 16px;
-  white-space: normal;
-  text-align: left;
-  height: 78px;
-  text-overflow: ellipsis;
-  overflow: scroll;
-  overflow-x: hidden;
+    color: #797f87;
+    font-size: 16px;
+    white-space: normal;
+    text-align: left;
+    height: 78px;
+    text-overflow: ellipsis;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 .card-scroll .order-detail-btn {
-  background-color: #154D96;
-  color: white;
-  padding: 10px 10px;
-  border: none;
-  border-radius: 10px;
-  font-size: 16px;
-  cursor: pointer;
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  transition: all 0.4s ease;
+    background-color: #154D96;
+    color: white;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    transition: all 0.4s ease;
 }
 
 .card-scroll .order-detail-btn i {
-  background-color: rgb(99, 130, 172);
-  color: #fff;
-  font-size: 16px;
-  padding: 6px;
-  border-radius: 100px;
-  margin-left: 5px;
+    background-color: rgb(99, 130, 172);
+    color: #fff;
+    font-size: 16px;
+    padding: 6px;
+    border-radius: 100px;
+    margin-left: 5px;
 }
 
 .card-scroll .order-detail-btn:hover {
-  background-color: #0f3669;
-  transform: scale(0.9);
+    background-color: #0f3669;
+    transform: scale(0.9);
 }
 
 .card-scroll .order-detail-btn:focus {
-  outline: none;
+    outline: none;
 }
 
 .order-detail-btn-arrow {
-  margin-left: 5px;
-  padding: 5px 8px;
-  background-color: rgb(99, 130, 172);
-  border-radius: 100%;
-  color: #fff;
+    margin-left: 5px;
+    padding: 5px 8px;
+    background-color: rgb(99, 130, 172);
+    border-radius: 100%;
+    color: #fff;
 }
 
 .popup-card {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
 }
 
 .popup-card .card {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
 }
 
 .close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 28px;
-  cursor: pointer;
-  background-color: #fff;
-  width: 25px;
-  height: 25px;
-  border: 0px;
-  border-radius: 100px;
-  color: #000000;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  transition: all 0.4s ease;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 28px;
+    cursor: pointer;
+    background-color: #fff;
+    width: 25px;
+    height: 25px;
+    border: 0px;
+    border-radius: 100px;
+    color: #000000;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    transition: all 0.4s ease;
 }
 
 .close-button:hover {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .category-section {
-  width: 100%;
-  height: auto;
-  margin-top: 55px;
+    width: 100%;
+    height: auto;
+    margin-top: 55px;
 }
 
 .sub-category-container {
-  width: 100%;
-  margin-top: 10px;
+    width: 100%;
+    margin-top: 10px;
 }
 
 @media (min-width: 768px) {
-  .sub-category-container {
-    width: 50%;
-    float: right;
-  }
+    .sub-category-container {
+        width: 50%;
+        float: right;
+    }
 }
 
 .category-option {
-  width: auto;
-  height: auto;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: 15px;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 15px;
 }
 
 .radius-category {
-  border-radius: 100px;
-  background-color: #E2E8F0;
-  height: 45px;
-  width: 45px;
-  border: 2px solid #94a3b8;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  color: #64748b;
-  font-weight: bold;
-  font-size: 22px;
-  text-transform: uppercase;
-}
-
-.create-text-container {
-  width: 100%;
-  height: auto;
-  margin-top: 55px;
-}
-
-.create-text {
-  text-align: center;
-  color: #000000;
-  font-size: 20px;
-  transition: all 0.4s ease;
-}
-
-.create-text:hover {
-  transform: scale(0.9);
-}
-
-.create-text a {
-  text-decoration: none;
-  color: #000000;
+    border-radius: 100px;
+    background-color: #E2E8F0;
+    height: 45px;
+    width: 45px;
+    border: 2px solid #94a3b8;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: #64748b;
+    font-weight: bold;
+    font-size: 22px;
+    text-transform: uppercase;
 }
 
 .card-category-text {
-  margin-left: 12px;
-  color: #000000;
-  font-size: 20px;
+    margin-left: 12px;
+    color: #000000;
+    font-size: 20px;
 }
 
 footer {
-  width: 100%;
-  height: 193px;
-  background-color: #132335;
-  margin-top: 50px;
-  padding-left: 15%;
-  padding-right: 15%;
-  display: flex;
+    width: 100%;
+    height: 193px;
+    background-color: #132335;
+    margin-top: 70px;
+    padding-left: 15%;
+    padding-right: 15%;
+    display: flex;
 }
 
 .describe-container {
-  width: 50%;
-  height: 100%;
-  padding-top: 30px;
+    width: 50%;
+    height: 100%;
+    padding-top: 30px;
 }
 
 .footer-logo {
-  object-fit: cover;
-  width: 65px;
+    object-fit: cover;
+    width: 65px;
 }
 
 .footer-logo:hover {
-  transform: scale(1.05, 1.05);
-  transition: 0.5s;
+    transform: scale(1.05, 1.05);
+    transition: 0.5s;
 }
 
 .footer-text-describe {
-  font-size: 15px;
-  color: #fff;
-  margin-top: 7px;
+    font-size: 15px;
+    color: #fff;
+    margin-top: 7px;
 }
 
 .privacy-container {
-  width: 50%;
-  height: 100%;
-  display: grid;
-  align-items: center;
+    width: 50%;
+    height: 100%;
+    display: grid;
+    align-items: center;
 }
 
 .support-container {
-  padding: 7px 10px;
-  border: 0.7px solid #797f87;
-  border-radius: 10px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  color: #fff;
-  font-size: 20px;
-  justify-self: flex-end;
-  transition: all 0.4s ease;
+    padding: 7px 10px;
+    border: 0.7px solid #797f87;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: #fff;
+    font-size: 20px;
+    justify-self: flex-end;
+    transition: all 0.4s ease;
 }
 
 .support-container:hover {
-  cursor: pointer;
-  transform: scale(0.9);
+    cursor: pointer;
+    transform: scale(0.9);
 }
 
 .fa-envelope {
-  margin-right: 7px;
+    margin-right: 7px;
 }
 
 .bottom-footer-container {
-  width: 100%;
-  background-color: #132335;
-  height: 60px;
+    width: 100%;
+    background-color: #132335;
+    height: 60px;
 }
 
 .bottom-footer {
-  width: 70%;
-  height: 100%;
-  background-color: #132335;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  color: #fff;
-  font-size: 20px;
-  border-top: 0.7px solid #797f87;
-  margin: auto;
+    width: 70%;
+    height: 100%;
+    background-color: #132335;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: #fff;
+    font-size: 20px;
+    border-top: 0.7px solid #797f87;
+    margin: auto;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 520px) {
-  .container {
-    width: 90%;
-  }
+    .container {
+        width: 90%;
+    }
 
-  .items-section {
-    margin-top: 0px;
-  }
+    .items-section {
+        margin-top: 0px;
+    }
 
-  .navbar {
-    margin-bottom: 40px;
-  }
+    .navbar {
+        margin-bottom: 40px;
+    }
 
-  .logo {
-    width: 55px;
-  }
+    .logo {
+        width: 55px;
+    }
 
-  .food-title-container {
-    margin-top: 0px;
-  }
+    .food-title-container {
+        margin-top: -15px;
+        margin-bottom: -10px;
+    }
 
-  .food-title {
-    font-size: 30px;
-  }
+    .food-title {
+        font-size: 28px;
+    }
 
-  .add-card-btn {
-    padding: 8px 8px;
-  }
+    .add-card-btn {
+        padding: 8px 8px;
+    }
 
-  .card-scroll .card-detail {
-    padding: 10px;
-  }
+    .card-scroll .card-detail {
+        padding: 10px;
+    }
 
-  .card-scroll .menu-detail {
-    height: 97px;
-  }
+    .card-scroll .menu-detail {
+        height: 97px;
+    }
 
-  .card-scroll .order-detail-btn {
-    padding: 5px 10px;
-    bottom: 10px;
-    right: 10px;
-  }
+    .card-scroll .order-detail-btn {
+        padding: 5px 10px;
+        bottom: 10px;
+        right: 10px;
+    }
 
-  .card-scroll .order-detail-btn i {
-    padding: 5px;
-  }
+    .card-scroll .order-detail-btn i {
+        padding: 5px;
+    }
 
-  .order-detail-btn-arrow {
-    padding: 3.5px 6.5px;
-    font-size: 15px;
-  }
+    .order-detail-btn-arrow {
+        padding: 3.5px 6.5px;
+        font-size: 15px;
+    }
 
-  .category-section {
-    margin-top: 0px;
-  }
+    .category-section {
+        margin-top: 0px;
+    }
 
-  .create-text-container {
-    margin-top: 25px;
-  }
+    footer {
+        margin-top: 40px;
+        flex-direction: column;
+        padding-left: 5%;
+        padding-right: 5%;
+        height: 250px;
+    }
 
-  footer {
-    margin-top: 40px;
-    flex-direction: column;
-    padding-left: 5%;
-    padding-right: 5%;
-    height: 250px;
-  }
+    .describe-container {
+        width: 100%;
+    }
 
-  .describe-container {
-    width: 100%;
-  }
+    .footer-logo {
+        width: 55px;
+    }
 
-  .footer-logo {
-    width: 55px;
-  }
+    .privacy-container {
+        width: 100%;
+        display: grid;
+    }
 
-  .privacy-container {
-    width: 100%;
-    display: grid;
-  }
+    .support-container {
+        height: 50px;
+        width: 220px;
+        font-size: 18px;
+        justify-self: flex-start;
+    }
 
-  .support-container {
-    height: 50px;
-    width: 220px;
-    font-size: 18px;
-    justify-self: flex-start;
-  }
+    .bottom-footer-container {
+        height: 75px;
+    }
 
-  .bottom-footer-container {
-    height: 75px;
-  }
-
-  .bottom-footer {
-    width: 90%;
-    margin: 0 auto;
-  }
+    .bottom-footer {
+        width: 90%;
+        margin: 0 auto;
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-  .container {
-    width: 85%;
-  }
+    .container {
+        width: 85%;
+    }
 }
 
 @media only screen and (min-width: 520px) and (max-width: 768px) {
-  .container {
-    width: 90%;
-  }
+    .container {
+        width: 90%;
+    }
 
-  footer {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
+    footer {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
 
-  .support-container {
-    height: 55px;
-    width: 230px;
-    font-size: 19px;
-  }
+    .support-container {
+        height: 55px;
+        width: 230px;
+        font-size: 19px;
+    }
 
-  .bottom-footer {
-    width: 90%;
-    margin: 0 auto;
-  }
+    .bottom-footer {
+        width: 90%;
+        margin: 0 auto;
+    }
 }
 
 /*# sourceMappingURL=style.css.map */

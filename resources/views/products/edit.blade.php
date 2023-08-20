@@ -2,7 +2,7 @@
   <div class="modal-dialog modal-md" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Create Product</h5>
+        <h5 class="modal-title">Edit Product</h5>
       </div>
       <div class="modal-body m-1">
         <form @submit.prevent="submit" id="updateProduct" v-cloak></form>

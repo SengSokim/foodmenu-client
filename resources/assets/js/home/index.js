@@ -119,7 +119,22 @@ const app = new Vue({
         this.carts =[];
         this.grandtotal = "";
         },
-      
+        submit() {
+          // showLoading();
+         
+          this.$validator.validate().then((result) => {
+              let save = true;
+
+              if (!result || !save) {
+                  // hideLoading();
+                  //set Window location to top
+                  window.scrollTo(0, 0);
+                  
+              } else {
+                  this.createOrder();
+              }
+          })
+      },
       createOrder() {
         axios.post('/createorder',
           this.orderDetails
@@ -127,9 +142,11 @@ const app = new Vue({
           console.log(response);
           showToastSuccess('Order has been created!');
           this.clear();
+          $('#invoiceModal').show();
         })
         .catch(error => {
           alert('Cannot create order'+" "+ error);
+          $('#invoiceModal').show();
         })
       }
     },

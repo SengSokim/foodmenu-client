@@ -42,7 +42,7 @@
                 <button type="button" class="btn btn-danger" data-dismiss="modal"><i
                         class="fas fa-times mr-1"></i>Cancel</button>
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"
-                    style="background-color: #154d97;"><i class="fas fa-check mr-1"></i>Checkout</button>
+                    style="background-color: #154d97;" :disabled="carts.length == 0"><i class="fas fa-check mr-1"></i>Checkout</button>
             </div>
         </div>
     </div>
@@ -62,39 +62,43 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form @submit.prevent="submit" v-cloak id="customer_info">
                     <div class="form-group">
-                        <label for="name">
-                            <i class="fas fa-user mr-1"></i>Name <span class="text-danger">*</span>
+                        <label for="name" class="required">
+                            <i class="fas fa-user mr-1"></i>Name 
                         </label>
-                        <input type="text" class="form-control" id="customer-name" v-model="orderDetails.customer_name">
+                        <input type="text" class="form-control" :class="{'is-invalid': errors.has('customer_name') }" v-validate="'required'"  id="customer-name" v-model="orderDetails.customer_name" name="customer_name" >
+                        <div class="invalid-feedback">@{{ errors.first('customer_name') }}</div>
                     </div>
                     <div class="form-group">
-                        <label for="phone">
-                            <i class="fas fa-phone mr-1"></i>Phone Number <span class="text-danger">*</span>
+                        <label for="phone" class="required">
+                            <i class="fas fa-phone mr-1"></i>Phone Number
                         </label>
-                        <input type="text" class="form-control" id="customer-phone" v-model="orderDetails.phone_number">
+                        <input type="text" class="form-control" :class="{'is-invalid': errors.has('customer_phone') }" v-validate="'required'" id="customer-phone" v-model="orderDetails.phone_number" name="customer_phone">
+                        <div class="invalid-feedback">@{{ errors.first('customer_phone') }}</div>
                     </div>
                     <div class="form-group">
-                        <label for="address">
+                        <label for="address" class="required">
                             <i class="fas fa-map-marker-alt mr-1"></i>Address
                         </label>
-                        <input type="text" class="form-control" id="customer-address" v-model="orderDetails.address">
+                        <input type="text" class="form-control" id="customer-address" v-model="orderDetails.address" :class="{'is-invalid': errors.has('customer_address') }" v-validate="'required'" name="customer_address">
+                        <div class="invalid-feedback">@{{ errors.first('customer_address') }}</div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">
+                            <i class="fas fa-times mr-1"></i>Cancel
+                        </button>
+                        <button type="button" class="btn btn-warning" id="backButton">
+                            <i class="fas fa-arrow-left mr-1"></i>Back
+                        </button>
+                        <button type="submit" class="btn btn-primary"
+                            style="background-color: #154d97;" id="submitBtn">
+                            <i class="fas fa-check mr-1"></i>Submit
+                        </button>
                     </div>
                 </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">
-                    <i class="fas fa-times mr-1"></i>Cancel
-                </button>
-                <button type="button" class="btn btn-warning" id="backButton">
-                    <i class="fas fa-arrow-left mr-1"></i>Back
-                </button>
-                <button data-toggle="modal" data-target="#invoiceModal" type="button" class="btn btn-primary"
-                    style="background-color: #154d97;" @click="createOrder" data-dismiss="modal" id="submitBtn">
-                    <i class="fas fa-check mr-1"></i>Submit
-                </button>
-            </div>
+            
         </div>
     </div>
 </div>

@@ -21,11 +21,11 @@
                     <img data-lity :src="item.media?.url ?? '{{ asset('adminlte/dist/img/placeholder/square-placeholder.png')}}'" alt="" width="50px">
                 </td>
                 <td>@{{ item.code ?? '' }}</td>
-                <td>@{{ item.name }}</td>
+                <td>@{{ item?.name }}</td>
                 <td class="text-center">@{{ item.description }}</td>
                 <td class="text-center">$@{{ item.price }}</td>
                 <td>@{{ item.sequence }}</td>
-                <td>@{{ item.category.name }}</td>
+                <td>@{{ item.category?.name }}</td>
                 <td class="text-center">
                     <a href="#" class="btn btn-outline-success btn-sm" v-if="item.enable_status"
                     style="padding: .425rem .55rem" data-toggle="modal" data-target="#status" @click="setData(item)"

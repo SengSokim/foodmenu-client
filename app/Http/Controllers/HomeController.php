@@ -10,16 +10,7 @@ class HomeController extends Controller
     {
         list($current_page, $limit, $offset, $search, $order, $sort) = $this->getParams();
 
-        $data = $this->pagination(
-            'admin/category/list/web',
-            $limit,
-            $offset,
-            $search,
-            $order,
-            $sort,
-            url(''),
-            $current_page
-        );
+        $data = $this->api_get('admin/category/list/web');
         self::clearAuth();
 
         return view('home.main',compact('data'));

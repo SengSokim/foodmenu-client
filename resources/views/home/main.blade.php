@@ -26,6 +26,10 @@
         <p class="food-title">AMBOJA Food Menu</p>
     </div>
     <section class="items-section" v-for="list in data">
+        <div class="back-next-container">
+            <button class="back-button"><i class="fas fa-chevron-left"></i></button>
+            <button class="next-button"><i class="fas fa-chevron-right"></i></button>
+        </div>
         <div class="card-scroll">
             <p class="card-category mt-3">@{{ list.name }}</p>
             <div class="card" v-for="product in list.products">
@@ -47,7 +51,6 @@
                 </div>
                 @include('home.modal.productdetails')
             </div>
-
         </div>
     </section>
 

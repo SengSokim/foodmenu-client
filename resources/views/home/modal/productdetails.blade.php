@@ -1,11 +1,11 @@
-<div class="modal fade modal-a" id="product-detail-modal" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="product-detail-modal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 style="color: #154d97;" class="modal-title text-bold">
                     <i class="fas fa-info-circle fa-fw"></i> Product Detail
                 </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="clear()">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">
                         <i class="far fa-times fa-fw text-secondary"></i>
                     </span>
@@ -35,15 +35,15 @@
                     <hr class="hr-style">
                     <div class="d-flex justify-content-between">
                         <div class="quantity">
-                            <button type="button" @click="decrement()">
+                            <button type="button" @click="decrementQtyAdd(toAdd)">
                                 <i class="fas fa-minus"></i>
                             </button>
                             <span id="quantityDisplay">@{{ toAdd.qty }}</span>
-                            <button type="button" class="increase-btn" @click="increment()">
+                            <button type="button" class="increase-btn" @click="incrementQtyAdd(toAdd)">
                                 <i class="fas fa-plus"></i>
                             </button>
                         </div>
-                        <button class="card-button" type="button" @click="addToCart(productDetail.id)">
+                        <button class="card-button" data-dismiss="modal" type="button" @click="addToCart(productDetail.id)">
                             <span class="icon">
                                 <i class="fas fa-cart-arrow-down"></i>
                             </span>

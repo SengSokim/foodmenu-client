@@ -37,13 +37,21 @@ const app = new Vue({
           subtotal: this.productDetail.price
         };
       },
-      decrement() {
-        this.toAdd.qty -= 1;
-        this.calculateSubtotal();
+      incrementQtyAdd(item) {
+        item.qty += 1;
+       
       },
-      increment() {
-        this.toAdd.qty += 1;
-        this.calculateSubtotal();
+      decrementQtyAdd(item) {
+        item.qty -= 1;
+        
+      },
+      incrementQty(item) {
+        item.qty += 1;
+        this.calculateSubtotal(item);
+      },
+      decrementQty(item) {
+        item.qty -= 1;
+        this.calculateSubtotal(item);
       },
       addToCart(id) {
         const existingItem = this.carts?.find(item => item.id === id);
@@ -71,11 +79,20 @@ const app = new Vue({
           this.orderDetails.total_order = this.grandtotal
         }
       },
-      calculateSubtotal() {
-        this.toAdd.subtotal = this.toAdd.price * this.toAdd.qty;
+      removefromCart(index) {
+        this.carts.splice(index-1);
+        this.grandtotal = this.calculateGrandtotal();
+      },
+      calculateSubtotal(item) {
+        item.subtotal = item.price * item.qty;
+        
+        this.grandtotal = this.calculateGrandtotal();
+        
+        
       },
       calculateGrandtotal() {
-        return this.carts.map(product => product.subtotal).reduce((acc, curr) => acc + curr);
+        return this.carts.map(product => product.subtotal).reduce(function(acc, curr) {
+          return acc + curr},0);
       },
       formatNumber(number, decimals, decPoint, thousandsSep) {
         number = (number + '').replace(/[^0-9+\-Ee.]/g, '');
@@ -139,21 +156,21 @@ const app = new Vue({
         axios.post('/createorder',
           this.orderDetails
         ).then(response => {
-            window.location.href="/";
-          showToastSuccess('Order has been created!');
-          this.clear();
-          $('#invoiceModal').show();
+          if(response.status === 200) {
+            showToastSuccess('Order has been created!');
+            this.clear();
+
+          }
         })
         .catch(error => {
           alert('Cannot create order'+" "+ error);
-          $('#invoiceModal').show();
         })
       }
     },
 
     watch: {
-      'toAdd.qty'() {
-        this.calculateSubtotal();
-      }
+      // 'toAdd.qty'() {
+      //   this.calculateSubtotal();
+      // }
     },
   });

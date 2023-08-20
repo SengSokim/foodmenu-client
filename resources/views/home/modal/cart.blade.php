@@ -1,5 +1,5 @@
 <div class="modal fade" id="cart-modal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 style="color: #154d97;" class="modal-title text-bold" id="orderModalLabel">
@@ -22,11 +22,25 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="item in carts">
+                        <tr v-for="(item,index) in carts" :key="index">
                             <td>@{{ item.name }} | @{{ item.code }}</td>
                             <td>@{{ formatCurrency(item.price) }}</td>
-                            <td>@{{ item.qty }}</td>
+                            <td>
+                                <button type="button" class="btn btn-light btn-sm" @click="decrementQty(item)">
+                                    <i class="fas fa-minus" style="cursor: pointer" ></i>
+                                </button>
+                                    @{{ item.qty }}
+                                <button type="button" class="btn btn-light btn-sm" @click="incrementQty(item)">
+                                    <i class="fas fa-plus cursor-pointer" style="cursor: pointer" ></i>
+                                </button>
+                                
+                            </td>
                             <td> @{{ formatCurrency(item.subtotal) }}</td>
+                            <td>
+                                <button type="button" class="btn btn-light btn-sm" @click="removefromCart(index)">
+                                    <i class="fas fa-minus" style="cursor: pointer" ></i>
+                                </button>
+                            </td>
                         </tr>
 
                     </tbody>
@@ -34,9 +48,9 @@
                 <p v-if="carts.length == 0" class="text-center text-bold">No Item in cart!</p>
             </div>
             <div class="modal-footer">
-                <h5 class="mr-auto">
+                <h5 class="mr-auto" v-show="carts.length != 0">
                     <strong>
-                        <i class="fas fa-coins mr-1"></i>Grand Total: @{{ grandtotal }}
+                        <i class="fas fa-coins mr-1"></i>Grand Total: @{{ formatCurrency(grandtotal) }}
                     </strong>
                 </h5>
                 <button type="button" class="btn btn-danger" data-dismiss="modal"><i
@@ -64,21 +78,21 @@
             <div class="modal-body">
                 <form @submit.prevent="submit" v-cloak id="customer_info">
                     <div class="form-group">
-                        <label for="name" class="required">
+                        <label for="customer-name" class="required">
                             <i class="fas fa-user mr-1"></i>Name 
                         </label>
                         <input type="text" class="form-control" :class="{'is-invalid': errors.has('customer_name') }" v-validate="'required'"  id="customer-name" v-model="orderDetails.customer_name" name="customer_name" >
                         <div class="invalid-feedback">@{{ errors.first('customer_name') }}</div>
                     </div>
                     <div class="form-group">
-                        <label for="phone" class="required">
+                        <label for="customer-phone" class="required">
                             <i class="fas fa-phone mr-1"></i>Phone Number
                         </label>
                         <input type="text" class="form-control" :class="{'is-invalid': errors.has('customer_phone') }" v-validate="'required'" id="customer-phone" v-model="orderDetails.phone_number" name="customer_phone">
                         <div class="invalid-feedback">@{{ errors.first('customer_phone') }}</div>
                     </div>
                     <div class="form-group">
-                        <label for="address" class="required">
+                        <label for="customer-address" class="required">
                             <i class="fas fa-map-marker-alt mr-1"></i>Address
                         </label>
                         <input type="text" class="form-control" id="customer-address" v-model="orderDetails.address" :class="{'is-invalid': errors.has('customer_address') }" v-validate="'required'" name="customer_address">
@@ -146,7 +160,7 @@
                     <div>
                         <h5 class="mr-auto">
                             <strong>
-                                <i class="fas fa-coins mr-1"></i>Grand Total: @{{ grandtotal }}
+                                <i class="fas fa-coins mr-1"></i>Grand Total: @{{ formatCurrency(grandtotal) }}
                             </strong>
                         </h5>
                     </div>

@@ -1,7 +1,7 @@
 <?php
 
 Route::get('/', 'HomeController@index')->name('home');
-
+Route::post('/createorder','OrderController@createOrder')->name('order.create');
 Route::group(['prefix' => 'auth', "middleware" => "auth:guest"], function () {
     Route::get('/', 'AuthController@login')->name('auth.login');
     Route::get('/login', 'AuthController@login')->name('auth.login');
@@ -113,4 +113,4 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::get('/list', 'FindDriverController@list')->name('drivers');
     });
 });
-Route::post('/createorder','OrderController@createOrder')->name('order.create');
+

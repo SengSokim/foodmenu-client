@@ -42,6 +42,9 @@
 <script src="{{ asset('adminlte/plugins/croppie-2.6.4/croppie.js') }}"></script>
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="{{ asset('adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.js') }}"></script>
+
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="{{ asset('adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.js') }}"></script>
 <!-- BS-Stepper -->
 <script src="{{ asset('adminlte/plugins/bs-stepper/js/bs-stepper.min.js') }}"></script>
 <!-- Lity -->
@@ -76,9 +79,7 @@
     };
     @endif
 
-    $(".category_id_select2").select2({
-            placeholder : "Select a category"
-        });
+
 </script>
 </body>
 </html>

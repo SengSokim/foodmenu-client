@@ -21,16 +21,16 @@
 @section('content')
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-12 mx-auto">
-                <div class="card shadow-lg p-3 card-rounded-shape" style="height: 500px;">
+            <div class="col-12 col-md-8 mx-auto">
+                <div class="card shadow-lg p-3 card-rounded-shape" style="height: 400px;">
                     {{-- <div class="" >
                         <h3 class="text-center">Customer Relationship Management</h3>
                     </div> --}}
                     {{-- <hr> --}}
                     <div class="row align-items-center">
-                        <div class="col-md-1"></div>
-                        <div class="col-md-5 col-sm-6 pl-3">
-                            <h4 class="mb-4 sub-header text-center">Login</h4>
+                        <div class="col-md-3"></div>
+                        <div class="col-md-7 col-sm-8 mt-5">
+                            <h4 class="mb-4 sub-header text-center"><b>Login</b></h4>
                             <form class="login-form" action="{{ url('auth/login') }}" method="post">
                                 @csrf
                                 @include('auth.alert_error_message')
@@ -58,9 +58,9 @@
                                 <button type="submit" class="btn btn-primary col-md-12 mt-3">Login</button>
                             </form>
                         </div>
-                        <div class="col-md-6 col-sm-6 d-none d-md-block">
+                        {{-- <div class="col-md-6 col-sm-6 d-none d-md-block">
                             <img src="{{ asset('assets/images/login_image.jpg') }}" width="100%">
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

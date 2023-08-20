@@ -89,7 +89,7 @@ class OrderController extends Controller
         // dd($result);
         if ($result->success == true) {
             session()->put('success', __('dialog_box.update_success', ['name' => 'order']));
-            return redirect()->route('orders.index')->with('success','Order Created successfully');
+            return redirect()->route('home')->with('success','Order Created successfully');
 
         } else {
             return fail($result->message, 200);

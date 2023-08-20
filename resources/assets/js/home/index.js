@@ -22,7 +22,7 @@ const app = new Vue({
       },
       grandtotal: 0
     },
-    
+
     methods: {
       getDetail(product) {
         this.productDetail = product;
@@ -47,7 +47,7 @@ const app = new Vue({
       },
       addToCart(id) {
         const existingItem = this.carts?.find(item => item.id === id);
-  
+
         if (existingItem) {
           existingItem.qty += this.toAdd.qty;
           existingItem.subtotal = existingItem.price * existingItem.qty;
@@ -64,7 +64,7 @@ const app = new Vue({
           this.orderDetails.product_ids = this.carts.map(function(item) {
             return {
               product_id: item.id,
-              qty: item.qty, 
+              qty: item.qty,
               total: item.subtotal
             }
           })
@@ -84,23 +84,23 @@ const app = new Vue({
         const sep = typeof thousandsSep === 'undefined' ? ',' : thousandsSep;
         const dec = typeof decPoint === 'undefined' ? '.' : decPoint;
         let s = '';
-  
+
         const toFixedFix = function(n, prec) {
           const k = Math.pow(10, prec);
           return '' + Math.round(n * k) / k;
         };
-  
+
         s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
-  
+
         if (s[0].length > 3) {
           s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
         }
-  
+
         if ((s[1] || '').length < prec) {
           s[1] = s[1] || '';
           s[1] += new Array(prec - s[1].length + 1).join('0');
         }
-  
+
         return s.join(dec);
       },
       formatCurrency(number, prefix = '$', decimal = 2) {
@@ -121,7 +121,7 @@ const app = new Vue({
         },
         submit() {
           // showLoading();
-         
+
           this.$validator.validate().then((result) => {
               let save = true;
 
@@ -129,7 +129,7 @@ const app = new Vue({
                   // hideLoading();
                   //set Window location to top
                   window.scrollTo(0, 0);
-                  
+
               } else {
                   this.createOrder();
               }
@@ -139,7 +139,7 @@ const app = new Vue({
         axios.post('/createorder',
           this.orderDetails
         ).then(response => {
-          console.log(response);
+            window.location.href="/";
           showToastSuccess('Order has been created!');
           this.clear();
           $('#invoiceModal').show();
@@ -150,7 +150,7 @@ const app = new Vue({
         })
       }
     },
-    
+
     watch: {
       'toAdd.qty'() {
         this.calculateSubtotal();

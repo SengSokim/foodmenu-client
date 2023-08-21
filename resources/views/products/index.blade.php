@@ -10,18 +10,21 @@
                     <div class="row mb-3">
                         <div class="col-md-12 d-flex justify-content-between">
                             <div></div>
-                            <div class="card-tools mt-1" style="float:right">
-                                <button class="btn btn-success" @click="clearData()" title="Create Product"
-                                    data-toggle="modal" data-target="#create-product"><i
-                                        class="far fa-plus fa-fw"></i>{{ __('app.global.create-new') }}</button>
-                                @include('products.create')
-                            </div>
+                            @if (checkPermission($auth->user->permissions, 'product-read'))
+                                <div class="card-tools mt-1" style="float:right">
+                                    <button class="btn btn-success" @click="clearData()" title="Create Product"
+                                        data-toggle="modal" data-target="#create-product"><i
+                                            class="far fa-plus fa-fw"></i>{{ __('app.global.create-new') }}</button>
+                                    @include('products.create')
+                                </div>
+                            @endif
                         </div>
                     </div>
                     <form action="{{ route('products') }}">
                         <div class="row">
                             <div class="col-md-6">
-                                <select name="category_id" id="" v-select2 class="form-control category_id_select2">
+                                <select name="category_id" id="" v-select2
+                                    class="form-control category_id_select2">
                                     <option value=""></option>
                                     <option :value="product_category.id" v-for="product_category in product_categories">
                                         @{{ product_category.name }}</option>
@@ -167,7 +170,7 @@
         }
     </script>
     <script>
-          $(".category_id_select2").select2({
+        $(".category_id_select2").select2({
             placeholder: "Select a category"
         });
     </script>

@@ -40,7 +40,7 @@
             @endif
             {{-- | ORDERS
             |-------------------------------------------------------------------------- --}}
-            @if (checkPermissionOr($auth->user->permissions, ['orders-read']))
+            @if (checkPermission($auth->user->permissions, 'orders-read'))
                 <li class="nav-item">
                     <a href="{{ route('orders') }}"
                         class="nav-link {{ request()->is('*admin/orders*') ? 'active' : '' }}">

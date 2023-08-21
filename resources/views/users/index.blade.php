@@ -1,62 +1,62 @@
 @extends('layouts.master')
-@section('style')
-    <style>
-        .user_image {
-            width: 55px;
-            height: 55px;
-        }
-        .show-user {
-
-        }
-    </style>
-@endsection
 @section('content-header')
-    {!! generateContentHeader(__('app.user.restaurant-user'), __('app.user.restaurant-user')) !!}
+{!! generateContentHeader('Users','Users') !!}
 @endsection
 @section('content')
-<div class="row" id="Users" v-cloak>
+<div class="row">
     <div class="col-md-12">
-        <div class="card">
-            <div class="card-header">
-                <div class="row d-flex justify-content-between">
-                    <div class="col-md-6">
-                        <form action="{{ route('users')}}">
-                            <div class="input-group">
-                                <input name="search" class="form-control" type="search" placeholder="{{ __('app.user.search-user') }}..." aria-label="Search" value="{{ request('search') }}">
-                                <div class="input-group-append">
-                                    <button type="submit" class="btn btn-sm btn-primary" style="border:1; width: 50px;" title="Search">
-                                        <i class="far fa-search"></i>
-                                    </button>
-                                    <a href="{{ route('users') }}" style="border: 0; background-color: #F2F2F2" class="btn btn-default" title="refresh">
-                                        <i class="far fa-sync-alt"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </form>
+      <div class="card card-primary card-outline">
+        <div class="card-header">
+          <div class="card-tools">
+            @if(checkPermission($auth->user->permissions, 'user-create'))
+              <a href="{{route('users.create')}}" class="btn btn-primary"><i class="far fa-plus fa-fw"></i>Add New </a>
+            @endif
+          </div>
+        </div>
+        <div class="card-body">
+            <form action="">
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                      <input type="text" class="form-control" name="search" placeholder="Search by Name | Phone | Email" value="{{ request('search') }}">
                     </div>
-                    <div class="card-tools mt-1" style="float:right">
-                        <button @click="clearData()" class="btn btn-primary btn-sm"  title="Create" data-toggle="modal" data-target="#createUser"><i class="far fa-plus fa-fw"></i>{{ __('app.global.create-new') }}</button>
-                        @include('users.create')
+                    <div class="col-md-3 mb-3">
+                        <select name="role_id" class="form-control">
+                            <option value="">Select Role</option>
+                            @foreach ($roles as $role)
+                               <option value="{{ $role->id }}" @if(request('role_id') == $role->id) selected @endif>{{ $role->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                      <select name="is_active" class="form-control">
+                          <option value="">Select Status</option>
+                          <option value="1" @if(request('is_active') == '1') selected @endif>Active</option>
+                          <option value="0" @if(request('is_active') == '0') selected @endif>Deactive</option>
+                      </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                      <select name="gender" class="form-control">
+                          <option value="">Select Gender</option>
+                          <option value="male" @if(request('gender') == 'male') selected @endif>Male</option>
+                          <option value="female" @if(request('gender') == 'female') selected @endif>Female</option>
+                      </select>
                     </div>
                 </div>
-            </div>
-            <div class="card-body">
-                @include('users.table')
-                @include('users.create')
-                @include('users.edit')
-                @include('users.delete')
-            </div>
-            <div class="card-footer">
-                @include('layouts.pagination')
-            </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <button class="btn btn-info text-white">Filter <i class="fas fa-filter"></i></button>
+                    <a href="{{ url('admin/users') }}" class="btn btn-danger">
+                        Clear
+                        <i class="fas fa-sync-alt"></i>
+                    </a>
+                  </div>
+                </div>
+            </form>
+            <br>
+            @include('users.table')
+            @include('layouts.pagination')
+        </div>
         </div>
     </div>
 </div>
-@endsection
-@section('footer-content')
-    <script>
-        const restaurant_users = @json($data);
-    </script>
-    <script src="{{ mix('dist/js/app.js') }}"></script>
-    <script src="{{ mix('dist/js/users/user.js')}}"></script>
 @endsection

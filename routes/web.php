@@ -61,11 +61,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::delete('/{id}', 'ProductCategoryController@destroy')->name('categories.destroy');
     });
 
-    Route::prefix('users')->group(function () {
+    Route::group(['prefix' => 'users'], function () {
         Route::get('/', 'UserController@index')->name('users');
-        Route::post('/', 'UserController@store')->name('users.store');
-        Route::post('/{id}', 'UserController@update')->name('users.update');
-        Route::delete('/{id}', 'UserController@destroy')->name('users.destroy');
+        Route::get('/create', 'UserController@create')->name('users.create');
+        Route::post('/create', 'UserController@store')->name('users.store');
+        Route::get('/{id}', 'UserController@show')->name('users.show');
+        Route::put('/{id}', 'UserController@update')->name('users.update');
+        Route::post('/update_password/{id}', 'UserController@updatePassword')->name('users.password');
+        Route::delete('/{id}', 'UserController@destroy')->name('users.delete');
     });
 
 

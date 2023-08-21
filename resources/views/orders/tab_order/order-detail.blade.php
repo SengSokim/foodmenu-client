@@ -104,6 +104,7 @@
                         {{ __('app.orders.reject') }}
                     </a>
                 @endif
+                {{-- Reject order --}}
                 <div class="modal fade" id="modelReject_{{ $list->id }}" tabindex="-1" data-keyboard="false"
                     data-backdrop="static" role="dialog" aria-hidden="true">
                     <div class="modal-dialog">
@@ -128,6 +129,8 @@
                         </div>
                     </div>
                 </div>
+
+                {{-- Confirm order --}}
                 <div class="modal fade" id="modelConfirm_{{ $list->id }}" tabindex="-1" data-keyboard="false"
                     data-backdrop="static" role="dialog" aria-hidden="true">
                     <div class="modal-dialog">

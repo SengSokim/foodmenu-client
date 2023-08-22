@@ -17,7 +17,7 @@
                         <tr>
                             <th style="color: #154d97;"><i class="fas fa-tag mr-1"></i> Item</th>
                             <th style="color: #154d97;"><i class="fas fa-dollar-sign mr-1"></i> Price</th>
-                            <th style="color: #154d97;"><i class="fas fa-sort-numeric-up mr-1"></i> Quantity</th>
+                            <th style="color: #154d97;width:20%"><i class="fas fa-sort-numeric-up mr-1"></i> Quantity</th>
                             <th style="color: #154d97;"><i class="fas fa-money-bill mr-1"></i> Total</th>
                         </tr>
                     </thead>

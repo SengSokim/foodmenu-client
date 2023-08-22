@@ -48,10 +48,14 @@ const app = new Vue({
       incrementQty(item) {
         item.qty += 1;
         this.calculateSubtotal(item);
+        this.orderDetails.product_ids = this.orderInfo();
+        this.orderDetails.total_order = this.calculateGrandtotal();
       },
       decrementQty(item) {
         item.qty -= 1;
         this.calculateSubtotal(item);
+        this.orderDetails.product_ids = this.orderInfo();
+        this.orderDetails.total_order = this.calculateGrandtotal();
       },
       addToCart(id) {
         const existingItem = this.carts?.find(item => item.id === id);
@@ -69,15 +73,19 @@ const app = new Vue({
           this.carts.push(newItem);
           showToastSuccess('Added to Cart!');
           this.grandtotal = this.calculateGrandtotal();
-          this.orderDetails.product_ids = this.carts.map(function(item) {
-            return {
-              product_id: item.id,
-              qty: item.qty,
-              total: item.subtotal
-            }
-          })
-          this.orderDetails.total_order = this.grandtotal
+          this.orderDetails.product_ids = this.orderInfo();
+          this.orderDetails.total_order = this.calculateGrandtotal();
         }
+      },
+      orderInfo() {
+        const details = this.carts.map(function(item) {
+          return {
+            product_id: item.id,
+            qty: item.qty,
+            total: item.subtotal
+          }
+        })
+        return details
       },
       removefromCart(index) {
         this.carts.splice(index-1);

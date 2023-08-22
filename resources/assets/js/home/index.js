@@ -132,6 +132,7 @@ const app = new Vue({
         const formattedNumber = this.formatNumber(number, decimal, '.', ',');
         return prefix + formattedNumber;
       },
+      
       clear() {
         this.productDetail = "";
         this.orderDetails= {
@@ -166,7 +167,8 @@ const app = new Vue({
         ).then(response => {
           if(response.status === 200) {
             showToastSuccess('Order has been created!');
-            this.clear();
+            $('#myModal').modal('toggle');
+            $('#invoiceModal').modal('toggle');
 
           }
         })
@@ -175,7 +177,7 @@ const app = new Vue({
         })
       }
     },
-
+    
     watch: {
       // 'toAdd.qty'() {
       //   this.calculateSubtotal();

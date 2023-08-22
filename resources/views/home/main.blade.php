@@ -25,7 +25,8 @@
     <div class="food-title-container">
         <p class="food-title">AMBOJA Food Menu</p>
     </div>
-    <section class="items-section" v-for="list in data">
+
+    <section class="items-section" v-for="list in data.list">
         <div class="back-next-container">
             <button class="back-button"><i class="fas fa-chevron-left"></i></button>
             <button class="next-button"><i class="fas fa-chevron-right"></i></button>

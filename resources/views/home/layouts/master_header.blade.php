@@ -58,6 +58,7 @@
     <link rel="stylesheet" href="{{ asset('scss/style.css') }}">
     <link rel="Shortcut icon" href="{{ asset('images/amboja_logo.jpg') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+   
     @yield('header-content')
     @yield('style')
     <style>

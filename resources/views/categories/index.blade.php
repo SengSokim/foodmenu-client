@@ -28,12 +28,14 @@
                                     </div>
                                 </form>
                             </div>
-                            <div class="card-tools mt-1" style="float:right">
-                                <button class="btn btn-success" @click="clearData()"
-                                    title="Create Category" data-toggle="modal" data-target="#modal-category"><i
-                                        class="far fa-plus fa-fw"></i>{{ __('app.global.create-new') }}</button>
-                                @include('categories.create')
-                            </div>
+                            @if (checkPermission($auth->user->permissions, 'category-create'))
+                                <div class="card-tools mt-1" style="float:right">
+                                    <button class="btn btn-success" @click="clearData()" title="Create Category"
+                                        data-toggle="modal" data-target="#modal-category"><i
+                                            class="far fa-plus fa-fw"></i>{{ __('app.global.create-new') }}</button>
+                                    @include('categories.create')
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>

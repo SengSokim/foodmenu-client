@@ -68,17 +68,7 @@
                         <h4 class="card-title">Daily Order</h4>
                         <div class="card-tools">
                             <div class="form-group">
-                                <div class="input-group date_confirmed_order" id="filter_date_confirmed_order"
-                                    data-target-input="nearest">
-                                    <input type="text" value="{{ request('date') }}"
-                                        class="form-control datetimepicker-input" id="filter_date_confirmed_order_input"
-                                        data-target="#filter_date_confirmed_order" name="date" autocomplete="off"
-                                        placeholder="YYYY-MM">
-                                    <div class="input-group-append" data-target="#filter_date_confirmed_order"
-                                        data-toggle="datetimepicker">
-                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                    </div>
-                                </div>
+                                <input type="month" id="filter_date_confirmed_order" name="filter_date_confirmed_order" class="form-control" value="{{ request('data') }}">
                             </div>
                         </div>
                     </div>
@@ -105,20 +95,12 @@
                         <h4 class="card-title">Monthly Order</h4>
                         <div class="card-tools">
                             <div class="form-group">
-                                <div class="input-group date_confirmed_order" id="filter_date_pending_order"
-                                    data-target-input="nearest">
-                                    <input type="text" value="{{ request('date') }}"
-                                        class="form-control datetimepicker-input" id="filter_date_pending_order_input"
-                                        data-target="#filter_date_pending_order" name="date" autocomplete="off"
-                                        placeholder="YYYY-MM">
-                                    <div class="input-group-append" data-target="#filter_date_pending_order"
-                                        data-toggle="datetimepicker">
-                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                    </div>
-                                </div>
+                                
+                                <input type="month" id="filter_date_pending_order" name="filter_date_pending_order" class="form-control" value="{{ request('data') }}">
                             </div>
                         </div>
                     </div>
+                   
                     <div class="card-body">
                         <div class="chart">
                             <div class="chartjs-size-monitor">
@@ -145,6 +127,7 @@
         var current_month_year = @json($current_month_year);
         var daily_order = @json($daily_order->total ?? []);
         var monthly_order = @json($monthly_order->total ?? []);
+        
     </script>
     <script src="{{ asset('adminlte/plugins/chart.js/Chart.min.js') }}"></script>
     <script src="{{ mix('dist/js/app.js') }}"></script>

@@ -9,8 +9,8 @@ new Vue({
             alert('123')
         },
         filterConfirmedOrder(yearAndMonth) {
-            showLoading();
-
+            // showLoading();
+            
             let monthYear = yearAndMonth.split("-");
             let y = monthYear[0];
             let m = monthYear[1];
@@ -18,40 +18,43 @@ new Vue({
             axios.get(`/admin/chart/daily_order/${y}/${m}`
             ).then(response => {
                 if (response.data.success) {
-                    hideLoading();
-                    this.OrderChart(response.data.data.total, "confirmed_order");
+                    // hideLoading();
+                    this.OrderChart(response.data.data.total, "daily_order");
                     console.log(response.data.data.total);
                 } else {
-                    showAlertError(response.data.message);
-                    hideLoading()
+                    alert(response.data.message);
+                    // showAlertError(response.data.message);
+                    // hideLoading()
                 }
             }).catch(error => {
-                hideLoading();
-                showAlertError('Cannot get data confirmed order!');
-                console.log(error)
+                // hideLoading();
+                alert('cannot get data');
+                // showAlertError('Cannot get data confirmed order!');
+                // console.log(error)
             })
         },
 
         filterPendingOrder(yearAndMonth) {
-            showLoading();
-
+            // showLoading();
+            
             let monthYear = yearAndMonth.split("-");
             let y = monthYear[0];
             let m = monthYear[1];
-
-            axios.get(`/admin/chart/monthly_order/${y}/${m}`
+            axios.get(`admin/chart/monthly_order/${y}`
             ).then(response => {
+                console.log(response);
                 if (response.data.success) {
-                    hideLoading();
-                    this.OrderChart(response.data.data.total, "pending_order");
+                    // hideLoading();
+                    this.OrderChart(response.data.data.total, "monthly_order");
                     console.log(response.data.data.total);
                 } else {
-                    showAlertError(response.data.message);
-                    hideLoading()
+                    alert(response.data.message);
+                    // showAlertError(response.data.message);
+                    // hideLoading()
                 }
             }).catch(error => {
-                hideLoading();
-                showAlertError('Cannot get data pending order!');
+                // hideLoading();
+                // showAlertError('Cannot get data pending order!');
                 console.log(error)
             })
         },
@@ -105,9 +108,9 @@ new Vue({
         //     changeYear: true,
         //     showButtonPanel: true,
         // }),
-        // $("#filter_date_confirmed_order").on("change.datetimepicker", (e) => {
-        //     this.filterConfirmedOrder($('#filter_date_confirmed_order_input').val());
-        // });
+        $("#filter_date_confirmed_order").on("change.datetimepicker", (e) => {
+            this.filterConfirmedOrder($('#filter_date_confirmed_order').val());
+        });
 
         // $("#filter_date_pending_order").datetimepicker({
         //     defaultDate: new Date(),
@@ -120,9 +123,9 @@ new Vue({
         //     changeYear: true,
         //     showButtonPanel: true,
         // }),
-        // $("#filter_date_pending_order").on("change.datetimepicker", (e) => {
-        //     this.filterPendingOrder($('#filter_date_pending_order_input').val());
-        // });
+        $("#filter_date_pending_order").on("change.datetimepicker", (e) => {
+            this.filterPendingOrder($('#filter_date_pending_order').val());
+        });
 
 
         new Chart("daily_order", {

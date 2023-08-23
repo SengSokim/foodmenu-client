@@ -170,7 +170,7 @@
                 <button type="button" class="btn btn-danger" data-dismiss="modal"><i
                         class="fas fa-times mr-1"></i>Close</button>
                 <button type="button" style="background-color: #154d97;" class="btn btn-primary">
-                    <i class="fas fa-download mr-1"></i>Download
+                    <i class="fas fa-download mr-1"></i>Print
                 </button>
             </div>
         </div>

@@ -19,7 +19,7 @@ class DashboardController extends Controller
     public function dailyOrder($y, $m)
     {
         $res = $this->api_get('admin/dashboard/daily_order/' . $y . '/' . $m);
-
+        
         if (!$res->success) {
             return fail($res->message, 200);
         }
@@ -30,7 +30,6 @@ class DashboardController extends Controller
     public function monthlyOrder($y)
     {
         $res = $this->api_get('admin/dashboard/monthly_order/' . $y);
-
         if (!$res->success) {
             return fail($res->message, 200);
         }

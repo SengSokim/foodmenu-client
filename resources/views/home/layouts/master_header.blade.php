@@ -95,5 +95,29 @@
             --apen-gold: #FFD662;
             --light-grey: #ced4da;
         }
+        @media screen {
+            #printSection {
+                display: none;
+            }
+        }
+        @media print {
+            body * {
+                visibility:hidden;
+            }
+            #printSection, #printSection * {
+                visibility:visible;
+            }
+            #printSection {
+                position:absolute;
+                left:0;
+                top:0;
+            }
+            .btn {
+                display: none;
+            }
+            button {
+                display:none;
+            }
+        }
     </style>
 </head>

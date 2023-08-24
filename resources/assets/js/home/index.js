@@ -175,12 +175,8 @@ const app = new Vue({
         .catch(error => {
           alert('Cannot create order'+" "+ error);
         })
-      }
-    },
-    
-    watch: {
-      // 'toAdd.qty'() {
-      //   this.calculateSubtotal();
-      // }
-    },
+        
+      },
+      
+    }
   });

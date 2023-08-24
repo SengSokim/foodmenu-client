@@ -26,7 +26,7 @@
         <p class="food-title">AMBOJA Food Menu</p>
     </div>
 
-    <section class="items-section" v-for="list in data.list">
+    <section class="items-section" v-for="list in data">
         <div class="back-next-container">
             <button class="back-button"><i class="fas fa-chevron-left"></i></button>
             <button class="next-button"><i class="fas fa-chevron-right"></i></button>
@@ -82,6 +82,30 @@
             $('#myModal').modal('hide');
             $('#cart-modal').modal('show');
         });
+        $('#btn-print-invoice').click(function () {
+            printElement($('#printThis'));
+        })
+
+        function printElement(elem) {
+            console.log(elem);
+            var domClone = elem[0].cloneNode(true);
+            
+            var $printSection = document.getElementById("printSection");
+            
+            if (!$printSection) {
+                var $printSection = document.createElement("div");
+                $printSection.id = "printSection";
+                document.body.appendChild($printSection);
+            }
+            
+            $printSection.innerHTML = "";
+            $printSection.appendChild(domClone);
+            setTimeout(function() {
+                window.print();
+            }, 250);
+            
+        }
+        
     });
 
 </script>

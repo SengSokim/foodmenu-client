@@ -116,20 +116,18 @@
         </div>
     </div>
 </div>
-
-<div class="modal fade" id="invoiceModal" tabindex="-1" role="dialog" aria-labelledby="invoiceModalLabel"
+<div class="" id="printThis">
+    <div class="modal fade" id="invoiceModal" tabindex="-1" role="dialog" aria-labelledby="invoiceModalLabel"
     aria-hidden="true" style="background-color: rgba(0, 0, 0, 0.5);">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
+            <div class="mx-auto mt-3">
+                <img class="logo" src="{{ asset('images/amboja_logo.jpg') }}" alt="ambojaLogo"/>
+            </div>
             <div class="modal-header">
                 <h4 style="color: #154d97;" class="modal-title text-bold" id="invoiceModalLabel">
                     <i class="fas fa-file-invoice-dollar mr-2"></i>Invoice
                 </h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="clear()">
-                    <span aria-hidden="true">
-                        <i class="far fa-times fa-fw text-secondary"></i>
-                    </span>
-                </button>
             </div>
             <div class="modal-body">
                 <table class="table table-striped table-borderless">
@@ -153,8 +151,18 @@
                 <div class="text-left" style="display: flex; justify-content: space-between;">
                     <div>
                         <h5>
+                            <strong><i class="fas fa-user mr-1"></i>Name:</strong>
+                            <span>@{{ orderDetails.customer_name }}</span>
+                        </h5>
+                        <hr>
+                        <h5>
                             <strong><i class="fas fa-phone mr-1"></i>Phone:</strong>
                             <span>@{{ orderDetails.phone_number }}</span>
+                        </h5>
+                        <hr>
+                        <h5>
+                            <strong><i class="fas fa-address-card mr-1"></i>Address:</strong>
+                            <span>@{{ orderDetails.address }}</span>
                         </h5>
                     </div>
                     <div>
@@ -169,10 +177,12 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal"><i
                         class="fas fa-times mr-1"></i>Close</button>
-                <button type="button" style="background-color: #154d97;" class="btn btn-primary">
+                <button type="button" style="background-color: #154d97;" class="btn btn-primary" id="btn-print-invoice">
                     <i class="fas fa-download mr-1"></i>Print
                 </button>
             </div>
         </div>
     </div>
 </div>
+</div>
+

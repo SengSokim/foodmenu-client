@@ -1,11 +1,19 @@
 var showLoading = function () {
-    $('body').loading({
-        zIndex : 10000
-    });
+    Swal.fire({
+        title: 'Loading ...',
+        onBeforeOpen () {
+          Swal.showLoading ()
+        },
+        
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        allowEnterKey: false
+    })
 };
 
 var hideLoading = function () {
-    $('body').loading('stop')
+    Swal.hideLoading ()
+    Swal.close()
 };
 
 var setToastMessage = function (message) {

@@ -117,7 +117,7 @@
     </div>
 </div>
 <div class="" id="printThis">
-    <div class="modal fade" id="invoiceModal" tabindex="-1" role="dialog" aria-labelledby="invoiceModalLabel"
+    <div class="modal fade" id="invoiceModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="invoiceModalLabel"
     aria-hidden="true" style="background-color: rgba(0, 0, 0, 0.5);">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
@@ -175,12 +175,21 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal"><i
+                <button type="button" class="btn btn-danger" data-dismiss="modal" @click="clear"><i
                         class="fas fa-times mr-1"></i>Close</button>
                 <button type="button" style="background-color: #154d97;" class="btn btn-primary" id="btn-print-invoice">
-                    <i class="fas fa-download mr-1"></i>Print
+                    <i class="fas fa-download mr-1"></i>Download
                 </button>
             </div>
+            
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="screenshotModal" tabindex="-1" role="dialog" aria-labelledby="invoiceModalLabel"
+    aria-hidden="true" style="background-color: rgba(0, 0, 0, 0.5);">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div id="screenshotSection"></div>
         </div>
     </div>
 </div>

@@ -76,8 +76,14 @@
  {{-- <!-- Jquery toast -->
  <script src="{{ asset('toast/jquery.toast.min.js') }}"></script>
  <script src="{{ asset('confirm/jquery-confirm.min.js') }}"></script> --}}
-
-
+{{-- html2canvas --}}
+<script src="
+https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js
+"></script>
+{{-- canvas2image --}}
+<script src="
+https://cdn.jsdelivr.net/npm/canvas2image@1.0.5/canvas2image.min.js
+"></script>
    <!-- Helper -->
 <script src="{{ asset('js/helper.js') }}"></script>
 <!-- AdminLTE App -->

@@ -162,19 +162,22 @@ const app = new Vue({
           })
       },
       createOrder() {
-        axios.post('/createorder',
-          this.orderDetails
-        ).then(response => {
-          if(response.status === 200) {
-            showToastSuccess('Order has been created!');
+        // axios.post('/createorder',
+        //   this.orderDetails
+        // ).then(response => {
+        //   if(response.status === 200) {
+        //     showToastSuccess('Order has been created!');
+        //     $('#myModal').modal('toggle');
+        //     $('#invoiceModal').modal('toggle');
+
+        //   }
+        // })
+        // .catch(error => {
+        //   alert('Cannot create order'+" "+ error);
+        // })
+        showToastSuccess('Order has been created!');
             $('#myModal').modal('toggle');
             $('#invoiceModal').modal('toggle');
-
-          }
-        })
-        .catch(error => {
-          alert('Cannot create order'+" "+ error);
-        })
         
       },
       

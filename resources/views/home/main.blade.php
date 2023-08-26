@@ -82,8 +82,16 @@
             $('#myModal').modal('hide');
             $('#cart-modal').modal('show');
         });
-        $('#btn-print-invoice').click(function () {
-            printElement($('#printThis'));
+        $('#btn-print-invoice').click(function() {
+            showLoading();
+            html2canvas($('#invoiceModal')[0]).then(canvas => {
+                hideLoading();
+                var dataString = canvas.toDataURL("image/png");
+                var link = document.createElement("a");
+                link.download = 'image';
+                link.href = dataString;
+                link.click();
+            });
         })
 
         function printElement(elem) {

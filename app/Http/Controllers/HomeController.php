@@ -13,6 +13,6 @@ class HomeController extends Controller
         $data = $this->api_get('admin/category/list/web');
         self::clearAuth();
 
-        return view('home.main',compact('data'));
+        return view('home.index',compact('data'));
     }
 }

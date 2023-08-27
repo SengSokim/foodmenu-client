@@ -1,7 +1,5 @@
 @include('home.layouts.master_header')
 
 <body>
-    @yield('content')
-    <section class="footer-section">
-        
+    @yield('content')        
     @include('home.layouts.master_footer')

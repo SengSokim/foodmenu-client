@@ -1,5 +1,5 @@
 <div class="modal fade" id="cart-modal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 style="color: #154d97;" class="modal-title text-bold" id="orderModalLabel">
@@ -12,36 +12,40 @@
                 </button>
             </div>
             <div class="modal-body">
-                <table class="table table-striped table-borderless">
-                    <thead>
-                        <tr>
-                            <th style="color: #154d97;"><i class="fas fa-tag mr-1"></i> Item</th>
-                            <th style="color: #154d97;"><i class="fas fa-dollar-sign mr-1"></i> Price</th>
-                            <th style="color: #154d97;width:20%"><i class="fas fa-sort-numeric-up mr-1"></i> Quantity</th>
-                            <th style="color: #154d97;"><i class="fas fa-money-bill mr-1"></i> Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="(item,index) in carts" :key="index">
-                            <td>@{{ item.name }} | @{{ item.code }}</td>
-                            <td>@{{ formatCurrency(item.price) }}</td>
-                            <td>
-                                <button type="button" class="btn btn-light btn-sm" @click="decrementQty(item)">
-                                    <i class="fas fa-minus" style="cursor: pointer" ></i>
-                                </button>
+                <div class="table-responsive">
+                    <table class="table table-striped table-borderless">
+                        <thead>
+                            <tr>
+                                <th style="color: #154d97;"><i class="fas fa-tag mr-1 display-icon"></i> Item</th>
+                                <th style="color: #154d97;"><i class="fas fa-dollar-sign mr-1 display-icon"></i> Price
+                                </th>
+                                <th style="color: #154d97;width:20%"><i
+                                        class="fas fa-sort-numeric-up mr-1 display-icon"></i> Quantity</th>
+                                <th style="color: #154d97;"><i class="fas fa-money-bill mr-1 display-icon"></i> Total
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="(item,index) in carts" :key="index">
+                                <td>@{{ item.name }} | @{{ item.code }}</td>
+                                <td>@{{ formatCurrency(item.price) }}</td>
+                                <td class="d-flex">
+                                    <button type="button" class="btn btn-light btn-sm" @click="decrementQty(item)">
+                                        <i class="fas fa-minus" style="cursor: pointer"></i>
+                                    </button>
                                     @{{ item.qty }}
-                                <button type="button" class="btn btn-light btn-sm" @click="incrementQty(item)">
-                                    <i class="fas fa-plus cursor-pointer" style="cursor: pointer" ></i>
-                                </button>
-                                
-                            </td>
-                            <td> @{{ formatCurrency(item.subtotal) }}</td>
-                            <td>
-                                <button type="button" class="btn btn-light btn-sm" @click="removefromCart(index)">
-                                    <i class="fas fa-minus" style="cursor: pointer" ></i>
-                                </button>
-                            </td>
-                        </tr>
+                                    <button type="button" class="btn btn-light btn-sm" @click="incrementQty(item)">
+                                        <i class="fas fa-plus cursor-pointer" style="cursor: pointer"></i>
+                                    </button>
+
+                                </td>
+                                <td> @{{ formatCurrency(item.subtotal) }}</td>
+                                <td>
+                                    <button type="button" class="btn btn-sm" @click="removefromCart(index)">
+                                        <i class="fas fa-trash-alt" style="cursor: pointer; color: red;"></i>
+                                    </button>
+                                </td>
+                            </tr>
 
                     </tbody>
                 </table>
@@ -194,4 +198,3 @@
     </div>
 </div>
 </div>
-

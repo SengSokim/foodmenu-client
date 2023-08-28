@@ -11,7 +11,7 @@ class HomeController extends Controller
         list($current_page, $limit, $offset, $search, $order, $sort) = $this->getParams();
 
         $data = $this->api_get('admin/category/list/web');
-        self::clearAuth();
+        // self::clearAuth();
 
         return view('home.index',compact('data'));
     }

@@ -30,7 +30,8 @@
 
             <section class="items-section" v-for="list in data">
                 <p class="card-category mt-3">@{{ list.name }}</p>
-                <div class="card-scroll" data-flickity='{ "groupCells": true }'>
+                <!-- <div class="card-scroll" data-flickity='{ "groupCells": true }'> -->
+                <div class="card-scroll">
                     <div class="card" v-for="product in list.products">
                         <div class="card-image-container">
                             <img class="card-image" :src="product.image?.url" alt="img">

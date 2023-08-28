@@ -106,7 +106,7 @@
                             <i class="fas fa-arrow-left mr-1"></i>Back
                         </button>
                         <button type="submit" class="btn btn-primary"
-                            style="background-color: #154d97;" id="submitBtn">
+                            style="background-color: #154d97;" id="submitBtn" @click="showLoading()">
                             <i class="fas fa-check mr-1"></i>Submit
                         </button>
                     </div>
@@ -175,10 +175,10 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal" @click="clear"><i
-                        class="fas fa-times mr-1"></i>Close</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" @click="clear" id="btn-close-invoice"><i
+                        class="fas fa-times mr-1" ></i>Close</button>
                 <button type="button" style="background-color: #154d97;" class="btn btn-primary" id="btn-print-invoice">
-                    <i class="fas fa-download mr-1"></i>Download
+                    <i class="fas fa-download mr-1" ></i>Download
                 </button>
             </div>
             

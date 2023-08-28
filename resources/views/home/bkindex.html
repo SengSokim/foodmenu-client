@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMBOJA</title>
+    <link rel="stylesheet" href="../styles/scss/style.css">
+    <link rel="Shortcut icon" href="../src/images/amboja_logo.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a href="#"><img class="logo" src="../src/images/amboja_logo.jpg" alt="ambojaLogo"></a>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="#"><button class="add-card-btn"><i class="fa-solid fa-cart-arrow-down"></i>Add to
+                            card</button></a></li>
+            </ul>
+        </nav>
+        <section class="items-section">
+            <p class="card-category">Pizzas</p>
+            <div class="card-scroll">
+                <div class="card" onclick="showPopup()">
+                    <div class="card-image-container">
+                        <img class="card-image" src="../src/images/pizza.jpg" alt="pizza">
+                    </div>
+                    <div class="card-detail">
+                        <span class="menu-name">Margherita</span>
+                        <span class="main-price">$9.90</span>
+                        <hr class="hr-style">
+                        <p class="menu-detail">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati alias ducimus esse aut
+                            officiis libero a excepturi sequi, possimus aperiam.
+                        </p>
+                        <button class="order-detail-btn">Order Detail<i class="fa fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <div id="popupCard" class="popup-card">
+                    <div class="card">
+                        <div class="card-image-container">
+                            <img class="card-image" src="../src/images/pizza.jpg" alt="pizza">
+                        </div>
+                        <div class="card-detail">
+                            <span class="menu-name">Margherita</span>
+                            <span class="main-price">$9.90</span>
+                            <hr class="hr-style">
+                            <p class="menu-detail">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, nesciunt. Lorem ipsum
+                                dolor sit amet consectetur adipisicing elit. Aliquam dolores, consequatur dolorem vitae
+                                asperiores quaerat, incidunt expedita pariatur omnis fugiat dolore saepe veniam numquam
+                                veritatis eos itaque quisquam suscipit enim?
+                            </p>
+                            <div class="bottom-btn-container">
+                                <div class="quantity">
+                                    <button onclick="decreaseQuantity()">-</button>
+                                    <span id="quantityDisplay">1</span>
+                                    <button class="increase-btn" onclick="increaseQuantity()">+</button>
+                                </div>
+                                <button class="card-button">
+                                    <span class="icon"><i class="fa-solid fa-cart-arrow-down"></i></span>
+                                    <span class="text">Cart</span>
+                                </button>
+                                <button class="buy-now-button">Buy Now</button>
+                            </div>
+                        </div>
+                        <button class="close-button" onclick="hidePopup()">&times;</button>
+                    </div>
+                </div>
+                <div class="card" onclick="showPopup()">
+                    <div class="card-image-container">
+                        <img class="card-image" src="../src/images/pizza.jpg" alt="pizza">
+                    </div>
+                    <div class="card-detail">
+                        <span class="menu-name">Margherita</span>
+                        <span class="main-price">$9.90</span>
+                        <hr class="hr-style">
+                        <p class="menu-detail">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati alias ducimus esse aut
+                            officiis libero a excepturi sequi, possimus aperiam.
+                        </p>
+                        <button class="order-detail-btn">Order Detail<i class="fa fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <div id="popupCard" class="popup-card">
+                    <div class="card">
+                        <div class="card-image-container">
+                            <img class="card-image" src="../src/images/pizza.jpg" alt="pizza">
+                        </div>
+                        <div class="card-detail">
+                            <span class="menu-name">Margherita</span>
+                            <span class="main-price">$9.90</span>
+                            <hr class="hr-style">
+                            <p class="menu-detail">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, nesciunt. Lorem ipsum
+                                dolor sit amet consectetur adipisicing elit. Aliquam dolores, consequatur dolorem vitae
+                                asperiores quaerat, incidunt expedita pariatur omnis fugiat dolore saepe veniam numquam
+                                veritatis eos itaque quisquam suscipit enim?
+                            </p>
+                            <div class="bottom-btn-container">
+                                <div class="quantity">
+                                    <button onclick="decreaseQuantity()">-</button>
+                                    <span id="quantityDisplay">1</span>
+                                    <button class="increase-btn" onclick="increaseQuantity()">+</button>
+                                </div>
+                                <button class="card-button">
+                                    <span class="icon"><i class="fa-solid fa-cart-arrow-down"></i></span>
+                                    <span class="text">Cart</span>
+                                </button>
+                                <button class="buy-now-button">Buy Now</button>
+                            </div>
+                        </div>
+                        <button class="close-button" onclick="hidePopup()">&times;</button>
+                    </div>
+                </div>
+                <div class="card" onclick="showPopup()">
+                    <div class="card-image-container">
+                        <img class="card-image" src="../src/images/pizza.jpg" alt="pizza">
+                    </div>
+                    <div class="card-detail">
+                        <span class="menu-name">Margherita</span>
+                        <span class="main-price">$9.90</span>
+                        <hr class="hr-style">
+                        <p class="menu-detail">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati alias ducimus esse aut
+                            officiis libero a excepturi sequi, possimus aperiam.
+                        </p>
+                        <button class="order-detail-btn">Order Detail<i class="fa fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <div id="popupCard" class="popup-card">
+                    <div class="card">
+                        <div class="card-image-container">
+                            <img class="card-image" src="../src/images/pizza.jpg" alt="pizza">
+                        </div>
+                        <div class="card-detail">
+                            <span class="menu-name">Margherita</span>
+                            <span class="main-price">$9.90</span>
+                            <hr class="hr-style">
+                            <p class="menu-detail">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, nesciunt. Lorem ipsum
+                                dolor sit amet consectetur adipisicing elit. Aliquam dolores, consequatur dolorem vitae
+                                asperiores quaerat, incidunt expedita pariatur omnis fugiat dolore saepe veniam numquam
+                                veritatis eos itaque quisquam suscipit enim?
+                            </p>
+                            <div class="bottom-btn-container">
+                                <div class="quantity">
+                                    <button onclick="decreaseQuantity()">-</button>
+                                    <span id="quantityDisplay">1</span>
+                                    <button class="increase-btn" onclick="increaseQuantity()">+</button>
+                                </div>
+                                <button class="card-button">
+                                    <span class="icon"><i class="fa-solid fa-cart-arrow-down"></i></span>
+                                    <span class="text">Cart</span>
+                                </button>
+                                <button class="buy-now-button">Buy Now</button>
+                            </div>
+                        </div>
+                        <button class="close-button" onclick="hidePopup()">&times;</button>
+                    </div>
+                </div>
+                <div class="card" onclick="showPopup()">
+                    <div class="card-image-container">
+                        <img class="card-image" src="../src/images/pizza.jpg" alt="pizza">
+                    </div>
+                    <div class="card-detail">
+                        <span class="menu-name">Margherita</span>
+                        <span class="main-price">$9.90</span>
+                        <hr class="hr-style">
+                        <p class="menu-detail">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati alias ducimus esse aut
+                            officiis libero a excepturi sequi, possimus aperiam.
+                        </p>
+                        <button class="order-detail-btn">Order Detail<i class="fa fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <div id="popupCard" class="popup-card">
+                    <div class="card">
+                        <div class="card-image-container">
+                            <img class="card-image" src="../src/images/pizza.jpg" alt="pizza">
+                        </div>
+                        <div class="card-detail">
+                            <span class="menu-name">Margherita</span>
+                            <span class="main-price">$9.90</span>
+                            <hr class="hr-style">
+                            <p class="menu-detail">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, nesciunt. Lorem ipsum
+                                dolor sit amet consectetur adipisicing elit. Aliquam dolores, consequatur dolorem vitae
+                                asperiores quaerat, incidunt expedita pariatur omnis fugiat dolore saepe veniam numquam
+                                veritatis eos itaque quisquam suscipit enim?
+                            </p>
+                            <div class="bottom-btn-container">
+                                <div class="quantity">
+                                    <button onclick="decreaseQuantity()">-</button>
+                                    <span id="quantityDisplay">1</span>
+                                    <button class="increase-btn" onclick="increaseQuantity()">+</button>
+                                </div>
+                                <button class="card-button">
+                                    <span class="icon"><i class="fa-solid fa-cart-arrow-down"></i></span>
+                                    <span class="text">Cart</span>
+                                </button>
+                                <button class="buy-now-button">Buy Now</button>
+                            </div>
+                        </div>
+                        <button class="close-button" onclick="hidePopup()">&times;</button>
+                    </div>
+                </div>
+                <div class="card" onclick="showPopup()">
+                    <div class="card-image-container">
+                        <img class="card-image" src="../src/images/pizza.jpg" alt="pizza">
+                    </div>
+                    <div class="card-detail">
+                        <span class="menu-name">Margherita</span>
+                        <span class="main-price">$9.90</span>
+                        <hr class="hr-style">
+                        <p class="menu-detail">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati alias ducimus esse aut
+                            officiis libero a excepturi sequi, possimus aperiam.
+                        </p>
+                        <button class="order-detail-btn">Order Detail<i class="fa fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <div id="popupCard" class="popup-card">
+                    <div class="card">
+                        <div class="card-image-container">
+                            <img class="card-image" src="../src/images/pizza.jpg" alt="pizza">
+                        </div>
+                        <div class="card-detail">
+                            <span class="menu-name">Margherita</span>
+                            <span class="main-price">$9.90</span>
+                            <hr class="hr-style">
+                            <p class="menu-detail">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, nesciunt. Lorem ipsum
+                                dolor sit amet consectetur adipisicing elit. Aliquam dolores, consequatur dolorem vitae
+                                asperiores quaerat, incidunt expedita pariatur omnis fugiat dolore saepe veniam numquam
+                                veritatis eos itaque quisquam suscipit enim?
+                            </p>
+                            <div class="bottom-btn-container">
+                                <div class="quantity">
+                                    <button onclick="decreaseQuantity()">-</button>
+                                    <span id="quantityDisplay">1</span>
+                                    <button class="increase-btn" onclick="increaseQuantity()">+</button>
+                                </div>
+                                <button class="card-button">
+                                    <span class="icon"><i class="fa-solid fa-cart-arrow-down"></i></span>
+                                    <span class="text">Cart</span>
+                                </button>
+                                <button class="buy-now-button">Buy Now</button>
+                            </div>
+                        </div>
+                        <button class="close-button" onclick="hidePopup()">&times;</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="items-section">
+            <p class="card-category">Pizzas</p>
+            <div class="card-scroll">
+                <div class="card" onclick="showPopup()">
+                    <div class="card-image-container">
+                        <img class="card-image" src="../src/images/pizza.jpg" alt="pizza">
+                    </div>
+                    <div class="card-detail">
+                        <span class="menu-name">Margherita</span>
+                        <span class="main-price">$9.90</span>
+                        <hr class="hr-style">
+                        <p class="menu-detail">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati alias ducimus esse aut
+                            officiis libero a excepturi sequi, possimus aperiam.
+                        </p>
+                        <button class="order-detail-btn">Order Detail<i class="fa fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <div id="popupCard" class="popup-card">
+                    <div class="card">
+                        <div class="card-image-container">
+                            <img class="card-image" src="../src/images/pizza.jpg" alt="pizza">
+                        </div>
+                        <div class="card-detail">
+                            <span class="menu-name">Margherita</span>
+                            <span class="main-price">$9.90</span>
+                            <hr class="hr-style">
+                            <p class="menu-detail">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, nesciunt. Lorem ipsum
+                                dolor sit amet consectetur adipisicing elit. Aliquam dolores, consequatur dolorem vitae
+                                asperiores quaerat, incidunt expedita pariatur omnis fugiat dolore saepe veniam numquam
+                                veritatis eos itaque quisquam suscipit enim?
+                            </p>
+                            <div class="bottom-btn-container">
+                                <div class="quantity">
+                                    <button onclick="decreaseQuantity()">-</button>
+                                    <span id="quantityDisplay">1</span>
+                                    <button class="increase-btn" onclick="increaseQuantity()">+</button>
+                                </div>
+                                <button class="card-button">
+                                    <span class="icon"><i class="fa-solid fa-cart-arrow-down"></i></span>
+                                    <span class="text">Cart</span>
+                                </button>
+                                <button class="buy-now-button">Buy Now</button>
+                            </div>
+                        </div>
+                        <button class="close-button" onclick="hidePopup()">&times;</button>
+                    </div>
+                </div>
+                <div class="card" onclick="showPopup()">
+                    <div class="card-image-container">
+                        <img class="card-image" src="../src/images/pizza.jpg" alt="pizza">
+                    </div>
+                    <div class="card-detail">
+                        <span class="menu-name">Margherita</span>
+                        <span class="main-price">$9.90</span>
+                        <hr class="hr-style">
+                        <p class="menu-detail">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati alias ducimus esse aut
+                            officiis libero a excepturi sequi, possimus aperiam.
+                        </p>
+                        <button class="order-detail-btn">Order Detail<i class="fa fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <div id="popupCard" class="popup-card">
+                    <div class="card">
+                        <div class="card-image-container">
+                            <img class="card-image" src="../src/images/pizza.jpg" alt="pizza">
+                        </div>
+                        <div class="card-detail">
+                            <span class="menu-name">Margherita</span>
+                            <span class="main-price">$9.90</span>
+                            <hr class="hr-style">
+                            <p class="menu-detail">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, nesciunt. Lorem ipsum
+                                dolor sit amet consectetur adipisicing elit. Aliquam dolores, consequatur dolorem vitae
+                                asperiores quaerat, incidunt expedita pariatur omnis fugiat dolore saepe veniam numquam
+                                veritatis eos itaque quisquam suscipit enim?
+                            </p>
+                            <div class="bottom-btn-container">
+                                <div class="quantity">
+                                    <button onclick="decreaseQuantity()">-</button>
+                                    <span id="quantityDisplay">1</span>
+                                    <button class="increase-btn" onclick="increaseQuantity()">+</button>
+                                </div>
+                                <button class="card-button">
+                                    <span class="icon"><i class="fa-solid fa-cart-arrow-down"></i></span>
+                                    <span class="text">Cart</span>
+                                </button>
+                                <button class="buy-now-button">Buy Now</button>
+                            </div>
+                        </div>
+                        <button class="close-button" onclick="hidePopup()">&times;</button>
+                    </div>
+                </div>
+                <div class="card" onclick="showPopup()">
+                    <div class="card-image-container">
+                        <img class="card-image" src="../src/images/pizza.jpg" alt="pizza">
+                    </div>
+                    <div class="card-detail">
+                        <span class="menu-name">Margherita</span>
+                        <span class="main-price">$9.90</span>
+                        <hr class="hr-style">
+                        <p class="menu-detail">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati alias ducimus esse aut
+                            officiis libero a excepturi sequi, possimus aperiam.
+                        </p>
+                        <button class="order-detail-btn">Order Detail<i class="fa fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <div id="popupCard" class="popup-card">
+                    <div class="card">
+                        <div class="card-image-container">
+                            <img class="card-image" src="../src/images/pizza.jpg" alt="pizza">
+                        </div>
+                        <div class="card-detail">
+                            <span class="menu-name">Margherita</span>
+                            <span class="main-price">$9.90</span>
+                            <hr class="hr-style">
+                            <p class="menu-detail">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, nesciunt. Lorem ipsum
+                                dolor sit amet consectetur adipisicing elit. Aliquam dolores, consequatur dolorem vitae
+                                asperiores quaerat, incidunt expedita pariatur omnis fugiat dolore saepe veniam numquam
+                                veritatis eos itaque quisquam suscipit enim?
+                            </p>
+                            <div class="bottom-btn-container">
+                                <div class="quantity">
+                                    <button onclick="decreaseQuantity()">-</button>
+                                    <span id="quantityDisplay">1</span>
+                                    <button class="increase-btn" onclick="increaseQuantity()">+</button>
+                                </div>
+                                <button class="card-button">
+                                    <span class="icon"><i class="fa-solid fa-cart-arrow-down"></i></span>
+                                    <span class="text">Cart</span>
+                                </button>
+                                <button class="buy-now-button">Buy Now</button>
+                            </div>
+                        </div>
+                        <button class="close-button" onclick="hidePopup()">&times;</button>
+                    </div>
+                </div>
+                <div class="card" onclick="showPopup()">
+                    <div class="card-image-container">
+                        <img class="card-image" src="../src/images/pizza.jpg" alt="pizza">
+                    </div>
+                    <div class="card-detail">
+                        <span class="menu-name">Margherita</span>
+                        <span class="main-price">$9.90</span>
+                        <hr class="hr-style">
+                        <p class="menu-detail">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati alias ducimus esse aut
+                            officiis libero a excepturi sequi, possimus aperiam.
+                        </p>
+                        <button class="order-detail-btn">Order Detail<i class="fa fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <div id="popupCard" class="popup-card">
+                    <div class="card">
+                        <div class="card-image-container">
+                            <img class="card-image" src="../src/images/pizza.jpg" alt="pizza">
+                        </div>
+                        <div class="card-detail">
+                            <span class="menu-name">Margherita</span>
+                            <span class="main-price">$9.90</span>
+                            <hr class="hr-style">
+                            <p class="menu-detail">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, nesciunt. Lorem ipsum
+                                dolor sit amet consectetur adipisicing elit. Aliquam dolores, consequatur dolorem vitae
+                                asperiores quaerat, incidunt expedita pariatur omnis fugiat dolore saepe veniam numquam
+                                veritatis eos itaque quisquam suscipit enim?
+                            </p>
+                            <div class="bottom-btn-container">
+                                <div class="quantity">
+                                    <button onclick="decreaseQuantity()">-</button>
+                                    <span id="quantityDisplay">1</span>
+                                    <button class="increase-btn" onclick="increaseQuantity()">+</button>
+                                </div>
+                                <button class="card-button">
+                                    <span class="icon"><i class="fa-solid fa-cart-arrow-down"></i></span>
+                                    <span class="text">Cart</span>
+                                </button>
+                                <button class="buy-now-button">Buy Now</button>
+                            </div>
+                        </div>
+                        <button class="close-button" onclick="hidePopup()">&times;</button>
+                    </div>
+                </div>
+                <div class="card" onclick="showPopup()">
+                    <div class="card-image-container">
+                        <img class="card-image" src="../src/images/pizza.jpg" alt="pizza">
+                    </div>
+                    <div class="card-detail">
+                        <span class="menu-name">Margherita</span>
+                        <span class="main-price">$9.90</span>
+                        <hr class="hr-style">
+                        <p class="menu-detail">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati alias ducimus esse aut
+                            officiis libero a excepturi sequi, possimus aperiam.
+                        </p>
+                        <button class="order-detail-btn">Order Detail<i class="fa fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <div id="popupCard" class="popup-card">
+                    <div class="card">
+                        <div class="card-image-container">
+                            <img class="card-image" src="../src/images/pizza.jpg" alt="pizza">
+                        </div>
+                        <div class="card-detail">
+                            <span class="menu-name">Margherita</span>
+                            <span class="main-price">$9.90</span>
+                            <hr class="hr-style">
+                            <p class="menu-detail">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, nesciunt. Lorem ipsum
+                                dolor sit amet consectetur adipisicing elit. Aliquam dolores, consequatur dolorem vitae
+                                asperiores quaerat, incidunt expedita pariatur omnis fugiat dolore saepe veniam numquam
+                                veritatis eos itaque quisquam suscipit enim?
+                            </p>
+                            <div class="bottom-btn-container">
+                                <div class="quantity">
+                                    <button onclick="decreaseQuantity()">-</button>
+                                    <span id="quantityDisplay">1</span>
+                                    <button class="increase-btn" onclick="increaseQuantity()">+</button>
+                                </div>
+                                <button class="card-button">
+                                    <span class="icon"><i class="fa-solid fa-cart-arrow-down"></i></span>
+                                    <span class="text">Cart</span>
+                                </button>
+                                <button class="buy-now-button">Buy Now</button>
+                            </div>
+                        </div>
+                        <button class="close-button" onclick="hidePopup()">&times;</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-section">
+            <p class="card-category">Allergens</p>
+            <div class="sub-category-container">
+                <div class="category-option">
+                    <div class="radius-category">
+                        a
+                    </div>
+                    <p class="card-category-text">Nice description of an allergen</p>
+                </div>
+                <div class="category-option">
+                    <div class="radius-category">
+                        c
+                    </div>
+                    <p class="card-category-text">Nice description of an allergen</p>
+                </div>
+                <div class="category-option">
+                    <div class="radius-category">
+                        e
+                    </div>
+                    <p class="card-category-text">Nice description of an allergen</p>
+                </div>
+            </div>
+            <div class="sub-category-container">
+                <div class="category-option">
+                    <div class="radius-category">
+                        b
+                    </div>
+                    <p class="card-category-text">Nice description of an allergen</p>
+                </div>
+                <div class="category-option">
+                    <div class="radius-category">
+                        d
+                    </div>
+                    <p class="card-category-text">Nice description of an allergen</p>
+                </div>
+                <div class="category-option">
+                    <div class="radius-category">
+                        f
+                    </div>
+                    <p class="card-category-text">Nice description of an allergen</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="create-text-container">
+        <p class="create-text">Created with <a href="#"><b>AMBOJA</b></a></p>
+    </div>
+    <footer>
+        <div class="describe-container">
+            <img class="footer-logo" src="../src/images/amboja_logo.jpg" alt="ambojaLogo">
+            <p class="footer-text-describe">
+                The easiest way to create a digital food menu for your restaurant, bar or cafe.
+            </p>
+        </div>
+        <div class="privacy-container">
+            <div class="support-container">
+                <i class="fa-regular fa-envelope"></i>
+                support@1food.menu
+            </div>
+        </div>
+    </footer>
+    <div class="bottom-footer-container">
+        <div class="bottom-footer">
+            @ 2023 - AMBOJA
+        </div>
+    </div>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

@@ -84,6 +84,8 @@
         });
         $('#btn-print-invoice').click(function() {
             showLoading();
+            $('#btn-print-invoice').css('display', 'none');
+            $('#btn-close-invoice').css('display', 'none');
             html2canvas($('#invoiceModal')[0]).then(canvas => {
                 hideLoading();
                 var dataString = canvas.toDataURL("image/png");
@@ -91,7 +93,12 @@
                 link.download = 'image';
                 link.href = dataString;
                 link.click();
+                
             });
+            setTimeout(function() {
+                window.location.reload();
+            }, 10000);
+            
         })
 
         function printElement(elem) {

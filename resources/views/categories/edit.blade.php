@@ -14,7 +14,7 @@
       </div>
       <div class="modal-footer">
       <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">{{ __('app.global.cancel') }}</button>
-      <button type="sumbit" form="updateProductCategory" class="btn btn-primary btn-sm"></i>{{ __('app.global.save-change') }}</button>
+      <button type="sumbit" form="updateProductCategory" class="btn btn-primary btn-sm" onclick="showLoading()"></i>{{ __('app.global.save-change') }}</button>
       </div>
     </div>
   </div>

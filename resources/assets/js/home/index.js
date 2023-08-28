@@ -177,6 +177,9 @@ const app = new Vue({
         })
         
       },
+      showLoading() {
+        showLoading();
+      }
       
     }
   });

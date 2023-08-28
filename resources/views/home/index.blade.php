@@ -2,7 +2,7 @@
 @section('content')
 
 <body>
-    <div class="main-container" id="homePage" v-cloak>
+    <div class="main-container" id="homePage">
         <nav class="navbar">
             <div class="navbar-brand">
                 <a href="#"><img class="logo" src="{{ asset('images/amboja_logo.jpg') }}" alt="ambojaLogo"></a>

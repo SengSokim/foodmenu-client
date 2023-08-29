@@ -1,7 +1,7 @@
 @extends('home.layouts.master')
 @section('content')
 
-<div class="container" id="homePage" v-cloak>
+<div class="container" id="homePage">
     <nav class="navbar">
         <div class="navbar-brand">
             <a href="#"><img class="logo" src="{{ asset('images/amboja_logo.jpg') }}" alt="ambojaLogo"></a>

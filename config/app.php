@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://localhost'),
     'api_url' => env('API_URL', 'https://emenu-development-api.rorean.com/api/'),
     'website_url' => env('WEBSITE_URL', 'https://emenu-development-web.rorean.com'),
 

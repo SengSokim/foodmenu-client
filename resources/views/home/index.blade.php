@@ -65,8 +65,8 @@
     const data = @json($data);
 
 </script>
-<script src="{{ mix('dist/js/app.js') }}"></script>
-<script src="{{ mix('dist/js/home/index.js') }}"></script>
+<script src="{{ mix('public/dist/js/app.js') }}"></script>
+<script src="{{ mix('public/dist/js/home/index.js') }}"></script>
 <script>
     $(document).ready(function () {
         $('#myModal').on('show.bs.modal', function () {

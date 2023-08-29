@@ -58,7 +58,10 @@
     <link rel="stylesheet" href="{{ asset('scss/style.css') }}">
     <link rel="Shortcut icon" href="{{ asset('images/amboja_logo.jpg') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-   
+    <!-- flickity -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script> -->
+    
     @yield('header-content')
     @yield('style')
     <style>

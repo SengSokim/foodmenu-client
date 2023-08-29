@@ -10,7 +10,16 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
-
+ mix.webpackConfig({
+    stats:{
+    hash: true,
+    children: true,
+    errors: true,
+    errorDetails: true,
+    warnings: true,
+    publicPath: true,
+}
+});
 mix.js('resources/assets/js/app.js', 'public/dist/js')
     .js('resources/assets/js/axios.js', 'public/dist/js')
     .js('resources/assets/js/general.js', 'public/dist/js')

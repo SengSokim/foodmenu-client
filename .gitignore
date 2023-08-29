@@ -13,8 +13,6 @@ yarn-error.log
 /.idea
 /.vscode
 /.vagrant
-/public/mix-manifest.json
-/public/dist
 /composer.lock
 /package-lock.json
 .DS_Store

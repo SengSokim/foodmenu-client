@@ -1,0 +1,21 @@
+{
+    "/dist/js/app.js": "/dist/js/app.js?id=cb8dcd61cbab11438ebd",
+    "/dist/css/app.css": "/dist/css/app.css?id=0eb18b534876bf338f19",
+    "/dist/js/axios.js": "/dist/js/axios.js?id=227c2fe958d8afc01355",
+    "/dist/js/categories/category.js": "/dist/js/categories/category.js?id=57c0aef8ae7227c958ac",
+    "/dist/js/chart/chart.js": "/dist/js/chart/chart.js?id=370cf3c4482ff61d6a58",
+    "/dist/js/general.js": "/dist/js/general.js?id=27d3ea927abb0bb7c260",
+    "/dist/js/home/edit.js": "/dist/js/home/edit.js?id=e124f46ae80d86144150",
+    "/dist/js/home/index.js": "/dist/js/home/index.js?id=9c4b8cd582268df0ab12",
+    "/dist/js/product-variants/product-variant.js": "/dist/js/product-variants/product-variant.js?id=f886abd009d4174c1ce0",
+    "/dist/js/products/product.js": "/dist/js/products/product.js?id=94ae7729c6ece079c547",
+    "/dist/js/profile/profile.js": "/dist/js/profile/profile.js?id=68c660850bba524bae8f",
+    "/dist/js/register/register.js": "/dist/js/register/register.js?id=27bf4a16e0dc324cadc4",
+    "/dist/js/restaurants/edit.js": "/dist/js/restaurants/edit.js?id=ce12ce37edcb7fac5554",
+    "/dist/js/roles/create.js": "/dist/js/roles/create.js?id=2fef62855534af72f5f3",
+    "/dist/js/roles/edit.js": "/dist/js/roles/edit.js?id=11ff4050be86e3232492",
+    "/dist/js/setting/telegram.js": "/dist/js/setting/telegram.js?id=9a9dac79c599b74899cb",
+    "/dist/js/tables/table.js": "/dist/js/tables/table.js?id=3464fe99b4d6db1b8825",
+    "/dist/js/users/create.js": "/dist/js/users/create.js?id=a07f5c49c6e9a3a7f222",
+    "/dist/js/users/edit.js": "/dist/js/users/edit.js?id=516edef92ab71c13c4b5"
+}

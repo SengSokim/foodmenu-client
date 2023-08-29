@@ -10,7 +10,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">{{ __('app.global.cancel') }}</button>
-        <button type="confirm" form="updateProduct" class="btn btn-primary btn-sm" onclick="showLoading()">{{ __('app.global.save-change') }}</button>
+        <button type="confirm" form="updateProduct" class="btn btn-primary btn-sm">{{ __('app.global.save-change') }}</button>
       </div>
     </div>
   </div>

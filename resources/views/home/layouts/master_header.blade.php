@@ -50,10 +50,7 @@
     <link rel="stylesheet" href="{{ asset('plugins/sweetalert2/sweetalert2.min.css') }}">
     <!-- Daterange picker -->
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/daterangepicker/daterangepicker.css') }}">
-    <!-- jQuery -->
-    <script src="{{ asset('adminlte/plugins/jquery/jquery.min.js') }}"></script>
-    <!-- jQuery UI 1.11.4 -->
-    <script src="{{ asset('adminlte/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+    
     <script src="{{ mix('dist/js/axios.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('scss/style.css') }}">
     <link rel="Shortcut icon" href="{{ asset('images/amboja_logo.jpg') }}">

@@ -58,63 +58,63 @@
     @include('home.modal.cart')
 </div>
 
-
 @endsection
 @section('footer-content')
-<script>
-    const data = @json($data);
-
-</script>
-<script src="{{ mix('dist/js/app.js') }}"></script>
-<script src="{{ mix('dist/js/home/index.js') }}"></script>
-<script>
-    $(document).ready(function () {
-        $('#myModal').on('show.bs.modal', function () {
-            $('#cart-modal').modal('hide');
-        });
-
-        $('#myModal').on('hidden.bs.modal', function () {
-            $('body').removeClass('modal-open');
-            $('.modal-backdrop').remove();
-        });
-
-        $('#backButton').on('click', function () {
-            $('#myModal').modal('hide');
-            $('#cart-modal').modal('show');
-        });
-        $('#btn-print-invoice').click(function() {
-            showLoading();
-            html2canvas($('#invoiceModal')[0]).then(canvas => {
-                hideLoading();
-                var dataString = canvas.toDataURL("image/png");
-                var link = document.createElement("a");
-                link.download = 'image';
-                link.href = dataString;
-                link.click();
+    <script >
+        const data = @json($data);
+    </script>
+    <script src="{{ mix('dist/js/app.js') }}"></script>
+    <script src="{{ mix('dist/js/home/index.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            $('#myModal').on('show.bs.modal', function () {
+                $('#cart-modal').modal('hide');
             });
-        })
 
-        function printElement(elem) {
-            console.log(elem);
-            var domClone = elem[0].cloneNode(true);
+            $('#myModal').on('hidden.bs.modal', function () {
+                $('body').removeClass('modal-open');
+                $('.modal-backdrop').remove();
+            });
+           
+            $('#backButton').on('click', function () {
+                $('#myModal').modal('hide');
+                $('#cart-modal').modal('show');
+            });
+            $('#btn-print-invoice').click(function() {
+                showLoading();
+                $('#btn-print-invoice').css('display', 'none');
+                $('#btn-close-invoice').css('display', 'none');
+                html2canvas($('#invoiceModal')[0]).then(canvas => {
+                    hideLoading();
+                    var dataString = canvas.toDataURL("image/png");
+                    var link = document.createElement("a");
+                    link.download = 'image';
+                    link.href = dataString;
+                    link.click();
+                });
+            })
 
-            var $printSection = document.getElementById("printSection");
+            function printElement(elem) {
+               
+                var domClone = elem[0].cloneNode(true);
 
-            if (!$printSection) {
-                var $printSection = document.createElement("div");
-                $printSection.id = "printSection";
-                document.body.appendChild($printSection);
+                var $printSection = document.getElementById("printSection");
+
+                if (!$printSection) {
+                    var $printSection = document.createElement("div");
+                    $printSection.id = "printSection";
+                    document.body.appendChild($printSection);
+                }
+
+                $printSection.innerHTML = "";
+                $printSection.appendChild(domClone);
+                setTimeout(function() {
+                    window.print();
+                }, 250);
+
             }
 
-            $printSection.innerHTML = "";
-            $printSection.appendChild(domClone);
-            setTimeout(function() {
-                window.print();
-            }, 250);
+        });
 
-        }
-
-    });
-
-</script>
+    </script>
 @endsection

@@ -5,12 +5,13 @@
         <h5 class="modal-title">Edit Product</h5>
       </div>
       <div class="modal-body m-1">
-        <form @submit.prevent="submit" id="updateProduct" v-cloak></form>
+        <form @submit.prevent="submit" id="updateProduct" v-cloak>
         @include('products.form')
+      </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">{{ __('app.global.cancel') }}</button>
-        <button type="confirm" form="updateProduct" class="btn btn-primary btn-sm">{{ __('app.global.save-change') }}</button>
+        <button type="button" form="updateProduct" class="btn btn-primary btn-sm">{{ __('app.global.save-change') }}</button>
       </div>
     </div>
   </div>

@@ -91,17 +91,15 @@ app = new Vue({
         },
 
         submit() {
-            // showLoading();
-           
             this.$validator.validate().then((result) => {
+                console.log(result);
                 let save = true;
                 if(!this.data.id && !this.data.image) {
                     this.error.image = 'The Image field is required.';
                     save = false;
                 }
-
                 if (!result || !save) {
-                    // hideLoading();
+                    hideLoading();
                     //set Window location to top
                     window.scrollTo(0, 0);
                     
